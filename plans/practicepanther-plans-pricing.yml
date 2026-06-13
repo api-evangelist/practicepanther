@@ -1,0 +1,74 @@
+name: PracticePanther Plans and Pricing
+description: Pricing plans for PracticePanther cloud-based legal practice management software, covering solo practitioners to full-service law firms.
+version: '0.1'
+url: https://www.practicepanther.com/pricing/
+plans:
+  - name: Solo
+    description: Core legal practice management features for solo practitioners and small firms.
+    price:
+      monthly: 59
+      annual: 49
+      currency: USD
+      per: user/month
+    features:
+      - Contact and Matter Management
+      - Billable Time and Expense Tracking
+      - Native ePayments
+      - Internal Chat
+      - Real-Time Notifications
+      - Daily Agenda Email
+      - Document Templates
+      - Task and Event Workflows
+      - Secure Client Portal
+      - Unlimited Data Storage
+      - Mobile App (iOS and Android)
+      - World Class Support
+  - name: Essential
+    description: Adds custom fields, security roles, and multi-bank support for growing firms.
+    price:
+      monthly: 79
+      annual: 69
+      currency: USD
+      per: user/month
+    features:
+      - All Solo features
+      - Custom Fields
+      - Custom Security Roles
+      - Invoice Read Alerts
+      - Multiple Bank Accounts
+  - name: Business
+    description: Full-featured plan with 2-way texting, intake forms, eSignature, and advanced billing for established firms.
+    price:
+      monthly: 99
+      annual: 89
+      currency: USD
+      per: user/month
+    features:
+      - All Essential features
+      - 2-Way Texting
+      - Intake Forms
+      - Native eSignature
+      - Attorney Revenue Report
+      - LEDES Billing
+  - name: Business Pro
+    description: Complete suite with PantherAccounting Plus including trust and operating accounting for full financial management.
+    price:
+      monthly: 124
+      annual: 114
+      currency: USD
+      per: user/month
+    features:
+      - All Business features
+      - PantherAccounting Plus
+      - Trust Accounting
+      - Operating Accounting
+      - Enhanced Reconciliation
+      - GL/AR/Expense Management
+trial:
+  available: true
+  duration: 7
+  durationUnit: days
+  creditCardRequired: false
+notes:
+  - Annual billing saves $120/user/year compared to monthly billing.
+  - API access is authorized on a case-by-case basis; submit a support request to request access.

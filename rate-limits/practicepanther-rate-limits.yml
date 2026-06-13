@@ -1,0 +1,19 @@
+name: PracticePanther API Rate Limits
+description: Rate limiting information for the PracticePanther REST API. PracticePanther's public documentation does not publish explicit rate limit thresholds; access is approved on a case-by-case basis and limits may be communicated during the API access approval process.
+version: '0.1'
+url: https://support.practicepanther.com/en/articles/479897-practicepanther-api
+documented: false
+notes:
+  - PracticePanther does not publicly document specific rate limit values.
+  - API access is granted on a case-by-case basis via a support request.
+  - Rate limit details, if any, are communicated during the API onboarding process.
+  - The API uses OAuth 2 tokens; refresh tokens are valid for 60 days or until used.
+authentication:
+  type: OAuth 2
+  authorizationEndpoint: https://app.practicepanther.com/oauth/authorize
+  tokenEndpoint: https://app.practicepanther.com/oauth/token
+  refreshTokenExpiry: 60 days or until used
+headers:
+  - name: Authorization
+    description: Bearer token obtained via OAuth 2 flow
+    required: true

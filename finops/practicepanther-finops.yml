@@ -1,0 +1,57 @@
+name: PracticePanther FinOps
+description: FinOps Framework FOCUS-aligned cost and usage information for PracticePanther legal practice management API and software subscriptions.
+version: '1.0'
+url: https://www.practicepanther.com/pricing/
+framework: FinOps Framework
+alignment: FOCUS 1.0
+provider: PracticePanther
+service: Legal Practice Management Platform and API
+billingModel: per-user-per-month
+currency: USD
+costDrivers:
+  - name: User Seats
+    description: Primary cost driver; each user requires a seat license at the chosen plan tier.
+    unit: user/month
+    tiers:
+      - plan: Solo
+        monthlyRate: 59
+        annualRate: 49
+      - plan: Essential
+        monthlyRate: 79
+        annualRate: 69
+      - plan: Business
+        monthlyRate: 99
+        annualRate: 89
+      - plan: Business Pro
+        monthlyRate: 124
+        annualRate: 114
+  - name: API Access
+    description: API access is approved on a case-by-case basis. No documented per-call or usage-based API charges; included within platform subscription.
+    unit: N/A
+    notes: Contact PracticePanther support for API access and any associated terms.
+savingsOpportunities:
+  - name: Annual Billing Discount
+    description: Switching from monthly to annual billing saves $120/user/year across all plan tiers.
+    estimatedSavings: 120
+    savingsUnit: USD/user/year
+  - name: Plan Right-Sizing
+    description: Solo practitioners may only need the Solo plan ($49/user/month annual) rather than higher tiers. Evaluate feature needs against plan tiers to avoid overspending.
+  - name: Free Trial
+    description: 7-day free trial available without a credit card, allowing evaluation before committing to paid subscription.
+costAllocation:
+  - dimension: Plan Tier
+    values:
+      - Solo
+      - Essential
+      - Business
+      - Business Pro
+  - dimension: Billing Frequency
+    values:
+      - Monthly
+      - Annual
+  - dimension: User Count
+    description: Total cost scales linearly with number of user seats.
+notes:
+  - PracticePanther does not publish usage-based or API-call-level pricing; costs are subscription-based per user.
+  - Trust accounting and full financial management (GL/AR) require the Business Pro tier.
+  - All plans include unlimited data storage, eliminating storage as a variable cost.

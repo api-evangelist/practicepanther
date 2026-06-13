@@ -1,0 +1,63 @@
+aid: practicepanther
+name: PracticePanther
+description: Cloud-based legal practice management with a REST API for managing cases, contacts, tasks, time tracking, billing, and trust accounting.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/practicepanther/refs/heads/main/apis.yml
+created: '2026-06-13'
+modified: '2026-06-13'
+specificationVersion: '0.19'
+tags:
+  - Legal
+  - Law Practice Management
+  - Case Management
+  - Billing
+  - Trust Accounting
+  - Time Tracking
+  - Legal Tech
+apis:
+  - aid: practicepanther:practicepanther-api
+    name: PracticePanther API
+    description: RESTful API for accessing and managing all PracticePanther resources including contacts, matters, tasks, time entries, expenses, invoices, and trust accounts. Supports OData queries and uses OAuth 2 authentication.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://support.practicepanther.com/en/collections/340699-api
+    baseURL: https://app.practicepanther.com
+    tags:
+      - Legal
+      - Case Management
+      - Billing
+      - Time Tracking
+      - Trust Accounting
+      - OData
+      - OAuth 2
+    properties:
+      - type: Documentation
+        url: https://support.practicepanther.com/en/articles/479897-practicepanther-api
+      - type: SwaggerUI
+        url: https://app.practicepanther.com/swagger/ui/index
+      - type: Authentication
+        url: https://support.practicepanther.com/en/articles/480086-api-access
+common:
+  - type: Website
+    url: https://www.practicepanther.com/
+  - type: Documentation
+    url: https://support.practicepanther.com/en/collections/340699-api
+  - type: Blog
+    url: https://www.practicepanther.com/blog/
+  - type: Pricing
+    url: https://www.practicepanther.com/pricing/
+  - type: StatusPage
+    url: https://practicepanther.statuspage.io/
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/practicepanther-law-practice-management-software
+  - type: X
+    url: https://x.com/practicepanther
+  - type: Plans
+    url: plans/practicepanther-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/practicepanther-rate-limits.yml
+  - type: FinOps
+    url: finops/practicepanther-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

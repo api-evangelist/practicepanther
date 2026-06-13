@@ -1,0 +1,235 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "https://schema.org/",
+    "pp": "https://app.practicepanther.com/api/",
+
+    "Account": {
+      "@id": "pp:account",
+      "@type": "@id"
+    },
+    "Contact": {
+      "@id": "schema:Person",
+      "@type": "@id"
+    },
+    "Project": {
+      "@id": "pp:project",
+      "@type": "@id"
+    },
+    "Matter": {
+      "@id": "pp:project",
+      "@type": "@id"
+    },
+    "TimeEntry": {
+      "@id": "pp:timeentry",
+      "@type": "@id"
+    },
+    "Expense": {
+      "@id": "pp:expense",
+      "@type": "@id"
+    },
+    "Payment": {
+      "@id": "schema:PayAction",
+      "@type": "@id"
+    },
+    "SaleDocument": {
+      "@id": "schema:Invoice",
+      "@type": "@id"
+    },
+    "Invoice": {
+      "@id": "schema:Invoice",
+      "@type": "@id"
+    },
+    "BankAccount": {
+      "@id": "schema:BankAccount",
+      "@type": "@id"
+    },
+    "TrustAccount": {
+      "@id": "pp:trustaccount",
+      "@type": "@id"
+    },
+    "User": {
+      "@id": "schema:Person",
+      "@type": "@id"
+    },
+    "Activity": {
+      "@id": "schema:Action",
+      "@type": "@id"
+    },
+    "Task": {
+      "@id": "schema:Action",
+      "@type": "@id"
+    },
+    "Attachment": {
+      "@id": "schema:MediaObject",
+      "@type": "@id"
+    },
+    "Tag": {
+      "@id": "schema:DefinedTerm",
+      "@type": "@id"
+    },
+    "Workflow": {
+      "@id": "pp:workflow",
+      "@type": "@id"
+    },
+    "CustomField": {
+      "@id": "pp:customfield",
+      "@type": "@id"
+    },
+    "Address": {
+      "@id": "schema:PostalAddress",
+      "@type": "@id"
+    },
+    "UtbmsCode": {
+      "@id": "pp:utbmscode",
+      "@type": "@id"
+    },
+
+    "guid": {
+      "@id": "schema:identifier",
+      "@type": "xsd:string"
+    },
+    "name": {
+      "@id": "schema:name",
+      "@type": "xsd:string"
+    },
+    "description": {
+      "@id": "schema:description",
+      "@type": "xsd:string"
+    },
+    "email": {
+      "@id": "schema:email",
+      "@type": "xsd:string"
+    },
+    "phone": {
+      "@id": "schema:telephone",
+      "@type": "xsd:string"
+    },
+    "url": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "createdAt": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:dateTime"
+    },
+    "updatedAt": {
+      "@id": "schema:dateModified",
+      "@type": "xsd:dateTime"
+    },
+    "date": {
+      "@id": "schema:startDate",
+      "@type": "xsd:date"
+    },
+    "dueDate": {
+      "@id": "schema:paymentDueDate",
+      "@type": "xsd:date"
+    },
+    "openDate": {
+      "@id": "schema:startDate",
+      "@type": "xsd:date"
+    },
+    "closeDate": {
+      "@id": "schema:endDate",
+      "@type": "xsd:date"
+    },
+    "amount": {
+      "@id": "schema:amount",
+      "@type": "xsd:decimal"
+    },
+    "total": {
+      "@id": "schema:totalPrice",
+      "@type": "xsd:decimal"
+    },
+    "price": {
+      "@id": "schema:price",
+      "@type": "xsd:decimal"
+    },
+    "rate": {
+      "@id": "pp:billingRate",
+      "@type": "xsd:decimal"
+    },
+    "hours": {
+      "@id": "pp:hours",
+      "@type": "xsd:decimal"
+    },
+    "isBillable": {
+      "@id": "pp:isBillable",
+      "@type": "xsd:boolean"
+    },
+    "isDeleted": {
+      "@id": "pp:isDeleted",
+      "@type": "xsd:boolean"
+    },
+    "isActive": {
+      "@id": "schema:actionStatus",
+      "@type": "xsd:boolean"
+    },
+    "status": {
+      "@id": "schema:actionStatus",
+      "@type": "xsd:string"
+    },
+    "paymentMethod": {
+      "@id": "schema:paymentMethod",
+      "@type": "xsd:string"
+    },
+    "checkNumber": {
+      "@id": "pp:checkNumber",
+      "@type": "xsd:string"
+    },
+    "memo": {
+      "@id": "schema:description",
+      "@type": "xsd:string"
+    },
+    "practiceArea": {
+      "@id": "pp:practiceArea",
+      "@type": "xsd:string"
+    },
+    "utbmsCode": {
+      "@id": "pp:utbmsCode",
+      "@type": "xsd:string"
+    },
+    "fileSize": {
+      "@id": "schema:fileSize",
+      "@type": "xsd:integer"
+    },
+    "contentType": {
+      "@id": "schema:encodingFormat",
+      "@type": "xsd:string"
+    },
+    "quantity": {
+      "@id": "schema:amount",
+      "@type": "xsd:decimal"
+    },
+    "client": {
+      "@id": "schema:customer",
+      "@type": "@id"
+    },
+    "project": {
+      "@id": "pp:project",
+      "@type": "@id"
+    },
+    "user": {
+      "@id": "schema:agent",
+      "@type": "@id"
+    },
+    "bankAccount": {
+      "@id": "schema:bankAccount",
+      "@type": "@id"
+    },
+    "assignedTo": {
+      "@id": "schema:agent",
+      "@type": "@id"
+    },
+    "tags": {
+      "@id": "schema:keywords",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "properties": {
+      "@id": "pp:customProperties",
+      "@container": "@set"
+    }
+  }
+}

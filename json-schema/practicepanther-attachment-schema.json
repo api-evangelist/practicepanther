@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/practicepanther/main/json-schema/practicepanther-attachment-schema.json",
+  "title": "Attachment",
+  "description": "JSON Schema for the PracticePanther Attachment resource",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "name": {
+      "type": "string"
+    },
+    "isImage": {
+      "type": "boolean"
+    },
+    "file": {
+      "type": "string",
+      "format": "byte"
+    },
+    "isEnabled": {
+      "type": "boolean"
+    },
+    "isDeleted": {
+      "type": "boolean"
+    },
+    "createdDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastModifiedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "createdBy": {
+      "$ref": "#/$defs/User"
+    },
+    "lastModifiedBy": {
+      "$ref": "#/$defs/User"
+    }
+  }
+}

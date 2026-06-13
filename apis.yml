@@ -37,6 +37,8 @@ apis:
         url: https://app.practicepanther.com/swagger/ui/index
       - type: Authentication
         url: https://support.practicepanther.com/en/articles/480086-api-access
+      - type: OpenAPI
+        url: openapi/practicepanther-practicepanther-api-openapi.yml
 common:
   - type: Website
     url: https://www.practicepanther.com/
@@ -58,6 +60,10 @@ common:
     url: rate-limits/practicepanther-rate-limits.yml
   - type: FinOps
     url: finops/practicepanther-finops.yml
+  - type: Vocabulary
+    url: vocabulary/practicepanther-vocabulary.yml
+  - type: JSONLDContext
+    url: json-ld/practicepanther-context.jsonld
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

@@ -1,0 +1,19 @@
+{
+  "guid": "b2c3d4e5-f6a7-8901-bcde-f23456789012",
+  "date": "2024-06-10",
+  "hours": 2.5,
+  "description": "Drafted motion for summary judgment and reviewed supporting case law",
+  "isBillable": true,
+  "rate": 350.0,
+  "amount": 875.0,
+  "utbmsCode": "L250",
+  "project": {
+    "guid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "Smith v. Jones - Civil Litigation"
+  },
+  "user": {
+    "guid": "c3d4e5f6-a7b8-9012-cdef-345678901234",
+    "name": "Attorney Adams"
+  },
+  "createdAt": "2024-06-10T17:00:00Z"
+}

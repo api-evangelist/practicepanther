@@ -1,0 +1,10 @@
+{
+  "guid": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "name": "Jane Smith",
+  "email": "jane.smith@example.com",
+  "phone": "555-867-5309",
+  "type": "Contact",
+  "isDeleted": false,
+  "createdAt": "2024-01-15T09:00:00Z",
+  "updatedAt": "2024-06-01T12:34:56Z"
+}

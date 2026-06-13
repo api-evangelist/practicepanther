@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/practicepanther/main/json-schema/practicepanther-contact-schema.json",
+  "title": "Contact",
+  "description": "Contact domain methods - business logic and factory methods",
+  "type": "object",
+  "properties": {
+    "guid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "photo": {
+      "$ref": "#/$defs/Blob"
+    },
+    "photoThumbnail": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Blob"
+      }
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "middleName": {
+      "type": "string"
+    },
+    "fullName": {
+      "type": "string"
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "mobile": {
+      "type": "string"
+    },
+    "home": {
+      "type": "string"
+    },
+    "office": {
+      "type": "string"
+    },
+    "ext": {
+      "type": "string"
+    },
+    "fax": {
+      "type": "string"
+    },
+    "salutation": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "prefix": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "skypeId": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "jobTitle": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "string",
+      "enum": [
+        "Male",
+        "Female"
+      ]
+    },
+    "isEmailOptOut": {
+      "type": "boolean"
+    },
+    "isEnabled": {
+      "type": "boolean"
+    },
+    "isDeleted": {
+      "type": "boolean"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Contact",
+        "Lead"
+      ]
+    },
+    "accountId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "tenant": {
+      "$ref": "#/$defs/Tenant"
+    }
+  },
+  "required": [
+    "id"
+  ]
+}

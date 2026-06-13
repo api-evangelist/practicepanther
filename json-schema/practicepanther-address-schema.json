@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/practicepanther/main/json-schema/practicepanther-address-schema.json",
+  "title": "Address",
+  "description": "Address domain methods - factory methods for creating addresses",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "name": {
+      "type": "string"
+    },
+    "address1": {
+      "type": "string"
+    },
+    "address2": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "postalCode": {
+      "type": "string"
+    },
+    "isEnabled": {
+      "type": "boolean"
+    },
+    "isDeleted": {
+      "type": "boolean"
+    },
+    "createdDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastModifiedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "createdBy": {
+      "$ref": "#/$defs/User"
+    },
+    "lastModifiedBy": {
+      "$ref": "#/$defs/User"
+    },
+    "contactId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "contact": {
+      "$ref": "#/$defs/Contact"
+    },
+    "accountId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "account": {
+      "$ref": "#/$defs/Account"
+    },
+    "tenantId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "tenant": {
+      "$ref": "#/$defs/Tenant"
+    },
+    "shipmentsFor": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Shipment"
+      }
+    },
+    "invoicesShippingFor": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/SaleDocument"
+      }
+    },
+    "invoicesBillingFor": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/SaleDocument"
+      }
+    },
+    "accountsShippingFor": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Account"
+      }
+    },
+    "accountsBillingFor": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Account"
+      }
+    },
+    "fullAddressHtml": {
+      "type": "string"
+    }
+  }
+}

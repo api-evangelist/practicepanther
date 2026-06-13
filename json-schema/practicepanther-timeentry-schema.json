@@ -1,0 +1,147 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/practicepanther/main/json-schema/practicepanther-timeentry-schema.json",
+  "title": "TimeEntry",
+  "description": "JSON Schema for the PracticePanther TimeEntry resource",
+  "type": "object",
+  "properties": {
+    "guid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "name": {
+      "type": "string"
+    },
+    "isNoCharge": {
+      "type": "boolean"
+    },
+    "isDeleted": {
+      "type": "boolean"
+    },
+    "isEnabled": {
+      "type": "boolean"
+    },
+    "accountId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "isAccountRequired": {
+      "type": "boolean"
+    },
+    "account": {
+      "$ref": "#/$defs/Account"
+    },
+    "utbmsCodeId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "utbmsCode": {
+      "$ref": "#/$defs/UtbmsCode"
+    },
+    "projectId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "isProjectRequired": {
+      "type": "boolean"
+    },
+    "project": {
+      "$ref": "#/$defs/Project"
+    },
+    "activityId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "activity": {
+      "$ref": "#/$defs/Activity"
+    },
+    "productId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "product": {
+      "$ref": "#/$defs/Product"
+    },
+    "userId": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "user": {
+      "$ref": "#/$defs/User"
+    },
+    "hourlyRate": {
+      "type": "number",
+      "format": "double"
+    },
+    "total": {
+      "type": "number",
+      "format": "double"
+    },
+    "isBillable": {
+      "type": "boolean"
+    },
+    "isBilled": {
+      "type": "boolean"
+    },
+    "createdDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastModifiedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "createdBy": {
+      "$ref": "#/$defs/User"
+    },
+    "lastModifiedBy": {
+      "$ref": "#/$defs/User"
+    },
+    "tenant_Id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "tenant": {
+      "$ref": "#/$defs/Tenant"
+    },
+    "description": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "hours": {
+      "type": "number",
+      "format": "double"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Billable",
+        "Billed",
+        "Paid",
+        "NotBillable"
+      ]
+    },
+    "saleDocumentItemId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "saleDocumentItem": {
+      "$ref": "#/$defs/SaleDocumentItem"
+    }
+  },
+  "required": [
+    "userId",
+    "date",
+    "hours"
+  ]
+}

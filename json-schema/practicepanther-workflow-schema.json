@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/practicepanther/main/json-schema/practicepanther-workflow-schema.json",
+  "title": "Workflow",
+  "description": "JSON Schema for the PracticePanther Workflow resource",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "guid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "isEnabled": {
+      "type": "boolean"
+    },
+    "isDeleted": {
+      "type": "boolean"
+    },
+    "createdDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastModifiedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "createdBy": {
+      "$ref": "#/$defs/User"
+    },
+    "lastModifiedBy": {
+      "$ref": "#/$defs/User"
+    },
+    "workflowEvents": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/WorkflowEvent"
+      }
+    },
+    "workflowTasks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/WorkflowTask"
+      }
+    },
+    "tenantId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "tenant": {
+      "$ref": "#/$defs/Tenant"
+    },
+    "sharing": {
+      "type": "string",
+      "enum": [
+        "Private",
+        "Public"
+      ]
+    },
+    "activities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Activity"
+      }
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

@@ -1,0 +1,346 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/practicepanther/main/json-schema/practicepanther-payment-schema.json",
+  "title": "Payment",
+  "description": "JSON Schema for the PracticePanther Payment resource",
+  "type": "object",
+  "properties": {
+    "guid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "isPaymentCleared": {
+      "type": "boolean"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "currencyCode": {
+      "type": "string"
+    },
+    "number": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "name": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "number",
+      "format": "double"
+    },
+    "amountApplied": {
+      "type": "number",
+      "format": "double"
+    },
+    "amountCredited": {
+      "type": "number",
+      "format": "double"
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "Cash",
+        "Check",
+        "CreditCard",
+        "PayPal",
+        "AuthorizeNet",
+        "Other",
+        "Stripe",
+        "Wire",
+        "Transfer",
+        "LawPay",
+        "PantherPaymentsCC",
+        "PantherPaymentsECheck",
+        "JournalEntry"
+      ]
+    },
+    "refund": {
+      "$ref": "#/$defs/Refund"
+    },
+    "authNumber": {
+      "type": "string"
+    },
+    "transactionId": {
+      "type": "string"
+    },
+    "bankAcctName": {
+      "type": "string"
+    },
+    "bankName": {
+      "type": "string"
+    },
+    "bankRoutingNumber": {
+      "type": "string"
+    },
+    "bankAcctType": {
+      "type": "string",
+      "enum": [
+        "Operating",
+        "Trust",
+        "CreditCard"
+      ]
+    },
+    "checkAcctNumber": {
+      "type": "string"
+    },
+    "isDepositSlipPrinted": {
+      "type": "boolean",
+      "description": "If the payment is associated with a bank account where BankAccount.IsPrintDepositSlips = true, this will indicate whether this payment had a deposit slip printed for it or not"
+    },
+    "checkNumber": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "checkPayeeId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "checkPayee": {
+      "$ref": "#/$defs/Account"
+    },
+    "checkIsPrinted": {
+      "type": "boolean"
+    },
+    "creditCardNameOnCard": {
+      "type": "string"
+    },
+    "creditCardLast4Digits": {
+      "type": "string"
+    },
+    "creditCardType": {
+      "type": "string",
+      "enum": [
+        "Unknown",
+        "Visa",
+        "Mastercard",
+        "AmericanExpress",
+        "Diners",
+        "Other"
+      ]
+    },
+    "creditCardExpMonth": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "creditCardExpYear": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "details": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "OfflinePayment",
+        "OnlinePayment",
+        "Transfer",
+        "HardCostExpense",
+        "FirmPayment"
+      ]
+    },
+    "saleDocumentPayments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/SaleDocumentPayment"
+      }
+    },
+    "accountId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "account": {
+      "$ref": "#/$defs/Account"
+    },
+    "projectId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "isProjectRequired": {
+      "type": "boolean"
+    },
+    "project": {
+      "$ref": "#/$defs/Project"
+    },
+    "tenant": {
+      "$ref": "#/$defs/Tenant"
+    },
+    "tenantId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "blobs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Blob"
+      }
+    },
+    "isEnabled": {
+      "type": "boolean"
+    },
+    "isDeleted": {
+      "type": "boolean"
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "createdDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastModifiedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "createdBy_Id": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "createdBy": {
+      "$ref": "#/$defs/User"
+    },
+    "lastModifiedBy_Id": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "lastModifiedBy": {
+      "$ref": "#/$defs/User"
+    },
+    "quickbooksId": {
+      "type": "string"
+    },
+    "quickbooksPurchaseId": {
+      "type": "string"
+    },
+    "quickbooksDepositId": {
+      "type": "string"
+    },
+    "lastQuickbooksSyncDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "xeroId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "lastXeroSyncDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "bankAccountGuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Used to set the reference in POST and PUT "
+    },
+    "bankAccount": {
+      "$ref": "#/$defs/BankAccount"
+    },
+    "isReconciled": {
+      "type": "boolean"
+    },
+    "reconciledDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "trustBooksReconciledDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "reconciledBy": {
+      "$ref": "#/$defs/User"
+    },
+    "trustBooksReconciledById": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "trustBooksReconciledBy": {
+      "$ref": "#/$defs/User"
+    },
+    "hardCostExpenses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Expense"
+      }
+    },
+    "feeAmountInCents": {
+      "type": "number",
+      "format": "double"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Pending",
+        "Failed",
+        "Success",
+        "Refunded",
+        "RefundPending",
+        "Canceled"
+      ]
+    },
+    "refundParentPaymentGuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Used to set the reference in POST and PUT "
+    },
+    "oneLinkTemplate": {
+      "$ref": "#/$defs/OneLinkTemplate"
+    },
+    "oneLinkTemplateId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "depositSlipId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "depositSlip": {
+      "$ref": "#/$defs/DepositSlip"
+    },
+    "lastModifiedHeadNoteDateUtc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "paymentSourceGuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Used to set the reference in POST and PUT "
+    },
+    "paymentSource": {
+      "$ref": "#/$defs/PaymentSource"
+    },
+    "surchargeAmountInCents": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "surchargeAmountGuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Used to set the reference in POST and PUT "
+    },
+    "chartOfAccountId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "trustbooksJournalEntryGuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Used to set the reference in POST and PUT "
+    },
+    "referenceNumber": {
+      "type": "string"
+    },
+    "transferId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "paymentImportMatch": {
+      "$ref": "#/$defs/PaymentImportMatch"
+    }
+  }
+}

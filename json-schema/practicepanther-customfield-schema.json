@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/practicepanther/main/json-schema/practicepanther-customfield-schema.json",
+  "title": "CustomField",
+  "description": "JSON Schema for the PracticePanther CustomField resource",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "customFieldSets": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/CustomFieldSet"
+      }
+    },
+    "customFieldTabGuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Used to set the reference in POST and PUT "
+    },
+    "customFieldTab": {
+      "$ref": "#/$defs/CustomFieldTab"
+    },
+    "rowIndex": {
+      "type": "integer",
+      "format": "int32",
+      "description": "The position of this custom field in the record's view"
+    },
+    "guid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "tenantId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "tenant": {
+      "$ref": "#/$defs/Tenant"
+    },
+    "name": {
+      "type": "string"
+    },
+    "objectType": {
+      "type": "string",
+      "enum": [
+        "Account",
+        "Project",
+        "Contact",
+        "User",
+        "Address"
+      ]
+    },
+    "valueType": {
+      "type": "string",
+      "enum": [
+        "TextBox",
+        "Date",
+        "DateTime",
+        "Number",
+        "Currency",
+        "TextEditor",
+        "DropDownList",
+        "Checkbox",
+        "Contact"
+      ]
+    },
+    "dropDownListValues": {
+      "type": "string"
+    },
+    "isIncludeInList": {
+      "type": "boolean"
+    },
+    "isExportToLedes": {
+      "type": "boolean"
+    },
+    "helpText": {
+      "type": "string"
+    },
+    "tooltip": {
+      "type": "string"
+    },
+    "isEnabled": {
+      "type": "boolean"
+    },
+    "isDeleted": {
+      "type": "boolean"
+    },
+    "createdDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastModifiedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "createdBy": {
+      "$ref": "#/$defs/User"
+    },
+    "lastModifiedBy": {
+      "$ref": "#/$defs/User"
+    },
+    "isRequired": {
+      "type": "boolean"
+    },
+    "isDefault": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "name",
+    "objectType",
+    "valueType"
+  ]
+}

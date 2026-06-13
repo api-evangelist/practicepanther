@@ -1,0 +1,307 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/practicepanther/main/json-schema/practicepanther-activity-schema.json",
+  "title": "Activity",
+  "description": "JSON Schema for the PracticePanther Activity resource",
+  "type": "object",
+  "properties": {
+    "date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "shares": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Share"
+      }
+    },
+    "workflowId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "workflow": {
+      "$ref": "#/$defs/Workflow"
+    },
+    "activitiesSync": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ActivitySync"
+      }
+    },
+    "guid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "googleId": {
+      "type": "string"
+    },
+    "isEnabled": {
+      "type": "boolean"
+    },
+    "isDeleted": {
+      "type": "boolean"
+    },
+    "createdDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastModifiedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "recurrenceStopDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "createdById": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "createdBy": {
+      "$ref": "#/$defs/User"
+    },
+    "lastModifiedBy": {
+      "$ref": "#/$defs/User"
+    },
+    "lawToolboxCourtRule_Id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "lawToolboxCourtRule": {
+      "$ref": "#/$defs/LawToolboxCourtRule"
+    },
+    "lawToolboxDeadlineId": {
+      "type": "string"
+    },
+    "lawToolboxDeadlineNumber": {
+      "type": "string"
+    },
+    "tenantId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "tenant": {
+      "$ref": "#/$defs/Tenant"
+    },
+    "isHoursLoggedManually": {
+      "type": "boolean",
+      "description": "sets if the activity should be marked as \"time logged\" even if no time was linked to it."
+    },
+    "recurrenceId": {
+      "type": "integer",
+      "format": "int64",
+      "description": "will show the realted recurrence for this event, if such exists"
+    },
+    "recurrence": {
+      "$ref": "#/$defs/Recurrence"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Call",
+        "Task",
+        "Event",
+        "Email",
+        "Note"
+      ]
+    },
+    "accountId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "account": {
+      "$ref": "#/$defs/Account"
+    },
+    "contactId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "contact": {
+      "$ref": "#/$defs/Contact"
+    },
+    "projectId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "project": {
+      "$ref": "#/$defs/Project"
+    },
+    "saleDocumentId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "saleDocument": {
+      "$ref": "#/$defs/SaleDocument"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "assignedToUsers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/User"
+      }
+    },
+    "assignedToContacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Contact"
+      }
+    },
+    "htmlBody": {
+      "$ref": "#/$defs/Blob"
+    },
+    "dueDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "taskCompleteDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "startDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "endDateTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "isAllDayActivity": {
+      "type": "boolean"
+    },
+    "location": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "NotCompleted",
+        "InProgress",
+        "Completed",
+        "Conditional"
+      ]
+    },
+    "mandrillId": {
+      "type": "string"
+    },
+    "isPrivate": {
+      "type": "boolean"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "isSendNotificationEmail": {
+      "type": "boolean"
+    },
+    "isSendCompletedEmail": {
+      "type": "boolean"
+    },
+    "isSendTaskCompleteEmail": {
+      "type": "boolean"
+    },
+    "isRecurringActivity": {
+      "type": "boolean"
+    },
+    "recurringActivityStartDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "recurringActivityEndDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "recurringRepeatType": {
+      "type": "string",
+      "enum": [
+        "None",
+        "Daily",
+        "Weekly",
+        "Monthly",
+        "Yearly"
+      ]
+    },
+    "callType": {
+      "type": "string",
+      "enum": [
+        "Inbound",
+        "Outbound"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Tag"
+      }
+    },
+    "eventColor": {
+      "type": "string"
+    },
+    "emailProperties": {
+      "$ref": "#/$defs/EmailProperties"
+    },
+    "noteProperties": {
+      "$ref": "#/$defs/NoteProperties"
+    },
+    "callProperties": {
+      "$ref": "#/$defs/CallProperties"
+    },
+    "timeEntries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/TimeEntry"
+      }
+    },
+    "flatFees": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/FlatFee"
+      }
+    },
+    "eventBackgroundColor": {
+      "type": "string"
+    },
+    "blobs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Blob"
+      }
+    },
+    "invitees": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Invitee"
+      }
+    },
+    "activityReminders": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ActivityReminder"
+      }
+    },
+    "activityConditionalTasks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ActivityConditionalTask"
+      }
+    },
+    "completedTask": {
+      "$ref": "#/$defs/CompletedTask"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

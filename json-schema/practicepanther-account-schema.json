@@ -1,0 +1,384 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/practicepanther/main/json-schema/practicepanther-account-schema.json",
+  "title": "Account",
+  "description": "Account domain methods - business logic and aggregate root operations",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "guid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "associatedBankAccountGuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Used to set the reference in POST and PUT "
+    },
+    "billingAddressId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "boxFolderId": {
+      "type": "string"
+    },
+    "boxSharedFolderUrl": {
+      "type": "string"
+    },
+    "campaignId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "createdBy": {
+      "$ref": "#/$defs/User"
+    },
+    "createdDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "cultureName": {
+      "type": "string"
+    },
+    "currencyCode": {
+      "type": "string"
+    },
+    "defaultPaymentSourceGuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Used to set the reference in POST and PUT "
+    },
+    "dropboxFolderId": {
+      "type": "string"
+    },
+    "googleDriveFolderId": {
+      "type": "string"
+    },
+    "headNoteClientId": {
+      "type": "string"
+    },
+    "is1099Eligible": {
+      "type": "boolean"
+    },
+    "isAllowClientToViewAllOutstandingInvoices": {
+      "type": "boolean"
+    },
+    "isAllowClientToViewAllPaidInvoices": {
+      "type": "boolean"
+    },
+    "isAllowClientToViewAllPayments": {
+      "type": "boolean"
+    },
+    "isAllowClientToViewAccountBalances": {
+      "type": "boolean"
+    },
+    "isContactSync": {
+      "type": "boolean"
+    },
+    "isCustomPriceList": {
+      "type": "boolean"
+    },
+    "isDeleted": {
+      "type": "boolean"
+    },
+    "isDisableEcheck": {
+      "type": "boolean"
+    },
+    "isEmailSync": {
+      "type": "boolean"
+    },
+    "isEnabled": {
+      "type": "boolean"
+    },
+    "isFilesSync": {
+      "type": "boolean"
+    },
+    "isObjectBeingEdited": {
+      "type": "boolean"
+    },
+    "isSendInvoicePaymentReminders": {
+      "type": "boolean"
+    },
+    "isSendQuoteApprovalReminders": {
+      "type": "boolean"
+    },
+    "lastModifiedBy": {
+      "$ref": "#/$defs/User"
+    },
+    "lastModifiedBy_Id": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "lastModifiedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastQuickbooksSyncDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastXeroSyncDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ledesClientId": {
+      "type": "string"
+    },
+    "logo": {
+      "$ref": "#/$defs/Blob"
+    },
+    "logoThumbnail": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Blob"
+      }
+    },
+    "nameAndNumber": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "number": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "tenantRefNumber": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "oneDriveFolderId": {
+      "type": "string"
+    },
+    "primaryContactId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "priceListId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "quickbooksId": {
+      "type": "string"
+    },
+    "saleDocumentTemplateGuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Used to set the reference in POST and PUT "
+    },
+    "shippingAddressId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Active",
+        "Archived"
+      ]
+    },
+    "accountTotal": {
+      "$ref": "#/$defs/AccountTotal"
+    },
+    "surchargesEnabled": {
+      "type": "boolean"
+    },
+    "taxId": {
+      "type": "string"
+    },
+    "tenantId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "utbmsIsEnabled": {
+      "type": "boolean"
+    },
+    "website": {
+      "type": "string"
+    },
+    "xeroId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "activities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Activity"
+      }
+    },
+    "addresses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Address"
+      }
+    },
+    "assignedTo": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/User"
+      }
+    },
+    "blobs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Blob"
+      }
+    },
+    "checks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Payment"
+      }
+    },
+    "contacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Contact"
+      }
+    },
+    "conversations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Conversation"
+      }
+    },
+    "customFieldValues": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/CustomFieldValue"
+      }
+    },
+    "expenses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Expense"
+      }
+    },
+    "feeds": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Feed"
+      }
+    },
+    "flatFees": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/FlatFee"
+      }
+    },
+    "intakeForms": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/IntakeForm"
+      }
+    },
+    "invoiceContactRecipients": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/InvoiceAccountRecipients"
+      }
+    },
+    "opportunities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Opportunity"
+      }
+    },
+    "partnerships": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Partnership"
+      }
+    },
+    "paymentSources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/PaymentSource"
+      }
+    },
+    "payments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Payment"
+      }
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Project"
+      }
+    },
+    "projectLinks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/AccountProjectLink"
+      }
+    },
+    "recurringPayments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/RecurringPayment"
+      }
+    },
+    "saleDocuments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/SaleDocument"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Tag"
+      }
+    },
+    "timeEntries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/TimeEntry"
+      }
+    },
+    "userImapSyncs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/UserImapSync"
+      }
+    },
+    "usersFollowing": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/User"
+      }
+    },
+    "defaultPaymentSource": {
+      "$ref": "#/$defs/PaymentSource"
+    },
+    "campaign": {
+      "$ref": "#/$defs/Campaign"
+    },
+    "priceList": {
+      "$ref": "#/$defs/PriceList"
+    },
+    "primaryContact": {
+      "$ref": "#/$defs/Contact"
+    },
+    "tenant": {
+      "$ref": "#/$defs/Tenant"
+    },
+    "billingAddress": {
+      "$ref": "#/$defs/Address"
+    },
+    "shippingAddress": {
+      "$ref": "#/$defs/Address"
+    }
+  },
+  "required": [
+    "id",
+    "tenantId"
+  ]
+}

@@ -1,0 +1,234 @@
+vocabulary:
+  name: PracticePanther API Vocabulary
+  description: Domain vocabulary for PracticePanther legal practice management API covering cases, contacts, billing, time tracking, and trust accounting.
+  url: https://support.practicepanther.com/en/collections/340699-api
+  version: v1
+
+terms:
+
+  - term: Account
+    type: Resource
+    description: A contact or organization in PracticePanther. Represents clients, opposing parties, witnesses, or other individuals and companies associated with legal matters.
+    properties:
+      - guid
+      - name
+      - email
+      - phone
+      - type
+      - isDeleted
+    relatedTerms:
+      - Contact
+      - AccountRef
+
+  - term: Project
+    type: Resource
+    description: A legal matter or case in PracticePanther. Represents the primary unit of work, associating time entries, expenses, documents, and billing records.
+    synonyms:
+      - Matter
+      - Case
+    properties:
+      - guid
+      - name
+      - status
+      - practiceArea
+      - openDate
+      - closeDate
+      - billableBudget
+      - client
+    relatedTerms:
+      - ProjectDTO
+      - ProjectRef
+
+  - term: TimeEntry
+    type: Resource
+    description: A billable or non-billable time record associated with a legal matter. Captures hours worked, billing rate, UTBMS task codes, and descriptions of attorney activity.
+    properties:
+      - guid
+      - date
+      - hours
+      - description
+      - isBillable
+      - rate
+      - amount
+      - utbmsCode
+      - project
+      - user
+    relatedTerms:
+      - TimeEntryDTO
+      - TimeEntryRef
+      - UtbmsCode
+
+  - term: Expense
+    type: Resource
+    description: A cost or disbursement associated with a legal matter, such as court filing fees, travel, or expert witness costs. May be billable to the client.
+    properties:
+      - guid
+      - date
+      - description
+      - quantity
+      - price
+      - total
+      - isBillable
+      - project
+    relatedTerms:
+      - ExpenseDTO
+      - ExpenseRef
+
+  - term: Payment
+    type: Resource
+    description: A monetary payment received from a client, applied against invoices or deposited into trust accounts.
+    properties:
+      - guid
+      - date
+      - amount
+      - paymentMethod
+      - checkNumber
+      - memo
+      - contact
+      - bankAccount
+    relatedTerms:
+      - PaymentDTO
+      - PaymentRef
+
+  - term: SaleDocument
+    type: Resource
+    description: An invoice, bill, or statement issued to a client for legal services and expenses. Contains line items for time entries and expenses.
+    synonyms:
+      - Invoice
+      - Bill
+    properties:
+      - guid
+      - number
+      - date
+      - dueDate
+      - subtotal
+      - total
+      - balance
+      - status
+      - contact
+      - project
+    relatedTerms:
+      - SaleDocumentDTO
+      - SaleDocumentItem
+
+  - term: BankAccount
+    type: Resource
+    description: A financial account (operating or trust) used to receive client payments and manage funds. Trust accounts follow IOLTA requirements.
+    properties:
+      - guid
+      - name
+      - accountType
+      - balance
+      - isTrust
+    relatedTerms:
+      - BankAccountRef
+      - DepositSlip
+
+  - term: CustomField
+    type: Resource
+    description: A user-defined field that extends core resources like matters, contacts, and tasks with firm-specific data attributes.
+    properties:
+      - guid
+      - name
+      - fieldType
+      - isRequired
+      - options
+    relatedTerms:
+      - CustomFieldDTO
+      - CustomFieldValue
+
+  - term: Activity
+    type: Resource
+    description: A task, calendar event, or follow-up item associated with a legal matter or contact. Tracks deadlines, court dates, and attorney to-dos.
+    synonyms:
+      - Task
+      - Event
+    properties:
+      - guid
+      - subject
+      - date
+      - dueDate
+      - status
+      - isCompleted
+      - project
+      - assignedTo
+    relatedTerms:
+      - ActivityDTO
+
+  - term: Tag
+    type: Resource
+    description: A label applied to contacts, matters, or other records for categorization and filtering within PracticePanther.
+    properties:
+      - guid
+      - name
+      - color
+    relatedTerms:
+      - TagDTO
+
+  - term: User
+    type: Resource
+    description: A PracticePanther firm user (attorney, paralegal, staff) with access to the system. Controls billing rates, permissions, and time tracking.
+    properties:
+      - guid
+      - name
+      - email
+      - role
+      - isActive
+    relatedTerms:
+      - UserDTO
+      - UserRef
+
+  - term: Workflow
+    type: Resource
+    description: An automated series of tasks and activities triggered by events in PracticePanther to streamline legal processes.
+    properties:
+      - guid
+      - name
+      - isActive
+      - trigger
+      - tasks
+    relatedTerms:
+      - WorkflowTask
+      - WorkflowEvent
+
+  - term: Attachment
+    type: Resource
+    description: A document or file attached to a matter, contact, or other record in PracticePanther.
+    properties:
+      - guid
+      - name
+      - fileSize
+      - contentType
+      - url
+    relatedTerms:
+      - Blob
+      - BlobRef
+
+  - term: UtbmsCode
+    type: Reference
+    description: Uniform Task-Based Management System code used to categorize legal tasks and expenses for billing purposes. Standard in legal billing.
+    properties:
+      - guid
+      - code
+      - description
+      - category
+    relatedTerms:
+      - TimeEntry
+
+  - term: TrustAccount
+    type: Concept
+    description: A dedicated financial account holding client funds (retainers, settlements) in trust. Strictly regulated and tracked separately from operating funds.
+    relatedTerms:
+      - BankAccount
+      - Payment
+      - DepositSlip
+
+  - term: OData
+    type: Protocol
+    description: The Open Data Protocol used by PracticePanther API list endpoints to support filtering, sorting, pagination, and field selection via URL query parameters.
+    url: https://www.odata.org/
+
+  - term: OAuth2
+    type: SecurityScheme
+    description: Authentication method used by PracticePanther API. Requires obtaining an access token via the OAuth 2.0 authorization code flow before making API calls.
+    url: https://support.practicepanther.com/en/articles/480086-api-access

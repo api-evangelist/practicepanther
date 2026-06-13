@@ -1,0 +1,14 @@
+{
+  "guid": "d4e5f6a7-b8c9-0123-defa-456789012345",
+  "date": "2024-06-10",
+  "description": "Court filing fee - motion for summary judgment",
+  "quantity": 1,
+  "price": 450.0,
+  "total": 450.0,
+  "isBillable": true,
+  "project": {
+    "guid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "Smith v. Jones - Civil Litigation"
+  },
+  "createdAt": "2024-06-10T10:00:00Z"
+}

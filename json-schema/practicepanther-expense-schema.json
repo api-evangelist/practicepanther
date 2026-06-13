@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/practicepanther/main/json-schema/practicepanther-expense-schema.json",
+  "title": "Expense",
+  "description": "JSON Schema for the PracticePanther Expense resource",
+  "type": "object",
+  "properties": {
+    "blobs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Blob"
+      }
+    },
+    "guid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "name": {
+      "type": "string"
+    },
+    "isDeleted": {
+      "type": "boolean"
+    },
+    "isEnabled": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "isDoNotCharge": {
+      "type": "boolean"
+    },
+    "accountId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "isAccountRequired": {
+      "type": "boolean"
+    },
+    "account": {
+      "$ref": "#/$defs/Account"
+    },
+    "projectId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "isProjectRequired": {
+      "type": "boolean"
+    },
+    "project": {
+      "$ref": "#/$defs/Project"
+    },
+    "accountingAccountId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "accountingAccount": {
+      "$ref": "#/$defs/AccountingAccount"
+    },
+    "productId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "qty": {
+      "type": "number",
+      "format": "double"
+    },
+    "totalAmount": {
+      "type": "number",
+      "format": "double"
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "amount": {
+      "type": "number",
+      "format": "double"
+    },
+    "isBillable": {
+      "type": "boolean"
+    },
+    "isBilled": {
+      "type": "boolean"
+    },
+    "tax1Id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "tax1": {
+      "$ref": "#/$defs/SalesTax"
+    },
+    "tax2Id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "tax2": {
+      "$ref": "#/$defs/SalesTax"
+    },
+    "userId": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "user": {
+      "$ref": "#/$defs/User"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Billable",
+        "Billed",
+        "Paid",
+        "NotBillable"
+      ]
+    },
+    "receipts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Blob"
+      }
+    },
+    "primaryReceipt": {
+      "$ref": "#/$defs/Blob"
+    },
+    "saleDocumentItemId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "saleDocumentItem": {
+      "$ref": "#/$defs/SaleDocumentItem"
+    },
+    "createdDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastModifiedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "createdBy": {
+      "$ref": "#/$defs/User"
+    },
+    "lastModifiedBy": {
+      "$ref": "#/$defs/User"
+    },
+    "tenantId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "tenant": {
+      "$ref": "#/$defs/Tenant"
+    },
+    "costType": {
+      "type": "string",
+      "description": "Hard costs are expenses incurred on behalf of a client that require a direct payment by the firm to a vendor. For example if a firm writes a check for a court filing fee, it is considered a hard cost. Soft costs are expenses that are charged to the client but a direct payment is not made to a vendor.",
+      "enum": [
+        "SoftCost",
+        "HardCost"
+      ]
+    },
+    "hardCostPayment": {
+      "$ref": "#/$defs/Payment"
+    },
+    "utbmsCodeId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "utbmsCode": {
+      "$ref": "#/$defs/UtbmsCode"
+    }
+  }
+}

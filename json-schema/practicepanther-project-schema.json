@@ -1,0 +1,341 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/practicepanther/main/json-schema/practicepanther-project-schema.json",
+  "title": "Project",
+  "description": "JSON Schema for the PracticePanther Project resource",
+  "type": "object",
+  "properties": {
+    "guid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "contactsSync": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ContactSync"
+      }
+    },
+    "isEmailSync": {
+      "type": "boolean"
+    },
+    "isFilesSync": {
+      "type": "boolean"
+    },
+    "isContactSync": {
+      "type": "boolean"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "projectRates": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/ProjectRate"
+      }
+    },
+    "presetProjectRate": {
+      "$ref": "#/$defs/PresetProjectRate"
+    },
+    "accountLinks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/AccountProjectLink"
+      }
+    },
+    "number": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "tenantRefNumber": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "nameAndNumber": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Tag"
+      }
+    },
+    "lawToolboxMatters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/LawToolboxMatter"
+      }
+    },
+    "name": {
+      "type": "string"
+    },
+    "accountId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "account": {
+      "$ref": "#/$defs/Account"
+    },
+    "evergreenIsOn": {
+      "type": "boolean"
+    },
+    "evergreenAmount": {
+      "type": "number",
+      "format": "double"
+    },
+    "isAddEvergreenToInvoice": {
+      "type": "boolean",
+      "description": "If set to true, we will add the amount required to replenish the retainer to the evergreen amount to the invoice."
+    },
+    "isAccountRequired": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "dueDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "openDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "closeDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "isDeleted": {
+      "type": "boolean"
+    },
+    "isEnabled": {
+      "type": "boolean"
+    },
+    "createdDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastModifiedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "createdBy": {
+      "$ref": "#/$defs/User"
+    },
+    "lastModifiedBy": {
+      "$ref": "#/$defs/User"
+    },
+    "assignedTo": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/User"
+      }
+    },
+    "originatedById": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "originatedBy": {
+      "$ref": "#/$defs/User"
+    },
+    "tenantId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "tenant": {
+      "$ref": "#/$defs/Tenant"
+    },
+    "customFieldValues": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/CustomFieldValue"
+      }
+    },
+    "userImapSyncs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/UserImapSync"
+      }
+    },
+    "feeds": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Feed"
+      }
+    },
+    "timeEntries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/TimeEntry"
+      }
+    },
+    "flatFees": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/FlatFee"
+      }
+    },
+    "boxFolderId": {
+      "type": "string"
+    },
+    "dropboxFolderId": {
+      "type": "string"
+    },
+    "googleDriveFolderId": {
+      "type": "string"
+    },
+    "oneDriveFolderId": {
+      "type": "string"
+    },
+    "ledesClientMatterId": {
+      "type": "string"
+    },
+    "hourlyRate": {
+      "type": "number",
+      "format": "double",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "flatRate": {
+      "type": "number",
+      "format": "double",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "contingencyRatePercent": {
+      "type": "number",
+      "format": "double",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "isFlatRateBilled": {
+      "type": "boolean",
+      "description": "Indicates if the flat rate has been billed.\r\nIf false, the flat rate is still billable and will be added to the account (contact) and project (matter) billable totals."
+    },
+    "billableFlatRate": {
+      "type": "number",
+      "format": "double"
+    },
+    "hourlyRateType": {
+      "type": "string",
+      "enum": [
+        "ItemRate",
+        "UserRate",
+        "ProjectRate",
+        "FlatRate",
+        "Contingency",
+        "PresetProjectRate"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Closed",
+        "Pending",
+        "Open",
+        "Archived"
+      ]
+    },
+    "expenses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Expense"
+      }
+    },
+    "saleDocuments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/SaleDocument"
+      }
+    },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Attachment"
+      }
+    },
+    "payments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Payment"
+      }
+    },
+    "projectTotal": {
+      "$ref": "#/$defs/ProjectTotal"
+    },
+    "intakeForms": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/IntakeForm"
+      }
+    },
+    "activities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Activity"
+      }
+    },
+    "conversations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Conversation"
+      }
+    },
+    "blobs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Blob"
+      }
+    },
+    "usersFollowing": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/User"
+      }
+    },
+    "paymentSources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/PaymentSource"
+      }
+    },
+    "defaultPaymentSourceGuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Used to set the reference in POST and PUT "
+    },
+    "defaultPaymentSource": {
+      "$ref": "#/$defs/PaymentSource"
+    },
+    "recurringPayments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/RecurringPayment"
+      }
+    },
+    "boxSharedFolderUrl": {
+      "type": "string"
+    },
+    "twilioTextMessages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/TwilioTextMessageChat"
+      }
+    },
+    "saleDocumentTemplateGuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Used to set the reference in POST and PUT "
+    },
+    "invoiceMatterRecipients": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/InvoiceMatterRecipients"
+      }
+    }
+  },
+  "required": [
+    "id",
+    "name"
+  ]
+}

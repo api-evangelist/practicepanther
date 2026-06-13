@@ -1,0 +1,16 @@
+{
+  "guid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "name": "Smith v. Jones - Civil Litigation",
+  "status": "Open",
+  "practiceArea": "Civil Litigation",
+  "openDate": "2024-02-01",
+  "closeDate": null,
+  "billableBudget": 15000.0,
+  "client": {
+    "guid": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "name": "Jane Smith"
+  },
+  "isDeleted": false,
+  "createdAt": "2024-02-01T08:00:00Z",
+  "updatedAt": "2024-06-01T12:34:56Z"
+}

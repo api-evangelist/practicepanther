@@ -1,0 +1,308 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/practicepanther/main/json-schema/practicepanther-user-schema.json",
+  "title": "User",
+  "description": "JSON Schema for the PracticePanther User resource",
+  "type": "object",
+  "properties": {
+    "guid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "photoUserGuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Used to set the reference in POST and PUT "
+    },
+    "iCalGuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Used to set the reference in POST and PUT "
+    },
+    "emailGuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Used to set the reference in POST and PUT "
+    },
+    "id": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "fullName": {
+      "type": "string"
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "middleName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "isEmailConfirmed": {
+      "type": "boolean",
+      "description": "Sets to true once user confirms email and sets password"
+    },
+    "isPasswordSet": {
+      "type": "boolean"
+    },
+    "password": {
+      "type": "string"
+    },
+    "confirmPassword": {
+      "type": "string"
+    },
+    "timeZoneId": {
+      "type": "string"
+    },
+    "ledesTimekeeperId": {
+      "type": "string"
+    },
+    "mobile": {
+      "type": "string"
+    },
+    "home": {
+      "type": "string"
+    },
+    "office": {
+      "type": "string"
+    },
+    "ext": {
+      "type": "string"
+    },
+    "fax": {
+      "type": "string"
+    },
+    "salutation": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "skypeId": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "gender": {
+      "type": "string",
+      "enum": [
+        "Male",
+        "Female"
+      ]
+    },
+    "directMailAdditionalEmailAddresses": {
+      "type": "string"
+    },
+    "photo": {
+      "$ref": "#/$defs/Blob"
+    },
+    "photoThumbnail": {
+      "$ref": "#/$defs/Blob"
+    },
+    "lastLoginDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastDateOfPaymentPlanMigrationSnooze": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastDateUpdateTenantInfoPopUpSnooze": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastDatePantherPaymentMigrationPopUpSnooze": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "birthday": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "isDeleted": {
+      "type": "boolean"
+    },
+    "isEnabled": {
+      "type": "boolean"
+    },
+    "createdDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastModifiedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "syncSettings": {
+      "$ref": "#/$defs/SyncSettings"
+    },
+    "googleUsername": {
+      "type": "string"
+    },
+    "isGoogleSyncEnabled": {
+      "type": "boolean"
+    },
+    "lastGoogleSyncDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "microsoftLiveConnectAuthToken": {
+      "type": "string"
+    },
+    "isMicrosoftLiveConnectEnabled": {
+      "type": "boolean"
+    },
+    "lastMicrosoftLiveSyncDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "isExchangeIntegrationEnabled": {
+      "type": "boolean"
+    },
+    "lastExchangeSyncDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "exchangeUsername": {
+      "type": "string"
+    },
+    "exchangeEmailAddress": {
+      "type": "string"
+    },
+    "exchangeURL": {
+      "type": "string"
+    },
+    "exchangePassword": {
+      "type": "string"
+    },
+    "isExchangePasswordEncrypted": {
+      "type": "boolean"
+    },
+    "hourlyRate": {
+      "type": "number",
+      "format": "double",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "hourlyCost": {
+      "type": "number",
+      "format": "double",
+      "minimum": 0,
+      "maximum": 2147483647
+    },
+    "timeEntries_IsRoundingEnabled": {
+      "type": "boolean"
+    },
+    "timeEntries_RoundDirection": {
+      "type": "string",
+      "enum": [
+        "Up",
+        "Down"
+      ]
+    },
+    "timeEntries_RoundToNearest": {
+      "type": "number",
+      "format": "double"
+    },
+    "portals": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Portal"
+      }
+    },
+    "isHideWelcomePage": {
+      "type": "boolean"
+    },
+    "isEmailActivityAssigneeByDefault": {
+      "type": "boolean"
+    },
+    "isEmailUserTaskCompletedByDefault": {
+      "type": "boolean"
+    },
+    "isReceiveDailyAgendaEmail": {
+      "type": "boolean"
+    },
+    "isReceiveWeeklySummaryEmail": {
+      "type": "boolean"
+    },
+    "isReceiveActivityEmails": {
+      "type": "boolean"
+    },
+    "isReceiveNotificationPopups": {
+      "type": "boolean"
+    },
+    "roleId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "role": {
+      "$ref": "#/$defs/Role"
+    },
+    "imapServer": {
+      "$ref": "#/$defs/MailServerSettings"
+    },
+    "smtpServer": {
+      "$ref": "#/$defs/MailServerSettings"
+    },
+    "notificationsSettings": {
+      "$ref": "#/$defs/NotificationSettings"
+    },
+    "mixpanelDistinctId": {
+      "type": "string"
+    },
+    "popUpSettings": {
+      "$ref": "#/$defs/UserPopUpSettings"
+    },
+    "goToWebinarWebinarKey": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "goToWebinarRegistrantKey": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "chatStatus": {
+      "type": "string",
+      "enum": [
+        "Offline",
+        "Online"
+      ]
+    },
+    "supportAccessExpiration": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "supportEncryptedAccessCode": {
+      "type": "string"
+    },
+    "isSupportRecordingEnabled": {
+      "type": "boolean"
+    },
+    "supportRecordingExpiration": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "doesHaveBankAccountViewPermissions": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "id",
+    "email"
+  ]
+}

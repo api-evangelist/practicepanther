@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/practicepanther/main/json-schema/practicepanther-bankaccount-schema.json",
+  "title": "BankAccount",
+  "description": "JSON Schema for the PracticePanther BankAccount resource",
+  "type": "object",
+  "properties": {
+    "guid": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Operating",
+        "Trust",
+        "CreditCard"
+      ]
+    },
+    "isDefault": {
+      "type": "boolean"
+    },
+    "isArchived": {
+      "type": "boolean"
+    },
+    "tenantId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "tenant": {
+      "$ref": "#/$defs/Tenant"
+    },
+    "createdDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastModifiedDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "openingBalance": {
+      "type": "number",
+      "format": "double"
+    },
+    "quickbooksId": {
+      "type": "string"
+    },
+    "quickbooksIsDepositToUndepositedFunds": {
+      "type": "boolean"
+    },
+    "isPrintDepositSlips": {
+      "type": "boolean",
+      "description": "If checked, we will add all cash and check payments to these accounts to the deposit slip queue"
+    },
+    "xeroId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "lawPayAchAccountName": {
+      "type": "string"
+    },
+    "lawPayAchAccountId": {
+      "type": "string"
+    },
+    "lawPayMerchantAccountName": {
+      "type": "string"
+    },
+    "lawPayMerchantAccountId": {
+      "type": "string"
+    },
+    "headNoteId": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Created",
+        "Failed",
+        "Success",
+        "Archived"
+      ]
+    },
+    "currencyCode": {
+      "type": "string"
+    },
+    "accountNumber": {
+      "type": "string"
+    },
+    "routingNumber": {
+      "type": "string"
+    },
+    "swiftCode": {
+      "type": "string"
+    },
+    "accountHolder": {
+      "type": "string"
+    },
+    "institution": {
+      "type": "string"
+    },
+    "domicileBranch": {
+      "type": "string"
+    },
+    "createdBy": {
+      "$ref": "#/$defs/User"
+    },
+    "lastModifiedBy": {
+      "$ref": "#/$defs/User"
+    },
+    "payments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Payment"
+      }
+    },
+    "firmPayments": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/FirmPayment"
+      }
+    },
+    "isDeleted": {
+      "type": "boolean"
+    },
+    "isEnabled": {
+      "type": "boolean"
+    },
+    "isDirty": {
+      "type": "boolean"
+    },
+    "lastReconciledDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "trustbooksOnboardingStep": {
+      "type": "integer",
+      "format": "int32"
+    }
+  }
+}

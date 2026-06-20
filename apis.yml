@@ -2,7 +2,7 @@ aid: practicepanther
 name: PracticePanther
 description: Cloud-based legal practice management with a REST API for managing cases, contacts, tasks, time tracking, billing, and trust accounting.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/practicepanther/refs/heads/main/apis.yml
 created: '2026-06-13'
 modified: '2026-06-13'
@@ -19,7 +19,7 @@ apis:
   - aid: practicepanther:practicepanther-api
     name: PracticePanther API
     description: RESTful API for accessing and managing all PracticePanther resources including contacts, matters, tasks, time entries, expenses, invoices, and trust accounts. Supports OData queries and uses OAuth 2 authentication.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://support.practicepanther.com/en/collections/340699-api
     baseURL: https://app.practicepanther.com
     tags:

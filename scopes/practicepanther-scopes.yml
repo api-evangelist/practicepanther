@@ -1,0 +1,18 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/practicepanther-practicepanther-api-openapi.yml
+schemes:
+- name: oauth2
+  source: openapi/practicepanther-practicepanther-api-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: /OAuth/Authorize
+    tokenUrl: /OAuth/Token
+  description: OAuth 2.0 - Authorization Code Grant
+scopes:
+- scope: full
+  description: Read/Write access to all resources
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/practicepanther-practicepanther-api-openapi.yml

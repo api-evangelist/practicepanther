@@ -40,6 +40,8 @@ apis:
       - type: OpenAPI
         url: openapi/practicepanther-practicepanther-api-openapi.yml
 common:
+  - type: DomainSecurity
+    url: security/practicepanther-domain-security.yml
   - type: Authentication
     url: authentication/practicepanther-authentication.yml
   - type: OAuthScopes

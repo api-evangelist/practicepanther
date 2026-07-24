@@ -1,0 +1,498 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account TimeEntry API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: TimeEntry
+paths:
+  /api/timeentry/{guid}:
+    get:
+      tags:
+      - TimeEntry
+      summary: Returns a time entry
+      operationId: TimeEntry_GetTimeEntry
+      parameters:
+      - name: guid
+        in: path
+        description: ''
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeEntryDTO_Detail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TimeEntryDTO_Detail'
+      security:
+      - oauth2:
+        - full
+  /api/timeentry:
+    get:
+      tags:
+      - TimeEntry
+      summary: OData end point to get a list of all time entries accessible by the user
+      operationId: TimeEntry_GetTimeEntries
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TimeEntryDTO'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TimeEntryDTO'
+      security:
+      - oauth2:
+        - full
+    put:
+      tags:
+      - TimeEntry
+      summary: Updates an existing time entry
+      operationId: TimeEntry_PutTimeEntry
+      requestBody:
+        $ref: '#/components/requestBodies/TimeEntryDTO_Detail'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeEntryDTO_Detail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TimeEntryDTO_Detail'
+      security:
+      - oauth2:
+        - full
+    post:
+      tags:
+      - TimeEntry
+      summary: Created a new time entry
+      operationId: TimeEntry_PostTimeEntry
+      requestBody:
+        $ref: '#/components/requestBodies/TimeEntryDTO_Detail'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeEntryDTO_Detail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TimeEntryDTO_Detail'
+      security:
+      - oauth2:
+        - full
+    delete:
+      tags:
+      - TimeEntry
+      summary: Marks an existing time entry as deleted
+      operationId: TimeEntry_DeleteTimeEntry
+      parameters:
+      - name: guid
+        in: query
+        description: ''
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeEntryDTO_Detail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/TimeEntryDTO_Detail'
+      security:
+      - oauth2:
+        - full
+components:
+  schemas:
+    TimeEntryDTO:
+      required:
+      - date
+      - hours
+      - hourlyRate
+      type: object
+      properties:
+        accountTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        projectTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        account:
+          $ref: '#/components/schemas/AccountRef'
+        project:
+          $ref: '#/components/schemas/ProjectRef'
+        user:
+          $ref: '#/components/schemas/UserRef'
+        product:
+          $ref: '#/components/schemas/ItemRef'
+        utbmsCode:
+          $ref: '#/components/schemas/UtbmsCodeRef'
+        description:
+          type: string
+        notes:
+          description: Internal notes, Not visible on the invoice.
+          type: string
+        date:
+          format: date-time
+          description: The date for this time entry. Will be used on the invoice and in various reports.
+          type: string
+        hours:
+          format: double
+          description: How many hours were logged, 1.1 = 1 hour and 6 minutes.
+          type: number
+        hourlyRate:
+          format: double
+          description: The hourly rate for this time entry.
+          type: number
+        total:
+          format: double
+          description: The total to be billed for this time entry. Set to ZERO if you wish to not bill this to the client.
+          type: number
+        createdDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        createdBy:
+          $ref: '#/components/schemas/UserRef'
+        status:
+          description: ' '
+          enum:
+          - Billable
+          - Billed
+          - Paid
+          - NotBillable
+          type: string
+          readOnly: true
+        saleDocumentItem:
+          $ref: '#/components/schemas/SaleDocumentItemRefWithSaleDocumentRef'
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+    ItemRef:
+      required:
+      - name
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          type: string
+        code:
+          type: string
+        chartOfAccountId:
+          format: int64
+          type: integer
+    TagDTO:
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+    AccountRef:
+      type: object
+      properties:
+        nameAndNumber:
+          description: ' '
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        utbmsIsEnabled:
+          type: boolean
+        id:
+          format: int64
+          type: integer
+    TimeEntryDTO_Detail:
+      required:
+      - accountGuid
+      - projectGuid
+      - userGuid
+      - isBillable
+      - isBilled
+      - date
+      - hours
+      - hourlyRate
+      type: object
+      properties:
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        accountGuid:
+          format: uuid
+          description: Used to set the reference in POST and PUTRequired for PracticePanther. When creating or updating a time entry, this is used to associate a time entry with an account (contact). Required for PracticePanther. When creating or updating a time entry, this is used to associate a time entry with an account (contact).
+          pattern: ^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        projectGuid:
+          format: uuid
+          description: Used to set the reference in POST and PUTRequired for PracticePanther. When creating or updating a time entry, this is used to associate a time entry with a project (matter). Required for PracticePanther. When creating or updating a time entry, this is used to associate a time entry with a project (matter).
+          pattern: ^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        lastModifiedDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        lastModifiedBy:
+          $ref: '#/components/schemas/UserRef'
+        activity:
+          $ref: '#/components/schemas/ActivityRef'
+        activityGuid:
+          format: uuid
+          description: Used to set the reference in POST and PUTWhen creating or updating a time entry, this is used to associate a time entry with an activity (task/event/email/call). When creating or updating a time entry, this is used to associate a time entry with an activity (task/event/email/call).
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        productGuid:
+          format: uuid
+          description: Used to set the reference in POST and PUTWhen creating or updating a time entry, this is used to associate a time entry with a product (item). When creating or updating a time entry, this is used to associate a time entry with a product (item).
+          pattern: ^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        utbmsCodeId:
+          format: int64
+          description: When creating or updating a time entry, this is used to attach the UtbmsCode
+          pattern: ^(\s*|\d+)$
+          type: integer
+        userGuid:
+          format: uuid
+          description: Used to set the reference in POST and PUTWhen creating or updating a time entry, this is used to associate a user with this time entry. When creating or updating a time entry, this is used to associate a user with this time entry.
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        isBillable:
+          description: Set this to true to indicate this expense is billable to the client and should be added to an invoice
+          type: boolean
+        isBilled:
+          description: Set this to true to indicate this expenses has already been billed to the client (added to an invoice).
+          type: boolean
+        isTimeEntryDateLimited:
+          type: boolean
+        accountTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        projectTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        account:
+          $ref: '#/components/schemas/AccountRef'
+        project:
+          $ref: '#/components/schemas/ProjectRef'
+        user:
+          $ref: '#/components/schemas/UserRef'
+        product:
+          $ref: '#/components/schemas/ItemRef'
+        utbmsCode:
+          $ref: '#/components/schemas/UtbmsCodeRef'
+        description:
+          type: string
+        notes:
+          description: Internal notes, Not visible on the invoice.
+          type: string
+        date:
+          format: date-time
+          description: The date for this time entry. Will be used on the invoice and in various reports.
+          type: string
+        hours:
+          format: double
+          description: How many hours were logged, 1.1 = 1 hour and 6 minutes.
+          type: number
+        hourlyRate:
+          format: double
+          description: The hourly rate for this time entry.
+          type: number
+        total:
+          format: double
+          description: The total to be billed for this time entry. Set to ZERO if you wish to not bill this to the client.
+          type: number
+        createdDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        createdBy:
+          $ref: '#/components/schemas/UserRef'
+        status:
+          description: ' '
+          enum:
+          - Billable
+          - Billed
+          - Paid
+          - NotBillable
+          type: string
+          readOnly: true
+        saleDocumentItem:
+          $ref: '#/components/schemas/SaleDocumentItemRefWithSaleDocumentRef'
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+    ActivityRef:
+      required:
+      - name
+      - type
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          description: Name (subject) of this activity.
+          type: string
+        type:
+          description: Sets the type of this activity (task/event/call/email)
+          enum:
+          - Call
+          - Task
+          - Event
+          - Email
+          - Note
+          type: string
+    SaleDocumentRef:
+      required:
+      - date
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        number:
+          format: int32
+          type: integer
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        type:
+          description: Indicates if this sale document is an Invoice or a Quote
+          enum:
+          - Invoice
+          - Quote
+          type: string
+        invoiceType:
+          description: If this sale document is of type 'invoice', will indicate if this is a sale, refund or credit invoice.
+          enum:
+          - Sale
+          - Refund
+          - Credit
+          type: string
+        date:
+          format: date-time
+          description: The issue date for this invoice / quote.
+          type: string
+    UserRef:
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        displayName:
+          description: ' '
+          type: string
+          readOnly: true
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        timeZoneId:
+          type: string
+    ProjectRef:
+      type: object
+      properties:
+        nameAndNumber:
+          description: This is a read only property This is a read only property
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        accountGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        id:
+          format: int64
+          type: integer
+    SaleDocumentItemRefWithSaleDocumentRef:
+      type: object
+      properties:
+        saleDocument:
+          $ref: '#/components/schemas/SaleDocumentRef'
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          type: string
+    UtbmsCodeRef:
+      type: object
+      properties:
+        name:
+          type: string
+        code:
+          type: string
+  requestBodies:
+    TimeEntryDTO_Detail:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/TimeEntryDTO_Detail'
+        text/json:
+          schema:
+            $ref: '#/components/schemas/TimeEntryDTO_Detail'
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: '#/components/schemas/TimeEntryDTO_Detail'
+      required: true
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

@@ -1,0 +1,186 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account V1PrintChecksPdf API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: V1PrintChecksPdf
+paths:
+  /api/internal/v1/tenants/{tenantId}/printChecksPdf:
+    post:
+      tags:
+      - V1PrintChecksPdf
+      operationId: V1PrintChecksPdf_Download
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PrintChecksPdfResource'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/PrintChecksPdfResource'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PrintChecksPdfResource'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+components:
+  schemas:
+    UserAccessLevel:
+      type: object
+      properties:
+        controllerAccessLevel:
+          enum:
+          - Account
+          - Activity
+          - Attachment
+          - Campaign
+          - Category
+          - Dashboard
+          - Expense
+          - Feed
+          - Inventory
+          - SaleDocument
+          - Item
+          - Payment
+          - PriceList
+          - ProductLog
+          - Project
+          - Report
+          - Role
+          - SalesTax
+          - Tenant
+          - TimeEntry
+          - User
+          - BankAccount
+          - OauthClient
+          - FlatFee
+          - Esignature
+          - PaymentForReport
+          - SMS
+          - SavedReport
+          - FirmPayment
+          - FinancialSummary
+          type: string
+        actionAccessLevel:
+          enum:
+          - Create
+          - Details
+          - Edit
+          - Delete
+          - ViewAll
+          - ModifyAll
+          - Archive
+          type: string
+    IntegrationAccess:
+      type: object
+      properties:
+        trustAccounting:
+          type: boolean
+        operatingAccounting:
+          type: boolean
+        pantherPayments:
+          type: boolean
+    LocalizationPreferences:
+      type: object
+      properties:
+        cultureName:
+          type: string
+        dateFormat:
+          type: string
+        dateTimeFormat:
+          type: string
+        timeFormat:
+          type: string
+        currencyCode:
+          type: string
+        timezoneId:
+          type: string
+    SecurityDetail:
+      type: object
+      properties:
+        userId:
+          format: int32
+          type: integer
+        isUserAuthenticated:
+          type: boolean
+        hasFullAccess:
+          type: boolean
+        accessLevels:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserAccessLevel'
+    PrintChecksPdfResource:
+      type: object
+      properties:
+        paymentsToPrint:
+          type: array
+          items:
+            format: uuid
+            type: string
+            example: 00000000-0000-0000-0000-000000000000
+        coreIdentity:
+          $ref: '#/components/schemas/CoreIdentity'
+        pageType:
+          enum:
+          - Standard
+          - Voucher
+          type: string
+        numOfChecksOnFirstPage:
+          format: int32
+          type: integer
+        startingCheckNumber:
+          format: int32
+          type: integer
+    CoreIdentity:
+      type: object
+      properties:
+        tenantId:
+          format: int64
+          type: integer
+        userId:
+          format: int32
+          type: integer
+        localizationPreferences:
+          $ref: '#/components/schemas/LocalizationPreferences'
+        integrations:
+          $ref: '#/components/schemas/IntegrationAccess'
+        securityDetail:
+          $ref: '#/components/schemas/SecurityDetail'
+        cultureInfo:
+          type: string
+          readOnly: true
+        timeZoneInfo:
+          type: object
+          readOnly: true
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

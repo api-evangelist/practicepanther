@@ -1,0 +1,250 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account Item API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: Item
+paths:
+  /api/item/{guid}:
+    get:
+      tags:
+      - Item
+      summary: Returns a item
+      operationId: Item_GetItem
+      parameters:
+      - name: guid
+        in: path
+        description: ''
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemDTO'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ItemDTO'
+      security:
+      - oauth2:
+        - full
+  /api/item:
+    get:
+      tags:
+      - Item
+      summary: OData end point to get a list of all items
+      operationId: Item_GetItems
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ItemDTO'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ItemDTO'
+      security:
+      - oauth2:
+        - full
+    put:
+      tags:
+      - Item
+      summary: Updates an existing item
+      operationId: Item_PutItem
+      requestBody:
+        $ref: '#/components/requestBodies/ItemDTO'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemDTO'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ItemDTO'
+      security:
+      - oauth2:
+        - full
+    post:
+      tags:
+      - Item
+      summary: Created a new item
+      operationId: Item_PostItem
+      requestBody:
+        $ref: '#/components/requestBodies/ItemDTO'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemDTO'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ItemDTO'
+      security:
+      - oauth2:
+        - full
+    delete:
+      tags:
+      - Item
+      summary: Marks an existing item as deleted
+      operationId: Item_DeleteItem
+      parameters:
+      - name: guid
+        in: query
+        description: ''
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemDTO'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ItemDTO'
+      security:
+      - oauth2:
+        - full
+components:
+  schemas:
+    ItemDTO:
+      required:
+      - salePrice
+      - name
+      type: object
+      properties:
+        description:
+          type: string
+        code:
+          type: string
+        salePrice:
+          format: double
+          type: number
+        isOverrideHourlyRate:
+          type: boolean
+        isDeleted:
+          description: ' '
+          type: boolean
+          readOnly: true
+        createdDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        lastModifiedDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        createdBy:
+          $ref: '#/components/schemas/UserRef'
+        lastModifiedBy:
+          $ref: '#/components/schemas/UserRef'
+        tax1Guid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        tax1:
+          $ref: '#/components/schemas/SalesTaxRef'
+        tax2Guid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        tax2:
+          $ref: '#/components/schemas/SalesTaxRef'
+        chartOfAccountId:
+          format: int64
+          type: integer
+        chartOfAccountGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        chartOfAccountName:
+          type: string
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          type: string
+    SalesTaxRef:
+      required:
+      - name
+      - rate
+      - isCompound
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          type: string
+        rate:
+          format: double
+          type: number
+        isCompound:
+          description: If set to true this will be considered to be a "Compound Tax". A compound tax is a special tax that is calculated after and on top of a primary tax. In Canada, Quebec and Prince Edward Island use compound taxes of 8.5% and 10% respectively.
+          type: boolean
+    UserRef:
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        displayName:
+          description: ' '
+          type: string
+          readOnly: true
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        timeZoneId:
+          type: string
+  requestBodies:
+    ItemDTO:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ItemDTO'
+        text/json:
+          schema:
+            $ref: '#/components/schemas/ItemDTO'
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: '#/components/schemas/ItemDTO'
+      required: true
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

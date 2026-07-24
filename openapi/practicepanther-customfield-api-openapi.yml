@@ -1,0 +1,104 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account CustomField API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: CustomField
+paths:
+  /api/customfield:
+    get:
+      tags:
+      - CustomField
+      summary: OData end point to get a list of all available custom fields for an object
+      operationId: CustomField_GetCustomFields
+      parameters:
+      - name: objectType
+        in: query
+        description: Project/Contact/Account
+        required: true
+        schema:
+          type: string
+          enum:
+          - Account
+          - Project
+          - Contact
+          - User
+          - Address
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomFieldDTO'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CustomFieldDTO'
+      security:
+      - oauth2:
+        - full
+components:
+  schemas:
+    CustomFieldDTO:
+      required:
+      - objectType
+      - valueType
+      - name
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        objectType:
+          description: Sets the object type this custom field relates to
+          enum:
+          - Account
+          - Project
+          - Contact
+          - User
+          - Address
+          type: string
+        valueType:
+          description: Sets the value type for this custom field. Will affect CustomFieldValues
+          enum:
+          - TextBox
+          - Date
+          - DateTime
+          - Number
+          - Currency
+          - TextEditor
+          - DropDownList
+          - Checkbox
+          - Contact
+          type: string
+        name:
+          type: string
+        isDeleted:
+          description: ' '
+          type: boolean
+          readOnly: true
+        isRequired:
+          type: boolean
+        isDefault:
+          type: boolean
+        dropDownListValues:
+          description: Comma separated list of values for ValueType 'dropDownList'.
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

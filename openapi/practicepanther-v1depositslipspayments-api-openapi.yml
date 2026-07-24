@@ -1,0 +1,400 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account V1DepositSlipsPayments API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: V1DepositSlipsPayments
+paths:
+  /api/internal/v1/tenants/{tenantId}/depositSlipPayments:
+    get:
+      tags:
+      - V1DepositSlipsPayments
+      operationId: V1DepositSlipsPayments_PaymentsAvailableForDepositSlip
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: depositSlipPaymentsGridResource.coreIdentity.tenantId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: depositSlipPaymentsGridResource.coreIdentity.userId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.cultureName
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.dateFormat
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.dateTimeFormat
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.timeFormat
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.currencyCode
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.timezoneId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipPaymentsGridResource.coreIdentity.integrations.trustAccounting
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipPaymentsGridResource.coreIdentity.integrations.operatingAccounting
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipPaymentsGridResource.coreIdentity.integrations.pantherPayments
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipPaymentsGridResource.coreIdentity.securityDetail.userId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: depositSlipPaymentsGridResource.coreIdentity.securityDetail.isUserAuthenticated
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipPaymentsGridResource.coreIdentity.securityDetail.hasFullAccess
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipPaymentsGridResource.coreIdentity.securityDetail.accessLevels
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items: {}
+      - name: depositSlipPaymentsGridResource.bankAccountGuid
+        in: query
+        required: false
+        schema:
+          type: string
+          format: uuid
+      - name: depositSlipPaymentsGridResource.paymentMethods
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - Cash
+            - Check
+            - CreditCard
+            - PayPal
+            - AuthorizeNet
+            - Other
+            - Stripe
+            - Wire
+            - Transfer
+            - LawPay
+            - PantherPaymentsCC
+            - PantherPaymentsECheck
+            - JournalEntry
+      - name: depositSlipPaymentsGridResource.searchTerm
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipPaymentsGridResource.showHiddenPayments
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipPaymentsGridResource.page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: depositSlipPaymentsGridResource.pageSize
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: depositSlipPaymentsGridResource.sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipPaymentsGridResource.sortOrder
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipPaymentsGridResource.columns
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items: {}
+      - name: depositSlipPaymentsGridResource.outputType
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - GridPage
+          - Csv
+          - Pdf
+      - name: depositSlipPaymentsGridResource.exportAll
+        in: query
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+  /api/internal/v1/tenants/{tenantId}/depositSlipPayments/{depositSlipGuid}:
+    get:
+      tags:
+      - V1DepositSlipsPayments
+      operationId: V1DepositSlipsPayments_PaymentsForDepositSlip
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: depositSlipGuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: depositSlipPaymentsGridResource.coreIdentity.tenantId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: depositSlipPaymentsGridResource.coreIdentity.userId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.cultureName
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.dateFormat
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.dateTimeFormat
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.timeFormat
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.currencyCode
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.timezoneId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipPaymentsGridResource.coreIdentity.integrations.trustAccounting
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipPaymentsGridResource.coreIdentity.integrations.operatingAccounting
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipPaymentsGridResource.coreIdentity.integrations.pantherPayments
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipPaymentsGridResource.coreIdentity.securityDetail.userId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: depositSlipPaymentsGridResource.coreIdentity.securityDetail.isUserAuthenticated
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipPaymentsGridResource.coreIdentity.securityDetail.hasFullAccess
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipPaymentsGridResource.coreIdentity.securityDetail.accessLevels
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items: {}
+      - name: depositSlipPaymentsGridResource.bankAccountGuid
+        in: query
+        description: 'Used to set the reference in POST and PUT '
+        required: false
+        schema:
+          type: string
+          format: uuid
+      - name: depositSlipPaymentsGridResource.paymentMethods
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - Cash
+            - Check
+            - CreditCard
+            - PayPal
+            - AuthorizeNet
+            - Other
+            - Stripe
+            - Wire
+            - Transfer
+            - LawPay
+            - PantherPaymentsCC
+            - PantherPaymentsECheck
+            - JournalEntry
+      - name: depositSlipPaymentsGridResource.searchTerm
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipPaymentsGridResource.showHiddenPayments
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipPaymentsGridResource.page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: depositSlipPaymentsGridResource.pageSize
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: depositSlipPaymentsGridResource.sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipPaymentsGridResource.sortOrder
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipPaymentsGridResource.columns
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items: {}
+      - name: depositSlipPaymentsGridResource.outputType
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - GridPage
+          - Csv
+          - Pdf
+      - name: depositSlipPaymentsGridResource.exportAll
+        in: query
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

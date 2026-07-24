@@ -1,0 +1,522 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account V1DepositSlips API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: V1DepositSlips
+paths:
+  /api/internal/v1/tenants/{tenantId}/depositSlips:
+    get:
+      tags:
+      - V1DepositSlips
+      operationId: V1DepositSlips_GetAll
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: depositSlipsGridResource.coreIdentity.tenantId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: depositSlipsGridResource.coreIdentity.userId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: depositSlipsGridResource.coreIdentity.localizationPreferences.cultureName
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipsGridResource.coreIdentity.localizationPreferences.dateFormat
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipsGridResource.coreIdentity.localizationPreferences.dateTimeFormat
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipsGridResource.coreIdentity.localizationPreferences.timeFormat
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipsGridResource.coreIdentity.localizationPreferences.currencyCode
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipsGridResource.coreIdentity.localizationPreferences.timezoneId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipsGridResource.coreIdentity.integrations.trustAccounting
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipsGridResource.coreIdentity.integrations.operatingAccounting
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipsGridResource.coreIdentity.integrations.pantherPayments
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipsGridResource.coreIdentity.securityDetail.userId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: depositSlipsGridResource.coreIdentity.securityDetail.isUserAuthenticated
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipsGridResource.coreIdentity.securityDetail.hasFullAccess
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipsGridResource.coreIdentity.securityDetail.accessLevels
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items: {}
+      - name: depositSlipsGridResource.bankAccountGuid
+        in: query
+        required: false
+        schema:
+          type: string
+          format: uuid
+      - name: depositSlipsGridResource.depositDateFrom
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipsGridResource.depositDateTo
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipsGridResource.createdDateFrom
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipsGridResource.createdDateTo
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipsGridResource.amountFilter1.amount
+        in: query
+        required: false
+        schema:
+          type: number
+          format: double
+      - name: depositSlipsGridResource.amountFilter1.operator
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipsGridResource.amountFilter2.amount
+        in: query
+        required: false
+        schema:
+          type: number
+          format: double
+      - name: depositSlipsGridResource.amountFilter2.operator
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipsGridResource.searchTerm
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipsGridResource.page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: depositSlipsGridResource.pageSize
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: depositSlipsGridResource.sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipsGridResource.sortOrder
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipsGridResource.columns
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items: {}
+      - name: depositSlipsGridResource.outputType
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - GridPage
+          - Csv
+          - Pdf
+      - name: depositSlipsGridResource.exportAll
+        in: query
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+    delete:
+      tags:
+      - V1DepositSlips
+      operationId: V1DepositSlips_Delete
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                format: uuid
+                type: string
+                example: 00000000-0000-0000-0000-000000000000
+          text/json:
+            schema:
+              type: array
+              items:
+                format: uuid
+                type: string
+                example: 00000000-0000-0000-0000-000000000000
+          application/x-www-form-urlencoded:
+            schema:
+              type: array
+              items:
+                format: uuid
+                type: string
+                example: 00000000-0000-0000-0000-000000000000
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+  /api/internal/v1/tenants/{tenantId}/depositSlip/{depositSlipGuid}:
+    get:
+      tags:
+      - V1DepositSlips
+      operationId: V1DepositSlips_Get
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: depositSlipGuid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: depositSlipDetailResource.depositSlipId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: depositSlipDetailResource.depositSlipGuid
+        in: query
+        required: false
+        schema:
+          type: string
+          format: uuid
+      - name: depositSlipDetailResource.coreIdentity.tenantId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: depositSlipDetailResource.coreIdentity.userId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: depositSlipDetailResource.coreIdentity.localizationPreferences.cultureName
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipDetailResource.coreIdentity.localizationPreferences.dateFormat
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipDetailResource.coreIdentity.localizationPreferences.dateTimeFormat
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipDetailResource.coreIdentity.localizationPreferences.timeFormat
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipDetailResource.coreIdentity.localizationPreferences.currencyCode
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipDetailResource.coreIdentity.localizationPreferences.timezoneId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: depositSlipDetailResource.coreIdentity.integrations.trustAccounting
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipDetailResource.coreIdentity.integrations.operatingAccounting
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipDetailResource.coreIdentity.integrations.pantherPayments
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipDetailResource.coreIdentity.securityDetail.userId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: depositSlipDetailResource.coreIdentity.securityDetail.isUserAuthenticated
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipDetailResource.coreIdentity.securityDetail.hasFullAccess
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: depositSlipDetailResource.coreIdentity.securityDetail.accessLevels
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+    put:
+      tags:
+      - V1DepositSlips
+      operationId: V1DepositSlips_Update
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: depositSlipGuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DepositSlipUpdateResource'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DepositSlipUpdateResource'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/DepositSlipUpdateResource'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+  /api/internal/v1/tenants/{tenantId}/depositSlip:
+    post:
+      tags:
+      - V1DepositSlips
+      operationId: V1DepositSlips_Create
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DepositSlipCreationResource'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/DepositSlipCreationResource'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/DepositSlipCreationResource'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+components:
+  schemas:
+    DepositSlipCreationResource:
+      type: object
+      properties:
+        id:
+          format: int64
+          type: integer
+        depositSlipPaymentGuids:
+          description: 'Used to set the reference in POST and PUT '
+          type: array
+          items:
+            format: uuid
+            type: string
+            example: 00000000-0000-0000-0000-000000000000
+        depositDate:
+          type: string
+        depositedByGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        tenantId:
+          format: int32
+          type: integer
+        bankAccountGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        type:
+          enum:
+          - Manual
+          - Online
+          type: string
+        isPrinted:
+          type: boolean
+    DepositSlipUpdateResource:
+      type: object
+      properties:
+        depositSlipId:
+          format: int64
+          type: integer
+        depositSlipGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        depositDate:
+          type: string
+        bankAccountHeadnoteId:
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

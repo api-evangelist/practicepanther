@@ -1,0 +1,288 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account Relationship API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: Relationship
+paths:
+  /api/relationship/{guid}:
+    get:
+      tags:
+      - Relationship
+      summary: Returns a relationshi
+      operationId: Relationship_GetRelationship
+      parameters:
+      - name: guid
+        in: path
+        description: ''
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RelationshipDTO_Detail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/RelationshipDTO_Detail'
+      security:
+      - oauth2:
+        - full
+  /api/relationship:
+    get:
+      tags:
+      - Relationship
+      summary: OData end point to get a list of all relationships for contacts accessible by the user
+      operationId: Relationship_GetRelationships
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RelationshipDTO'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RelationshipDTO'
+      security:
+      - oauth2:
+        - full
+    put:
+      tags:
+      - Relationship
+      summary: Updates an existing relationship
+      operationId: Relationship_PutRelationship
+      requestBody:
+        $ref: '#/components/requestBodies/RelationshipDTO_Detail'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RelationshipDTO_Detail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/RelationshipDTO_Detail'
+      security:
+      - oauth2:
+        - full
+    post:
+      tags:
+      - Relationship
+      summary: Creates a new relationship
+      operationId: Relationship_PostRelationship
+      requestBody:
+        $ref: '#/components/requestBodies/RelationshipDTO_Detail'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RelationshipDTO_Detail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/RelationshipDTO_Detail'
+      security:
+      - oauth2:
+        - full
+    delete:
+      tags:
+      - Relationship
+      summary: Deletes an existing relationship
+      operationId: Relationship_DeleteRelationship
+      parameters:
+      - name: guid
+        in: query
+        description: ''
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RelationshipDTO_Detail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/RelationshipDTO_Detail'
+      security:
+      - oauth2:
+        - full
+components:
+  schemas:
+    ContactRef:
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        middleName:
+          type: string
+        accountName:
+          type: string
+        displayName:
+          type: string
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        email:
+          type: string
+    AccountRef:
+      type: object
+      properties:
+        nameAndNumber:
+          description: ' '
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        utbmsIsEnabled:
+          type: boolean
+        id:
+          format: int64
+          type: integer
+    UserRef:
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        displayName:
+          description: ' '
+          type: string
+          readOnly: true
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        timeZoneId:
+          type: string
+    ProjectRef:
+      type: object
+      properties:
+        nameAndNumber:
+          description: This is a read only property This is a read only property
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        accountGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        id:
+          format: int64
+          type: integer
+    RelationshipDTO_Detail:
+      required:
+      - contactGuid
+      - projectGuid
+      - relationshipName
+      type: object
+      properties:
+        contactGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          pattern: ^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        projectGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          pattern: ^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        createdDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        createdBy:
+          $ref: '#/components/schemas/UserRef'
+        lastModifiedBy:
+          $ref: '#/components/schemas/UserRef'
+        lastModifiedDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        account:
+          $ref: '#/components/schemas/AccountRef'
+        contact:
+          $ref: '#/components/schemas/ContactRef'
+        project:
+          $ref: '#/components/schemas/ProjectRef'
+        relationshipName:
+          type: string
+        notes:
+          type: string
+    RelationshipDTO:
+      required:
+      - relationshipName
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        account:
+          $ref: '#/components/schemas/AccountRef'
+        contact:
+          $ref: '#/components/schemas/ContactRef'
+        project:
+          $ref: '#/components/schemas/ProjectRef'
+        relationshipName:
+          type: string
+        notes:
+          type: string
+  requestBodies:
+    RelationshipDTO_Detail:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/RelationshipDTO_Detail'
+        text/json:
+          schema:
+            $ref: '#/components/schemas/RelationshipDTO_Detail'
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: '#/components/schemas/RelationshipDTO_Detail'
+      required: true
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

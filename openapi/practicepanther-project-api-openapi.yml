@@ -1,0 +1,730 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account Project API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: Project
+paths:
+  /api/project/{guid}:
+    get:
+      tags:
+      - Project
+      summary: Returns a project (matter)
+      operationId: Project_GetProject
+      parameters:
+      - name: guid
+        in: path
+        description: ''
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectDTO_Detail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProjectDTO_Detail'
+      security:
+      - oauth2:
+        - full
+  /api/project:
+    get:
+      tags:
+      - Project
+      summary: OData end point to get a list of all projects (matters) accessible by the user
+      operationId: Project_GetProjects
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProjectDTO'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProjectDTO'
+      security:
+      - oauth2:
+        - full
+    put:
+      tags:
+      - Project
+      summary: Updates an existing project (matter)
+      operationId: Project_PutProject
+      requestBody:
+        $ref: '#/components/requestBodies/ProjectDTO_Detail'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectDTO_Detail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProjectDTO_Detail'
+      security:
+      - oauth2:
+        - full
+    post:
+      tags:
+      - Project
+      summary: Creates a new project (matter)
+      operationId: Project_PostProject
+      requestBody:
+        $ref: '#/components/requestBodies/ProjectDTO_Detail'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectDTO_Detail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProjectDTO_Detail'
+      security:
+      - oauth2:
+        - full
+    delete:
+      tags:
+      - Project
+      summary: Marks an existing project (matter) as deleted
+      operationId: Project_DeleteProject
+      parameters:
+      - name: guid
+        in: query
+        description: ''
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProjectDTO_Detail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ProjectDTO_Detail'
+      security:
+      - oauth2:
+        - full
+components:
+  schemas:
+    PresetProjectRateRef:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+    CustomFieldDTO_Detail:
+      required:
+      - objectType
+      - valueType
+      - name
+      type: object
+      properties:
+        isIncludeInList:
+          type: boolean
+        isExportToLedes:
+          type: boolean
+        helpText:
+          type: string
+        tooltip:
+          type: string
+        objectType:
+          enum:
+          - Account
+          - Project
+          - Contact
+          - User
+          - Address
+          type: string
+        rowIndex:
+          format: int32
+          description: Defines the order of the custom fields on the object
+          type: integer
+        createdDate:
+          format: date-time
+          description: Returns the number of CustomFieldValues which use this custom field. (ie, how many different contacts have a value for this custom field) Returns the number of CustomFieldValues which use this custom field. (ie, how many different contacts have a value for this custom field)
+          type: string
+          readOnly: true
+        lastModifiedDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        createdBy:
+          $ref: '#/components/schemas/UserRef'
+        lastModifiedBy:
+          $ref: '#/components/schemas/UserRef'
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        valueType:
+          description: Sets the value type for this custom field. Will affect CustomFieldValues
+          enum:
+          - TextBox
+          - Date
+          - DateTime
+          - Number
+          - Currency
+          - TextEditor
+          - DropDownList
+          - Checkbox
+          - Contact
+          type: string
+        name:
+          type: string
+        isDeleted:
+          description: ' '
+          type: boolean
+          readOnly: true
+        isRequired:
+          type: boolean
+        isDefault:
+          type: boolean
+        dropDownListValues:
+          description: Comma separated list of values for ValueType 'dropDownList'.
+          type: string
+    ProjectRateDTO:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/UserRef'
+        role:
+          $ref: '#/components/schemas/RoleRef'
+        userGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        roleGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        hourlyRate:
+          format: double
+          type: number
+        rateType:
+          enum:
+          - User
+          - Role
+          - Everyone
+          type: string
+    ContactRef:
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        middleName:
+          type: string
+        accountName:
+          type: string
+        displayName:
+          type: string
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        email:
+          type: string
+    AccountRef:
+      type: object
+      properties:
+        nameAndNumber:
+          description: ' '
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        utbmsIsEnabled:
+          type: boolean
+        id:
+          format: int64
+          type: integer
+    TagDTO:
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+    ProjectDTO_Detail:
+      required:
+      - hourlyRateType
+      - name
+      - status
+      - assignedToGuids
+      type: object
+      properties:
+        customFieldValues:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomFieldValueDTO_Detail'
+        isEmailSync:
+          type: boolean
+        isFilesSync:
+          type: boolean
+        isContactSync:
+          type: boolean
+        projectRates:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProjectRateDTO'
+        usersFollowing:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserRef'
+        ledesClientMatterId:
+          type: string
+        createdBy:
+          $ref: '#/components/schemas/UserRef'
+        notes:
+          description: Internal notes.
+          type: string
+        originatedByGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          pattern: ^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        lastModifiedBy:
+          $ref: '#/components/schemas/UserRef'
+        accountGuid:
+          format: uuid
+          description: Used to set the reference in POST and PUTRequired for PracticePanther. When creating or updating a time entry, this is used to associate a time entry with an account (contact). Required for PracticePanther. When creating or updating a time entry, this is used to associate a time entry with an account (contact).
+          pattern: ^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        presetProjectRateGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        operatingUnappliedCredit:
+          format: double
+          description: "[OperatingUnappliedCredit] is a read only property .\r\n= OperatingPayments.AvailableFunds + CreditNotes.AvailableFunds: for this project (matter)."
+          type: number
+        invoicesDue:
+          format: double
+          description: This is a read only property. Will show current outstanding amount on all invoices for this project (matter).
+          type: number
+        hourlyRate:
+          format: double
+          description: If this project (matter) has a different hourly rate, it can be set here. Will be used if HourlyRateType = 'ProjectRate'.
+          maximum: 2147483647
+          minimum: 0
+          type: number
+        flatRate:
+          format: double
+          description: If this project (matter) has a flat rate (and a zero ($0) hourly rate), it can be set here. Will be used if HourlyRateType = 'FlatRate'.
+          maximum: 2147483647
+          minimum: 0
+          type: number
+        contingencyRatePercent:
+          format: double
+          description: If this project (matter) has a contingency rate.
+          maximum: 2147483647
+          minimum: 0
+          type: number
+        isFlatRateBilled:
+          description: "Indicates if the flat rate has been billed.\r\nIf false, the flat rate is still billable and will be added to the account (contact) and project (matter) billable totals."
+          type: boolean
+        hourlyRateType:
+          description: Sets the hourly rate type for this project (matter).
+          enum:
+          - ItemRate
+          - UserRate
+          - ProjectRate
+          - FlatRate
+          - Contingency
+          - PresetProjectRate
+          type: string
+        isContainsOnlyPendingInvoices:
+          description: ' '
+          type: boolean
+          readOnly: true
+        operatingPaid:
+          format: double
+          description: This is a read only property. Will show the sum of all payments from operating bank accounts made for this project (matter).
+          type: number
+        ccPaid:
+          format: double
+          description: This is a read only property. Will show the sum of all payments from CC bank accounts made for this project (matter).
+          type: number
+        name:
+          type: string
+        account:
+          $ref: '#/components/schemas/AccountRef'
+        tenantRefNumber:
+          format: int32
+          description: The due date for this project (matter). will appear on the calendar.
+          type: integer
+        dueDate:
+          format: date-time
+          type: string
+        openDate:
+          format: date-time
+          type: string
+        closeDate:
+          format: date-time
+          type: string
+        createdDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        lastModifiedDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        evergreenIsAlert:
+          type: boolean
+          readOnly: true
+        evergreenIsOn:
+          description: If on, evergreen alerts will be activated based on the evergreen amount
+          type: boolean
+        evergreenAmount:
+          format: double
+          type: number
+        isAddEvergreenToInvoice:
+          description: If set to true, we will add the amount required to replenish the retainer to the evergreen amount to the invoice.
+          type: boolean
+        status:
+          enum:
+          - Closed
+          - Pending
+          - Open
+          - Archived
+          type: string
+        assignedTo:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserRef'
+        originatedBy:
+          $ref: '#/components/schemas/UserRef'
+        number:
+          format: int32
+          description: Project number. Must be unique.
+          type: integer
+        assignedToGuids:
+          description: Used to set the reference in POST and PUTFor compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects. For compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects.
+          type: array
+          items:
+            format: uuid
+            type: string
+            example: 00000000-0000-0000-0000-000000000000
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        accountTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        tagNames:
+          description: For compatibility reasons, this will return an array of tag names instead of a list of tag objects.
+          type: array
+          items:
+            type: string
+        accountTagsNames:
+          type: array
+          items:
+            type: string
+        paid:
+          format: double
+          description: This is a read only property. Will show the sum of all payments from operating bank accounts and CC bank accounts made for this project (matter).
+          type: number
+        trustBalance:
+          format: double
+          description: This is a read only property. Will indicate what is the trust account balance for this project (matter).
+          type: number
+        operatingBalance:
+          format: double
+          description: "[OperatingBalance] is a read only property.\r\n= Sum of OperatingPayments.AvailableFunds + CreditNotes.AvailableFunds - Invoices.AmountDue: for this project (matter)."
+          type: number
+        billable:
+          format: double
+          description: This is a read only property. Will indicate how much is currently billable for this project (matter). will include expenses, time entries and flat rate.
+          type: number
+        saleDocumentTemplateGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        saleDocumentTemplateName:
+          type: string
+        presetProjectRate:
+          $ref: '#/components/schemas/PresetProjectRateRef'
+        invoiceMatterRecipients:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactRef'
+        invoiceMatterRecipientsGuids:
+          description: 'Used to set the reference in POST and PUT '
+          type: array
+          items:
+            format: uuid
+            type: string
+            example: 00000000-0000-0000-0000-000000000000
+        nameAndNumber:
+          description: This is a read only property This is a read only property
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        id:
+          format: int64
+          type: integer
+    ProjectDTO:
+      required:
+      - name
+      - status
+      - assignedToGuids
+      type: object
+      properties:
+        name:
+          type: string
+        account:
+          $ref: '#/components/schemas/AccountRef'
+        tenantRefNumber:
+          format: int32
+          description: The due date for this project (matter). will appear on the calendar.
+          type: integer
+        dueDate:
+          format: date-time
+          type: string
+        openDate:
+          format: date-time
+          type: string
+        closeDate:
+          format: date-time
+          type: string
+        createdDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        lastModifiedDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        evergreenIsAlert:
+          type: boolean
+          readOnly: true
+        evergreenIsOn:
+          description: If on, evergreen alerts will be activated based on the evergreen amount
+          type: boolean
+        evergreenAmount:
+          format: double
+          type: number
+        isAddEvergreenToInvoice:
+          description: If set to true, we will add the amount required to replenish the retainer to the evergreen amount to the invoice.
+          type: boolean
+        status:
+          enum:
+          - Closed
+          - Pending
+          - Open
+          - Archived
+          type: string
+        assignedTo:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserRef'
+        originatedBy:
+          $ref: '#/components/schemas/UserRef'
+        number:
+          format: int32
+          description: Project number. Must be unique.
+          type: integer
+        assignedToGuids:
+          description: Used to set the reference in POST and PUTFor compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects. For compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects.
+          type: array
+          items:
+            format: uuid
+            type: string
+            example: 00000000-0000-0000-0000-000000000000
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        accountTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        tagNames:
+          description: For compatibility reasons, this will return an array of tag names instead of a list of tag objects.
+          type: array
+          items:
+            type: string
+        accountTagsNames:
+          type: array
+          items:
+            type: string
+        paid:
+          format: double
+          description: This is a read only property. Will show the sum of all payments from operating bank accounts and CC bank accounts made for this project (matter).
+          type: number
+        trustBalance:
+          format: double
+          description: This is a read only property. Will indicate what is the trust account balance for this project (matter).
+          type: number
+        operatingBalance:
+          format: double
+          description: "[OperatingBalance] is a read only property.\r\n= Sum of OperatingPayments.AvailableFunds + CreditNotes.AvailableFunds - Invoices.AmountDue: for this project (matter)."
+          type: number
+        billable:
+          format: double
+          description: This is a read only property. Will indicate how much is currently billable for this project (matter). will include expenses, time entries and flat rate.
+          type: number
+        saleDocumentTemplateGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        saleDocumentTemplateName:
+          type: string
+        presetProjectRate:
+          $ref: '#/components/schemas/PresetProjectRateRef'
+        invoiceMatterRecipients:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactRef'
+        invoiceMatterRecipientsGuids:
+          description: 'Used to set the reference in POST and PUT '
+          type: array
+          items:
+            format: uuid
+            type: string
+            example: 00000000-0000-0000-0000-000000000000
+        nameAndNumber:
+          description: This is a read only property This is a read only property
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        accountGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        id:
+          format: int64
+          type: integer
+    UserRef:
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        displayName:
+          description: ' '
+          type: string
+          readOnly: true
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        timeZoneId:
+          type: string
+    RoleRef:
+      required:
+      - name
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          type: string
+    CustomFieldValueDTO_Detail:
+      required:
+      - customField
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        valueString:
+          description: Used to set the value type for CustomField.ValueType of 'textBox', 'textEdit' and 'dropDownList'.
+          type: string
+        valueNumber:
+          format: double
+          description: Used to set the value type for CustomField.ValueType of 'number' and 'currency'.
+          type: number
+        valueDateTime:
+          format: date-time
+          description: Used to set the value type for CustomField.ValueType of 'dateTime' and 'date'.
+          type: string
+        valueBoolean:
+          description: Used to set the value type for CustomField.ValueType of 'checkbox'
+          type: boolean
+        valueContactGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        valueContact:
+          $ref: '#/components/schemas/ContactRef'
+        customField:
+          $ref: '#/components/schemas/CustomFieldDTO_Detail'
+  requestBodies:
+    ProjectDTO_Detail:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ProjectDTO_Detail'
+        text/json:
+          schema:
+            $ref: '#/components/schemas/ProjectDTO_Detail'
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: '#/components/schemas/ProjectDTO_Detail'
+      required: true
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

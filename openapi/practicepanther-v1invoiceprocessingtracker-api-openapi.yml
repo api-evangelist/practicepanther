@@ -1,0 +1,127 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account V1InvoiceProcessingTracker API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: V1InvoiceProcessingTracker
+paths:
+  /api/internal/v1/tenants/{tenantId}/InvoiceProcessingTracker/{matterGuid}:
+    get:
+      tags:
+      - V1InvoiceProcessingTracker
+      operationId: V1InvoiceProcessingTracker_GetAsync
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: matterGuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+  /api/internal/v1/tenants/{tenantId}/InvoiceProcessingTracker:
+    post:
+      tags:
+      - V1InvoiceProcessingTracker
+      operationId: V1InvoiceProcessingTracker_PostAsync
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        $ref: '#/components/requestBodies/V1InvoiceProcessingTracker_PostAsyncMatterids'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+    delete:
+      tags:
+      - V1InvoiceProcessingTracker
+      operationId: V1InvoiceProcessingTracker_DeleteAsync
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        $ref: '#/components/requestBodies/V1InvoiceProcessingTracker_PostAsyncMatterids'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+components:
+  requestBodies:
+    V1InvoiceProcessingTracker_PostAsyncMatterids:
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              format: int64
+              type: integer
+        text/json:
+          schema:
+            type: array
+            items:
+              format: int64
+              type: integer
+        application/x-www-form-urlencoded:
+          schema:
+            type: array
+            items:
+              format: int64
+              type: integer
+      required: true
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

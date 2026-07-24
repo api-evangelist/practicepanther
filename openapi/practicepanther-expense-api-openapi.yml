@@ -1,0 +1,566 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account Expense API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: Expense
+paths:
+  /api/expense/{guid}:
+    get:
+      tags:
+      - Expense
+      summary: Returns an expense
+      operationId: Expense_GetExpense
+      parameters:
+      - name: guid
+        in: path
+        description: ''
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseDTO_Detail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseDTO_Detail'
+      security:
+      - oauth2:
+        - full
+  /api/expense:
+    get:
+      tags:
+      - Expense
+      summary: OData end point to get a list of all expenses accessible by the user
+      operationId: Expense_GetExpenses
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExpenseDTO'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ExpenseDTO'
+      security:
+      - oauth2:
+        - full
+    put:
+      tags:
+      - Expense
+      summary: Updates an existing expense
+      operationId: Expense_PutExpense
+      requestBody:
+        $ref: '#/components/requestBodies/ExpenseDTO_Detail'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseDTO_Detail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseDTO_Detail'
+      security:
+      - oauth2:
+        - full
+    post:
+      tags:
+      - Expense
+      summary: Created a new expense (contact)
+      operationId: Expense_PostExpense
+      requestBody:
+        $ref: '#/components/requestBodies/ExpenseDTO_Detail'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseDTO_Detail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseDTO_Detail'
+      security:
+      - oauth2:
+        - full
+    delete:
+      tags:
+      - Expense
+      summary: Marks an existing expense as deleted
+      operationId: Expense_DeleteExpense
+      parameters:
+      - name: guid
+        in: query
+        description: ''
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseDTO_Detail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ExpenseDTO_Detail'
+      security:
+      - oauth2:
+        - full
+components:
+  schemas:
+    BankAccountRef:
+      required:
+      - name
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          type: string
+        type:
+          enum:
+          - Operating
+          - Trust
+          - CreditCard
+          type: string
+        isArchived:
+          type: boolean
+    AccountingAccountRef:
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          type: string
+        code:
+          type: string
+        chartOfAccountId:
+          format: int64
+          type: integer
+    TagDTO:
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+    AccountRef:
+      type: object
+      properties:
+        nameAndNumber:
+          description: ' '
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        utbmsIsEnabled:
+          type: boolean
+        id:
+          format: int64
+          type: integer
+    ExpenseDTO_Detail:
+      required:
+      - accountGuid
+      - projectGuid
+      - isBillable
+      - isBilled
+      - date
+      - amount
+      - qty
+      type: object
+      properties:
+        accountGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          pattern: ^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        projectGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          pattern: ^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        lastModifiedDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        accountingAccountGuid:
+          format: uuid
+          description: Used to set the reference in POST and PUTWhen creating an expense, this is used to reference the expense category. When creating an expense, this is used to reference the expense category.
+          pattern: ^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        lastModifiedBy:
+          $ref: '#/components/schemas/UserRef'
+        userGuid:
+          format: uuid
+          description: Used to set the reference in POST and PUTWhen creating or updating a time entry, this is used to associate a user with this time entry. When creating or updating a time entry, this is used to associate a user with this time entry.
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        isDeleted:
+          description: ' '
+          type: boolean
+          readOnly: true
+        isBillable:
+          description: Set this to true to indicate this expense is billable to the client and should be added to an invoice.
+          type: boolean
+        isBilled:
+          description: Set this to true to indicate this expenses has already been billed to the client.
+          type: boolean
+        hardCostPaymentMethod:
+          enum:
+          - Cash
+          - Check
+          - CreditCard
+          - PayPal
+          - AuthorizeNet
+          - Other
+          - Stripe
+          - Wire
+          - Transfer
+          - LawPay
+          - PantherPaymentsCC
+          - PantherPaymentsECheck
+          - JournalEntry
+          type: string
+        hardCostPaymentCheckNumber:
+          format: int32
+          type: integer
+        hardCostPaymentBankAccountGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        hardCostPaymentBankAccount:
+          $ref: '#/components/schemas/BankAccountRef'
+        hardCostPaymentCheckPayeeGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        hardCostPaymentCheckIsPrinted:
+          type: boolean
+        hardCostPaymentCheckIsToPrint:
+          type: boolean
+        hardCostPaymentChartOfAccountGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        hardCostPaymentChartOfAccountName:
+          type: string
+        hardCostPaymentNotes:
+          type: string
+        hardCostPaymentGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        utbmsCodeId:
+          format: int64
+          description: When creating or updating a time entry, this is used to attach the UtbmsCode
+          pattern: ^(\s*|\d+)$
+          type: integer
+        primaryReceiptGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        isMatchedToBankTransaction:
+          type: boolean
+        account:
+          $ref: '#/components/schemas/AccountRef'
+        accountTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        projectTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        accountingAccount:
+          $ref: '#/components/schemas/AccountingAccountRef'
+        project:
+          $ref: '#/components/schemas/ProjectRef'
+        notes:
+          description: Internal notes, Not visible on the invoice.
+          type: string
+        description:
+          description: Description, visible on the invoice.
+          type: string
+        user:
+          $ref: '#/components/schemas/UserRef'
+        date:
+          format: date-time
+          description: The date of this expense. It will be added to the invoice and indicated on the reports.
+          type: string
+        amount:
+          format: double
+          description: The amount, in the account's (contact) currency.
+          type: number
+        qty:
+          format: double
+          type: number
+        totalAmount:
+          format: double
+          type: number
+        utbmsCode:
+          $ref: '#/components/schemas/UtbmsCodeRef'
+        createdDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        createdBy:
+          $ref: '#/components/schemas/UserRef'
+        primaryReceipt:
+          $ref: '#/components/schemas/BlobRef'
+        status:
+          description: This is a read only property, will be set on GET requests This is a read only property, will be set on GET requests
+          enum:
+          - Billable
+          - Billed
+          - Paid
+          - NotBillable
+          type: string
+          readOnly: true
+        costType:
+          description: Hard costs are expenses incurred on behalf of a client that require a direct payment by the firm to a vendor. For example if a firm writes a check for a court filing fee, it is considered a hard cost. Soft costs are expenses that are charged to the client but a direct payment is not made to a vendor.
+          enum:
+          - SoftCost
+          - HardCost
+          type: string
+        saleDocumentItem:
+          $ref: '#/components/schemas/SaleDocumentItemRefWithSaleDocumentRef'
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+    SaleDocumentRef:
+      required:
+      - date
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        number:
+          format: int32
+          type: integer
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        type:
+          description: Indicates if this sale document is an Invoice or a Quote
+          enum:
+          - Invoice
+          - Quote
+          type: string
+        invoiceType:
+          description: If this sale document is of type 'invoice', will indicate if this is a sale, refund or credit invoice.
+          enum:
+          - Sale
+          - Refund
+          - Credit
+          type: string
+        date:
+          format: date-time
+          description: The issue date for this invoice / quote.
+          type: string
+    UserRef:
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        displayName:
+          description: ' '
+          type: string
+          readOnly: true
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        timeZoneId:
+          type: string
+    ExpenseDTO:
+      required:
+      - date
+      - amount
+      - qty
+      type: object
+      properties:
+        account:
+          $ref: '#/components/schemas/AccountRef'
+        accountTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        projectTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        accountingAccount:
+          $ref: '#/components/schemas/AccountingAccountRef'
+        project:
+          $ref: '#/components/schemas/ProjectRef'
+        notes:
+          description: Internal notes, Not visible on the invoice.
+          type: string
+        description:
+          description: Description, visible on the invoice.
+          type: string
+        user:
+          $ref: '#/components/schemas/UserRef'
+        date:
+          format: date-time
+          description: The date of this expense. It will be added to the invoice and indicated on the reports.
+          type: string
+        amount:
+          format: double
+          description: The amount, in the account's (contact) currency.
+          type: number
+        qty:
+          format: double
+          type: number
+        totalAmount:
+          format: double
+          type: number
+        utbmsCode:
+          $ref: '#/components/schemas/UtbmsCodeRef'
+        createdDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        createdBy:
+          $ref: '#/components/schemas/UserRef'
+        primaryReceipt:
+          $ref: '#/components/schemas/BlobRef'
+        status:
+          description: This is a read only property, will be set on GET requests This is a read only property, will be set on GET requests
+          enum:
+          - Billable
+          - Billed
+          - Paid
+          - NotBillable
+          type: string
+          readOnly: true
+        costType:
+          description: Hard costs are expenses incurred on behalf of a client that require a direct payment by the firm to a vendor. For example if a firm writes a check for a court filing fee, it is considered a hard cost. Soft costs are expenses that are charged to the client but a direct payment is not made to a vendor.
+          enum:
+          - SoftCost
+          - HardCost
+          type: string
+        saleDocumentItem:
+          $ref: '#/components/schemas/SaleDocumentItemRefWithSaleDocumentRef'
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+    ProjectRef:
+      type: object
+      properties:
+        nameAndNumber:
+          description: This is a read only property This is a read only property
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        accountGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        id:
+          format: int64
+          type: integer
+    SaleDocumentItemRefWithSaleDocumentRef:
+      type: object
+      properties:
+        saleDocument:
+          $ref: '#/components/schemas/SaleDocumentRef'
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          type: string
+    UtbmsCodeRef:
+      type: object
+      properties:
+        name:
+          type: string
+        code:
+          type: string
+    BlobRef:
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          type: string
+  requestBodies:
+    ExpenseDTO_Detail:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ExpenseDTO_Detail'
+        text/json:
+          schema:
+            $ref: '#/components/schemas/ExpenseDTO_Detail'
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: '#/components/schemas/ExpenseDTO_Detail'
+      required: true
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

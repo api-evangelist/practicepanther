@@ -1,0 +1,52 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account V1AccountPayeeSettings API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: V1AccountPayeeSettings
+paths:
+  /api/internal/v1/tenants/{tenantId}/accounts/{accountGuid}/payee-settings:
+    get:
+      tags:
+      - V1AccountPayeeSettings
+      operationId: V1AccountPayeeSettings_Get
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: accountGuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

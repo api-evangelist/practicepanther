@@ -1,0 +1,593 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account Payment API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: Payment
+paths:
+  /api/payment/{guid}:
+    get:
+      tags:
+      - Payment
+      summary: Returns a payment
+      operationId: Payment_GetPayment
+      parameters:
+      - name: guid
+        in: path
+        description: ''
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentDTO_Detail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PaymentDTO_Detail'
+      security:
+      - oauth2:
+        - full
+  /api/payment:
+    get:
+      tags:
+      - Payment
+      summary: OData end point to get a list of all payments accessible by the user
+      operationId: Payment_GetPayments
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PaymentDTO'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PaymentDTO'
+      security:
+      - oauth2:
+        - full
+    post:
+      tags:
+      - Payment
+      summary: Created a new payment
+      operationId: Payment_PostPayment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentDTO_Detail'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/PaymentDTO_Detail'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PaymentDTO_Detail'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentDTO_Detail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PaymentDTO_Detail'
+      security:
+      - oauth2:
+        - full
+    delete:
+      tags:
+      - Payment
+      summary: Marks an existing payment as deleted, will remove all amounts applied on invoices.
+      operationId: Payment_DeletePayment
+      parameters:
+      - name: guid
+        in: query
+        description: ''
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaymentDTO_Detail'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PaymentDTO_Detail'
+      security:
+      - oauth2:
+        - full
+components:
+  schemas:
+    PaymentDTO:
+      required:
+      - currencyCode
+      - amount
+      - date
+      - method
+      type: object
+      properties:
+        accountTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        projectTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        account:
+          $ref: '#/components/schemas/AccountRef'
+        checkPayee:
+          $ref: '#/components/schemas/AccountRef'
+        project:
+          $ref: '#/components/schemas/ProjectRef'
+        createdBy:
+          $ref: '#/components/schemas/UserRef'
+        createdDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        notes:
+          type: string
+        number:
+          format: int32
+          description: ' '
+          type: integer
+          readOnly: true
+        currencyCode:
+          description: This defines the currency for this account. Must be in ISO 4217 format. Must match the currency code for the Account (contact).
+          type: string
+        amountApplied:
+          format: double
+          description: The portion of the payment already applied towards invoices. The portion of the payment already applied towards invoices.
+          type: number
+          readOnly: true
+        amountCredited:
+          format: double
+          description: The portion of the payment not yet applied towards invoices. The portion of the payment not yet applied towards invoices.
+          type: number
+          readOnly: true
+        transactionId:
+          description: Used to reference a transaction from an external gateway (ie. Stripe, PayPal, Auth.Net etc.)
+          type: string
+        bankAccount:
+          $ref: '#/components/schemas/BankAccountRef'
+        isReconciled:
+          type: boolean
+        reconciledDate:
+          format: date-time
+          type: string
+        reconciledBy:
+          $ref: '#/components/schemas/UserRef'
+        checkIsPrinted:
+          type: boolean
+        isDepositSlipPrinted:
+          type: boolean
+        checkNumber:
+          format: int32
+          type: integer
+        feeAmountInCents:
+          format: double
+          type: number
+        refundParentPaymentGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        surchargeAmount:
+          format: double
+          type: number
+        totalAmount:
+          format: double
+          type: number
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        amount:
+          format: double
+          description: The total amount received.
+          type: number
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        date:
+          format: date-time
+          type: string
+        method:
+          enum:
+          - Cash
+          - Check
+          - CreditCard
+          - PayPal
+          - AuthorizeNet
+          - Other
+          - Stripe
+          - Wire
+          - Transfer
+          - LawPay
+          - PantherPaymentsCC
+          - PantherPaymentsECheck
+          - JournalEntry
+          type: string
+        methodName:
+          type: string
+          readOnly: true
+    BankAccountRef:
+      required:
+      - name
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          type: string
+        type:
+          enum:
+          - Operating
+          - Trust
+          - CreditCard
+          type: string
+        isArchived:
+          type: boolean
+    CreditRef:
+      required:
+      - creditForSaleDocument
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        creditAmount:
+          format: double
+          description: Total credit amount Total credit amount
+          type: number
+          readOnly: true
+        creditApplied:
+          format: double
+          description: Credit amount applied towards invoices Credit amount applied towards invoices
+          type: number
+          readOnly: true
+        creditAvailable:
+          format: double
+          description: Credit amount available (not applied towards invoices) Credit amount available (not applied towards invoices)
+          type: number
+          readOnly: true
+        creditForSaleDocument:
+          $ref: '#/components/schemas/SaleDocumentRef'
+    PaymentDTO_Detail:
+      required:
+      - accountGuid
+      - bankAccountGuid
+      - currencyCode
+      - amount
+      - date
+      - method
+      type: object
+      properties:
+        saleDocumentPayments:
+          description: A list of the invoices this payment was applied to.
+          type: array
+          items:
+            $ref: '#/components/schemas/SaleDocumentPaymentRef'
+        lastModifiedBy:
+          $ref: '#/components/schemas/UserRef'
+        lastModifiedDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        projectGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          pattern: ^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        accountGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          pattern: ^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})$
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        authNumber:
+          description: Authorization number for online payments
+          type: string
+        bankAccountGuid:
+          format: uuid
+          description: Used to set the reference in POST and PUTOnly operating account payments can be applied towards invoices. Only operating account payments can be applied towards invoices.
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        accountTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        projectTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        account:
+          $ref: '#/components/schemas/AccountRef'
+        checkPayee:
+          $ref: '#/components/schemas/AccountRef'
+        project:
+          $ref: '#/components/schemas/ProjectRef'
+        createdBy:
+          $ref: '#/components/schemas/UserRef'
+        createdDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        notes:
+          type: string
+        number:
+          format: int32
+          description: ' '
+          type: integer
+          readOnly: true
+        currencyCode:
+          description: This defines the currency for this account. Must be in ISO 4217 format. Must match the currency code for the Account (contact).
+          type: string
+        amountApplied:
+          format: double
+          description: The portion of the payment already applied towards invoices. The portion of the payment already applied towards invoices.
+          type: number
+          readOnly: true
+        amountCredited:
+          format: double
+          description: The portion of the payment not yet applied towards invoices. The portion of the payment not yet applied towards invoices.
+          type: number
+          readOnly: true
+        transactionId:
+          description: Used to reference a transaction from an external gateway (ie. Stripe, PayPal, Auth.Net etc.)
+          type: string
+        bankAccount:
+          $ref: '#/components/schemas/BankAccountRef'
+        isReconciled:
+          type: boolean
+        reconciledDate:
+          format: date-time
+          type: string
+        reconciledBy:
+          $ref: '#/components/schemas/UserRef'
+        checkIsPrinted:
+          type: boolean
+        isDepositSlipPrinted:
+          type: boolean
+        checkNumber:
+          format: int32
+          type: integer
+        feeAmountInCents:
+          format: double
+          type: number
+        refundParentPaymentGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        surchargeAmount:
+          format: double
+          type: number
+        totalAmount:
+          format: double
+          type: number
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        amount:
+          format: double
+          description: The total amount received.
+          type: number
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        date:
+          format: date-time
+          type: string
+        method:
+          enum:
+          - Cash
+          - Check
+          - CreditCard
+          - PayPal
+          - AuthorizeNet
+          - Other
+          - Stripe
+          - Wire
+          - Transfer
+          - LawPay
+          - PantherPaymentsCC
+          - PantherPaymentsECheck
+          - JournalEntry
+          type: string
+        methodName:
+          type: string
+          readOnly: true
+    TagDTO:
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+    AccountRef:
+      type: object
+      properties:
+        nameAndNumber:
+          description: ' '
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        utbmsIsEnabled:
+          type: boolean
+        id:
+          format: int64
+          type: integer
+    SaleDocumentRef:
+      required:
+      - date
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        number:
+          format: int32
+          type: integer
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        type:
+          description: Indicates if this sale document is an Invoice or a Quote
+          enum:
+          - Invoice
+          - Quote
+          type: string
+        invoiceType:
+          description: If this sale document is of type 'invoice', will indicate if this is a sale, refund or credit invoice.
+          enum:
+          - Sale
+          - Refund
+          - Credit
+          type: string
+        date:
+          format: date-time
+          description: The issue date for this invoice / quote.
+          type: string
+    UserRef:
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        displayName:
+          description: ' '
+          type: string
+          readOnly: true
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        timeZoneId:
+          type: string
+    ProjectRef:
+      type: object
+      properties:
+        nameAndNumber:
+          description: This is a read only property This is a read only property
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        accountGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        id:
+          format: int64
+          type: integer
+    PaymentRef:
+      required:
+      - amount
+      - date
+      - method
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        amount:
+          format: double
+          description: The total amount received.
+          type: number
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        date:
+          format: date-time
+          type: string
+        method:
+          enum:
+          - Cash
+          - Check
+          - CreditCard
+          - PayPal
+          - AuthorizeNet
+          - Other
+          - Stripe
+          - Wire
+          - Transfer
+          - LawPay
+          - PantherPaymentsCC
+          - PantherPaymentsECheck
+          - JournalEntry
+          type: string
+        methodName:
+          type: string
+          readOnly: true
+    SaleDocumentPaymentRef:
+      required:
+      - amount
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        amount:
+          format: double
+          description: The amount of payment or credit applied on this invoice
+          type: number
+        saleDocument:
+          $ref: '#/components/schemas/SaleDocumentRef'
+        payment:
+          $ref: '#/components/schemas/PaymentRef'
+        credit:
+          $ref: '#/components/schemas/CreditRef'
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

@@ -1,0 +1,105 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account User API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: User
+paths:
+  /api/user:
+    get:
+      tags:
+      - User
+      summary: OData end point to get a list of all users
+      operationId: User_GetUsers
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserDTO'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserDTO'
+      security:
+      - oauth2:
+        - full
+components:
+  schemas:
+    RoleRef:
+      required:
+      - name
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          type: string
+    UserDTO:
+      required:
+      - email
+      - hourlyRate
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        middleName:
+          type: string
+        email:
+          type: string
+        lastLoginDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        isEnabled:
+          description: Indicates if this user is active or not.
+          type: boolean
+        role:
+          $ref: '#/components/schemas/RoleRef'
+        createdDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        hourlyRate:
+          format: double
+          description: Sets the default hourly rate for the user for time entries.
+          maximum: 2147483647
+          minimum: 0
+          type: number
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        displayName:
+          description: ' '
+          type: string
+          readOnly: true
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        timeZoneId:
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

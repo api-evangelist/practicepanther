@@ -1,0 +1,394 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account V1BarReportGrid API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: V1BarReportGrid
+paths:
+  /api/internal/v1/tenants/{tenantId}/barreport:
+    get:
+      tags:
+      - V1BarReportGrid
+      operationId: V1BarReportGrid_GetLineItems
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: barReportGridResource.types
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - RegularItem
+            - TimeEntryItem
+            - ExpenseItem
+            - InterestItem
+            - EmptyItem
+      - name: barReportGridResource.statuses
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - Billable
+            - Billed
+            - Paid
+            - NotBillable
+      - name: barReportGridResource.billedByGuids
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            format: uuid
+      - name: barReportGridResource.workedByGuids
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            format: uuid
+      - name: barReportGridResource.originatedByGuids
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            format: uuid
+      - name: barReportGridResource.contactAssignedToUserGuids
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            format: uuid
+      - name: barReportGridResource.matterAssignedToUserGuids
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            format: uuid
+      - name: barReportGridResource.accountGuids
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            format: uuid
+      - name: barReportGridResource.projectGuids
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            format: uuid
+      - name: barReportGridResource.billedWorkedDateFrom
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.billedWorkedDateTo
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.workedDateFrom
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.workedDateTo
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.billedDateFrom
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.billedDateTo
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.createdDateFrom
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.createdDateTo
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.invoiceSentDateFrom
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.invoiceSentDateTo
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.invoiceDueDateFrom
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.invoiceDueDateTo
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.invoiceApprovedDateFrom
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.invoiceApprovedDateTo
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.lowBilledAmount.amount
+        in: query
+        required: false
+        schema:
+          type: number
+          format: double
+      - name: barReportGridResource.lowBilledAmount.operator
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.highBilledAmount.amount
+        in: query
+        required: false
+        schema:
+          type: number
+          format: double
+      - name: barReportGridResource.highBilledAmount.operator
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.lowWorkedAmount.amount
+        in: query
+        required: false
+        schema:
+          type: number
+          format: double
+      - name: barReportGridResource.lowWorkedAmount.operator
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.highWorkedAmount.amount
+        in: query
+        required: false
+        schema:
+          type: number
+          format: double
+      - name: barReportGridResource.highWorkedAmount.operator
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.accountTags
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+      - name: barReportGridResource.projectTags
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+      - name: barReportGridResource.searchTerm
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: barReportGridResource.pageSize
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: barReportGridResource.sortBy
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.sortOrder
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.columns
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items: {}
+      - name: barReportGridResource.outputType
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - GridPage
+          - Csv
+          - Pdf
+      - name: barReportGridResource.exportAll
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: barReportGridResource.coreIdentity.tenantId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: barReportGridResource.coreIdentity.userId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: barReportGridResource.coreIdentity.localizationPreferences.cultureName
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.coreIdentity.localizationPreferences.dateFormat
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.coreIdentity.localizationPreferences.dateTimeFormat
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.coreIdentity.localizationPreferences.timeFormat
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.coreIdentity.localizationPreferences.currencyCode
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.coreIdentity.localizationPreferences.timezoneId
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: barReportGridResource.coreIdentity.integrations.trustAccounting
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: barReportGridResource.coreIdentity.integrations.operatingAccounting
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: barReportGridResource.coreIdentity.integrations.pantherPayments
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: barReportGridResource.coreIdentity.securityDetail.userId
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: barReportGridResource.coreIdentity.securityDetail.isUserAuthenticated
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: barReportGridResource.coreIdentity.securityDetail.hasFullAccess
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: barReportGridResource.coreIdentity.securityDetail.accessLevels
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items: {}
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

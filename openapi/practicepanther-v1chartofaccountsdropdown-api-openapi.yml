@@ -1,0 +1,65 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account V1ChartOfAccountsDropdown API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: V1ChartOfAccountsDropdown
+paths:
+  /api/internal/v1/tenants/{tenantId}/chartofaccounts-dropdown:
+    get:
+      tags:
+      - V1ChartOfAccountsDropdown
+      operationId: V1ChartOfAccountsDropdown_Get
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: includeArchived
+        in: query
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DropdownResponse'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DropdownResponse'
+      security:
+      - oauth2:
+        - full
+components:
+  schemas:
+    DropdownResponse:
+      type: object
+      properties:
+        value:
+          type: string
+        displayName:
+          type: string
+        groupSlug:
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

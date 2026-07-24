@@ -1,0 +1,87 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account V1BankAccountsDropdown API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: V1BankAccountsDropdown
+paths:
+  /api/internal/v1/tenants/{tenantId}/bankaccounts-dropdown:
+    get:
+      tags:
+      - V1BankAccountsDropdown
+      operationId: V1BankAccountsDropdown_Get
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: bankAccountTypes
+        in: query
+        required: false
+        explode: true
+        schema:
+          type: array
+          items:
+            type: string
+            enum:
+            - Operating
+            - Trust
+            - CreditCard
+      - name: includeBankBalance
+        in: query
+        required: false
+        schema:
+          type: boolean
+      - name: includeArchived
+        in: query
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BankAccountDropdownResponse'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BankAccountDropdownResponse'
+      security:
+      - oauth2:
+        - full
+components:
+  schemas:
+    BankAccountDropdownResponse:
+      type: object
+      properties:
+        isDefaultBankAccount:
+          type: boolean
+        bankAccountType:
+          format: int32
+          type: integer
+        value:
+          type: string
+        displayName:
+          type: string
+        groupSlug:
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

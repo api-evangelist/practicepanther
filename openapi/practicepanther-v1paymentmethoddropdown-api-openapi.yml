@@ -1,0 +1,65 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account V1PaymentMethodDropdown API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: V1PaymentMethodDropdown
+paths:
+  /api/internal/v1/tenants/{tenantId}/paymentmethods:
+    get:
+      tags:
+      - V1PaymentMethodDropdown
+      operationId: V1PaymentMethodDropdown_Get
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: paymentPageVariant
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - PaymentHistory
+          - BankLedger
+          - PrintChecks
+          - CreditCardLedger
+      - name: bankAccountType
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - Operating
+          - Trust
+          - CreditCard
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

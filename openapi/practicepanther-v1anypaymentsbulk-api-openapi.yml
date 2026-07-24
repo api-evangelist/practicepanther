@@ -1,0 +1,132 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account V1AnyPaymentsBulk API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: V1AnyPaymentsBulk
+paths:
+  /api/internal/v1/tenants/{tenantId}/payments/depositSlipPaymentsUpdate:
+    put:
+      tags:
+      - V1AnyPaymentsBulk
+      operationId: V1AnyPaymentsBulk_DepositSlipPaymentsUpdate
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        $ref: '#/components/requestBodies/PaymentMakeAvailableResource'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+  /api/internal/v1/tenants/{tenantId}/payments/makePaymentsAvailableForDepositSlips:
+    put:
+      tags:
+      - V1AnyPaymentsBulk
+      operationId: V1AnyPaymentsBulk_MakePaymentsAvailableForDepositSlips
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        $ref: '#/components/requestBodies/PaymentMakeAvailableResource'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+  /api/internal/v1/tenants/{tenantId}/payment/{paymentGuid}/makePaymentAvailableForDepositSlip:
+    put:
+      tags:
+      - V1AnyPaymentsBulk
+      operationId: V1AnyPaymentsBulk_MakePaymentAvailableForDepositSlips
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: paymentGuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+components:
+  schemas:
+    PaymentMakeAvailableResource:
+      type: object
+      properties:
+        paymentGuids:
+          description: 'Used to set the reference in POST and PUT '
+          type: array
+          items:
+            format: uuid
+            type: string
+            example: 00000000-0000-0000-0000-000000000000
+        isDepositSlipPrinted:
+          type: boolean
+  requestBodies:
+    PaymentMakeAvailableResource:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PaymentMakeAvailableResource'
+        text/json:
+          schema:
+            $ref: '#/components/schemas/PaymentMakeAvailableResource'
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: '#/components/schemas/PaymentMakeAvailableResource'
+      required: true
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

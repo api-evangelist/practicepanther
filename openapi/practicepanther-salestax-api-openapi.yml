@@ -1,0 +1,176 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account SalesTax API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: SalesTax
+paths:
+  /api/salestax/{guid}:
+    get:
+      tags:
+      - SalesTax
+      summary: Returns a sales tax
+      operationId: SalesTax_GetSalesTax
+      parameters:
+      - name: guid
+        in: path
+        description: ''
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesTaxDTO'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SalesTaxDTO'
+      security:
+      - oauth2:
+        - full
+  /api/salestax:
+    get:
+      tags:
+      - SalesTax
+      summary: OData end point to get a list of all sales taxes accessible by the user
+      operationId: SalesTax_GetSalesTaxs
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SalesTaxDTO'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SalesTaxDTO'
+      security:
+      - oauth2:
+        - full
+    put:
+      tags:
+      - SalesTax
+      summary: Updates an existing sales tax
+      operationId: SalesTax_PutSalesTax
+      requestBody:
+        $ref: '#/components/requestBodies/SalesTaxDTO'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesTaxDTO'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SalesTaxDTO'
+      security:
+      - oauth2:
+        - full
+    post:
+      tags:
+      - SalesTax
+      summary: Created a new sales tax (contact)
+      operationId: SalesTax_PostSalesTax
+      requestBody:
+        $ref: '#/components/requestBodies/SalesTaxDTO'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesTaxDTO'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SalesTaxDTO'
+      security:
+      - oauth2:
+        - full
+    delete:
+      tags:
+      - SalesTax
+      summary: Marks an existing sales tax as deleted
+      operationId: SalesTax_DeleteSalesTax
+      parameters:
+      - name: guid
+        in: query
+        description: ''
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SalesTaxDTO'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/SalesTaxDTO'
+      security:
+      - oauth2:
+        - full
+components:
+  requestBodies:
+    SalesTaxDTO:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SalesTaxDTO'
+        text/json:
+          schema:
+            $ref: '#/components/schemas/SalesTaxDTO'
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: '#/components/schemas/SalesTaxDTO'
+      required: true
+  schemas:
+    SalesTaxDTO:
+      required:
+      - name
+      - rate
+      - isCompound
+      type: object
+      properties:
+        description:
+          type: string
+        isDeleted:
+          description: ' '
+          type: boolean
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          type: string
+        rate:
+          format: double
+          type: number
+        isCompound:
+          description: If set to true this will be considered to be a "Compound Tax". A compound tax is a special tax that is calculated after and on top of a primary tax. In Canada, Quebec and Prince Edward Island use compound taxes of 8.5% and 10% respectively.
+          type: boolean
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

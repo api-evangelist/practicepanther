@@ -1,0 +1,102 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account EmailTemplate API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: EmailTemplate
+paths:
+  /api/EmailTemplate:
+    post:
+      tags:
+      - EmailTemplate
+      operationId: EmailTemplate_Post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmailTemplateRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmailTemplateRequest'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/EmailTemplateRequest'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: string
+            text/json:
+              schema:
+                type: string
+      security:
+      - oauth2:
+        - full
+components:
+  schemas:
+    EmailAddressInfo:
+      type: object
+      properties:
+        email:
+          type: string
+        name:
+          type: string
+    EmailAttachment:
+      type: object
+      properties:
+        name:
+          type: string
+        byteArray:
+          format: byte
+          type: string
+    EmailTemplateRequest:
+      type: object
+      properties:
+        templateSerializedData:
+          type: string
+        templateDataType:
+          type: string
+        emailData:
+          $ref: '#/components/schemas/EmailData'
+    EmailData:
+      type: object
+      properties:
+        from:
+          $ref: '#/components/schemas/EmailAddressInfo'
+        recipients:
+          type: array
+          items:
+            $ref: '#/components/schemas/EmailAddressInfo'
+        singleRecipientMode:
+          type: boolean
+        bcc:
+          $ref: '#/components/schemas/EmailAddressInfo'
+        subject:
+          type: string
+        bodyText:
+          type: string
+        bodyHtml:
+          type: string
+        attachments:
+          type: array
+          items:
+            $ref: '#/components/schemas/EmailAttachment'
+        customArguments:
+          description: ' '
+          type: object
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

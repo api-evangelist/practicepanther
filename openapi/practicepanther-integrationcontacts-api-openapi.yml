@@ -1,0 +1,82 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account IntegrationContacts API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: IntegrationContacts
+paths:
+  /api/integrations/v1/contacts/search:
+    get:
+      tags:
+      - IntegrationContacts
+      operationId: IntegrationContacts_Search
+      parameters:
+      - name: search_text
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: page_size
+        in: query
+        required: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+  /api/integrations/v1/contacts/{id}:
+    get:
+      tags:
+      - IntegrationContacts
+      operationId: IntegrationContacts_GetById
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

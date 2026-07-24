@@ -1,0 +1,54 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account V1TrustbooksOnboardingNotifications API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: V1TrustbooksOnboardingNotifications
+paths:
+  /api/internal/v1/tenants/{tenantId}/TrustbooksOnboardingNotifications:
+    post:
+      tags:
+      - V1TrustbooksOnboardingNotifications
+      operationId: V1TrustbooksOnboardingNotifications_Post
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ActionResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ActionResponse'
+      security:
+      - oauth2:
+        - full
+components:
+  schemas:
+    ActionResponse:
+      type: object
+      properties:
+        isSuccess:
+          type: boolean
+        responseMessage:
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

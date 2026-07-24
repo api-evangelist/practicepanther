@@ -1,0 +1,421 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account V1FirmPayments API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: V1FirmPayments
+paths:
+  /api/internal/v1/tenants/{tenantId}/firmpayments/{firmPaymentGuid}:
+    get:
+      tags:
+      - V1FirmPayments
+      operationId: V1FirmPayments_Get
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: firmPaymentGuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+    delete:
+      tags:
+      - V1FirmPayments
+      operationId: V1FirmPayments_Delete
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: firmPaymentGuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+    patch:
+      tags:
+      - V1FirmPayments
+      operationId: V1FirmPayments_UpdateReconcilationStatus
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: firmPaymentGuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: isReconciled
+        in: query
+        required: true
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+  /api/internal/v1/tenants/{tenantId}/firmpayments/{transferGuid}:
+    get:
+      tags:
+      - V1FirmPayments
+      operationId: V1FirmPayments_GetTransfer
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: transferGuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: transfer
+        in: query
+        required: true
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+    patch:
+      tags:
+      - V1FirmPayments
+      operationId: V1FirmPayments_UpdateTransfer
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: transferGuid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FirmPaymentTransferResource'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/FirmPaymentTransferResource'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/FirmPaymentTransferResource'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+  /api/internal/v1/tenants/{tenantId}/firmpayments:
+    post:
+      tags:
+      - V1FirmPayments
+      operationId: V1FirmPayments_Create
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+    patch:
+      tags:
+      - V1FirmPayments
+      operationId: V1FirmPayments_Update
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+  /api/internal/v1/tenants/{tenantId}/firmpayments/syncFirmPaymentsToTrustbooks/{firmPaymentGuid}:
+    get:
+      tags:
+      - V1FirmPayments
+      operationId: V1FirmPayments_SyncFirmPaymentsToTrustbooks
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: firmPaymentGuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: isTransfer
+        in: query
+        required: true
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+  /api/internal/v1/tenants/{tenantId}/firmpayments/openTransferInQuickbooks/{transferGuid}:
+    get:
+      tags:
+      - V1FirmPayments
+      operationId: V1FirmPayments_OpenTransferInQuickbooks
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: transferGuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: firmPaymentGuid
+        in: query
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+  /api/internal/v1/tenants/{tenantId}/firmpayments/syncTransferToQuickbooks/{transferGuid}:
+    get:
+      tags:
+      - V1FirmPayments
+      operationId: V1FirmPayments_SyncTransferToQuickbooks
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: transferGuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: firmPaymentGuid
+        in: query
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+    post:
+      tags:
+      - V1FirmPayments
+      operationId: V1FirmPayments_SyncTransferToQuickbooks_1
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: transferGuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: isBatchSync
+        in: query
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+components:
+  schemas:
+    FirmPaymentTransferResource:
+      required:
+      - transferFromGuid
+      - transferToGuid
+      - date
+      - amount
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        transferFromGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        transferToGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        date:
+          format: date-time
+          type: string
+        amount:
+          format: double
+          type: number
+        notes:
+          maxLength: 1000
+          minLength: 0
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

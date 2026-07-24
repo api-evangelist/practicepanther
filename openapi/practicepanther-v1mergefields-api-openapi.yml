@@ -1,0 +1,97 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account V1MergeFields API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: V1MergeFields
+paths:
+  /api/internal/v1/tenants/{tenantId}/merge-fields:
+    get:
+      tags:
+      - V1MergeFields
+      operationId: V1MergeFields_GetMergeFields
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+    post:
+      tags:
+      - V1MergeFields
+      summary: "This action will take in an HTML document containing the old document\r\ntemplate merge fields and will replace the merge field with values from the matter,contact, and account"
+      operationId: V1MergeFields_MergeHtmlDocument
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MergeHtmlRequestDto'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/MergeHtmlRequestDto'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MergeHtmlRequestDto'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+components:
+  schemas:
+    MergeHtmlRequestDto:
+      type: object
+      properties:
+        htmlContent:
+          type: string
+        accountGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        projectGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

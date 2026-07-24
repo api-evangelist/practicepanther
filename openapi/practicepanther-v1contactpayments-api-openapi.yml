@@ -1,0 +1,148 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account V1ContactPayments API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: V1ContactPayments
+paths:
+  /api/internal/v1/tenants/{tenantId}/contactpayments:
+    post:
+      tags:
+      - V1ContactPayments
+      operationId: V1ContactPayments_Create
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+  /api/internal/v1/tenants/{tenantId}/contactpayments/{contactPaymentGuid}:
+    post:
+      tags:
+      - V1ContactPayments
+      operationId: V1ContactPayments_UpdateReconcilationStatus
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: contactPaymentGuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: isReconciled
+        in: query
+        required: true
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+    patch:
+      tags:
+      - V1ContactPayments
+      operationId: V1ContactPayments_UpdateCheckIsPrinted
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: contactPaymentGuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      - name: isPrinted
+        in: query
+        required: true
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+  /api/internal/v1/tenants/{tenantId}/contactpayments/syncContactPaymentToTrustbooks/{paymentGuid}:
+    get:
+      tags:
+      - V1ContactPayments
+      operationId: V1ContactPayments_SyncContactPaymentToTrustbooks
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: paymentGuid
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/json:
+              schema:
+                type: object
+      security:
+      - oauth2:
+        - full
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

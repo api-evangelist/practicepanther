@@ -1,0 +1,79 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account V1PaymentGridColumns API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: V1PaymentGridColumns
+paths:
+  /api/internal/v1/tenants/{tenantId}/paymentgridcolumns:
+    get:
+      tags:
+      - V1PaymentGridColumns
+      operationId: V1PaymentGridColumns_GetColumns
+      parameters:
+      - name: pageVariant
+        in: query
+        required: true
+        schema:
+          type: string
+          enum:
+          - PaymentHistory
+          - BankLedger
+          - PrintChecks
+          - CreditCardLedger
+      - name: bankAccountType
+        in: query
+        required: false
+        schema:
+          type: string
+          enum:
+          - Operating
+          - Trust
+          - CreditCard
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GridColumnDefinition'
+            text/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GridColumnDefinition'
+      security:
+      - oauth2:
+        - full
+components:
+  schemas:
+    GridColumnDefinition:
+      type: object
+      properties:
+        field:
+          format: int32
+          type: integer
+        headerName:
+          type: string
+        sortable:
+          type: boolean
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

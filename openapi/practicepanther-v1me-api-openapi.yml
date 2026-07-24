@@ -1,0 +1,148 @@
+openapi: 3.0.0
+info:
+  version: v1
+  title: Legacy API (v1) Account V1Me API
+  description: ''
+servers:
+- url: https://app.practicepanther.com
+tags:
+- name: V1Me
+paths:
+  /api/internal/v1/tenants/{tenantId}/me:
+    get:
+      tags:
+      - V1Me
+      operationId: V1Me_Get
+      parameters:
+      - name: tenantId
+        in: path
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetResponse'
+      security:
+      - oauth2:
+        - full
+components:
+  schemas:
+    GetResponse:
+      type: object
+      properties:
+        id:
+          format: int32
+          type: integer
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        displayName:
+          type: string
+        roleSummary:
+          $ref: '#/components/schemas/RoleSummary'
+        featuresInPlan:
+          type: array
+          items:
+            format: int32
+            type: integer
+        integrations:
+          $ref: '#/components/schemas/IntegrationSummary'
+        featureFlags:
+          type: array
+          items:
+            $ref: '#/components/schemas/FeatureFlag'
+        accountingPlusUserPermissions:
+          $ref: '#/components/schemas/AccountingPlusUserPermissionsDto'
+    AccessLevelSummary:
+      type: object
+      properties:
+        controller:
+          format: int32
+          type: integer
+        action:
+          format: int32
+          type: integer
+    AccountingPlusUserPermissionsDto:
+      type: object
+      properties:
+        create_reconciliation:
+          type: boolean
+        upload_bank_statements:
+          type: boolean
+        create_journal_entries:
+          type: boolean
+        view_journal_entries:
+          type: boolean
+        edit_journal_entries:
+          type: boolean
+        create_chart_of_accounts:
+          type: boolean
+        view_chart_of_accounts:
+          type: boolean
+        edit_chart_of_accounts:
+          type: boolean
+        view_operating_reports:
+          type: boolean
+        set_permissions:
+          type: boolean
+        view_reconciliation:
+          type: boolean
+        edit_reconciliation:
+          type: boolean
+    RoleSummary:
+      type: object
+      properties:
+        isFullAccess:
+          type: boolean
+        accessLevels:
+          type: array
+          items:
+            $ref: '#/components/schemas/AccessLevelSummary'
+    FeatureFlag:
+      type: object
+      properties:
+        name:
+          type: string
+        isEnabled:
+          type: boolean
+    IntegrationSummary:
+      type: object
+      properties:
+        isLawPayEnabled:
+          type: boolean
+        isHeadNoteEnabled:
+          type: boolean
+        isPayPalEnabled:
+          type: boolean
+        isStripeEnabled:
+          type: boolean
+        isAuthorizeNetEnabled:
+          type: boolean
+        isQuickbooksEnabled:
+          type: boolean
+        isOperatingAccountingEnabled:
+          type: boolean
+        isTrustAccountingEnabled:
+          type: boolean
+        operatingOnboardingStep:
+          format: int32
+          type: integer
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      description: OAuth 2.0 - Authorization Code Grant
+      flows:
+        authorizationCode:
+          authorizationUrl: /OAuth/Authorize
+          tokenUrl: /OAuth/Token
+          scopes:
+            full: Read/Write access to all resources

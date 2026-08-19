@@ -1,0 +1,420 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Legacy API (v1) Account V1DepositSlips API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "V1DepositSlips",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "V1DepositSlips_GetAll",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.practicepanther.com/api/internal/v1/tenants/:tenantId/depositSlips",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "depositSlipsGridResource.coreIdentity.tenantId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.coreIdentity.userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.coreIdentity.localizationPreferences.cultureName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.coreIdentity.localizationPreferences.dateFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.coreIdentity.localizationPreferences.dateTimeFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.coreIdentity.localizationPreferences.timeFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.coreIdentity.localizationPreferences.currencyCode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.coreIdentity.localizationPreferences.timezoneId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.coreIdentity.integrations.trustAccounting",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.coreIdentity.integrations.operatingAccounting",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.coreIdentity.integrations.pantherPayments",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.coreIdentity.securityDetail.userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.coreIdentity.securityDetail.isUserAuthenticated",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.coreIdentity.securityDetail.hasFullAccess",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.coreIdentity.securityDetail.accessLevels",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.bankAccountGuid",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.depositDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.depositDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.createdDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.createdDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.amountFilter1.amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.amountFilter1.operator",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.amountFilter2.amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.amountFilter2.operator",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.searchTerm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.sortBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.sortOrder",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.columns",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.outputType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipsGridResource.exportAll",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "V1DepositSlips_Delete",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.practicepanther.com/api/internal/v1/tenants/:tenantId/depositSlips",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "V1DepositSlips_Get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.practicepanther.com/api/internal/v1/tenants/:tenantId/depositSlip/:depositSlipGuid",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "depositSlipGuid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "depositSlipDetailResource.depositSlipId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipDetailResource.depositSlipGuid",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipDetailResource.coreIdentity.tenantId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipDetailResource.coreIdentity.userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipDetailResource.coreIdentity.localizationPreferences.cultureName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipDetailResource.coreIdentity.localizationPreferences.dateFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipDetailResource.coreIdentity.localizationPreferences.dateTimeFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipDetailResource.coreIdentity.localizationPreferences.timeFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipDetailResource.coreIdentity.localizationPreferences.currencyCode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipDetailResource.coreIdentity.localizationPreferences.timezoneId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipDetailResource.coreIdentity.integrations.trustAccounting",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipDetailResource.coreIdentity.integrations.operatingAccounting",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipDetailResource.coreIdentity.integrations.pantherPayments",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipDetailResource.coreIdentity.securityDetail.userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipDetailResource.coreIdentity.securityDetail.isUserAuthenticated",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipDetailResource.coreIdentity.securityDetail.hasFullAccess",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipDetailResource.coreIdentity.securityDetail.accessLevels",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "V1DepositSlips_Update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://app.practicepanther.com/api/internal/v1/tenants/:tenantId/depositSlip/:depositSlipGuid",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "depositSlipGuid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "V1DepositSlips_Create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.practicepanther.com/api/internal/v1/tenants/:tenantId/depositSlip",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

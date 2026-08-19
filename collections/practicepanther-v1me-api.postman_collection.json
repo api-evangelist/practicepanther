@@ -1,0 +1,153 @@
+{
+  "item": [
+    {
+      "id": "171337d2-fe09-4244-92f9-79ffe092bc10",
+      "name": "V1Me",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "28aff8b8-1a6b-4569-a161-1cfa9af6a3e5",
+          "name": "V1Me Get",
+          "request": {
+            "name": "V1Me Get",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "internal",
+                "v1",
+                "tenants",
+                ":tenantId",
+                "me"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "tenantId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d6900e73-6f45-477a-aa67-48cd1127a95c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "internal",
+                    "v1",
+                    "tenants",
+                    ":tenantId",
+                    "me"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "tenantId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 4613,\n  \"guid\": \"00000000-0000-0000-0000-000000000000\",\n  \"displayName\": \"string\",\n  \"roleSummary\": {\n    \"isFullAccess\": true,\n    \"accessLevels\": [\n      {\n        \"controller\": 7645,\n        \"action\": 2274\n      },\n      {\n        \"controller\": 8755,\n        \"action\": 9082\n      }\n    ]\n  },\n  \"featuresInPlan\": [\n    4617,\n    3463\n  ],\n  \"integrations\": {\n    \"isLawPayEnabled\": false,\n    \"isHeadNoteEnabled\": true,\n    \"isPayPalEnabled\": true,\n    \"isStripeEnabled\": true,\n    \"isAuthorizeNetEnabled\": false,\n    \"isQuickbooksEnabled\": true,\n    \"isOperatingAccountingEnabled\": false,\n    \"isTrustAccountingEnabled\": true,\n    \"operatingOnboardingStep\": 1408\n  },\n  \"featureFlags\": [\n    {\n      \"name\": \"string\",\n      \"isEnabled\": true\n    },\n    {\n      \"name\": \"string\",\n      \"isEnabled\": true\n    }\n  ],\n  \"accountingPlusUserPermissions\": {\n    \"create_reconciliation\": true,\n    \"upload_bank_statements\": false,\n    \"create_journal_entries\": false,\n    \"view_journal_entries\": true,\n    \"edit_journal_entries\": true,\n    \"create_chart_of_accounts\": true,\n    \"view_chart_of_accounts\": true,\n    \"edit_chart_of_accounts\": false,\n    \"view_operating_reports\": false,\n    \"set_permissions\": true,\n    \"view_reconciliation\": true,\n    \"edit_reconciliation\": false\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.practicepanther.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "aa43798f-2daa-41f7-b4be-00ae7a6c6870",
+    "name": "Legacy API (v1) Account V1Me API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

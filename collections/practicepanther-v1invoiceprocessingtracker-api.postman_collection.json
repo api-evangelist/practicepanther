@@ -1,0 +1,449 @@
+{
+  "item": [
+    {
+      "id": "f893bcda-4085-442f-b27d-0019480618b6",
+      "name": "V1InvoiceProcessingTracker",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c171cb0f-b0e8-4f7e-b065-a07689d590b5",
+          "name": "V1Invoice Processing Tracker Get Async",
+          "request": {
+            "name": "V1Invoice Processing Tracker Get Async",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "internal",
+                "v1",
+                "tenants",
+                ":tenantId",
+                "InvoiceProcessingTracker",
+                ":matterGuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "tenantId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "matterGuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b0089a5d-c6a5-4a59-9f66-2630d7c4334e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "internal",
+                    "v1",
+                    "tenants",
+                    ":tenantId",
+                    "InvoiceProcessingTracker",
+                    ":matterGuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "tenantId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "matterGuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4ea136ab-d784-4a93-83f3-476da436fced",
+          "name": "V1Invoice Processing Tracker Post Async",
+          "request": {
+            "name": "V1Invoice Processing Tracker Post Async",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "internal",
+                "v1",
+                "tenants",
+                ":tenantId",
+                "InvoiceProcessingTracker"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "tenantId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "0",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "1",
+                  "value": "<long>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "86bd9daf-56c3-49df-b27b-3b23048ee379",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "internal",
+                    "v1",
+                    "tenants",
+                    ":tenantId",
+                    "InvoiceProcessingTracker"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "tenantId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "50d55909-2430-4fd5-a332-4dfc2be036fc",
+          "name": "V1Invoice Processing Tracker Delete Async",
+          "request": {
+            "name": "V1Invoice Processing Tracker Delete Async",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "internal",
+                "v1",
+                "tenants",
+                ":tenantId",
+                "InvoiceProcessingTracker"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "tenantId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "0",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "1",
+                  "value": "<long>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8d9c16fb-706b-4e4d-b057-6f4f20086dd8",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "internal",
+                    "v1",
+                    "tenants",
+                    ":tenantId",
+                    "InvoiceProcessingTracker"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "tenantId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.practicepanther.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e991ad17-f2dd-4746-b1a5-92948a6535aa",
+    "name": "Legacy API (v1) Account V1InvoiceProcessingTracker API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

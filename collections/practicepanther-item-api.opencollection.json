@@ -1,0 +1,145 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Legacy API (v1) Account Item API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Item",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns a item",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.practicepanther.com/api/item/:guid",
+            "params": [
+              {
+                "name": "guid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Returns a item"
+        },
+        {
+          "info": {
+            "name": "OData end point to get a list of all items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.practicepanther.com/api/item",
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "OData end point to get a list of all items"
+        },
+        {
+          "info": {
+            "name": "Created a new item",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.practicepanther.com/api/item",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Created a new item"
+        },
+        {
+          "info": {
+            "name": "Updates an existing item",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://app.practicepanther.com/api/item",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Updates an existing item"
+        },
+        {
+          "info": {
+            "name": "Marks an existing item as deleted",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.practicepanther.com/api/item",
+            "params": [
+              {
+                "name": "guid",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Marks an existing item as deleted"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

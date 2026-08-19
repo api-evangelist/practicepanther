@@ -1,0 +1,77 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Legacy API (v1) Account V1MergeFields API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "V1MergeFields",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "V1MergeFields_GetMergeFields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.practicepanther.com/api/internal/v1/tenants/:tenantId/merge-fields",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "This action will take in an HTML document containing the old document\r\ntemplate merge fields and will replace the merge field with values from the matter,contact, and account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.practicepanther.com/api/internal/v1/tenants/:tenantId/merge-fields",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "This action will take in an HTML document containing the old document\r\ntemplate merge fields and will replace the merge field with values from the matter,contact, and account"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

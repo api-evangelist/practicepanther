@@ -1,0 +1,141 @@
+{
+  "item": [
+    {
+      "id": "cd1d0e1c-940f-4000-9b42-bad57a5b466e",
+      "name": "CustomField",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1aa8cd0c-50a7-424e-9f89-c757c9613b40",
+          "name": "OData end point to get a list of all available custom fields for an object",
+          "request": {
+            "name": "OData end point to get a list of all available custom fields for an object",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "customfield"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "objectType",
+                  "value": "<string>",
+                  "description": "(Required) Project/Contact/Account"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "585f19e3-1fd2-4724-8e3f-23bfac137b53",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "customfield"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "objectType",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"objectType\": \"User\",\n    \"valueType\": \"DropDownList\",\n    \"name\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"isDeleted\": false,\n    \"isRequired\": true,\n    \"isDefault\": true,\n    \"dropDownListValues\": \"string\"\n  },\n  {\n    \"objectType\": \"Contact\",\n    \"valueType\": \"Contact\",\n    \"name\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"isDeleted\": false,\n    \"isRequired\": false,\n    \"isDefault\": true,\n    \"dropDownListValues\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.practicepanther.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d68f3805-2d6d-45d0-a61e-51fd9bc71fe8",
+    "name": "Legacy API (v1) Account CustomField API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

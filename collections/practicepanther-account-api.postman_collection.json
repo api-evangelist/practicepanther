@@ -1,0 +1,1499 @@
+{
+  "item": [
+    {
+      "id": "4ec07e82-c25e-43cc-b0f0-765ea5703950",
+      "name": "Account",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d478f0e0-1264-453b-9517-f392c426c142",
+          "name": "Returns an account (contact)",
+          "request": {
+            "name": "Returns an account (contact)",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "account",
+                ":guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "guid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "08cae054-38d5-4d4a-8e54-49e8cf398e8a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "account",
+                    ":guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "guid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"primaryContact\": {\n    \"customFieldValues\": [\n      {\n        \"customField\": {\n          \"objectType\": \"Address\",\n          \"valueType\": \"DateTime\",\n          \"name\": \"string\",\n          \"isIncludeInList\": true,\n          \"isExportToLedes\": true,\n          \"helpText\": \"string\",\n          \"tooltip\": \"string\",\n          \"rowIndex\": 2585,\n          \"createdDate\": \"1949-07-14T11:43:50.525Z\",\n          \"lastModifiedDate\": \"1955-12-06T12:52:03.159Z\",\n          \"createdBy\": {\n            \"guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"displayName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timeZoneId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"lastModifiedBy\": {\n            \"guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"displayName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timeZoneId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"isDeleted\": false,\n          \"isRequired\": false,\n          \"isDefault\": false,\n          \"dropDownListValues\": \"string\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"valueString\": \"string\",\n        \"valueNumber\": 17.740810300616026,\n        \"valueDateTime\": \"1960-04-04T02:30:15.962Z\",\n        \"valueBoolean\": false,\n        \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n        \"valueContact\": {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"middleName\": \"string\",\n          \"accountName\": \"string\",\n          \"displayName\": \"string\",\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"email\": \"string\"\n        }\n      },\n      {\n        \"customField\": {\n          \"objectType\": \"Contact\",\n          \"valueType\": \"TextBox\",\n          \"name\": \"string\",\n          \"isIncludeInList\": true,\n          \"isExportToLedes\": false,\n          \"helpText\": \"string\",\n          \"tooltip\": \"string\",\n          \"rowIndex\": 7978,\n          \"createdDate\": \"2003-08-26T13:34:44.035Z\",\n          \"lastModifiedDate\": \"1947-05-10T03:42:12.033Z\",\n          \"createdBy\": {\n            \"guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"displayName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timeZoneId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"lastModifiedBy\": {\n            \"guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"displayName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timeZoneId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"isDeleted\": true,\n          \"isRequired\": true,\n          \"isDefault\": false,\n          \"dropDownListValues\": \"string\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"valueString\": \"string\",\n        \"valueNumber\": 4327.550903583244,\n        \"valueDateTime\": \"1954-10-01T17:22:05.337Z\",\n        \"valueBoolean\": true,\n        \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n        \"valueContact\": {\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"middleName\": \"string\",\n          \"accountName\": \"string\",\n          \"displayName\": \"string\",\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"email\": \"string\"\n        }\n      }\n    ],\n    \"notes\": \"string\",\n    \"photoGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"type\": \"Lead\",\n    \"portal\": {\n      \"isEnabled\": false,\n      \"lastLoginDate\": \"1971-04-10T03:37:07.651Z\"\n    },\n    \"name\": \"string\",\n    \"email\": \"string\",\n    \"mobile\": \"string\",\n    \"home\": \"string\",\n    \"office\": \"string\",\n    \"ext\": \"string\",\n    \"fax\": \"string\",\n    \"salutation\": \"string\",\n    \"position\": \"string\",\n    \"prefix\": \"string\",\n    \"isDeleted\": true,\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"middleName\": \"string\",\n    \"accountName\": \"string\",\n    \"displayName\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\"\n  },\n  \"isAllowClientToViewAllOutstandingInvoices\": false,\n  \"isAllowClientToViewAllPaidInvoices\": true,\n  \"isAllowClientToViewAllPayments\": true,\n  \"isAllowClientToViewAccountBalances\": true,\n  \"isSendInvoicePaymentReminders\": true,\n  \"isSendQuoteApprovalReminders\": true,\n  \"isDisableEcheck\": true,\n  \"assignedToGuids\": [\n    \"00000000-0000-0000-0000-000000000000\",\n    \"00000000-0000-0000-0000-000000000000\"\n  ],\n  \"customFieldValues\": [\n    {\n      \"customField\": {\n        \"objectType\": \"Contact\",\n        \"valueType\": \"Checkbox\",\n        \"name\": \"string\",\n        \"isIncludeInList\": true,\n        \"isExportToLedes\": true,\n        \"helpText\": \"string\",\n        \"tooltip\": \"string\",\n        \"rowIndex\": 8993,\n        \"createdDate\": \"2014-01-01T11:47:28.686Z\",\n        \"lastModifiedDate\": \"1950-08-19T03:32:50.672Z\",\n        \"createdBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"string\"\n        },\n        \"lastModifiedBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"string\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"isDeleted\": true,\n        \"isRequired\": true,\n        \"isDefault\": false,\n        \"dropDownListValues\": \"string\"\n      },\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueString\": \"string\",\n      \"valueNumber\": 9520.278933784197,\n      \"valueDateTime\": \"1991-03-07T11:07:04.552Z\",\n      \"valueBoolean\": true,\n      \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueContact\": {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"middleName\": \"string\",\n        \"accountName\": \"string\",\n        \"displayName\": \"string\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"string\"\n      }\n    },\n    {\n      \"customField\": {\n        \"objectType\": \"Account\",\n        \"valueType\": \"Contact\",\n        \"name\": \"string\",\n        \"isIncludeInList\": false,\n        \"isExportToLedes\": false,\n        \"helpText\": \"string\",\n        \"tooltip\": \"string\",\n        \"rowIndex\": 5714,\n        \"createdDate\": \"1963-05-02T15:25:24.779Z\",\n        \"lastModifiedDate\": \"1995-03-03T01:40:25.628Z\",\n        \"createdBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"string\"\n        },\n        \"lastModifiedBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"string\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"isDeleted\": true,\n        \"isRequired\": true,\n        \"isDefault\": false,\n        \"dropDownListValues\": \"string\"\n      },\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueString\": \"string\",\n      \"valueNumber\": 4042.5226443838746,\n      \"valueDateTime\": \"1997-06-27T00:20:00.402Z\",\n      \"valueBoolean\": false,\n      \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueContact\": {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"middleName\": \"string\",\n        \"accountName\": \"string\",\n        \"displayName\": \"string\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"string\"\n      }\n    }\n  ],\n  \"isContactSync\": false,\n  \"isEmailSync\": true,\n  \"isFilesSync\": false,\n  \"usersFollowing\": [\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    },\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    }\n  ],\n  \"cultureName\": \"string\",\n  \"notes\": \"string\",\n  \"isDeleted\": false,\n  \"lastModifiedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"string\"\n  },\n  \"createdBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"string\"\n  },\n  \"contacts\": [\n    {\n      \"customFieldValues\": [\n        {\n          \"customField\": {\n            \"objectType\": \"Project\",\n            \"valueType\": \"TextEditor\",\n            \"name\": \"string\",\n            \"isIncludeInList\": true,\n            \"isExportToLedes\": false,\n            \"helpText\": \"string\",\n            \"tooltip\": \"string\",\n            \"rowIndex\": 8,\n            \"createdDate\": \"1999-01-02T07:52:43.679Z\",\n            \"lastModifiedDate\": \"1957-10-09T15:19:08.126Z\",\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastModifiedBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"isDeleted\": false,\n            \"isRequired\": false,\n            \"isDefault\": true,\n            \"dropDownListValues\": \"string\"\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueString\": \"string\",\n          \"valueNumber\": 5437.853146559233,\n          \"valueDateTime\": \"1975-01-14T20:30:40.259Z\",\n          \"valueBoolean\": true,\n          \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueContact\": {\n            \"firstName\": \"string\",\n            \"lastName\": \"string\",\n            \"middleName\": \"string\",\n            \"accountName\": \"string\",\n            \"displayName\": \"string\",\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"email\": \"string\"\n          }\n        },\n        {\n          \"customField\": {\n            \"objectType\": \"Project\",\n            \"valueType\": \"Currency\",\n            \"name\": \"string\",\n            \"isIncludeInList\": false,\n            \"isExportToLedes\": false,\n            \"helpText\": \"string\",\n            \"tooltip\": \"string\",\n            \"rowIndex\": 8199,\n            \"createdDate\": \"1953-06-27T21:15:36.975Z\",\n            \"lastModifiedDate\": \"1986-07-24T10:05:41.860Z\",\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastModifiedBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"isDeleted\": false,\n            \"isRequired\": true,\n            \"isDefault\": true,\n            \"dropDownListValues\": \"string\"\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueString\": \"string\",\n          \"valueNumber\": 5667.853134090347,\n          \"valueDateTime\": \"1999-06-12T00:32:26.306Z\",\n          \"valueBoolean\": false,\n          \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueContact\": {\n            \"firstName\": \"string\",\n            \"lastName\": \"string\",\n            \"middleName\": \"string\",\n            \"accountName\": \"string\",\n            \"displayName\": \"string\",\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"email\": \"string\"\n          }\n        }\n      ],\n      \"notes\": \"string\",\n      \"photoGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"type\": \"Lead\",\n      \"portal\": {\n        \"isEnabled\": false,\n        \"lastLoginDate\": \"1960-08-16T06:13:42.019Z\"\n      },\n      \"name\": \"string\",\n      \"email\": \"string\",\n      \"mobile\": \"string\",\n      \"home\": \"string\",\n      \"office\": \"string\",\n      \"ext\": \"string\",\n      \"fax\": \"string\",\n      \"salutation\": \"string\",\n      \"position\": \"string\",\n      \"prefix\": \"string\",\n      \"isDeleted\": true,\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"middleName\": \"string\",\n      \"accountName\": \"string\",\n      \"displayName\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\"\n    },\n    {\n      \"customFieldValues\": [\n        {\n          \"customField\": {\n            \"objectType\": \"Address\",\n            \"valueType\": \"TextEditor\",\n            \"name\": \"string\",\n            \"isIncludeInList\": false,\n            \"isExportToLedes\": false,\n            \"helpText\": \"string\",\n            \"tooltip\": \"string\",\n            \"rowIndex\": 1796,\n            \"createdDate\": \"1971-12-14T02:52:28.807Z\",\n            \"lastModifiedDate\": \"1956-10-26T12:04:56.347Z\",\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastModifiedBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"isDeleted\": false,\n            \"isRequired\": true,\n            \"isDefault\": true,\n            \"dropDownListValues\": \"string\"\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueString\": \"string\",\n          \"valueNumber\": 4922.252304110478,\n          \"valueDateTime\": \"1949-07-17T05:50:25.215Z\",\n          \"valueBoolean\": false,\n          \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueContact\": {\n            \"firstName\": \"string\",\n            \"lastName\": \"string\",\n            \"middleName\": \"string\",\n            \"accountName\": \"string\",\n            \"displayName\": \"string\",\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"email\": \"string\"\n          }\n        },\n        {\n          \"customField\": {\n            \"objectType\": \"User\",\n            \"valueType\": \"Checkbox\",\n            \"name\": \"string\",\n            \"isIncludeInList\": true,\n            \"isExportToLedes\": false,\n            \"helpText\": \"string\",\n            \"tooltip\": \"string\",\n            \"rowIndex\": 9337,\n            \"createdDate\": \"1990-06-08T06:03:18.877Z\",\n            \"lastModifiedDate\": \"2020-11-14T11:31:59.161Z\",\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastModifiedBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"isDeleted\": true,\n            \"isRequired\": false,\n            \"isDefault\": false,\n            \"dropDownListValues\": \"string\"\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueString\": \"string\",\n          \"valueNumber\": 9400.28043414726,\n          \"valueDateTime\": \"2013-03-28T10:52:52.312Z\",\n          \"valueBoolean\": false,\n          \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueContact\": {\n            \"firstName\": \"string\",\n            \"lastName\": \"string\",\n            \"middleName\": \"string\",\n            \"accountName\": \"string\",\n            \"displayName\": \"string\",\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"email\": \"string\"\n          }\n        }\n      ],\n      \"notes\": \"string\",\n      \"photoGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"type\": \"Contact\",\n      \"portal\": {\n        \"isEnabled\": true,\n        \"lastLoginDate\": \"2025-11-07T08:47:39.147Z\"\n      },\n      \"name\": \"string\",\n      \"email\": \"string\",\n      \"mobile\": \"string\",\n      \"home\": \"string\",\n      \"office\": \"string\",\n      \"ext\": \"string\",\n      \"fax\": \"string\",\n      \"salutation\": \"string\",\n      \"position\": \"string\",\n      \"prefix\": \"string\",\n      \"isDeleted\": false,\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"middleName\": \"string\",\n      \"accountName\": \"string\",\n      \"displayName\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\"\n    }\n  ],\n  \"utbmsIsEnabled\": false,\n  \"ledesClientId\": \"string\",\n  \"website\": \"string\",\n  \"billingAddress\": {\n    \"name\": \"string\",\n    \"address1\": \"string\",\n    \"address2\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"country\": \"string\",\n    \"postalCode\": \"string\"\n  },\n  \"shippingAddress\": {\n    \"name\": \"string\",\n    \"address1\": \"string\",\n    \"address2\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"country\": \"string\",\n    \"postalCode\": \"string\"\n  },\n  \"invoicesDue\": 6819.577990857235,\n  \"isContainsOnlyPendingInvoices\": false,\n  \"operatingUnappliedCredit\": 2823.359973126952,\n  \"is1099Eligible\": true,\n  \"taxId\": \"string\",\n  \"defaultChartOfAccountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"defaultChartOfAccountName\": \"string\",\n  \"operatingPaid\": 9811.192632570499,\n  \"ccPaid\": 609.270350003952,\n  \"surchargesEnabled\": false,\n  \"name\": \"string\",\n  \"currencyCode\": \"string\",\n  \"number\": 9918,\n  \"assignedTo\": [\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    },\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    }\n  ],\n  \"tags\": [\n    {\n      \"name\": \"string\"\n    },\n    {\n      \"name\": \"string\"\n    }\n  ],\n  \"tagNames\": [\n    \"string\",\n    \"string\"\n  ],\n  \"createdDate\": \"2009-09-01T20:59:33.725Z\",\n  \"lastModifiedDate\": \"1951-07-20T03:07:00.008Z\",\n  \"paid\": 7595.764363195001,\n  \"trustBalance\": 5500.200763683779,\n  \"operatingBalance\": 7199.435742851071,\n  \"billable\": 5163.330482722039,\n  \"status\": \"Active\",\n  \"saleDocumentTemplateGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"saleDocumentTemplateName\": \"string\",\n  \"contactInvoiceRecipients\": [\n    {\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"middleName\": \"string\",\n      \"accountName\": \"string\",\n      \"displayName\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"email\": \"string\"\n    },\n    {\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"middleName\": \"string\",\n      \"accountName\": \"string\",\n      \"displayName\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"email\": \"string\"\n    }\n  ],\n  \"contactInvoiceRecipientsGuids\": [\n    \"00000000-0000-0000-0000-000000000000\",\n    \"00000000-0000-0000-0000-000000000000\"\n  ],\n  \"nameAndNumber\": \"string\",\n  \"guid\": \"00000000-0000-0000-0000-000000000000\",\n  \"id\": 6321\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5acb9922-7979-451d-8c8c-d3ba472c3005",
+          "name": "OData end point to get a list of all accounts (contacts) accessible by the user",
+          "request": {
+            "name": "OData end point to get a list of all accounts (contacts) accessible by the user",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "account"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "dc791213-2290-415a-943c-02a4cb2df6a6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"assignedToGuids\": [\n      \"00000000-0000-0000-0000-000000000000\",\n      \"00000000-0000-0000-0000-000000000000\"\n    ],\n    \"contacts\": [\n      {\n        \"customFieldValues\": [\n          {\n            \"customFieldGuid\": \"00000000-0000-0000-0000-000000000000\",\n            \"valueString\": \"string\",\n            \"valueNumber\": 9109.60773324413,\n            \"valueDateTime\": \"2020-11-07T13:20:55.150Z\",\n            \"valueDateString\": \"string\",\n            \"valueBoolean\": true,\n            \"valueContact\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"customFieldGuid\": \"00000000-0000-0000-0000-000000000000\",\n            \"valueString\": \"string\",\n            \"valueNumber\": 4736.690197203948,\n            \"valueDateTime\": \"1959-06-11T09:26:58.880Z\",\n            \"valueDateString\": \"string\",\n            \"valueBoolean\": true,\n            \"valueContact\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"email\": \"string\",\n        \"mobile\": \"string\",\n        \"home\": \"string\",\n        \"office\": \"string\",\n        \"ext\": \"string\",\n        \"fax\": \"string\",\n        \"salutation\": \"string\",\n        \"position\": \"string\",\n        \"prefix\": \"string\",\n        \"isDeleted\": true,\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"middleName\": \"string\",\n        \"accountName\": \"string\",\n        \"displayName\": \"string\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\"\n      },\n      {\n        \"customFieldValues\": [\n          {\n            \"customFieldGuid\": \"00000000-0000-0000-0000-000000000000\",\n            \"valueString\": \"string\",\n            \"valueNumber\": 4132.472962520943,\n            \"valueDateTime\": \"2004-03-13T18:24:59.930Z\",\n            \"valueDateString\": \"string\",\n            \"valueBoolean\": false,\n            \"valueContact\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"customFieldGuid\": \"00000000-0000-0000-0000-000000000000\",\n            \"valueString\": \"string\",\n            \"valueNumber\": 7990.827495460258,\n            \"valueDateTime\": \"1978-09-23T03:38:15.703Z\",\n            \"valueDateString\": \"string\",\n            \"valueBoolean\": true,\n            \"valueContact\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"email\": \"string\",\n        \"mobile\": \"string\",\n        \"home\": \"string\",\n        \"office\": \"string\",\n        \"ext\": \"string\",\n        \"fax\": \"string\",\n        \"salutation\": \"string\",\n        \"position\": \"string\",\n        \"prefix\": \"string\",\n        \"isDeleted\": true,\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"middleName\": \"string\",\n        \"accountName\": \"string\",\n        \"displayName\": \"string\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\"\n      }\n    ],\n    \"website\": \"string\",\n    \"billingAddress\": {\n      \"name\": \"string\",\n      \"address1\": \"string\",\n      \"address2\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"country\": \"string\",\n      \"postalCode\": \"string\"\n    },\n    \"name\": \"string\",\n    \"currencyCode\": \"string\",\n    \"number\": 2474,\n    \"assignedTo\": [\n      {\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"displayName\": \"string\",\n        \"name\": \"string\",\n        \"timeZoneId\": \"string\"\n      },\n      {\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"displayName\": \"string\",\n        \"name\": \"string\",\n        \"timeZoneId\": \"string\"\n      }\n    ],\n    \"primaryContact\": {\n      \"customFieldValues\": [\n        {\n          \"customFieldGuid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueString\": \"string\",\n          \"valueNumber\": 7798.61754658383,\n          \"valueDateTime\": \"1963-04-25T11:32:43.355Z\",\n          \"valueDateString\": \"string\",\n          \"valueBoolean\": true,\n          \"valueContact\": {\n            \"firstName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"middleName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"accountName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"displayName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"customFieldGuid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueString\": \"string\",\n          \"valueNumber\": 2498.047165868279,\n          \"valueDateTime\": \"2003-10-01T01:43:56.254Z\",\n          \"valueDateString\": \"string\",\n          \"valueBoolean\": false,\n          \"valueContact\": {\n            \"firstName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"middleName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"accountName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"displayName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ],\n      \"email\": \"string\",\n      \"mobile\": \"string\",\n      \"home\": \"string\",\n      \"office\": \"string\",\n      \"ext\": \"string\",\n      \"fax\": \"string\",\n      \"salutation\": \"string\",\n      \"position\": \"string\",\n      \"prefix\": \"string\",\n      \"isDeleted\": true,\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"middleName\": \"string\",\n      \"accountName\": \"string\",\n      \"displayName\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\"\n    },\n    \"tags\": [\n      {\n        \"name\": \"string\"\n      },\n      {\n        \"name\": \"string\"\n      }\n    ],\n    \"tagNames\": [\n      \"string\",\n      \"string\"\n    ],\n    \"createdDate\": \"2020-08-30T15:44:11.601Z\",\n    \"lastModifiedDate\": \"1975-07-13T00:12:55.804Z\",\n    \"paid\": 2214.209196437289,\n    \"trustBalance\": 9640.443080545963,\n    \"operatingBalance\": 5429.017355622966,\n    \"billable\": 472.8283560124336,\n    \"status\": \"Archived\",\n    \"saleDocumentTemplateGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"saleDocumentTemplateName\": \"string\",\n    \"contactInvoiceRecipients\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"middleName\": \"string\",\n        \"accountName\": \"string\",\n        \"displayName\": \"string\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"string\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"middleName\": \"string\",\n        \"accountName\": \"string\",\n        \"displayName\": \"string\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"string\"\n      }\n    ],\n    \"contactInvoiceRecipientsGuids\": [\n      \"00000000-0000-0000-0000-000000000000\",\n      \"00000000-0000-0000-0000-000000000000\"\n    ],\n    \"is1099Eligible\": false,\n    \"taxId\": \"string\",\n    \"surchargesEnabled\": true,\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"utbmsIsEnabled\": false,\n    \"id\": 6999\n  },\n  {\n    \"assignedToGuids\": [\n      \"00000000-0000-0000-0000-000000000000\",\n      \"00000000-0000-0000-0000-000000000000\"\n    ],\n    \"contacts\": [\n      {\n        \"customFieldValues\": [\n          {\n            \"customFieldGuid\": \"00000000-0000-0000-0000-000000000000\",\n            \"valueString\": \"string\",\n            \"valueNumber\": 5667.860063291929,\n            \"valueDateTime\": \"1976-11-25T14:36:39.193Z\",\n            \"valueDateString\": \"string\",\n            \"valueBoolean\": true,\n            \"valueContact\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"customFieldGuid\": \"00000000-0000-0000-0000-000000000000\",\n            \"valueString\": \"string\",\n            \"valueNumber\": 9158.297563396787,\n            \"valueDateTime\": \"1967-08-27T04:03:03.949Z\",\n            \"valueDateString\": \"string\",\n            \"valueBoolean\": true,\n            \"valueContact\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"email\": \"string\",\n        \"mobile\": \"string\",\n        \"home\": \"string\",\n        \"office\": \"string\",\n        \"ext\": \"string\",\n        \"fax\": \"string\",\n        \"salutation\": \"string\",\n        \"position\": \"string\",\n        \"prefix\": \"string\",\n        \"isDeleted\": true,\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"middleName\": \"string\",\n        \"accountName\": \"string\",\n        \"displayName\": \"string\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\"\n      },\n      {\n        \"customFieldValues\": [\n          {\n            \"customFieldGuid\": \"00000000-0000-0000-0000-000000000000\",\n            \"valueString\": \"string\",\n            \"valueNumber\": 3410.928438920001,\n            \"valueDateTime\": \"2006-12-07T18:40:41.850Z\",\n            \"valueDateString\": \"string\",\n            \"valueBoolean\": true,\n            \"valueContact\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"customFieldGuid\": \"00000000-0000-0000-0000-000000000000\",\n            \"valueString\": \"string\",\n            \"valueNumber\": 256.5861422717775,\n            \"valueDateTime\": \"2020-06-03T11:24:36.126Z\",\n            \"valueDateString\": \"string\",\n            \"valueBoolean\": false,\n            \"valueContact\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"email\": \"string\",\n        \"mobile\": \"string\",\n        \"home\": \"string\",\n        \"office\": \"string\",\n        \"ext\": \"string\",\n        \"fax\": \"string\",\n        \"salutation\": \"string\",\n        \"position\": \"string\",\n        \"prefix\": \"string\",\n        \"isDeleted\": true,\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"middleName\": \"string\",\n        \"accountName\": \"string\",\n        \"displayName\": \"string\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\"\n      }\n    ],\n    \"website\": \"string\",\n    \"billingAddress\": {\n      \"name\": \"string\",\n      \"address1\": \"string\",\n      \"address2\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"country\": \"string\",\n      \"postalCode\": \"string\"\n    },\n    \"name\": \"string\",\n    \"currencyCode\": \"string\",\n    \"number\": 4823,\n    \"assignedTo\": [\n      {\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"displayName\": \"string\",\n        \"name\": \"string\",\n        \"timeZoneId\": \"string\"\n      },\n      {\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"displayName\": \"string\",\n        \"name\": \"string\",\n        \"timeZoneId\": \"string\"\n      }\n    ],\n    \"primaryContact\": {\n      \"customFieldValues\": [\n        {\n          \"customFieldGuid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueString\": \"string\",\n          \"valueNumber\": 74.38648180950858,\n          \"valueDateTime\": \"2004-01-13T15:47:06.095Z\",\n          \"valueDateString\": \"string\",\n          \"valueBoolean\": true,\n          \"valueContact\": {\n            \"firstName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"middleName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"accountName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"displayName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"customFieldGuid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueString\": \"string\",\n          \"valueNumber\": 2105.394090188061,\n          \"valueDateTime\": \"1964-11-27T14:32:26.414Z\",\n          \"valueDateString\": \"string\",\n          \"valueBoolean\": false,\n          \"valueContact\": {\n            \"firstName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"middleName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"accountName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"displayName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"email\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ],\n      \"email\": \"string\",\n      \"mobile\": \"string\",\n      \"home\": \"string\",\n      \"office\": \"string\",\n      \"ext\": \"string\",\n      \"fax\": \"string\",\n      \"salutation\": \"string\",\n      \"position\": \"string\",\n      \"prefix\": \"string\",\n      \"isDeleted\": true,\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"middleName\": \"string\",\n      \"accountName\": \"string\",\n      \"displayName\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\"\n    },\n    \"tags\": [\n      {\n        \"name\": \"string\"\n      },\n      {\n        \"name\": \"string\"\n      }\n    ],\n    \"tagNames\": [\n      \"string\",\n      \"string\"\n    ],\n    \"createdDate\": \"2010-11-26T14:20:33.587Z\",\n    \"lastModifiedDate\": \"2015-08-27T16:19:50.536Z\",\n    \"paid\": 3885.10613083192,\n    \"trustBalance\": 3466.639155782281,\n    \"operatingBalance\": 3979.954467598539,\n    \"billable\": 9873.756508920731,\n    \"status\": \"Archived\",\n    \"saleDocumentTemplateGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"saleDocumentTemplateName\": \"string\",\n    \"contactInvoiceRecipients\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"middleName\": \"string\",\n        \"accountName\": \"string\",\n        \"displayName\": \"string\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"string\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"middleName\": \"string\",\n        \"accountName\": \"string\",\n        \"displayName\": \"string\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"string\"\n      }\n    ],\n    \"contactInvoiceRecipientsGuids\": [\n      \"00000000-0000-0000-0000-000000000000\",\n      \"00000000-0000-0000-0000-000000000000\"\n    ],\n    \"is1099Eligible\": true,\n    \"taxId\": \"string\",\n    \"surchargesEnabled\": false,\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"utbmsIsEnabled\": false,\n    \"id\": 3546\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bd22f7bf-6d88-4bac-856e-0074e23c3ceb",
+          "name": "Updates an existing account (Contact)",
+          "request": {
+            "name": "Updates an existing account (Contact)",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "account"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "customFieldValues",
+                  "value": "[{\"customField\":{\"objectType\":\"<string>\",\"valueType\":\"<string>\",\"name\":\"<string>\",\"isIncludeInList\":\"<boolean>\",\"isExportToLedes\":\"<boolean>\",\"helpText\":\"<string>\",\"tooltip\":\"<string>\",\"rowIndex\":\"<integer>\",\"createdBy\":{\"guid\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"timeZoneId\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"lastModifiedBy\":{\"guid\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"timeZoneId\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"guid\":\"<uuid>\",\"isRequired\":\"<boolean>\",\"isDefault\":\"<boolean>\",\"dropDownListValues\":\"<string>\"},\"guid\":\"<uuid>\",\"valueString\":\"<string>\",\"valueNumber\":\"<double>\",\"valueDateTime\":\"<dateTime>\",\"valueBoolean\":\"<boolean>\",\"valueContactGuid\":\"<uuid>\",\"valueContact\":{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}},{\"customField\":{\"objectType\":\"<string>\",\"valueType\":\"<string>\",\"name\":\"<string>\",\"isIncludeInList\":\"<boolean>\",\"isExportToLedes\":\"<boolean>\",\"helpText\":\"<string>\",\"tooltip\":\"<string>\",\"rowIndex\":\"<integer>\",\"createdBy\":{\"guid\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"timeZoneId\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"lastModifiedBy\":{\"guid\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"timeZoneId\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"guid\":\"<uuid>\",\"isRequired\":\"<boolean>\",\"isDefault\":\"<boolean>\",\"dropDownListValues\":\"<string>\"},\"guid\":\"<uuid>\",\"valueString\":\"<string>\",\"valueNumber\":\"<double>\",\"valueDateTime\":\"<dateTime>\",\"valueBoolean\":\"<boolean>\",\"valueContactGuid\":\"<uuid>\",\"valueContact\":{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}}]",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "notes",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "photoGuid",
+                  "value": "<uuid>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "portal",
+                  "value": "{\"isEnabled\":\"<boolean>\",\"lastLoginDate\":\"<dateTime>\"}",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "mobile",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "home",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "office",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "ext",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "fax",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "salutation",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "position",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "prefix",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "firstName",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "lastName",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "middleName",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "accountName",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "displayName",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "isAllowClientToViewAllOutstandingInvoices",
+                  "value": "<boolean>",
+                  "description": "(Required) Client portal setting. Sets if all outstanding invoices should be visible to the contact in the portal."
+                },
+                {
+                  "disabled": false,
+                  "key": "isAllowClientToViewAllPaidInvoices",
+                  "value": "<boolean>",
+                  "description": "(Required) Client portal setting. Sets if all paid invoices should be visible to the contact in the portal."
+                },
+                {
+                  "disabled": false,
+                  "key": "isAllowClientToViewAllPayments",
+                  "value": "<boolean>",
+                  "description": "(Required) Client portal setting. Sets if all previous payments should be visible in the portal."
+                },
+                {
+                  "disabled": false,
+                  "key": "isAllowClientToViewAccountBalances",
+                  "value": "<boolean>",
+                  "description": "(Required) Client portal setting. Sets if account balances (trust and operating) shoudl be visible in the portal."
+                },
+                {
+                  "disabled": false,
+                  "key": "isSendInvoicePaymentReminders",
+                  "value": "<boolean>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "isSendQuoteApprovalReminders",
+                  "value": "<boolean>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "isDisableEcheck",
+                  "value": "<boolean>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "assignedToGuids",
+                  "value": "<uuid>",
+                  "description": "(Required) Used to set the reference in POST and PUTFor compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects. For compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects."
+                },
+                {
+                  "disabled": false,
+                  "key": "assignedToGuids",
+                  "value": "<uuid>",
+                  "description": "(Required) Used to set the reference in POST and PUTFor compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects. For compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects."
+                },
+                {
+                  "disabled": false,
+                  "key": "customFieldValues",
+                  "value": "{\"customField\":{\"objectType\":\"<string>\",\"valueType\":\"<string>\",\"name\":\"<string>\",\"isIncludeInList\":\"<boolean>\",\"isExportToLedes\":\"<boolean>\",\"helpText\":\"<string>\",\"tooltip\":\"<string>\",\"rowIndex\":\"<integer>\",\"createdBy\":{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"},\"lastModifiedBy\":{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"},\"guid\":\"<uuid>\",\"isRequired\":\"<boolean>\",\"isDefault\":\"<boolean>\",\"dropDownListValues\":\"<string>\"},\"guid\":\"<uuid>\",\"valueString\":\"<string>\",\"valueNumber\":\"<double>\",\"valueDateTime\":\"<dateTime>\",\"valueBoolean\":\"<boolean>\",\"valueContactGuid\":\"<uuid>\",\"valueContact\":{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}}",
+                  "description": "custom field values."
+                },
+                {
+                  "disabled": false,
+                  "key": "customFieldValues",
+                  "value": "{\"customField\":{\"objectType\":\"<string>\",\"valueType\":\"<string>\",\"name\":\"<string>\",\"isIncludeInList\":\"<boolean>\",\"isExportToLedes\":\"<boolean>\",\"helpText\":\"<string>\",\"tooltip\":\"<string>\",\"rowIndex\":\"<integer>\",\"createdBy\":{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"},\"lastModifiedBy\":{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"},\"guid\":\"<uuid>\",\"isRequired\":\"<boolean>\",\"isDefault\":\"<boolean>\",\"dropDownListValues\":\"<string>\"},\"guid\":\"<uuid>\",\"valueString\":\"<string>\",\"valueNumber\":\"<double>\",\"valueDateTime\":\"<dateTime>\",\"valueBoolean\":\"<boolean>\",\"valueContactGuid\":\"<uuid>\",\"valueContact\":{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}}",
+                  "description": "custom field values."
+                },
+                {
+                  "disabled": false,
+                  "key": "isContactSync",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isEmailSync",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isFilesSync",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "usersFollowing",
+                  "value": "{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "usersFollowing",
+                  "value": "{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "cultureName",
+                  "value": "<string>",
+                  "description": "Defines the \"Culture\" for the account. Must be in RFC 4646 format. This will affect date/time formats and language displayed to the customer. If null, defaults will be set."
+                },
+                {
+                  "disabled": false,
+                  "key": "notes",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "contacts",
+                  "value": "{\"customFieldValues\":[{\"customField\":{\"objectType\":\"<string>\",\"valueType\":\"<string>\",\"name\":\"<string>\",\"isIncludeInList\":\"<boolean>\",\"isExportToLedes\":\"<boolean>\",\"helpText\":\"<string>\",\"tooltip\":\"<string>\",\"rowIndex\":\"<integer>\",\"createdBy\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"lastModifiedBy\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"guid\":\"<uuid>\",\"isRequired\":\"<boolean>\",\"isDefault\":\"<boolean>\",\"dropDownListValues\":\"<string>\"},\"guid\":\"<uuid>\",\"valueString\":\"<string>\",\"valueNumber\":\"<double>\",\"valueDateTime\":\"<dateTime>\",\"valueBoolean\":\"<boolean>\",\"valueContactGuid\":\"<uuid>\",\"valueContact\":{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}},{\"customField\":{\"objectType\":\"<string>\",\"valueType\":\"<string>\",\"name\":\"<string>\",\"isIncludeInList\":\"<boolean>\",\"isExportToLedes\":\"<boolean>\",\"helpText\":\"<string>\",\"tooltip\":\"<string>\",\"rowIndex\":\"<integer>\",\"createdBy\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"lastModifiedBy\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"guid\":\"<uuid>\",\"isRequired\":\"<boolean>\",\"isDefault\":\"<boolean>\",\"dropDownListValues\":\"<string>\"},\"guid\":\"<uuid>\",\"valueString\":\"<string>\",\"valueNumber\":\"<double>\",\"valueDateTime\":\"<dateTime>\",\"valueBoolean\":\"<boolean>\",\"valueContactGuid\":\"<uuid>\",\"valueContact\":{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}}],\"notes\":\"<string>\",\"photoGuid\":\"<uuid>\",\"type\":\"<string>\",\"portal\":{\"isEnabled\":\"<boolean>\",\"lastLoginDate\":\"<dateTime>\"},\"email\":\"<string>\",\"mobile\":\"<string>\",\"home\":\"<string>\",\"office\":\"<string>\",\"ext\":\"<string>\",\"fax\":\"<string>\",\"salutation\":\"<string>\",\"position\":\"<string>\",\"prefix\":\"<string>\",\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\"}",
+                  "description": "Contacts related to this account. Includes the primary contact."
+                },
+                {
+                  "disabled": false,
+                  "key": "contacts",
+                  "value": "{\"customFieldValues\":[{\"customField\":{\"objectType\":\"<string>\",\"valueType\":\"<string>\",\"name\":\"<string>\",\"isIncludeInList\":\"<boolean>\",\"isExportToLedes\":\"<boolean>\",\"helpText\":\"<string>\",\"tooltip\":\"<string>\",\"rowIndex\":\"<integer>\",\"createdBy\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"lastModifiedBy\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"guid\":\"<uuid>\",\"isRequired\":\"<boolean>\",\"isDefault\":\"<boolean>\",\"dropDownListValues\":\"<string>\"},\"guid\":\"<uuid>\",\"valueString\":\"<string>\",\"valueNumber\":\"<double>\",\"valueDateTime\":\"<dateTime>\",\"valueBoolean\":\"<boolean>\",\"valueContactGuid\":\"<uuid>\",\"valueContact\":{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}},{\"customField\":{\"objectType\":\"<string>\",\"valueType\":\"<string>\",\"name\":\"<string>\",\"isIncludeInList\":\"<boolean>\",\"isExportToLedes\":\"<boolean>\",\"helpText\":\"<string>\",\"tooltip\":\"<string>\",\"rowIndex\":\"<integer>\",\"createdBy\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"lastModifiedBy\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"guid\":\"<uuid>\",\"isRequired\":\"<boolean>\",\"isDefault\":\"<boolean>\",\"dropDownListValues\":\"<string>\"},\"guid\":\"<uuid>\",\"valueString\":\"<string>\",\"valueNumber\":\"<double>\",\"valueDateTime\":\"<dateTime>\",\"valueBoolean\":\"<boolean>\",\"valueContactGuid\":\"<uuid>\",\"valueContact\":{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}}],\"notes\":\"<string>\",\"photoGuid\":\"<uuid>\",\"type\":\"<string>\",\"portal\":{\"isEnabled\":\"<boolean>\",\"lastLoginDate\":\"<dateTime>\"},\"email\":\"<string>\",\"mobile\":\"<string>\",\"home\":\"<string>\",\"office\":\"<string>\",\"ext\":\"<string>\",\"fax\":\"<string>\",\"salutation\":\"<string>\",\"position\":\"<string>\",\"prefix\":\"<string>\",\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\"}",
+                  "description": "Contacts related to this account. Includes the primary contact."
+                },
+                {
+                  "disabled": false,
+                  "key": "utbmsIsEnabled",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ledesClientId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "website",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "address1",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "address2",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "city",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "postalCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "address1",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "address2",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "city",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "postalCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "is1099Eligible",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "taxId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "defaultChartOfAccountGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "defaultChartOfAccountName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "surchargesEnabled",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Account (company) name"
+                },
+                {
+                  "disabled": false,
+                  "key": "currencyCode",
+                  "value": "<string>",
+                  "description": "This defines the currency for this account. Must be in ISO 4217 format. Invoices created for this account will use this currency. If null, defaults will be set."
+                },
+                {
+                  "disabled": false,
+                  "key": "number",
+                  "value": "<integer>",
+                  "description": "Account number, must be unique."
+                },
+                {
+                  "disabled": false,
+                  "key": "assignedTo",
+                  "value": "{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"}",
+                  "description": "The users this account (contact) is assigned to. For custom security roles this can define which users can access this account."
+                },
+                {
+                  "disabled": false,
+                  "key": "assignedTo",
+                  "value": "{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"}",
+                  "description": "The users this account (contact) is assigned to. For custom security roles this can define which users can access this account."
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "{\"name\":\"<string>\"}",
+                  "description": "Tags, Used in POST and PUT to modify account tags so make sure you include all tags."
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "{\"name\":\"<string>\"}",
+                  "description": "Tags, Used in POST and PUT to modify account tags so make sure you include all tags."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagNames",
+                  "value": "<string>",
+                  "description": "For compatibility reasons, this will return an array of tag names instead of a list of tag objects."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagNames",
+                  "value": "<string>",
+                  "description": "For compatibility reasons, this will return an array of tag names instead of a list of tag objects."
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "saleDocumentTemplateGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "saleDocumentTemplateName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "contactInvoiceRecipients",
+                  "value": "{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "contactInvoiceRecipients",
+                  "value": "{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "contactInvoiceRecipientsGuids",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "contactInvoiceRecipientsGuids",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<long>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e6a4a956-c74f-4a91-be9e-482442b1dd66",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"primaryContact\": {\n    \"customFieldValues\": [\n      {\n        \"customField\": {\n          \"objectType\": \"<string>\",\n          \"valueType\": \"<string>\",\n          \"name\": \"<string>\",\n          \"isIncludeInList\": \"<boolean>\",\n          \"isExportToLedes\": \"<boolean>\",\n          \"helpText\": \"<string>\",\n          \"tooltip\": \"<string>\",\n          \"rowIndex\": \"<integer>\",\n          \"createdDate\": \"1952-03-19T09:50:15.543Z\",\n          \"lastModifiedDate\": \"1988-06-04T07:19:33.361Z\",\n          \"createdBy\": {\n            \"guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"displayName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timeZoneId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"lastModifiedBy\": {\n            \"guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"displayName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timeZoneId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"isDeleted\": false,\n          \"isRequired\": \"<boolean>\",\n          \"isDefault\": \"<boolean>\",\n          \"dropDownListValues\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"valueString\": \"<string>\",\n        \"valueNumber\": \"<double>\",\n        \"valueDateTime\": \"<dateTime>\",\n        \"valueBoolean\": \"<boolean>\",\n        \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n        \"valueContact\": {\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"middleName\": \"<string>\",\n          \"accountName\": \"<string>\",\n          \"displayName\": \"<string>\",\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"email\": \"<string>\"\n        }\n      },\n      {\n        \"customField\": {\n          \"objectType\": \"<string>\",\n          \"valueType\": \"<string>\",\n          \"name\": \"<string>\",\n          \"isIncludeInList\": \"<boolean>\",\n          \"isExportToLedes\": \"<boolean>\",\n          \"helpText\": \"<string>\",\n          \"tooltip\": \"<string>\",\n          \"rowIndex\": \"<integer>\",\n          \"createdDate\": \"1982-08-06T23:26:57.037Z\",\n          \"lastModifiedDate\": \"1987-08-09T13:47:32.105Z\",\n          \"createdBy\": {\n            \"guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"displayName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timeZoneId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"lastModifiedBy\": {\n            \"guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"displayName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timeZoneId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"isDeleted\": true,\n          \"isRequired\": \"<boolean>\",\n          \"isDefault\": \"<boolean>\",\n          \"dropDownListValues\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"valueString\": \"<string>\",\n        \"valueNumber\": \"<double>\",\n        \"valueDateTime\": \"<dateTime>\",\n        \"valueBoolean\": \"<boolean>\",\n        \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n        \"valueContact\": {\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"middleName\": \"<string>\",\n          \"accountName\": \"<string>\",\n          \"displayName\": \"<string>\",\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"email\": \"<string>\"\n        }\n      }\n    ],\n    \"notes\": \"<string>\",\n    \"photoGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"type\": \"<string>\",\n    \"portal\": {\n      \"isEnabled\": \"<boolean>\",\n      \"lastLoginDate\": \"<dateTime>\"\n    },\n    \"name\": \"string\",\n    \"email\": \"<string>\",\n    \"mobile\": \"<string>\",\n    \"home\": \"<string>\",\n    \"office\": \"<string>\",\n    \"ext\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"salutation\": \"<string>\",\n    \"position\": \"<string>\",\n    \"prefix\": \"<string>\",\n    \"isDeleted\": false,\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"accountName\": \"<string>\",\n    \"displayName\": \"<string>\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\"\n  },\n  \"isAllowClientToViewAllOutstandingInvoices\": \"<boolean>\",\n  \"isAllowClientToViewAllPaidInvoices\": \"<boolean>\",\n  \"isAllowClientToViewAllPayments\": \"<boolean>\",\n  \"isAllowClientToViewAccountBalances\": \"<boolean>\",\n  \"isSendInvoicePaymentReminders\": \"<boolean>\",\n  \"isSendQuoteApprovalReminders\": \"<boolean>\",\n  \"isDisableEcheck\": \"<boolean>\",\n  \"assignedToGuids\": [\n    \"00000000-0000-0000-0000-000000000000\",\n    \"00000000-0000-0000-0000-000000000000\"\n  ],\n  \"customFieldValues\": [\n    {\n      \"customField\": {\n        \"objectType\": \"<string>\",\n        \"valueType\": \"<string>\",\n        \"name\": \"<string>\",\n        \"isIncludeInList\": \"<boolean>\",\n        \"isExportToLedes\": \"<boolean>\",\n        \"helpText\": \"<string>\",\n        \"tooltip\": \"<string>\",\n        \"rowIndex\": \"<integer>\",\n        \"createdDate\": \"2018-10-23T13:10:56.346Z\",\n        \"lastModifiedDate\": \"2000-07-15T00:37:12.650Z\",\n        \"createdBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"lastModifiedBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"isDeleted\": false,\n        \"isRequired\": \"<boolean>\",\n        \"isDefault\": \"<boolean>\",\n        \"dropDownListValues\": \"<string>\"\n      },\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueString\": \"<string>\",\n      \"valueNumber\": \"<double>\",\n      \"valueDateTime\": \"<dateTime>\",\n      \"valueBoolean\": \"<boolean>\",\n      \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueContact\": {\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"middleName\": \"<string>\",\n        \"accountName\": \"<string>\",\n        \"displayName\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"<string>\"\n      }\n    },\n    {\n      \"customField\": {\n        \"objectType\": \"<string>\",\n        \"valueType\": \"<string>\",\n        \"name\": \"<string>\",\n        \"isIncludeInList\": \"<boolean>\",\n        \"isExportToLedes\": \"<boolean>\",\n        \"helpText\": \"<string>\",\n        \"tooltip\": \"<string>\",\n        \"rowIndex\": \"<integer>\",\n        \"createdDate\": \"1988-07-12T18:35:46.437Z\",\n        \"lastModifiedDate\": \"1961-04-27T23:58:51.521Z\",\n        \"createdBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"lastModifiedBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"isDeleted\": true,\n        \"isRequired\": \"<boolean>\",\n        \"isDefault\": \"<boolean>\",\n        \"dropDownListValues\": \"<string>\"\n      },\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueString\": \"<string>\",\n      \"valueNumber\": \"<double>\",\n      \"valueDateTime\": \"<dateTime>\",\n      \"valueBoolean\": \"<boolean>\",\n      \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueContact\": {\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"middleName\": \"<string>\",\n        \"accountName\": \"<string>\",\n        \"displayName\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"<string>\"\n      }\n    }\n  ],\n  \"isContactSync\": \"<boolean>\",\n  \"isEmailSync\": \"<boolean>\",\n  \"isFilesSync\": \"<boolean>\",\n  \"usersFollowing\": [\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    },\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    }\n  ],\n  \"cultureName\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"isDeleted\": false,\n  \"lastModifiedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"createdBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"contacts\": [\n    {\n      \"customFieldValues\": [\n        {\n          \"customField\": {\n            \"objectType\": \"<string>\",\n            \"valueType\": \"<string>\",\n            \"name\": \"<string>\",\n            \"isIncludeInList\": \"<boolean>\",\n            \"isExportToLedes\": \"<boolean>\",\n            \"helpText\": \"<string>\",\n            \"tooltip\": \"<string>\",\n            \"rowIndex\": \"<integer>\",\n            \"createdDate\": \"1975-12-09T03:45:13.378Z\",\n            \"lastModifiedDate\": \"2023-07-02T11:38:30.250Z\",\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastModifiedBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"isDeleted\": true,\n            \"isRequired\": \"<boolean>\",\n            \"isDefault\": \"<boolean>\",\n            \"dropDownListValues\": \"<string>\"\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueString\": \"<string>\",\n          \"valueNumber\": \"<double>\",\n          \"valueDateTime\": \"<dateTime>\",\n          \"valueBoolean\": \"<boolean>\",\n          \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueContact\": {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"middleName\": \"<string>\",\n            \"accountName\": \"<string>\",\n            \"displayName\": \"<string>\",\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"email\": \"<string>\"\n          }\n        },\n        {\n          \"customField\": {\n            \"objectType\": \"<string>\",\n            \"valueType\": \"<string>\",\n            \"name\": \"<string>\",\n            \"isIncludeInList\": \"<boolean>\",\n            \"isExportToLedes\": \"<boolean>\",\n            \"helpText\": \"<string>\",\n            \"tooltip\": \"<string>\",\n            \"rowIndex\": \"<integer>\",\n            \"createdDate\": \"1983-05-15T10:00:47.586Z\",\n            \"lastModifiedDate\": \"1964-04-12T00:36:59.754Z\",\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastModifiedBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"isDeleted\": true,\n            \"isRequired\": \"<boolean>\",\n            \"isDefault\": \"<boolean>\",\n            \"dropDownListValues\": \"<string>\"\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueString\": \"<string>\",\n          \"valueNumber\": \"<double>\",\n          \"valueDateTime\": \"<dateTime>\",\n          \"valueBoolean\": \"<boolean>\",\n          \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueContact\": {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"middleName\": \"<string>\",\n            \"accountName\": \"<string>\",\n            \"displayName\": \"<string>\",\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"email\": \"<string>\"\n          }\n        }\n      ],\n      \"notes\": \"<string>\",\n      \"photoGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"type\": \"<string>\",\n      \"portal\": {\n        \"isEnabled\": \"<boolean>\",\n        \"lastLoginDate\": \"<dateTime>\"\n      },\n      \"name\": \"string\",\n      \"email\": \"<string>\",\n      \"mobile\": \"<string>\",\n      \"home\": \"<string>\",\n      \"office\": \"<string>\",\n      \"ext\": \"<string>\",\n      \"fax\": \"<string>\",\n      \"salutation\": \"<string>\",\n      \"position\": \"<string>\",\n      \"prefix\": \"<string>\",\n      \"isDeleted\": true,\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\"\n    },\n    {\n      \"customFieldValues\": [\n        {\n          \"customField\": {\n            \"objectType\": \"<string>\",\n            \"valueType\": \"<string>\",\n            \"name\": \"<string>\",\n            \"isIncludeInList\": \"<boolean>\",\n            \"isExportToLedes\": \"<boolean>\",\n            \"helpText\": \"<string>\",\n            \"tooltip\": \"<string>\",\n            \"rowIndex\": \"<integer>\",\n            \"createdDate\": \"2022-07-27T21:55:38.941Z\",\n            \"lastModifiedDate\": \"2000-10-11T23:49:04.840Z\",\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastModifiedBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"isDeleted\": true,\n            \"isRequired\": \"<boolean>\",\n            \"isDefault\": \"<boolean>\",\n            \"dropDownListValues\": \"<string>\"\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueString\": \"<string>\",\n          \"valueNumber\": \"<double>\",\n          \"valueDateTime\": \"<dateTime>\",\n          \"valueBoolean\": \"<boolean>\",\n          \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueContact\": {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"middleName\": \"<string>\",\n            \"accountName\": \"<string>\",\n            \"displayName\": \"<string>\",\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"email\": \"<string>\"\n          }\n        },\n        {\n          \"customField\": {\n            \"objectType\": \"<string>\",\n            \"valueType\": \"<string>\",\n            \"name\": \"<string>\",\n            \"isIncludeInList\": \"<boolean>\",\n            \"isExportToLedes\": \"<boolean>\",\n            \"helpText\": \"<string>\",\n            \"tooltip\": \"<string>\",\n            \"rowIndex\": \"<integer>\",\n            \"createdDate\": \"1961-11-22T06:00:33.654Z\",\n            \"lastModifiedDate\": \"2020-12-04T12:54:07.634Z\",\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastModifiedBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"isDeleted\": true,\n            \"isRequired\": \"<boolean>\",\n            \"isDefault\": \"<boolean>\",\n            \"dropDownListValues\": \"<string>\"\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueString\": \"<string>\",\n          \"valueNumber\": \"<double>\",\n          \"valueDateTime\": \"<dateTime>\",\n          \"valueBoolean\": \"<boolean>\",\n          \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueContact\": {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"middleName\": \"<string>\",\n            \"accountName\": \"<string>\",\n            \"displayName\": \"<string>\",\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"email\": \"<string>\"\n          }\n        }\n      ],\n      \"notes\": \"<string>\",\n      \"photoGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"type\": \"<string>\",\n      \"portal\": {\n        \"isEnabled\": \"<boolean>\",\n        \"lastLoginDate\": \"<dateTime>\"\n      },\n      \"name\": \"string\",\n      \"email\": \"<string>\",\n      \"mobile\": \"<string>\",\n      \"home\": \"<string>\",\n      \"office\": \"<string>\",\n      \"ext\": \"<string>\",\n      \"fax\": \"<string>\",\n      \"salutation\": \"<string>\",\n      \"position\": \"<string>\",\n      \"prefix\": \"<string>\",\n      \"isDeleted\": true,\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\"\n    }\n  ],\n  \"utbmsIsEnabled\": \"<boolean>\",\n  \"ledesClientId\": \"<string>\",\n  \"website\": \"<string>\",\n  \"billingAddress\": {\n    \"name\": \"<string>\",\n    \"address1\": \"<string>\",\n    \"address2\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"country\": \"<string>\",\n    \"postalCode\": \"<string>\"\n  },\n  \"shippingAddress\": {\n    \"name\": \"<string>\",\n    \"address1\": \"<string>\",\n    \"address2\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"country\": \"<string>\",\n    \"postalCode\": \"<string>\"\n  },\n  \"invoicesDue\": 8930.697762633763,\n  \"isContainsOnlyPendingInvoices\": false,\n  \"operatingUnappliedCredit\": 6868.6543290855725,\n  \"is1099Eligible\": \"<boolean>\",\n  \"taxId\": \"<string>\",\n  \"defaultChartOfAccountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"defaultChartOfAccountName\": \"<string>\",\n  \"operatingPaid\": 9584.744029590669,\n  \"ccPaid\": 9363.48478281721,\n  \"surchargesEnabled\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"currencyCode\": \"<string>\",\n  \"number\": \"<integer>\",\n  \"assignedTo\": [\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    },\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    }\n  ],\n  \"tags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"tagNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"createdDate\": \"1974-02-03T23:48:55.068Z\",\n  \"lastModifiedDate\": \"1952-06-12T19:22:23.751Z\",\n  \"paid\": 3206.4195014566553,\n  \"trustBalance\": 9588.670728106586,\n  \"operatingBalance\": 8663.253988079157,\n  \"billable\": 2821.617185126165,\n  \"status\": \"<string>\",\n  \"saleDocumentTemplateGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"saleDocumentTemplateName\": \"<string>\",\n  \"contactInvoiceRecipients\": [\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"email\": \"<string>\"\n    },\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"email\": \"<string>\"\n    }\n  ],\n  \"contactInvoiceRecipientsGuids\": [\n    \"00000000-0000-0000-0000-000000000000\",\n    \"00000000-0000-0000-0000-000000000000\"\n  ],\n  \"nameAndNumber\": \"string\",\n  \"guid\": \"00000000-0000-0000-0000-000000000000\",\n  \"id\": \"<long>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "abf9766b-7cc3-44ba-bb30-17f9114d1fda",
+          "name": "Created a new account (contact)",
+          "request": {
+            "name": "Created a new account (contact)",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "account"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "customFieldValues",
+                  "value": "[{\"customField\":{\"objectType\":\"<string>\",\"valueType\":\"<string>\",\"name\":\"<string>\",\"isIncludeInList\":\"<boolean>\",\"isExportToLedes\":\"<boolean>\",\"helpText\":\"<string>\",\"tooltip\":\"<string>\",\"rowIndex\":\"<integer>\",\"createdBy\":{\"guid\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"timeZoneId\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"lastModifiedBy\":{\"guid\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"timeZoneId\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"guid\":\"<uuid>\",\"isRequired\":\"<boolean>\",\"isDefault\":\"<boolean>\",\"dropDownListValues\":\"<string>\"},\"guid\":\"<uuid>\",\"valueString\":\"<string>\",\"valueNumber\":\"<double>\",\"valueDateTime\":\"<dateTime>\",\"valueBoolean\":\"<boolean>\",\"valueContactGuid\":\"<uuid>\",\"valueContact\":{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}},{\"customField\":{\"objectType\":\"<string>\",\"valueType\":\"<string>\",\"name\":\"<string>\",\"isIncludeInList\":\"<boolean>\",\"isExportToLedes\":\"<boolean>\",\"helpText\":\"<string>\",\"tooltip\":\"<string>\",\"rowIndex\":\"<integer>\",\"createdBy\":{\"guid\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"timeZoneId\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"lastModifiedBy\":{\"guid\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"timeZoneId\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"}},\"guid\":\"<uuid>\",\"isRequired\":\"<boolean>\",\"isDefault\":\"<boolean>\",\"dropDownListValues\":\"<string>\"},\"guid\":\"<uuid>\",\"valueString\":\"<string>\",\"valueNumber\":\"<double>\",\"valueDateTime\":\"<dateTime>\",\"valueBoolean\":\"<boolean>\",\"valueContactGuid\":\"<uuid>\",\"valueContact\":{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}}]",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "notes",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "photoGuid",
+                  "value": "<uuid>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "portal",
+                  "value": "{\"isEnabled\":\"<boolean>\",\"lastLoginDate\":\"<dateTime>\"}",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "email",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "mobile",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "home",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "office",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "ext",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "fax",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "salutation",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "position",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "prefix",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "firstName",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "lastName",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "middleName",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "accountName",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "displayName",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "isAllowClientToViewAllOutstandingInvoices",
+                  "value": "<boolean>",
+                  "description": "(Required) Client portal setting. Sets if all outstanding invoices should be visible to the contact in the portal."
+                },
+                {
+                  "disabled": false,
+                  "key": "isAllowClientToViewAllPaidInvoices",
+                  "value": "<boolean>",
+                  "description": "(Required) Client portal setting. Sets if all paid invoices should be visible to the contact in the portal."
+                },
+                {
+                  "disabled": false,
+                  "key": "isAllowClientToViewAllPayments",
+                  "value": "<boolean>",
+                  "description": "(Required) Client portal setting. Sets if all previous payments should be visible in the portal."
+                },
+                {
+                  "disabled": false,
+                  "key": "isAllowClientToViewAccountBalances",
+                  "value": "<boolean>",
+                  "description": "(Required) Client portal setting. Sets if account balances (trust and operating) shoudl be visible in the portal."
+                },
+                {
+                  "disabled": false,
+                  "key": "isSendInvoicePaymentReminders",
+                  "value": "<boolean>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "isSendQuoteApprovalReminders",
+                  "value": "<boolean>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "isDisableEcheck",
+                  "value": "<boolean>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "assignedToGuids",
+                  "value": "<uuid>",
+                  "description": "(Required) Used to set the reference in POST and PUTFor compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects. For compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects."
+                },
+                {
+                  "disabled": false,
+                  "key": "assignedToGuids",
+                  "value": "<uuid>",
+                  "description": "(Required) Used to set the reference in POST and PUTFor compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects. For compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects."
+                },
+                {
+                  "disabled": false,
+                  "key": "customFieldValues",
+                  "value": "{\"customField\":{\"objectType\":\"<string>\",\"valueType\":\"<string>\",\"name\":\"<string>\",\"isIncludeInList\":\"<boolean>\",\"isExportToLedes\":\"<boolean>\",\"helpText\":\"<string>\",\"tooltip\":\"<string>\",\"rowIndex\":\"<integer>\",\"createdBy\":{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"},\"lastModifiedBy\":{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"},\"guid\":\"<uuid>\",\"isRequired\":\"<boolean>\",\"isDefault\":\"<boolean>\",\"dropDownListValues\":\"<string>\"},\"guid\":\"<uuid>\",\"valueString\":\"<string>\",\"valueNumber\":\"<double>\",\"valueDateTime\":\"<dateTime>\",\"valueBoolean\":\"<boolean>\",\"valueContactGuid\":\"<uuid>\",\"valueContact\":{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}}",
+                  "description": "custom field values."
+                },
+                {
+                  "disabled": false,
+                  "key": "customFieldValues",
+                  "value": "{\"customField\":{\"objectType\":\"<string>\",\"valueType\":\"<string>\",\"name\":\"<string>\",\"isIncludeInList\":\"<boolean>\",\"isExportToLedes\":\"<boolean>\",\"helpText\":\"<string>\",\"tooltip\":\"<string>\",\"rowIndex\":\"<integer>\",\"createdBy\":{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"},\"lastModifiedBy\":{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"},\"guid\":\"<uuid>\",\"isRequired\":\"<boolean>\",\"isDefault\":\"<boolean>\",\"dropDownListValues\":\"<string>\"},\"guid\":\"<uuid>\",\"valueString\":\"<string>\",\"valueNumber\":\"<double>\",\"valueDateTime\":\"<dateTime>\",\"valueBoolean\":\"<boolean>\",\"valueContactGuid\":\"<uuid>\",\"valueContact\":{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}}",
+                  "description": "custom field values."
+                },
+                {
+                  "disabled": false,
+                  "key": "isContactSync",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isEmailSync",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isFilesSync",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "usersFollowing",
+                  "value": "{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "usersFollowing",
+                  "value": "{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "cultureName",
+                  "value": "<string>",
+                  "description": "Defines the \"Culture\" for the account. Must be in RFC 4646 format. This will affect date/time formats and language displayed to the customer. If null, defaults will be set."
+                },
+                {
+                  "disabled": false,
+                  "key": "notes",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "contacts",
+                  "value": "{\"customFieldValues\":[{\"customField\":{\"objectType\":\"<string>\",\"valueType\":\"<string>\",\"name\":\"<string>\",\"isIncludeInList\":\"<boolean>\",\"isExportToLedes\":\"<boolean>\",\"helpText\":\"<string>\",\"tooltip\":\"<string>\",\"rowIndex\":\"<integer>\",\"createdBy\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"lastModifiedBy\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"guid\":\"<uuid>\",\"isRequired\":\"<boolean>\",\"isDefault\":\"<boolean>\",\"dropDownListValues\":\"<string>\"},\"guid\":\"<uuid>\",\"valueString\":\"<string>\",\"valueNumber\":\"<double>\",\"valueDateTime\":\"<dateTime>\",\"valueBoolean\":\"<boolean>\",\"valueContactGuid\":\"<uuid>\",\"valueContact\":{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}},{\"customField\":{\"objectType\":\"<string>\",\"valueType\":\"<string>\",\"name\":\"<string>\",\"isIncludeInList\":\"<boolean>\",\"isExportToLedes\":\"<boolean>\",\"helpText\":\"<string>\",\"tooltip\":\"<string>\",\"rowIndex\":\"<integer>\",\"createdBy\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"lastModifiedBy\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"guid\":\"<uuid>\",\"isRequired\":\"<boolean>\",\"isDefault\":\"<boolean>\",\"dropDownListValues\":\"<string>\"},\"guid\":\"<uuid>\",\"valueString\":\"<string>\",\"valueNumber\":\"<double>\",\"valueDateTime\":\"<dateTime>\",\"valueBoolean\":\"<boolean>\",\"valueContactGuid\":\"<uuid>\",\"valueContact\":{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}}],\"notes\":\"<string>\",\"photoGuid\":\"<uuid>\",\"type\":\"<string>\",\"portal\":{\"isEnabled\":\"<boolean>\",\"lastLoginDate\":\"<dateTime>\"},\"email\":\"<string>\",\"mobile\":\"<string>\",\"home\":\"<string>\",\"office\":\"<string>\",\"ext\":\"<string>\",\"fax\":\"<string>\",\"salutation\":\"<string>\",\"position\":\"<string>\",\"prefix\":\"<string>\",\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\"}",
+                  "description": "Contacts related to this account. Includes the primary contact."
+                },
+                {
+                  "disabled": false,
+                  "key": "contacts",
+                  "value": "{\"customFieldValues\":[{\"customField\":{\"objectType\":\"<string>\",\"valueType\":\"<string>\",\"name\":\"<string>\",\"isIncludeInList\":\"<boolean>\",\"isExportToLedes\":\"<boolean>\",\"helpText\":\"<string>\",\"tooltip\":\"<string>\",\"rowIndex\":\"<integer>\",\"createdBy\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"lastModifiedBy\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"guid\":\"<uuid>\",\"isRequired\":\"<boolean>\",\"isDefault\":\"<boolean>\",\"dropDownListValues\":\"<string>\"},\"guid\":\"<uuid>\",\"valueString\":\"<string>\",\"valueNumber\":\"<double>\",\"valueDateTime\":\"<dateTime>\",\"valueBoolean\":\"<boolean>\",\"valueContactGuid\":\"<uuid>\",\"valueContact\":{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}},{\"customField\":{\"objectType\":\"<string>\",\"valueType\":\"<string>\",\"name\":\"<string>\",\"isIncludeInList\":\"<boolean>\",\"isExportToLedes\":\"<boolean>\",\"helpText\":\"<string>\",\"tooltip\":\"<string>\",\"rowIndex\":\"<integer>\",\"createdBy\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"lastModifiedBy\":{\"value\":\"<Error: Too many levels of nesting to fake this schema>\"},\"guid\":\"<uuid>\",\"isRequired\":\"<boolean>\",\"isDefault\":\"<boolean>\",\"dropDownListValues\":\"<string>\"},\"guid\":\"<uuid>\",\"valueString\":\"<string>\",\"valueNumber\":\"<double>\",\"valueDateTime\":\"<dateTime>\",\"valueBoolean\":\"<boolean>\",\"valueContactGuid\":\"<uuid>\",\"valueContact\":{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}}],\"notes\":\"<string>\",\"photoGuid\":\"<uuid>\",\"type\":\"<string>\",\"portal\":{\"isEnabled\":\"<boolean>\",\"lastLoginDate\":\"<dateTime>\"},\"email\":\"<string>\",\"mobile\":\"<string>\",\"home\":\"<string>\",\"office\":\"<string>\",\"ext\":\"<string>\",\"fax\":\"<string>\",\"salutation\":\"<string>\",\"position\":\"<string>\",\"prefix\":\"<string>\",\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\"}",
+                  "description": "Contacts related to this account. Includes the primary contact."
+                },
+                {
+                  "disabled": false,
+                  "key": "utbmsIsEnabled",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "ledesClientId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "website",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "address1",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "address2",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "city",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "postalCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "address1",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "address2",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "city",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "state",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "postalCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "is1099Eligible",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "taxId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "defaultChartOfAccountGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "defaultChartOfAccountName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "surchargesEnabled",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "Account (company) name"
+                },
+                {
+                  "disabled": false,
+                  "key": "currencyCode",
+                  "value": "<string>",
+                  "description": "This defines the currency for this account. Must be in ISO 4217 format. Invoices created for this account will use this currency. If null, defaults will be set."
+                },
+                {
+                  "disabled": false,
+                  "key": "number",
+                  "value": "<integer>",
+                  "description": "Account number, must be unique."
+                },
+                {
+                  "disabled": false,
+                  "key": "assignedTo",
+                  "value": "{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"}",
+                  "description": "The users this account (contact) is assigned to. For custom security roles this can define which users can access this account."
+                },
+                {
+                  "disabled": false,
+                  "key": "assignedTo",
+                  "value": "{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"}",
+                  "description": "The users this account (contact) is assigned to. For custom security roles this can define which users can access this account."
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "{\"name\":\"<string>\"}",
+                  "description": "Tags, Used in POST and PUT to modify account tags so make sure you include all tags."
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "{\"name\":\"<string>\"}",
+                  "description": "Tags, Used in POST and PUT to modify account tags so make sure you include all tags."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagNames",
+                  "value": "<string>",
+                  "description": "For compatibility reasons, this will return an array of tag names instead of a list of tag objects."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagNames",
+                  "value": "<string>",
+                  "description": "For compatibility reasons, this will return an array of tag names instead of a list of tag objects."
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "saleDocumentTemplateGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "saleDocumentTemplateName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "contactInvoiceRecipients",
+                  "value": "{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "contactInvoiceRecipients",
+                  "value": "{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "contactInvoiceRecipientsGuids",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "contactInvoiceRecipientsGuids",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<long>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "daebf631-201b-468f-8465-2cec00076ba3",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"primaryContact\": {\n    \"customFieldValues\": [\n      {\n        \"customField\": {\n          \"objectType\": \"<string>\",\n          \"valueType\": \"<string>\",\n          \"name\": \"<string>\",\n          \"isIncludeInList\": \"<boolean>\",\n          \"isExportToLedes\": \"<boolean>\",\n          \"helpText\": \"<string>\",\n          \"tooltip\": \"<string>\",\n          \"rowIndex\": \"<integer>\",\n          \"createdDate\": \"1952-03-19T09:50:15.543Z\",\n          \"lastModifiedDate\": \"1988-06-04T07:19:33.361Z\",\n          \"createdBy\": {\n            \"guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"displayName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timeZoneId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"lastModifiedBy\": {\n            \"guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"displayName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timeZoneId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"isDeleted\": false,\n          \"isRequired\": \"<boolean>\",\n          \"isDefault\": \"<boolean>\",\n          \"dropDownListValues\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"valueString\": \"<string>\",\n        \"valueNumber\": \"<double>\",\n        \"valueDateTime\": \"<dateTime>\",\n        \"valueBoolean\": \"<boolean>\",\n        \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n        \"valueContact\": {\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"middleName\": \"<string>\",\n          \"accountName\": \"<string>\",\n          \"displayName\": \"<string>\",\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"email\": \"<string>\"\n        }\n      },\n      {\n        \"customField\": {\n          \"objectType\": \"<string>\",\n          \"valueType\": \"<string>\",\n          \"name\": \"<string>\",\n          \"isIncludeInList\": \"<boolean>\",\n          \"isExportToLedes\": \"<boolean>\",\n          \"helpText\": \"<string>\",\n          \"tooltip\": \"<string>\",\n          \"rowIndex\": \"<integer>\",\n          \"createdDate\": \"1982-08-06T23:26:57.037Z\",\n          \"lastModifiedDate\": \"1987-08-09T13:47:32.105Z\",\n          \"createdBy\": {\n            \"guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"displayName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timeZoneId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"lastModifiedBy\": {\n            \"guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"displayName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timeZoneId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"isDeleted\": true,\n          \"isRequired\": \"<boolean>\",\n          \"isDefault\": \"<boolean>\",\n          \"dropDownListValues\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"valueString\": \"<string>\",\n        \"valueNumber\": \"<double>\",\n        \"valueDateTime\": \"<dateTime>\",\n        \"valueBoolean\": \"<boolean>\",\n        \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n        \"valueContact\": {\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"middleName\": \"<string>\",\n          \"accountName\": \"<string>\",\n          \"displayName\": \"<string>\",\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"email\": \"<string>\"\n        }\n      }\n    ],\n    \"notes\": \"<string>\",\n    \"photoGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"type\": \"<string>\",\n    \"portal\": {\n      \"isEnabled\": \"<boolean>\",\n      \"lastLoginDate\": \"<dateTime>\"\n    },\n    \"name\": \"string\",\n    \"email\": \"<string>\",\n    \"mobile\": \"<string>\",\n    \"home\": \"<string>\",\n    \"office\": \"<string>\",\n    \"ext\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"salutation\": \"<string>\",\n    \"position\": \"<string>\",\n    \"prefix\": \"<string>\",\n    \"isDeleted\": false,\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"accountName\": \"<string>\",\n    \"displayName\": \"<string>\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\"\n  },\n  \"isAllowClientToViewAllOutstandingInvoices\": \"<boolean>\",\n  \"isAllowClientToViewAllPaidInvoices\": \"<boolean>\",\n  \"isAllowClientToViewAllPayments\": \"<boolean>\",\n  \"isAllowClientToViewAccountBalances\": \"<boolean>\",\n  \"isSendInvoicePaymentReminders\": \"<boolean>\",\n  \"isSendQuoteApprovalReminders\": \"<boolean>\",\n  \"isDisableEcheck\": \"<boolean>\",\n  \"assignedToGuids\": [\n    \"00000000-0000-0000-0000-000000000000\",\n    \"00000000-0000-0000-0000-000000000000\"\n  ],\n  \"customFieldValues\": [\n    {\n      \"customField\": {\n        \"objectType\": \"<string>\",\n        \"valueType\": \"<string>\",\n        \"name\": \"<string>\",\n        \"isIncludeInList\": \"<boolean>\",\n        \"isExportToLedes\": \"<boolean>\",\n        \"helpText\": \"<string>\",\n        \"tooltip\": \"<string>\",\n        \"rowIndex\": \"<integer>\",\n        \"createdDate\": \"2018-10-23T13:10:56.346Z\",\n        \"lastModifiedDate\": \"2000-07-15T00:37:12.650Z\",\n        \"createdBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"lastModifiedBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"isDeleted\": false,\n        \"isRequired\": \"<boolean>\",\n        \"isDefault\": \"<boolean>\",\n        \"dropDownListValues\": \"<string>\"\n      },\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueString\": \"<string>\",\n      \"valueNumber\": \"<double>\",\n      \"valueDateTime\": \"<dateTime>\",\n      \"valueBoolean\": \"<boolean>\",\n      \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueContact\": {\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"middleName\": \"<string>\",\n        \"accountName\": \"<string>\",\n        \"displayName\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"<string>\"\n      }\n    },\n    {\n      \"customField\": {\n        \"objectType\": \"<string>\",\n        \"valueType\": \"<string>\",\n        \"name\": \"<string>\",\n        \"isIncludeInList\": \"<boolean>\",\n        \"isExportToLedes\": \"<boolean>\",\n        \"helpText\": \"<string>\",\n        \"tooltip\": \"<string>\",\n        \"rowIndex\": \"<integer>\",\n        \"createdDate\": \"1988-07-12T18:35:46.437Z\",\n        \"lastModifiedDate\": \"1961-04-27T23:58:51.521Z\",\n        \"createdBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"lastModifiedBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"isDeleted\": true,\n        \"isRequired\": \"<boolean>\",\n        \"isDefault\": \"<boolean>\",\n        \"dropDownListValues\": \"<string>\"\n      },\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueString\": \"<string>\",\n      \"valueNumber\": \"<double>\",\n      \"valueDateTime\": \"<dateTime>\",\n      \"valueBoolean\": \"<boolean>\",\n      \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueContact\": {\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"middleName\": \"<string>\",\n        \"accountName\": \"<string>\",\n        \"displayName\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"<string>\"\n      }\n    }\n  ],\n  \"isContactSync\": \"<boolean>\",\n  \"isEmailSync\": \"<boolean>\",\n  \"isFilesSync\": \"<boolean>\",\n  \"usersFollowing\": [\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    },\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    }\n  ],\n  \"cultureName\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"isDeleted\": false,\n  \"lastModifiedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"createdBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"contacts\": [\n    {\n      \"customFieldValues\": [\n        {\n          \"customField\": {\n            \"objectType\": \"<string>\",\n            \"valueType\": \"<string>\",\n            \"name\": \"<string>\",\n            \"isIncludeInList\": \"<boolean>\",\n            \"isExportToLedes\": \"<boolean>\",\n            \"helpText\": \"<string>\",\n            \"tooltip\": \"<string>\",\n            \"rowIndex\": \"<integer>\",\n            \"createdDate\": \"1975-12-09T03:45:13.378Z\",\n            \"lastModifiedDate\": \"2023-07-02T11:38:30.250Z\",\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastModifiedBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"isDeleted\": true,\n            \"isRequired\": \"<boolean>\",\n            \"isDefault\": \"<boolean>\",\n            \"dropDownListValues\": \"<string>\"\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueString\": \"<string>\",\n          \"valueNumber\": \"<double>\",\n          \"valueDateTime\": \"<dateTime>\",\n          \"valueBoolean\": \"<boolean>\",\n          \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueContact\": {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"middleName\": \"<string>\",\n            \"accountName\": \"<string>\",\n            \"displayName\": \"<string>\",\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"email\": \"<string>\"\n          }\n        },\n        {\n          \"customField\": {\n            \"objectType\": \"<string>\",\n            \"valueType\": \"<string>\",\n            \"name\": \"<string>\",\n            \"isIncludeInList\": \"<boolean>\",\n            \"isExportToLedes\": \"<boolean>\",\n            \"helpText\": \"<string>\",\n            \"tooltip\": \"<string>\",\n            \"rowIndex\": \"<integer>\",\n            \"createdDate\": \"1983-05-15T10:00:47.586Z\",\n            \"lastModifiedDate\": \"1964-04-12T00:36:59.754Z\",\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastModifiedBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"isDeleted\": true,\n            \"isRequired\": \"<boolean>\",\n            \"isDefault\": \"<boolean>\",\n            \"dropDownListValues\": \"<string>\"\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueString\": \"<string>\",\n          \"valueNumber\": \"<double>\",\n          \"valueDateTime\": \"<dateTime>\",\n          \"valueBoolean\": \"<boolean>\",\n          \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueContact\": {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"middleName\": \"<string>\",\n            \"accountName\": \"<string>\",\n            \"displayName\": \"<string>\",\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"email\": \"<string>\"\n          }\n        }\n      ],\n      \"notes\": \"<string>\",\n      \"photoGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"type\": \"<string>\",\n      \"portal\": {\n        \"isEnabled\": \"<boolean>\",\n        \"lastLoginDate\": \"<dateTime>\"\n      },\n      \"name\": \"string\",\n      \"email\": \"<string>\",\n      \"mobile\": \"<string>\",\n      \"home\": \"<string>\",\n      \"office\": \"<string>\",\n      \"ext\": \"<string>\",\n      \"fax\": \"<string>\",\n      \"salutation\": \"<string>\",\n      \"position\": \"<string>\",\n      \"prefix\": \"<string>\",\n      \"isDeleted\": true,\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\"\n    },\n    {\n      \"customFieldValues\": [\n        {\n          \"customField\": {\n            \"objectType\": \"<string>\",\n            \"valueType\": \"<string>\",\n            \"name\": \"<string>\",\n            \"isIncludeInList\": \"<boolean>\",\n            \"isExportToLedes\": \"<boolean>\",\n            \"helpText\": \"<string>\",\n            \"tooltip\": \"<string>\",\n            \"rowIndex\": \"<integer>\",\n            \"createdDate\": \"2022-07-27T21:55:38.941Z\",\n            \"lastModifiedDate\": \"2000-10-11T23:49:04.840Z\",\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastModifiedBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"isDeleted\": true,\n            \"isRequired\": \"<boolean>\",\n            \"isDefault\": \"<boolean>\",\n            \"dropDownListValues\": \"<string>\"\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueString\": \"<string>\",\n          \"valueNumber\": \"<double>\",\n          \"valueDateTime\": \"<dateTime>\",\n          \"valueBoolean\": \"<boolean>\",\n          \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueContact\": {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"middleName\": \"<string>\",\n            \"accountName\": \"<string>\",\n            \"displayName\": \"<string>\",\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"email\": \"<string>\"\n          }\n        },\n        {\n          \"customField\": {\n            \"objectType\": \"<string>\",\n            \"valueType\": \"<string>\",\n            \"name\": \"<string>\",\n            \"isIncludeInList\": \"<boolean>\",\n            \"isExportToLedes\": \"<boolean>\",\n            \"helpText\": \"<string>\",\n            \"tooltip\": \"<string>\",\n            \"rowIndex\": \"<integer>\",\n            \"createdDate\": \"1961-11-22T06:00:33.654Z\",\n            \"lastModifiedDate\": \"2020-12-04T12:54:07.634Z\",\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastModifiedBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"isDeleted\": true,\n            \"isRequired\": \"<boolean>\",\n            \"isDefault\": \"<boolean>\",\n            \"dropDownListValues\": \"<string>\"\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueString\": \"<string>\",\n          \"valueNumber\": \"<double>\",\n          \"valueDateTime\": \"<dateTime>\",\n          \"valueBoolean\": \"<boolean>\",\n          \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueContact\": {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"middleName\": \"<string>\",\n            \"accountName\": \"<string>\",\n            \"displayName\": \"<string>\",\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"email\": \"<string>\"\n          }\n        }\n      ],\n      \"notes\": \"<string>\",\n      \"photoGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"type\": \"<string>\",\n      \"portal\": {\n        \"isEnabled\": \"<boolean>\",\n        \"lastLoginDate\": \"<dateTime>\"\n      },\n      \"name\": \"string\",\n      \"email\": \"<string>\",\n      \"mobile\": \"<string>\",\n      \"home\": \"<string>\",\n      \"office\": \"<string>\",\n      \"ext\": \"<string>\",\n      \"fax\": \"<string>\",\n      \"salutation\": \"<string>\",\n      \"position\": \"<string>\",\n      \"prefix\": \"<string>\",\n      \"isDeleted\": true,\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\"\n    }\n  ],\n  \"utbmsIsEnabled\": \"<boolean>\",\n  \"ledesClientId\": \"<string>\",\n  \"website\": \"<string>\",\n  \"billingAddress\": {\n    \"name\": \"<string>\",\n    \"address1\": \"<string>\",\n    \"address2\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"country\": \"<string>\",\n    \"postalCode\": \"<string>\"\n  },\n  \"shippingAddress\": {\n    \"name\": \"<string>\",\n    \"address1\": \"<string>\",\n    \"address2\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"country\": \"<string>\",\n    \"postalCode\": \"<string>\"\n  },\n  \"invoicesDue\": 8930.697762633763,\n  \"isContainsOnlyPendingInvoices\": false,\n  \"operatingUnappliedCredit\": 6868.6543290855725,\n  \"is1099Eligible\": \"<boolean>\",\n  \"taxId\": \"<string>\",\n  \"defaultChartOfAccountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"defaultChartOfAccountName\": \"<string>\",\n  \"operatingPaid\": 9584.744029590669,\n  \"ccPaid\": 9363.48478281721,\n  \"surchargesEnabled\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"currencyCode\": \"<string>\",\n  \"number\": \"<integer>\",\n  \"assignedTo\": [\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    },\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    }\n  ],\n  \"tags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"tagNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"createdDate\": \"1974-02-03T23:48:55.068Z\",\n  \"lastModifiedDate\": \"1952-06-12T19:22:23.751Z\",\n  \"paid\": 3206.4195014566553,\n  \"trustBalance\": 9588.670728106586,\n  \"operatingBalance\": 8663.253988079157,\n  \"billable\": 2821.617185126165,\n  \"status\": \"<string>\",\n  \"saleDocumentTemplateGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"saleDocumentTemplateName\": \"<string>\",\n  \"contactInvoiceRecipients\": [\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"email\": \"<string>\"\n    },\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"email\": \"<string>\"\n    }\n  ],\n  \"contactInvoiceRecipientsGuids\": [\n    \"00000000-0000-0000-0000-000000000000\",\n    \"00000000-0000-0000-0000-000000000000\"\n  ],\n  \"nameAndNumber\": \"string\",\n  \"guid\": \"00000000-0000-0000-0000-000000000000\",\n  \"id\": \"<long>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a0901e04-aff4-4d9e-b07e-8b754504a279",
+          "name": "Marks an existing account as deleted",
+          "request": {
+            "name": "Marks an existing account as deleted",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "account"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4a9d9960-d6b0-4ecf-8392-b94502de78f0",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "account"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "guid",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"primaryContact\": {\n    \"customFieldValues\": [\n      {\n        \"customField\": {\n          \"objectType\": \"<string>\",\n          \"valueType\": \"<string>\",\n          \"name\": \"<string>\",\n          \"isIncludeInList\": \"<boolean>\",\n          \"isExportToLedes\": \"<boolean>\",\n          \"helpText\": \"<string>\",\n          \"tooltip\": \"<string>\",\n          \"rowIndex\": \"<integer>\",\n          \"createdDate\": \"1952-03-19T09:50:15.543Z\",\n          \"lastModifiedDate\": \"1988-06-04T07:19:33.361Z\",\n          \"createdBy\": {\n            \"guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"displayName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timeZoneId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"lastModifiedBy\": {\n            \"guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"displayName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timeZoneId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"isDeleted\": false,\n          \"isRequired\": \"<boolean>\",\n          \"isDefault\": \"<boolean>\",\n          \"dropDownListValues\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"valueString\": \"<string>\",\n        \"valueNumber\": \"<double>\",\n        \"valueDateTime\": \"<dateTime>\",\n        \"valueBoolean\": \"<boolean>\",\n        \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n        \"valueContact\": {\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"middleName\": \"<string>\",\n          \"accountName\": \"<string>\",\n          \"displayName\": \"<string>\",\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"email\": \"<string>\"\n        }\n      },\n      {\n        \"customField\": {\n          \"objectType\": \"<string>\",\n          \"valueType\": \"<string>\",\n          \"name\": \"<string>\",\n          \"isIncludeInList\": \"<boolean>\",\n          \"isExportToLedes\": \"<boolean>\",\n          \"helpText\": \"<string>\",\n          \"tooltip\": \"<string>\",\n          \"rowIndex\": \"<integer>\",\n          \"createdDate\": \"1982-08-06T23:26:57.037Z\",\n          \"lastModifiedDate\": \"1987-08-09T13:47:32.105Z\",\n          \"createdBy\": {\n            \"guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"displayName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timeZoneId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"lastModifiedBy\": {\n            \"guid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"displayName\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"timeZoneId\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"isDeleted\": true,\n          \"isRequired\": \"<boolean>\",\n          \"isDefault\": \"<boolean>\",\n          \"dropDownListValues\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"valueString\": \"<string>\",\n        \"valueNumber\": \"<double>\",\n        \"valueDateTime\": \"<dateTime>\",\n        \"valueBoolean\": \"<boolean>\",\n        \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n        \"valueContact\": {\n          \"firstName\": \"<string>\",\n          \"lastName\": \"<string>\",\n          \"middleName\": \"<string>\",\n          \"accountName\": \"<string>\",\n          \"displayName\": \"<string>\",\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"email\": \"<string>\"\n        }\n      }\n    ],\n    \"notes\": \"<string>\",\n    \"photoGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"type\": \"<string>\",\n    \"portal\": {\n      \"isEnabled\": \"<boolean>\",\n      \"lastLoginDate\": \"<dateTime>\"\n    },\n    \"name\": \"string\",\n    \"email\": \"<string>\",\n    \"mobile\": \"<string>\",\n    \"home\": \"<string>\",\n    \"office\": \"<string>\",\n    \"ext\": \"<string>\",\n    \"fax\": \"<string>\",\n    \"salutation\": \"<string>\",\n    \"position\": \"<string>\",\n    \"prefix\": \"<string>\",\n    \"isDeleted\": false,\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"middleName\": \"<string>\",\n    \"accountName\": \"<string>\",\n    \"displayName\": \"<string>\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\"\n  },\n  \"isAllowClientToViewAllOutstandingInvoices\": \"<boolean>\",\n  \"isAllowClientToViewAllPaidInvoices\": \"<boolean>\",\n  \"isAllowClientToViewAllPayments\": \"<boolean>\",\n  \"isAllowClientToViewAccountBalances\": \"<boolean>\",\n  \"isSendInvoicePaymentReminders\": \"<boolean>\",\n  \"isSendQuoteApprovalReminders\": \"<boolean>\",\n  \"isDisableEcheck\": \"<boolean>\",\n  \"assignedToGuids\": [\n    \"00000000-0000-0000-0000-000000000000\",\n    \"00000000-0000-0000-0000-000000000000\"\n  ],\n  \"customFieldValues\": [\n    {\n      \"customField\": {\n        \"objectType\": \"<string>\",\n        \"valueType\": \"<string>\",\n        \"name\": \"<string>\",\n        \"isIncludeInList\": \"<boolean>\",\n        \"isExportToLedes\": \"<boolean>\",\n        \"helpText\": \"<string>\",\n        \"tooltip\": \"<string>\",\n        \"rowIndex\": \"<integer>\",\n        \"createdDate\": \"2018-10-23T13:10:56.346Z\",\n        \"lastModifiedDate\": \"2000-07-15T00:37:12.650Z\",\n        \"createdBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"lastModifiedBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"isDeleted\": false,\n        \"isRequired\": \"<boolean>\",\n        \"isDefault\": \"<boolean>\",\n        \"dropDownListValues\": \"<string>\"\n      },\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueString\": \"<string>\",\n      \"valueNumber\": \"<double>\",\n      \"valueDateTime\": \"<dateTime>\",\n      \"valueBoolean\": \"<boolean>\",\n      \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueContact\": {\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"middleName\": \"<string>\",\n        \"accountName\": \"<string>\",\n        \"displayName\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"<string>\"\n      }\n    },\n    {\n      \"customField\": {\n        \"objectType\": \"<string>\",\n        \"valueType\": \"<string>\",\n        \"name\": \"<string>\",\n        \"isIncludeInList\": \"<boolean>\",\n        \"isExportToLedes\": \"<boolean>\",\n        \"helpText\": \"<string>\",\n        \"tooltip\": \"<string>\",\n        \"rowIndex\": \"<integer>\",\n        \"createdDate\": \"1988-07-12T18:35:46.437Z\",\n        \"lastModifiedDate\": \"1961-04-27T23:58:51.521Z\",\n        \"createdBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"lastModifiedBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"isDeleted\": true,\n        \"isRequired\": \"<boolean>\",\n        \"isDefault\": \"<boolean>\",\n        \"dropDownListValues\": \"<string>\"\n      },\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueString\": \"<string>\",\n      \"valueNumber\": \"<double>\",\n      \"valueDateTime\": \"<dateTime>\",\n      \"valueBoolean\": \"<boolean>\",\n      \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueContact\": {\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"middleName\": \"<string>\",\n        \"accountName\": \"<string>\",\n        \"displayName\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"<string>\"\n      }\n    }\n  ],\n  \"isContactSync\": \"<boolean>\",\n  \"isEmailSync\": \"<boolean>\",\n  \"isFilesSync\": \"<boolean>\",\n  \"usersFollowing\": [\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    },\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    }\n  ],\n  \"cultureName\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"isDeleted\": false,\n  \"lastModifiedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"createdBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"contacts\": [\n    {\n      \"customFieldValues\": [\n        {\n          \"customField\": {\n            \"objectType\": \"<string>\",\n            \"valueType\": \"<string>\",\n            \"name\": \"<string>\",\n            \"isIncludeInList\": \"<boolean>\",\n            \"isExportToLedes\": \"<boolean>\",\n            \"helpText\": \"<string>\",\n            \"tooltip\": \"<string>\",\n            \"rowIndex\": \"<integer>\",\n            \"createdDate\": \"1975-12-09T03:45:13.378Z\",\n            \"lastModifiedDate\": \"2023-07-02T11:38:30.250Z\",\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastModifiedBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"isDeleted\": true,\n            \"isRequired\": \"<boolean>\",\n            \"isDefault\": \"<boolean>\",\n            \"dropDownListValues\": \"<string>\"\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueString\": \"<string>\",\n          \"valueNumber\": \"<double>\",\n          \"valueDateTime\": \"<dateTime>\",\n          \"valueBoolean\": \"<boolean>\",\n          \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueContact\": {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"middleName\": \"<string>\",\n            \"accountName\": \"<string>\",\n            \"displayName\": \"<string>\",\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"email\": \"<string>\"\n          }\n        },\n        {\n          \"customField\": {\n            \"objectType\": \"<string>\",\n            \"valueType\": \"<string>\",\n            \"name\": \"<string>\",\n            \"isIncludeInList\": \"<boolean>\",\n            \"isExportToLedes\": \"<boolean>\",\n            \"helpText\": \"<string>\",\n            \"tooltip\": \"<string>\",\n            \"rowIndex\": \"<integer>\",\n            \"createdDate\": \"1983-05-15T10:00:47.586Z\",\n            \"lastModifiedDate\": \"1964-04-12T00:36:59.754Z\",\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastModifiedBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"isDeleted\": true,\n            \"isRequired\": \"<boolean>\",\n            \"isDefault\": \"<boolean>\",\n            \"dropDownListValues\": \"<string>\"\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueString\": \"<string>\",\n          \"valueNumber\": \"<double>\",\n          \"valueDateTime\": \"<dateTime>\",\n          \"valueBoolean\": \"<boolean>\",\n          \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueContact\": {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"middleName\": \"<string>\",\n            \"accountName\": \"<string>\",\n            \"displayName\": \"<string>\",\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"email\": \"<string>\"\n          }\n        }\n      ],\n      \"notes\": \"<string>\",\n      \"photoGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"type\": \"<string>\",\n      \"portal\": {\n        \"isEnabled\": \"<boolean>\",\n        \"lastLoginDate\": \"<dateTime>\"\n      },\n      \"name\": \"string\",\n      \"email\": \"<string>\",\n      \"mobile\": \"<string>\",\n      \"home\": \"<string>\",\n      \"office\": \"<string>\",\n      \"ext\": \"<string>\",\n      \"fax\": \"<string>\",\n      \"salutation\": \"<string>\",\n      \"position\": \"<string>\",\n      \"prefix\": \"<string>\",\n      \"isDeleted\": true,\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\"\n    },\n    {\n      \"customFieldValues\": [\n        {\n          \"customField\": {\n            \"objectType\": \"<string>\",\n            \"valueType\": \"<string>\",\n            \"name\": \"<string>\",\n            \"isIncludeInList\": \"<boolean>\",\n            \"isExportToLedes\": \"<boolean>\",\n            \"helpText\": \"<string>\",\n            \"tooltip\": \"<string>\",\n            \"rowIndex\": \"<integer>\",\n            \"createdDate\": \"2022-07-27T21:55:38.941Z\",\n            \"lastModifiedDate\": \"2000-10-11T23:49:04.840Z\",\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastModifiedBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"isDeleted\": true,\n            \"isRequired\": \"<boolean>\",\n            \"isDefault\": \"<boolean>\",\n            \"dropDownListValues\": \"<string>\"\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueString\": \"<string>\",\n          \"valueNumber\": \"<double>\",\n          \"valueDateTime\": \"<dateTime>\",\n          \"valueBoolean\": \"<boolean>\",\n          \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueContact\": {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"middleName\": \"<string>\",\n            \"accountName\": \"<string>\",\n            \"displayName\": \"<string>\",\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"email\": \"<string>\"\n          }\n        },\n        {\n          \"customField\": {\n            \"objectType\": \"<string>\",\n            \"valueType\": \"<string>\",\n            \"name\": \"<string>\",\n            \"isIncludeInList\": \"<boolean>\",\n            \"isExportToLedes\": \"<boolean>\",\n            \"helpText\": \"<string>\",\n            \"tooltip\": \"<string>\",\n            \"rowIndex\": \"<integer>\",\n            \"createdDate\": \"1961-11-22T06:00:33.654Z\",\n            \"lastModifiedDate\": \"2020-12-04T12:54:07.634Z\",\n            \"createdBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"lastModifiedBy\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"isDeleted\": true,\n            \"isRequired\": \"<boolean>\",\n            \"isDefault\": \"<boolean>\",\n            \"dropDownListValues\": \"<string>\"\n          },\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueString\": \"<string>\",\n          \"valueNumber\": \"<double>\",\n          \"valueDateTime\": \"<dateTime>\",\n          \"valueBoolean\": \"<boolean>\",\n          \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n          \"valueContact\": {\n            \"firstName\": \"<string>\",\n            \"lastName\": \"<string>\",\n            \"middleName\": \"<string>\",\n            \"accountName\": \"<string>\",\n            \"displayName\": \"<string>\",\n            \"guid\": \"00000000-0000-0000-0000-000000000000\",\n            \"email\": \"<string>\"\n          }\n        }\n      ],\n      \"notes\": \"<string>\",\n      \"photoGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"type\": \"<string>\",\n      \"portal\": {\n        \"isEnabled\": \"<boolean>\",\n        \"lastLoginDate\": \"<dateTime>\"\n      },\n      \"name\": \"string\",\n      \"email\": \"<string>\",\n      \"mobile\": \"<string>\",\n      \"home\": \"<string>\",\n      \"office\": \"<string>\",\n      \"ext\": \"<string>\",\n      \"fax\": \"<string>\",\n      \"salutation\": \"<string>\",\n      \"position\": \"<string>\",\n      \"prefix\": \"<string>\",\n      \"isDeleted\": true,\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\"\n    }\n  ],\n  \"utbmsIsEnabled\": \"<boolean>\",\n  \"ledesClientId\": \"<string>\",\n  \"website\": \"<string>\",\n  \"billingAddress\": {\n    \"name\": \"<string>\",\n    \"address1\": \"<string>\",\n    \"address2\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"country\": \"<string>\",\n    \"postalCode\": \"<string>\"\n  },\n  \"shippingAddress\": {\n    \"name\": \"<string>\",\n    \"address1\": \"<string>\",\n    \"address2\": \"<string>\",\n    \"city\": \"<string>\",\n    \"state\": \"<string>\",\n    \"country\": \"<string>\",\n    \"postalCode\": \"<string>\"\n  },\n  \"invoicesDue\": 8930.697762633763,\n  \"isContainsOnlyPendingInvoices\": false,\n  \"operatingUnappliedCredit\": 6868.6543290855725,\n  \"is1099Eligible\": \"<boolean>\",\n  \"taxId\": \"<string>\",\n  \"defaultChartOfAccountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"defaultChartOfAccountName\": \"<string>\",\n  \"operatingPaid\": 9584.744029590669,\n  \"ccPaid\": 9363.48478281721,\n  \"surchargesEnabled\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"currencyCode\": \"<string>\",\n  \"number\": \"<integer>\",\n  \"assignedTo\": [\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    },\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    }\n  ],\n  \"tags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"tagNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"createdDate\": \"1974-02-03T23:48:55.068Z\",\n  \"lastModifiedDate\": \"1952-06-12T19:22:23.751Z\",\n  \"paid\": 3206.4195014566553,\n  \"trustBalance\": 9588.670728106586,\n  \"operatingBalance\": 8663.253988079157,\n  \"billable\": 2821.617185126165,\n  \"status\": \"<string>\",\n  \"saleDocumentTemplateGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"saleDocumentTemplateName\": \"<string>\",\n  \"contactInvoiceRecipients\": [\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"email\": \"<string>\"\n    },\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"email\": \"<string>\"\n    }\n  ],\n  \"contactInvoiceRecipientsGuids\": [\n    \"00000000-0000-0000-0000-000000000000\",\n    \"00000000-0000-0000-0000-000000000000\"\n  ],\n  \"nameAndNumber\": \"string\",\n  \"guid\": \"00000000-0000-0000-0000-000000000000\",\n  \"id\": \"<long>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.practicepanther.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d0220cac-a158-4696-9ec0-20ac0c3028a6",
+    "name": "Legacy API (v1) Account API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Legacy API (v1) Account V1PaymentGridColumns API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "V1PaymentGridColumns",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "V1PaymentGridColumns_GetColumns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.practicepanther.com/api/internal/v1/tenants/:tenantId/paymentgridcolumns",
+            "params": [
+              {
+                "name": "pageVariant",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "bankAccountType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

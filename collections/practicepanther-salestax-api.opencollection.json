@@ -1,0 +1,145 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Legacy API (v1) Account SalesTax API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "SalesTax",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns a sales tax",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.practicepanther.com/api/salestax/:guid",
+            "params": [
+              {
+                "name": "guid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Returns a sales tax"
+        },
+        {
+          "info": {
+            "name": "OData end point to get a list of all sales taxes accessible by the user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.practicepanther.com/api/salestax",
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "OData end point to get a list of all sales taxes accessible by the user"
+        },
+        {
+          "info": {
+            "name": "Created a new sales tax (contact)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.practicepanther.com/api/salestax",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Created a new sales tax (contact)"
+        },
+        {
+          "info": {
+            "name": "Updates an existing sales tax",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://app.practicepanther.com/api/salestax",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Updates an existing sales tax"
+        },
+        {
+          "info": {
+            "name": "Marks an existing sales tax as deleted",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://app.practicepanther.com/api/salestax",
+            "params": [
+              {
+                "name": "guid",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "Marks an existing sales tax as deleted"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

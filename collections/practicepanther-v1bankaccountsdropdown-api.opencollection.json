@@ -1,0 +1,60 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Legacy API (v1) Account V1BankAccountsDropdown API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "V1BankAccountsDropdown",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "V1BankAccountsDropdown_Get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.practicepanther.com/api/internal/v1/tenants/:tenantId/bankaccounts-dropdown",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "bankAccountTypes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeBankBalance",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "includeArchived",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

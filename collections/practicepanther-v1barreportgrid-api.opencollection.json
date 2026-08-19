@@ -1,0 +1,325 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Legacy API (v1) Account V1BarReportGrid API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "V1BarReportGrid",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "V1BarReportGrid_GetLineItems",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.practicepanther.com/api/internal/v1/tenants/:tenantId/barreport",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "barReportGridResource.types",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.statuses",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.billedByGuids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.workedByGuids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.originatedByGuids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.contactAssignedToUserGuids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.matterAssignedToUserGuids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.accountGuids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.projectGuids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.billedWorkedDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.billedWorkedDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.workedDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.workedDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.billedDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.billedDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.createdDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.createdDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.invoiceSentDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.invoiceSentDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.invoiceDueDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.invoiceDueDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.invoiceApprovedDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.invoiceApprovedDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.lowBilledAmount.amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.lowBilledAmount.operator",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.highBilledAmount.amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.highBilledAmount.operator",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.lowWorkedAmount.amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.lowWorkedAmount.operator",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.highWorkedAmount.amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.highWorkedAmount.operator",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.accountTags",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.projectTags",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.searchTerm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.sortBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.sortOrder",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.columns",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.outputType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.exportAll",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.coreIdentity.tenantId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.coreIdentity.userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.coreIdentity.localizationPreferences.cultureName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.coreIdentity.localizationPreferences.dateFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.coreIdentity.localizationPreferences.dateTimeFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.coreIdentity.localizationPreferences.timeFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.coreIdentity.localizationPreferences.currencyCode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.coreIdentity.localizationPreferences.timezoneId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.coreIdentity.integrations.trustAccounting",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.coreIdentity.integrations.operatingAccounting",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.coreIdentity.integrations.pantherPayments",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.coreIdentity.securityDetail.userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.coreIdentity.securityDetail.isUserAuthenticated",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.coreIdentity.securityDetail.hasFullAccess",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "barReportGridResource.coreIdentity.securityDetail.accessLevels",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

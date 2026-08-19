@@ -1,0 +1,740 @@
+{
+  "item": [
+    {
+      "id": "3c493dd6-ecde-4730-8e3c-61c6cb9a4e08",
+      "name": "V1BarReportGrid",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "82952545-d949-4cf7-902a-300610e98701",
+          "name": "V1Bar Report Grid Get Line Items",
+          "request": {
+            "name": "V1Bar Report Grid Get Line Items",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "internal",
+                "v1",
+                "tenants",
+                ":tenantId",
+                "barreport"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.types",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.types",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.statuses",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.statuses",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.billedByGuids",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.billedByGuids",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.workedByGuids",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.workedByGuids",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.originatedByGuids",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.originatedByGuids",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.contactAssignedToUserGuids",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.contactAssignedToUserGuids",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.matterAssignedToUserGuids",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.matterAssignedToUserGuids",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.accountGuids",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.accountGuids",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.projectGuids",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.projectGuids",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.billedWorkedDateFrom",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.billedWorkedDateTo",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.workedDateFrom",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.workedDateTo",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.billedDateFrom",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.billedDateTo",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.createdDateFrom",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.createdDateTo",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.invoiceSentDateFrom",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.invoiceSentDateTo",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.invoiceDueDateFrom",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.invoiceDueDateTo",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.invoiceApprovedDateFrom",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.invoiceApprovedDateTo",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.lowBilledAmount.amount",
+                  "value": "<double>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.lowBilledAmount.operator",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.highBilledAmount.amount",
+                  "value": "<double>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.highBilledAmount.operator",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.lowWorkedAmount.amount",
+                  "value": "<double>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.lowWorkedAmount.operator",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.highWorkedAmount.amount",
+                  "value": "<double>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.highWorkedAmount.operator",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.accountTags",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.accountTags",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.projectTags",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.projectTags",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.searchTerm",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.page",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.sortBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.sortOrder",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.outputType",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.exportAll",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.coreIdentity.tenantId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.coreIdentity.userId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.coreIdentity.localizationPreferences.cultureName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.coreIdentity.localizationPreferences.dateFormat",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.coreIdentity.localizationPreferences.dateTimeFormat",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.coreIdentity.localizationPreferences.timeFormat",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.coreIdentity.localizationPreferences.currencyCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.coreIdentity.localizationPreferences.timezoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.coreIdentity.integrations.trustAccounting",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.coreIdentity.integrations.operatingAccounting",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.coreIdentity.integrations.pantherPayments",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.coreIdentity.securityDetail.userId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.coreIdentity.securityDetail.isUserAuthenticated",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "barReportGridResource.coreIdentity.securityDetail.hasFullAccess",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "tenantId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7a8a6c0d-42f8-4cd8-9a59-651bb201f0f5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "internal",
+                    "v1",
+                    "tenants",
+                    ":tenantId",
+                    "barreport"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "barReportGridResource.types",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.types",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.statuses",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.billedByGuids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "barReportGridResource.billedByGuids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "barReportGridResource.workedByGuids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "barReportGridResource.workedByGuids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "barReportGridResource.originatedByGuids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "barReportGridResource.originatedByGuids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "barReportGridResource.contactAssignedToUserGuids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "barReportGridResource.contactAssignedToUserGuids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "barReportGridResource.matterAssignedToUserGuids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "barReportGridResource.matterAssignedToUserGuids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "barReportGridResource.accountGuids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "barReportGridResource.accountGuids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "barReportGridResource.projectGuids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "barReportGridResource.projectGuids",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "barReportGridResource.billedWorkedDateFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.billedWorkedDateTo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.workedDateFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.workedDateTo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.billedDateFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.billedDateTo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.createdDateFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.createdDateTo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.invoiceSentDateFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.invoiceSentDateTo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.invoiceDueDateFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.invoiceDueDateTo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.invoiceApprovedDateFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.invoiceApprovedDateTo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.lowBilledAmount.amount",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "barReportGridResource.lowBilledAmount.operator",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.highBilledAmount.amount",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "barReportGridResource.highBilledAmount.operator",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.lowWorkedAmount.amount",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "barReportGridResource.lowWorkedAmount.operator",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.highWorkedAmount.amount",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "barReportGridResource.highWorkedAmount.operator",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.accountTags",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.accountTags",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.projectTags",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.projectTags",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.searchTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "barReportGridResource.pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "barReportGridResource.sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.sortOrder",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.outputType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.exportAll",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "barReportGridResource.coreIdentity.tenantId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "barReportGridResource.coreIdentity.userId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "barReportGridResource.coreIdentity.localizationPreferences.cultureName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.coreIdentity.localizationPreferences.dateFormat",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.coreIdentity.localizationPreferences.dateTimeFormat",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.coreIdentity.localizationPreferences.timeFormat",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.coreIdentity.localizationPreferences.currencyCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.coreIdentity.localizationPreferences.timezoneId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "barReportGridResource.coreIdentity.integrations.trustAccounting",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "barReportGridResource.coreIdentity.integrations.operatingAccounting",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "barReportGridResource.coreIdentity.integrations.pantherPayments",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "barReportGridResource.coreIdentity.securityDetail.userId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "barReportGridResource.coreIdentity.securityDetail.isUserAuthenticated",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "barReportGridResource.coreIdentity.securityDetail.hasFullAccess",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "tenantId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.practicepanther.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3769c4cb-1177-4e28-acae-35a2c614b4e4",
+    "name": "Legacy API (v1) Account V1BarReportGrid API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

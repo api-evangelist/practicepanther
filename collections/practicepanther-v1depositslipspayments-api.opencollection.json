@@ -1,0 +1,338 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Legacy API (v1) Account V1DepositSlipsPayments API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "V1DepositSlipsPayments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "V1DepositSlipsPayments_PaymentsAvailableForDepositSlip",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.practicepanther.com/api/internal/v1/tenants/:tenantId/depositSlipPayments",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.tenantId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.cultureName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.dateFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.dateTimeFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.timeFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.currencyCode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.timezoneId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.integrations.trustAccounting",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.integrations.operatingAccounting",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.integrations.pantherPayments",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.securityDetail.userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.securityDetail.isUserAuthenticated",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.securityDetail.hasFullAccess",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.securityDetail.accessLevels",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.bankAccountGuid",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.paymentMethods",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.searchTerm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.showHiddenPayments",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.sortBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.sortOrder",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.columns",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.outputType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.exportAll",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "V1DepositSlipsPayments_PaymentsForDepositSlip",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.practicepanther.com/api/internal/v1/tenants/:tenantId/depositSlipPayments/:depositSlipGuid",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "depositSlipGuid",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.tenantId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.cultureName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.dateFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.dateTimeFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.timeFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.currencyCode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.timezoneId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.integrations.trustAccounting",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.integrations.operatingAccounting",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.integrations.pantherPayments",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.securityDetail.userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.securityDetail.isUserAuthenticated",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.securityDetail.hasFullAccess",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.coreIdentity.securityDetail.accessLevels",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.bankAccountGuid",
+                "value": "",
+                "type": "query",
+                "description": "Used to set the reference in POST and PUT "
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.paymentMethods",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.searchTerm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.showHiddenPayments",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.sortBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.sortOrder",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.columns",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.outputType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "depositSlipPaymentsGridResource.exportAll",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

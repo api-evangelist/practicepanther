@@ -1,0 +1,252 @@
+{
+  "item": [
+    {
+      "id": "0dc28319-012c-40d6-bdab-4a6e687fe55a",
+      "name": "EmailTemplate",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "02051335-0691-4c0c-8b1e-47cf2e490dc8",
+          "name": "Email Template Post",
+          "request": {
+            "name": "Email Template Post",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "EmailTemplate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "templateSerializedData",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "templateDataType",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "from",
+                  "value": "{\"email\":\"<string>\",\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "recipients",
+                  "value": "[{\"email\":\"<string>\",\"name\":\"<string>\"},{\"email\":\"<string>\",\"name\":\"<string>\"}]"
+                },
+                {
+                  "disabled": false,
+                  "key": "singleRecipientMode",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "bcc",
+                  "value": "{\"email\":\"<string>\",\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "subject",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "bodyText",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "bodyHtml",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "attachments",
+                  "value": "[{\"name\":\"<string>\",\"byteArray\":\"<byte>\"},{\"name\":\"<string>\",\"byteArray\":\"<byte>\"}]"
+                },
+                {
+                  "disabled": false,
+                  "key": "customArguments",
+                  "value": "<object>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "79dc0a3c-7b75-4073-95fd-8a8555967dec",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "EmailTemplate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "key": "templateSerializedData",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "templateDataType",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "from",
+                      "value": "{\"email\":\"<string>\",\"name\":\"<string>\"}"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "recipients",
+                      "value": "[{\"email\":\"<string>\",\"name\":\"<string>\"},{\"email\":\"<string>\",\"name\":\"<string>\"}]"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "singleRecipientMode",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "bcc",
+                      "value": "{\"email\":\"<string>\",\"name\":\"<string>\"}"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "subject",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "bodyText",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "bodyHtml",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "attachments",
+                      "value": "[{\"name\":\"<string>\",\"byteArray\":\"<byte>\"},{\"name\":\"<string>\",\"byteArray\":\"<byte>\"}]"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "customArguments",
+                      "value": "<object>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"string\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.practicepanther.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7d18fcaf-3858-4996-89ed-2d7b99c71e16",
+    "name": "Legacy API (v1) Account EmailTemplate API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

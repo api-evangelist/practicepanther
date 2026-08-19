@@ -1,0 +1,1031 @@
+{
+  "item": [
+    {
+      "id": "c9924da1-18fd-4c29-9ea2-9a4892f4a158",
+      "name": "TimeEntry",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "20b52df1-a24e-49f0-b36f-98abc8ae05a5",
+          "name": "Returns a time entry",
+          "request": {
+            "name": "Returns a time entry",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "timeentry",
+                ":guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "guid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "73e15962-292b-41f4-aad6-d7e4e494c4bc",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "timeentry",
+                    ":guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "guid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"projectGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"userGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"isBillable\": false,\n  \"isBilled\": false,\n  \"date\": \"1976-11-02T09:31:35.230Z\",\n  \"hours\": 1811.4009842654998,\n  \"hourlyRate\": 6436.720030578935,\n  \"name\": \"string\",\n  \"lastModifiedDate\": \"2008-11-23T04:22:01.087Z\",\n  \"lastModifiedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"string\"\n  },\n  \"activity\": {\n    \"name\": \"string\",\n    \"type\": \"Call\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\"\n  },\n  \"activityGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"productGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"utbmsCodeId\": null,\n  \"isTimeEntryDateLimited\": false,\n  \"accountTags\": [\n    {\n      \"name\": \"string\"\n    },\n    {\n      \"name\": \"string\"\n    }\n  ],\n  \"projectTags\": [\n    {\n      \"name\": \"string\"\n    },\n    {\n      \"name\": \"string\"\n    }\n  ],\n  \"account\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"utbmsIsEnabled\": true,\n    \"id\": 1630\n  },\n  \"project\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"id\": 2321\n  },\n  \"user\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"string\"\n  },\n  \"product\": {\n    \"name\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"code\": \"string\",\n    \"chartOfAccountId\": 5399\n  },\n  \"utbmsCode\": {\n    \"name\": \"string\",\n    \"code\": \"string\"\n  },\n  \"description\": \"string\",\n  \"notes\": \"string\",\n  \"total\": 211.41187394406734,\n  \"createdDate\": \"1979-05-12T15:22:36.376Z\",\n  \"createdBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"string\"\n  },\n  \"status\": \"NotBillable\",\n  \"saleDocumentItem\": {\n    \"saleDocument\": {\n      \"date\": \"1960-11-23T18:55:53.865Z\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"number\": 3169,\n      \"name\": \"string\",\n      \"type\": \"Invoice\",\n      \"invoiceType\": \"Refund\"\n    },\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"string\"\n  },\n  \"guid\": \"00000000-0000-0000-0000-000000000000\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ad4f6d6a-1daa-4292-98e7-b9394dcae8ca",
+          "name": "OData end point to get a list of all time entries accessible by the user",
+          "request": {
+            "name": "OData end point to get a list of all time entries accessible by the user",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "timeentry"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8ffc7a90-569b-4d7d-bddd-4cf7a22f2215",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "timeentry"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"date\": \"2014-08-27T23:29:29.270Z\",\n    \"hours\": 3255.640306344656,\n    \"hourlyRate\": 9234.576749777927,\n    \"accountTags\": [\n      {\n        \"name\": \"string\"\n      },\n      {\n        \"name\": \"string\"\n      }\n    ],\n    \"projectTags\": [\n      {\n        \"name\": \"string\"\n      },\n      {\n        \"name\": \"string\"\n      }\n    ],\n    \"account\": {\n      \"nameAndNumber\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"utbmsIsEnabled\": true,\n      \"id\": 338\n    },\n    \"project\": {\n      \"nameAndNumber\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"id\": 9829\n    },\n    \"user\": {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    },\n    \"product\": {\n      \"name\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"code\": \"string\",\n      \"chartOfAccountId\": 3378\n    },\n    \"utbmsCode\": {\n      \"name\": \"string\",\n      \"code\": \"string\"\n    },\n    \"description\": \"string\",\n    \"notes\": \"string\",\n    \"total\": 127.39791086414543,\n    \"createdDate\": \"1971-02-01T03:09:28.030Z\",\n    \"createdBy\": {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    },\n    \"status\": \"Paid\",\n    \"saleDocumentItem\": {\n      \"saleDocument\": {\n        \"date\": \"2012-11-12T20:18:42.189Z\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"number\": 4979,\n        \"name\": \"string\",\n        \"type\": \"Invoice\",\n        \"invoiceType\": \"Refund\"\n      },\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"name\": \"string\"\n    },\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"string\"\n  },\n  {\n    \"date\": \"2015-10-23T10:52:57.834Z\",\n    \"hours\": 5725.235363937983,\n    \"hourlyRate\": 7206.053603495678,\n    \"accountTags\": [\n      {\n        \"name\": \"string\"\n      },\n      {\n        \"name\": \"string\"\n      }\n    ],\n    \"projectTags\": [\n      {\n        \"name\": \"string\"\n      },\n      {\n        \"name\": \"string\"\n      }\n    ],\n    \"account\": {\n      \"nameAndNumber\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"utbmsIsEnabled\": false,\n      \"id\": 9905\n    },\n    \"project\": {\n      \"nameAndNumber\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"id\": 8824\n    },\n    \"user\": {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    },\n    \"product\": {\n      \"name\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"code\": \"string\",\n      \"chartOfAccountId\": 3971\n    },\n    \"utbmsCode\": {\n      \"name\": \"string\",\n      \"code\": \"string\"\n    },\n    \"description\": \"string\",\n    \"notes\": \"string\",\n    \"total\": 3200.826479362574,\n    \"createdDate\": \"1989-04-27T23:19:56.792Z\",\n    \"createdBy\": {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    },\n    \"status\": \"Paid\",\n    \"saleDocumentItem\": {\n      \"saleDocument\": {\n        \"date\": \"1998-09-28T15:40:41.786Z\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"number\": 5872,\n        \"name\": \"string\",\n        \"type\": \"Invoice\",\n        \"invoiceType\": \"Credit\"\n      },\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"name\": \"string\"\n    },\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5da761fd-65d4-40e4-b8c4-858561f2a0d6",
+          "name": "Updates an existing time entry",
+          "request": {
+            "name": "Updates an existing time entry",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "timeentry"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "accountGuid",
+                  "value": "<uuid>",
+                  "description": "(Required) Used to set the reference in POST and PUTRequired for PracticePanther. When creating or updating a time entry, this is used to associate a time entry with an account (contact). Required for PracticePanther. When creating or updating a time entry, this is used to associate a time entry with an account (contact)."
+                },
+                {
+                  "disabled": false,
+                  "key": "projectGuid",
+                  "value": "<uuid>",
+                  "description": "(Required) Used to set the reference in POST and PUTRequired for PracticePanther. When creating or updating a time entry, this is used to associate a time entry with a project (matter). Required for PracticePanther. When creating or updating a time entry, this is used to associate a time entry with a project (matter)."
+                },
+                {
+                  "disabled": false,
+                  "key": "userGuid",
+                  "value": "<uuid>",
+                  "description": "(Required) Used to set the reference in POST and PUTWhen creating or updating a time entry, this is used to associate a user with this time entry. When creating or updating a time entry, this is used to associate a user with this time entry."
+                },
+                {
+                  "disabled": false,
+                  "key": "isBillable",
+                  "value": "<boolean>",
+                  "description": "(Required) Set this to true to indicate this expense is billable to the client and should be added to an invoice"
+                },
+                {
+                  "disabled": false,
+                  "key": "isBilled",
+                  "value": "<boolean>",
+                  "description": "(Required) Set this to true to indicate this expenses has already been billed to the client (added to an invoice)."
+                },
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<dateTime>",
+                  "description": "(Required) The date for this time entry. Will be used on the invoice and in various reports."
+                },
+                {
+                  "disabled": false,
+                  "key": "hours",
+                  "value": "<double>",
+                  "description": "(Required) How many hours were logged, 1.1 = 1 hour and 6 minutes."
+                },
+                {
+                  "disabled": false,
+                  "key": "hourlyRate",
+                  "value": "<double>",
+                  "description": "(Required) The hourly rate for this time entry."
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "activityGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUTWhen creating or updating a time entry, this is used to associate a time entry with an activity (task/event/email/call). When creating or updating a time entry, this is used to associate a time entry with an activity (task/event/email/call)."
+                },
+                {
+                  "disabled": false,
+                  "key": "productGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUTWhen creating or updating a time entry, this is used to associate a time entry with a product (item). When creating or updating a time entry, this is used to associate a time entry with a product (item)."
+                },
+                {
+                  "disabled": false,
+                  "key": "utbmsCodeId",
+                  "value": "<long>",
+                  "description": "When creating or updating a time entry, this is used to attach the UtbmsCode"
+                },
+                {
+                  "disabled": false,
+                  "key": "isTimeEntryDateLimited",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "projectTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "projectTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "utbmsIsEnabled",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountGuid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "chartOfAccountId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "notes",
+                  "value": "<string>",
+                  "description": "Internal notes, Not visible on the invoice."
+                },
+                {
+                  "disabled": false,
+                  "key": "total",
+                  "value": "<double>",
+                  "description": "The total to be billed for this time entry. Set to ZERO if you wish to not bill this to the client."
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "saleDocument",
+                  "value": "{\"date\":\"<dateTime>\",\"guid\":\"<uuid>\",\"number\":\"<integer>\",\"type\":\"<string>\",\"invoiceType\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "91edc9ff-277f-4099-a1ed-dd0c5aefa4f7",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "timeentry"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"projectGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"userGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"isBillable\": \"<boolean>\",\n  \"isBilled\": \"<boolean>\",\n  \"date\": \"<dateTime>\",\n  \"hours\": \"<double>\",\n  \"hourlyRate\": \"<double>\",\n  \"name\": \"string\",\n  \"lastModifiedDate\": \"1987-06-02T06:16:33.917Z\",\n  \"lastModifiedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"activity\": {\n    \"name\": \"<string>\",\n    \"type\": \"<string>\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\"\n  },\n  \"activityGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"productGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"utbmsCodeId\": \"<long>\",\n  \"isTimeEntryDateLimited\": \"<boolean>\",\n  \"accountTags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"projectTags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"account\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"utbmsIsEnabled\": \"<boolean>\",\n    \"id\": \"<long>\"\n  },\n  \"project\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"id\": \"<long>\"\n  },\n  \"user\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"product\": {\n    \"name\": \"<string>\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"code\": \"<string>\",\n    \"chartOfAccountId\": \"<long>\"\n  },\n  \"utbmsCode\": {\n    \"name\": \"<string>\",\n    \"code\": \"<string>\"\n  },\n  \"description\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"total\": \"<double>\",\n  \"createdDate\": \"1991-11-24T04:15:40.820Z\",\n  \"createdBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"status\": \"Billable\",\n  \"saleDocumentItem\": {\n    \"saleDocument\": {\n      \"date\": \"<dateTime>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"number\": \"<integer>\",\n      \"name\": \"string\",\n      \"type\": \"<string>\",\n      \"invoiceType\": \"<string>\"\n    },\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"<string>\"\n  },\n  \"guid\": \"00000000-0000-0000-0000-000000000000\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "33588fae-6d91-4f05-8529-36ac04b31f28",
+          "name": "Created a new time entry",
+          "request": {
+            "name": "Created a new time entry",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "timeentry"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "accountGuid",
+                  "value": "<uuid>",
+                  "description": "(Required) Used to set the reference in POST and PUTRequired for PracticePanther. When creating or updating a time entry, this is used to associate a time entry with an account (contact). Required for PracticePanther. When creating or updating a time entry, this is used to associate a time entry with an account (contact)."
+                },
+                {
+                  "disabled": false,
+                  "key": "projectGuid",
+                  "value": "<uuid>",
+                  "description": "(Required) Used to set the reference in POST and PUTRequired for PracticePanther. When creating or updating a time entry, this is used to associate a time entry with a project (matter). Required for PracticePanther. When creating or updating a time entry, this is used to associate a time entry with a project (matter)."
+                },
+                {
+                  "disabled": false,
+                  "key": "userGuid",
+                  "value": "<uuid>",
+                  "description": "(Required) Used to set the reference in POST and PUTWhen creating or updating a time entry, this is used to associate a user with this time entry. When creating or updating a time entry, this is used to associate a user with this time entry."
+                },
+                {
+                  "disabled": false,
+                  "key": "isBillable",
+                  "value": "<boolean>",
+                  "description": "(Required) Set this to true to indicate this expense is billable to the client and should be added to an invoice"
+                },
+                {
+                  "disabled": false,
+                  "key": "isBilled",
+                  "value": "<boolean>",
+                  "description": "(Required) Set this to true to indicate this expenses has already been billed to the client (added to an invoice)."
+                },
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<dateTime>",
+                  "description": "(Required) The date for this time entry. Will be used on the invoice and in various reports."
+                },
+                {
+                  "disabled": false,
+                  "key": "hours",
+                  "value": "<double>",
+                  "description": "(Required) How many hours were logged, 1.1 = 1 hour and 6 minutes."
+                },
+                {
+                  "disabled": false,
+                  "key": "hourlyRate",
+                  "value": "<double>",
+                  "description": "(Required) The hourly rate for this time entry."
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "activityGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUTWhen creating or updating a time entry, this is used to associate a time entry with an activity (task/event/email/call). When creating or updating a time entry, this is used to associate a time entry with an activity (task/event/email/call)."
+                },
+                {
+                  "disabled": false,
+                  "key": "productGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUTWhen creating or updating a time entry, this is used to associate a time entry with a product (item). When creating or updating a time entry, this is used to associate a time entry with a product (item)."
+                },
+                {
+                  "disabled": false,
+                  "key": "utbmsCodeId",
+                  "value": "<long>",
+                  "description": "When creating or updating a time entry, this is used to attach the UtbmsCode"
+                },
+                {
+                  "disabled": false,
+                  "key": "isTimeEntryDateLimited",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "projectTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "projectTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "utbmsIsEnabled",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountGuid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "chartOfAccountId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "notes",
+                  "value": "<string>",
+                  "description": "Internal notes, Not visible on the invoice."
+                },
+                {
+                  "disabled": false,
+                  "key": "total",
+                  "value": "<double>",
+                  "description": "The total to be billed for this time entry. Set to ZERO if you wish to not bill this to the client."
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "saleDocument",
+                  "value": "{\"date\":\"<dateTime>\",\"guid\":\"<uuid>\",\"number\":\"<integer>\",\"type\":\"<string>\",\"invoiceType\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0976255d-692e-4030-9412-b1504c1b1ce4",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "timeentry"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"projectGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"userGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"isBillable\": \"<boolean>\",\n  \"isBilled\": \"<boolean>\",\n  \"date\": \"<dateTime>\",\n  \"hours\": \"<double>\",\n  \"hourlyRate\": \"<double>\",\n  \"name\": \"string\",\n  \"lastModifiedDate\": \"1987-06-02T06:16:33.917Z\",\n  \"lastModifiedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"activity\": {\n    \"name\": \"<string>\",\n    \"type\": \"<string>\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\"\n  },\n  \"activityGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"productGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"utbmsCodeId\": \"<long>\",\n  \"isTimeEntryDateLimited\": \"<boolean>\",\n  \"accountTags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"projectTags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"account\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"utbmsIsEnabled\": \"<boolean>\",\n    \"id\": \"<long>\"\n  },\n  \"project\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"id\": \"<long>\"\n  },\n  \"user\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"product\": {\n    \"name\": \"<string>\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"code\": \"<string>\",\n    \"chartOfAccountId\": \"<long>\"\n  },\n  \"utbmsCode\": {\n    \"name\": \"<string>\",\n    \"code\": \"<string>\"\n  },\n  \"description\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"total\": \"<double>\",\n  \"createdDate\": \"1991-11-24T04:15:40.820Z\",\n  \"createdBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"status\": \"Billable\",\n  \"saleDocumentItem\": {\n    \"saleDocument\": {\n      \"date\": \"<dateTime>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"number\": \"<integer>\",\n      \"name\": \"string\",\n      \"type\": \"<string>\",\n      \"invoiceType\": \"<string>\"\n    },\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"<string>\"\n  },\n  \"guid\": \"00000000-0000-0000-0000-000000000000\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e810d457-7dd3-4b70-a93e-d27be874a7fc",
+          "name": "Marks an existing time entry as deleted",
+          "request": {
+            "name": "Marks an existing time entry as deleted",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "timeentry"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "96db1c2c-ff5a-42a5-88d9-c0f270d1521f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "timeentry"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "guid",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"projectGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"userGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"isBillable\": \"<boolean>\",\n  \"isBilled\": \"<boolean>\",\n  \"date\": \"<dateTime>\",\n  \"hours\": \"<double>\",\n  \"hourlyRate\": \"<double>\",\n  \"name\": \"string\",\n  \"lastModifiedDate\": \"1987-06-02T06:16:33.917Z\",\n  \"lastModifiedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"activity\": {\n    \"name\": \"<string>\",\n    \"type\": \"<string>\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\"\n  },\n  \"activityGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"productGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"utbmsCodeId\": \"<long>\",\n  \"isTimeEntryDateLimited\": \"<boolean>\",\n  \"accountTags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"projectTags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"account\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"utbmsIsEnabled\": \"<boolean>\",\n    \"id\": \"<long>\"\n  },\n  \"project\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"id\": \"<long>\"\n  },\n  \"user\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"product\": {\n    \"name\": \"<string>\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"code\": \"<string>\",\n    \"chartOfAccountId\": \"<long>\"\n  },\n  \"utbmsCode\": {\n    \"name\": \"<string>\",\n    \"code\": \"<string>\"\n  },\n  \"description\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"total\": \"<double>\",\n  \"createdDate\": \"1991-11-24T04:15:40.820Z\",\n  \"createdBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"status\": \"Billable\",\n  \"saleDocumentItem\": {\n    \"saleDocument\": {\n      \"date\": \"<dateTime>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"number\": \"<integer>\",\n      \"name\": \"string\",\n      \"type\": \"<string>\",\n      \"invoiceType\": \"<string>\"\n    },\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"<string>\"\n  },\n  \"guid\": \"00000000-0000-0000-0000-000000000000\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.practicepanther.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "995d2bd4-f503-4fc7-8f0c-1fce765c0851",
+    "name": "Legacy API (v1) Account TimeEntry API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

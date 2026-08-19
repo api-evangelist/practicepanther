@@ -1,0 +1,191 @@
+{
+  "item": [
+    {
+      "id": "5eb5bb0f-9f68-40f2-ad02-b023a32d7b68",
+      "name": "V1BankAccountsDropdown",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "acf616e6-9c50-4ec1-b75a-b561f576ae1f",
+          "name": "V1Bank Accounts Dropdown Get",
+          "request": {
+            "name": "V1Bank Accounts Dropdown Get",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "internal",
+                "v1",
+                "tenants",
+                ":tenantId",
+                "bankaccounts-dropdown"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "bankAccountTypes",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "bankAccountTypes",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeBankBalance",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "includeArchived",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "tenantId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f1bbc3b5-c41c-43f0-b071-f08b5af0320e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "internal",
+                    "v1",
+                    "tenants",
+                    ":tenantId",
+                    "bankaccounts-dropdown"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "bankAccountTypes",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "bankAccountTypes",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "includeBankBalance",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "includeArchived",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "tenantId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"isDefaultBankAccount\": true,\n    \"bankAccountType\": 4887,\n    \"value\": \"string\",\n    \"displayName\": \"string\",\n    \"groupSlug\": \"string\"\n  },\n  {\n    \"isDefaultBankAccount\": true,\n    \"bankAccountType\": 5817,\n    \"value\": \"string\",\n    \"displayName\": \"string\",\n    \"groupSlug\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.practicepanther.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "ea9acd1b-cbb7-4c16-a6b6-7b6ca0d7789c",
+    "name": "Legacy API (v1) Account V1BankAccountsDropdown API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

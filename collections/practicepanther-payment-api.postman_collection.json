@@ -1,0 +1,963 @@
+{
+  "item": [
+    {
+      "id": "99801790-c57b-4ff6-a25a-8b4b28299523",
+      "name": "Payment",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1b95e6a2-da24-48cf-bab2-9ffe9b375a14",
+          "name": "Returns a payment",
+          "request": {
+            "name": "Returns a payment",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "payment",
+                ":guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "guid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d61ae0e9-bdf6-400b-950f-b1030a8e3f91",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "payment",
+                    ":guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "guid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"bankAccountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"currencyCode\": \"string\",\n  \"amount\": 2338.7874748751838,\n  \"date\": \"2022-03-28T09:18:47.913Z\",\n  \"method\": \"CreditCard\",\n  \"saleDocumentPayments\": [\n    {\n      \"amount\": 5804.342361384575,\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"saleDocument\": {\n        \"date\": \"2000-06-05T19:19:10.979Z\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"number\": 2988,\n        \"name\": \"string\",\n        \"type\": \"Invoice\",\n        \"invoiceType\": \"Refund\"\n      },\n      \"payment\": {\n        \"amount\": 4778.4972869379135,\n        \"date\": \"1958-06-03T21:45:37.207Z\",\n        \"method\": \"AuthorizeNet\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"name\": \"string\",\n        \"methodName\": \"string\"\n      },\n      \"credit\": {\n        \"creditForSaleDocument\": {\n          \"date\": \"1997-12-22T10:32:43.700Z\",\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"number\": 8320,\n          \"name\": \"string\",\n          \"type\": \"Invoice\",\n          \"invoiceType\": \"Refund\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"creditAmount\": 9021.785073783645,\n        \"creditApplied\": 5353.230086290135,\n        \"creditAvailable\": 5353.292684743173\n      }\n    },\n    {\n      \"amount\": 3423.426631993922,\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"saleDocument\": {\n        \"date\": \"2001-11-09T00:37:46.757Z\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"number\": 8413,\n        \"name\": \"string\",\n        \"type\": \"Invoice\",\n        \"invoiceType\": \"Sale\"\n      },\n      \"payment\": {\n        \"amount\": 4901.009713228423,\n        \"date\": \"1959-12-05T07:44:47.876Z\",\n        \"method\": \"PayPal\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"name\": \"string\",\n        \"methodName\": \"string\"\n      },\n      \"credit\": {\n        \"creditForSaleDocument\": {\n          \"date\": \"1952-01-30T21:15:05.046Z\",\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"number\": 2864,\n          \"name\": \"string\",\n          \"type\": \"Invoice\",\n          \"invoiceType\": \"Refund\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"creditAmount\": 7141.190171278397,\n        \"creditApplied\": 2717.262770242759,\n        \"creditAvailable\": 6931.954777068695\n      }\n    }\n  ],\n  \"lastModifiedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"string\"\n  },\n  \"lastModifiedDate\": \"1947-09-05T10:56:32.511Z\",\n  \"projectGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"authNumber\": \"string\",\n  \"accountTags\": [\n    {\n      \"name\": \"string\"\n    },\n    {\n      \"name\": \"string\"\n    }\n  ],\n  \"projectTags\": [\n    {\n      \"name\": \"string\"\n    },\n    {\n      \"name\": \"string\"\n    }\n  ],\n  \"account\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"utbmsIsEnabled\": true,\n    \"id\": 2496\n  },\n  \"checkPayee\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"utbmsIsEnabled\": false,\n    \"id\": 1093\n  },\n  \"project\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"id\": 3657\n  },\n  \"createdBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"string\"\n  },\n  \"createdDate\": \"1963-10-14T08:26:50.947Z\",\n  \"notes\": \"string\",\n  \"number\": 4769,\n  \"amountApplied\": 3846.0352095561066,\n  \"amountCredited\": 759.731897554371,\n  \"transactionId\": \"string\",\n  \"bankAccount\": {\n    \"name\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"type\": \"Operating\",\n    \"isArchived\": true\n  },\n  \"isReconciled\": true,\n  \"reconciledDate\": \"1987-07-20T22:51:27.682Z\",\n  \"reconciledBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"string\"\n  },\n  \"checkIsPrinted\": true,\n  \"isDepositSlipPrinted\": true,\n  \"checkNumber\": 4028,\n  \"feeAmountInCents\": 7321.434778974849,\n  \"refundParentPaymentGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"surchargeAmount\": 296.79883900150526,\n  \"totalAmount\": 479.81170145323216,\n  \"guid\": \"00000000-0000-0000-0000-000000000000\",\n  \"name\": \"string\",\n  \"methodName\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "252ec2b8-489e-49b7-b2c8-ed5c03baccd8",
+          "name": "OData end point to get a list of all payments accessible by the user",
+          "request": {
+            "name": "OData end point to get a list of all payments accessible by the user",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "payment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0d8f08e0-b848-4e15-843d-8f7f8f678f8a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "payment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"currencyCode\": \"string\",\n    \"amount\": 6920.536343974427,\n    \"date\": \"1948-10-06T00:38:02.561Z\",\n    \"method\": \"AuthorizeNet\",\n    \"accountTags\": [\n      {\n        \"name\": \"string\"\n      },\n      {\n        \"name\": \"string\"\n      }\n    ],\n    \"projectTags\": [\n      {\n        \"name\": \"string\"\n      },\n      {\n        \"name\": \"string\"\n      }\n    ],\n    \"account\": {\n      \"nameAndNumber\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"utbmsIsEnabled\": false,\n      \"id\": 7671\n    },\n    \"checkPayee\": {\n      \"nameAndNumber\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"utbmsIsEnabled\": true,\n      \"id\": 2526\n    },\n    \"project\": {\n      \"nameAndNumber\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"id\": 8642\n    },\n    \"createdBy\": {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    },\n    \"createdDate\": \"1974-08-18T04:00:17.735Z\",\n    \"notes\": \"string\",\n    \"number\": 7905,\n    \"amountApplied\": 1007.8882219277318,\n    \"amountCredited\": 9464.863056262986,\n    \"transactionId\": \"string\",\n    \"bankAccount\": {\n      \"name\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"type\": \"CreditCard\",\n      \"isArchived\": true\n    },\n    \"isReconciled\": true,\n    \"reconciledDate\": \"1982-04-29T19:05:33.607Z\",\n    \"reconciledBy\": {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    },\n    \"checkIsPrinted\": false,\n    \"isDepositSlipPrinted\": false,\n    \"checkNumber\": 5809,\n    \"feeAmountInCents\": 2884.149835004157,\n    \"refundParentPaymentGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"surchargeAmount\": 129.45995318047966,\n    \"totalAmount\": 1450.1676187420032,\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"string\",\n    \"methodName\": \"string\"\n  },\n  {\n    \"currencyCode\": \"string\",\n    \"amount\": 5192.3180115574105,\n    \"date\": \"1974-12-27T10:17:33.583Z\",\n    \"method\": \"JournalEntry\",\n    \"accountTags\": [\n      {\n        \"name\": \"string\"\n      },\n      {\n        \"name\": \"string\"\n      }\n    ],\n    \"projectTags\": [\n      {\n        \"name\": \"string\"\n      },\n      {\n        \"name\": \"string\"\n      }\n    ],\n    \"account\": {\n      \"nameAndNumber\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"utbmsIsEnabled\": false,\n      \"id\": 9322\n    },\n    \"checkPayee\": {\n      \"nameAndNumber\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"utbmsIsEnabled\": true,\n      \"id\": 7991\n    },\n    \"project\": {\n      \"nameAndNumber\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"id\": 8827\n    },\n    \"createdBy\": {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    },\n    \"createdDate\": \"1962-07-18T05:55:13.828Z\",\n    \"notes\": \"string\",\n    \"number\": 3190,\n    \"amountApplied\": 2595.9581000783614,\n    \"amountCredited\": 6992.996468847463,\n    \"transactionId\": \"string\",\n    \"bankAccount\": {\n      \"name\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"type\": \"Trust\",\n      \"isArchived\": true\n    },\n    \"isReconciled\": false,\n    \"reconciledDate\": \"1990-02-19T16:47:55.916Z\",\n    \"reconciledBy\": {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    },\n    \"checkIsPrinted\": false,\n    \"isDepositSlipPrinted\": false,\n    \"checkNumber\": 6168,\n    \"feeAmountInCents\": 7206.026122794189,\n    \"refundParentPaymentGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"surchargeAmount\": 6514.890541715637,\n    \"totalAmount\": 9129.282381603289,\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"string\",\n    \"methodName\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dbb89993-3f96-48ce-8d2c-04399856311b",
+          "name": "Created a new payment",
+          "request": {
+            "name": "Created a new payment",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "payment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "accountGuid",
+                  "value": "<uuid>",
+                  "description": "(Required) Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "bankAccountGuid",
+                  "value": "<uuid>",
+                  "description": "(Required) Used to set the reference in POST and PUTOnly operating account payments can be applied towards invoices. Only operating account payments can be applied towards invoices."
+                },
+                {
+                  "disabled": false,
+                  "key": "currencyCode",
+                  "value": "<string>",
+                  "description": "(Required) This defines the currency for this account. Must be in ISO 4217 format. Must match the currency code for the Account (contact)."
+                },
+                {
+                  "disabled": false,
+                  "key": "amount",
+                  "value": "<double>",
+                  "description": "(Required) The total amount received."
+                },
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<dateTime>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "method",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "saleDocumentPayments",
+                  "value": "{\"amount\":\"<double>\",\"guid\":\"<uuid>\",\"saleDocument\":{\"date\":\"<dateTime>\",\"guid\":\"<uuid>\",\"number\":\"<integer>\",\"type\":\"<string>\",\"invoiceType\":\"<string>\"},\"payment\":{\"amount\":\"<double>\",\"date\":\"<dateTime>\",\"method\":\"<string>\",\"guid\":\"<uuid>\"},\"credit\":{\"creditForSaleDocument\":{\"date\":\"<dateTime>\",\"guid\":\"<uuid>\",\"number\":\"<integer>\",\"type\":\"<string>\",\"invoiceType\":\"<string>\"},\"guid\":\"<uuid>\"}}",
+                  "description": "A list of the invoices this payment was applied to."
+                },
+                {
+                  "disabled": false,
+                  "key": "saleDocumentPayments",
+                  "value": "{\"amount\":\"<double>\",\"guid\":\"<uuid>\",\"saleDocument\":{\"date\":\"<dateTime>\",\"guid\":\"<uuid>\",\"number\":\"<integer>\",\"type\":\"<string>\",\"invoiceType\":\"<string>\"},\"payment\":{\"amount\":\"<double>\",\"date\":\"<dateTime>\",\"method\":\"<string>\",\"guid\":\"<uuid>\"},\"credit\":{\"creditForSaleDocument\":{\"date\":\"<dateTime>\",\"guid\":\"<uuid>\",\"number\":\"<integer>\",\"type\":\"<string>\",\"invoiceType\":\"<string>\"},\"guid\":\"<uuid>\"}}",
+                  "description": "A list of the invoices this payment was applied to."
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "projectGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "authNumber",
+                  "value": "<string>",
+                  "description": "Authorization number for online payments"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "projectTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "projectTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "utbmsIsEnabled",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "utbmsIsEnabled",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountGuid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "notes",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "transactionId",
+                  "value": "<string>",
+                  "description": "Used to reference a transaction from an external gateway (ie. Stripe, PayPal, Auth.Net etc.)"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isArchived",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isReconciled",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "reconciledDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "checkIsPrinted",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isDepositSlipPrinted",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "checkNumber",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "feeAmountInCents",
+                  "value": "<double>"
+                },
+                {
+                  "disabled": false,
+                  "key": "refundParentPaymentGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "surchargeAmount",
+                  "value": "<double>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4608c717-3495-4e1d-8693-a346eda6e408",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "payment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Used to set the reference in POST and PUT ",
+                        "type": "text/plain"
+                      },
+                      "key": "accountGuid",
+                      "value": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) Used to set the reference in POST and PUTOnly operating account payments can be applied towards invoices. Only operating account payments can be applied towards invoices.",
+                        "type": "text/plain"
+                      },
+                      "key": "bankAccountGuid",
+                      "value": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) This defines the currency for this account. Must be in ISO 4217 format. Must match the currency code for the Account (contact).",
+                        "type": "text/plain"
+                      },
+                      "key": "currencyCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) The total amount received.",
+                        "type": "text/plain"
+                      },
+                      "key": "amount",
+                      "value": "<double>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "date",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "method",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "A list of the invoices this payment was applied to.",
+                        "type": "text/plain"
+                      },
+                      "key": "saleDocumentPayments",
+                      "value": "{\"amount\":\"<double>\",\"guid\":\"00000000-0000-0000-0000-000000000000\",\"saleDocument\":{\"date\":\"<dateTime>\",\"guid\":\"00000000-0000-0000-0000-000000000000\",\"number\":\"<integer>\",\"type\":\"<string>\",\"invoiceType\":\"<string>\"},\"payment\":{\"amount\":\"<double>\",\"date\":\"<dateTime>\",\"method\":\"<string>\",\"guid\":\"00000000-0000-0000-0000-000000000000\"},\"credit\":{\"creditForSaleDocument\":{\"date\":\"<dateTime>\",\"guid\":\"00000000-0000-0000-0000-000000000000\",\"number\":\"<integer>\",\"type\":\"<string>\",\"invoiceType\":\"<string>\"},\"guid\":\"00000000-0000-0000-0000-000000000000\"}}"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "A list of the invoices this payment was applied to.",
+                        "type": "text/plain"
+                      },
+                      "key": "saleDocumentPayments",
+                      "value": "{\"amount\":\"<double>\",\"guid\":\"00000000-0000-0000-0000-000000000000\",\"saleDocument\":{\"date\":\"<dateTime>\",\"guid\":\"00000000-0000-0000-0000-000000000000\",\"number\":\"<integer>\",\"type\":\"<string>\",\"invoiceType\":\"<string>\"},\"payment\":{\"amount\":\"<double>\",\"date\":\"<dateTime>\",\"method\":\"<string>\",\"guid\":\"00000000-0000-0000-0000-000000000000\"},\"credit\":{\"creditForSaleDocument\":{\"date\":\"<dateTime>\",\"guid\":\"00000000-0000-0000-0000-000000000000\",\"number\":\"<integer>\",\"type\":\"<string>\",\"invoiceType\":\"<string>\"},\"guid\":\"00000000-0000-0000-0000-000000000000\"}}"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "guid",
+                      "value": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "timeZoneId",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Used to set the reference in POST and PUT ",
+                        "type": "text/plain"
+                      },
+                      "key": "projectGuid",
+                      "value": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Authorization number for online payments",
+                        "type": "text/plain"
+                      },
+                      "key": "authNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "accountTags",
+                      "value": "{\"name\":\"<string>\"}"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "accountTags",
+                      "value": "{\"name\":\"<string>\"}"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "projectTags",
+                      "value": "{\"name\":\"<string>\"}"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "projectTags",
+                      "value": "{\"name\":\"<string>\"}"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "guid",
+                      "value": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "utbmsIsEnabled",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "id",
+                      "value": "<long>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "guid",
+                      "value": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "utbmsIsEnabled",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "id",
+                      "value": "<long>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "guid",
+                      "value": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "accountGuid",
+                      "value": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "id",
+                      "value": "<long>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "guid",
+                      "value": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "timeZoneId",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "notes",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Used to reference a transaction from an external gateway (ie. Stripe, PayPal, Auth.Net etc.)",
+                        "type": "text/plain"
+                      },
+                      "key": "transactionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "name",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "guid",
+                      "value": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "isArchived",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "isReconciled",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "reconciledDate",
+                      "value": "<dateTime>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "guid",
+                      "value": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "timeZoneId",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "checkIsPrinted",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "isDepositSlipPrinted",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "checkNumber",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "feeAmountInCents",
+                      "value": "<double>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Used to set the reference in POST and PUT ",
+                        "type": "text/plain"
+                      },
+                      "key": "refundParentPaymentGuid",
+                      "value": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "surchargeAmount",
+                      "value": "<double>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "guid",
+                      "value": "00000000-0000-0000-0000-000000000000"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"bankAccountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"currencyCode\": \"<string>\",\n  \"amount\": \"<double>\",\n  \"date\": \"<dateTime>\",\n  \"method\": \"<string>\",\n  \"saleDocumentPayments\": [\n    {\n      \"amount\": \"<double>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"saleDocument\": {\n        \"date\": \"<dateTime>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"number\": \"<integer>\",\n        \"name\": \"string\",\n        \"type\": \"<string>\",\n        \"invoiceType\": \"<string>\"\n      },\n      \"payment\": {\n        \"amount\": \"<double>\",\n        \"date\": \"<dateTime>\",\n        \"method\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"name\": \"string\",\n        \"methodName\": \"string\"\n      },\n      \"credit\": {\n        \"creditForSaleDocument\": {\n          \"date\": \"<dateTime>\",\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"number\": \"<integer>\",\n          \"name\": \"string\",\n          \"type\": \"<string>\",\n          \"invoiceType\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"creditAmount\": 7642.425242932995,\n        \"creditApplied\": 3159.687584361606,\n        \"creditAvailable\": 9247.981850518316\n      }\n    },\n    {\n      \"amount\": \"<double>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"saleDocument\": {\n        \"date\": \"<dateTime>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"number\": \"<integer>\",\n        \"name\": \"string\",\n        \"type\": \"<string>\",\n        \"invoiceType\": \"<string>\"\n      },\n      \"payment\": {\n        \"amount\": \"<double>\",\n        \"date\": \"<dateTime>\",\n        \"method\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"name\": \"string\",\n        \"methodName\": \"string\"\n      },\n      \"credit\": {\n        \"creditForSaleDocument\": {\n          \"date\": \"<dateTime>\",\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"number\": \"<integer>\",\n          \"name\": \"string\",\n          \"type\": \"<string>\",\n          \"invoiceType\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"creditAmount\": 4293.854653076015,\n        \"creditApplied\": 5940.815316478908,\n        \"creditAvailable\": 6262.323501446422\n      }\n    }\n  ],\n  \"lastModifiedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"lastModifiedDate\": \"1990-06-27T18:31:40.375Z\",\n  \"projectGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"authNumber\": \"<string>\",\n  \"accountTags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"projectTags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"account\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"utbmsIsEnabled\": \"<boolean>\",\n    \"id\": \"<long>\"\n  },\n  \"checkPayee\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"utbmsIsEnabled\": \"<boolean>\",\n    \"id\": \"<long>\"\n  },\n  \"project\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"id\": \"<long>\"\n  },\n  \"createdBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"createdDate\": \"1991-06-27T06:20:38.430Z\",\n  \"notes\": \"<string>\",\n  \"number\": 5447,\n  \"amountApplied\": 6818.406634011446,\n  \"amountCredited\": 3028.6688612669864,\n  \"transactionId\": \"<string>\",\n  \"bankAccount\": {\n    \"name\": \"<string>\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"type\": \"<string>\",\n    \"isArchived\": \"<boolean>\"\n  },\n  \"isReconciled\": \"<boolean>\",\n  \"reconciledDate\": \"<dateTime>\",\n  \"reconciledBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"checkIsPrinted\": \"<boolean>\",\n  \"isDepositSlipPrinted\": \"<boolean>\",\n  \"checkNumber\": \"<integer>\",\n  \"feeAmountInCents\": \"<double>\",\n  \"refundParentPaymentGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"surchargeAmount\": \"<double>\",\n  \"totalAmount\": 9724.583718167034,\n  \"guid\": \"00000000-0000-0000-0000-000000000000\",\n  \"name\": \"string\",\n  \"methodName\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "49e80a32-1f45-4826-b184-245cb95d9b5f",
+          "name": "Marks an existing payment as deleted, will remove all amounts applied on invoices.",
+          "request": {
+            "name": "Marks an existing payment as deleted, will remove all amounts applied on invoices.",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "payment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "37d10443-9289-40bf-9226-a031b63493ec",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "payment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "guid",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"bankAccountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"currencyCode\": \"<string>\",\n  \"amount\": \"<double>\",\n  \"date\": \"<dateTime>\",\n  \"method\": \"<string>\",\n  \"saleDocumentPayments\": [\n    {\n      \"amount\": \"<double>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"saleDocument\": {\n        \"date\": \"<dateTime>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"number\": \"<integer>\",\n        \"name\": \"string\",\n        \"type\": \"<string>\",\n        \"invoiceType\": \"<string>\"\n      },\n      \"payment\": {\n        \"amount\": \"<double>\",\n        \"date\": \"<dateTime>\",\n        \"method\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"name\": \"string\",\n        \"methodName\": \"string\"\n      },\n      \"credit\": {\n        \"creditForSaleDocument\": {\n          \"date\": \"<dateTime>\",\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"number\": \"<integer>\",\n          \"name\": \"string\",\n          \"type\": \"<string>\",\n          \"invoiceType\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"creditAmount\": 7642.425242932995,\n        \"creditApplied\": 3159.687584361606,\n        \"creditAvailable\": 9247.981850518316\n      }\n    },\n    {\n      \"amount\": \"<double>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"saleDocument\": {\n        \"date\": \"<dateTime>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"number\": \"<integer>\",\n        \"name\": \"string\",\n        \"type\": \"<string>\",\n        \"invoiceType\": \"<string>\"\n      },\n      \"payment\": {\n        \"amount\": \"<double>\",\n        \"date\": \"<dateTime>\",\n        \"method\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"name\": \"string\",\n        \"methodName\": \"string\"\n      },\n      \"credit\": {\n        \"creditForSaleDocument\": {\n          \"date\": \"<dateTime>\",\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"number\": \"<integer>\",\n          \"name\": \"string\",\n          \"type\": \"<string>\",\n          \"invoiceType\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"creditAmount\": 4293.854653076015,\n        \"creditApplied\": 5940.815316478908,\n        \"creditAvailable\": 6262.323501446422\n      }\n    }\n  ],\n  \"lastModifiedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"lastModifiedDate\": \"1990-06-27T18:31:40.375Z\",\n  \"projectGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"authNumber\": \"<string>\",\n  \"accountTags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"projectTags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"account\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"utbmsIsEnabled\": \"<boolean>\",\n    \"id\": \"<long>\"\n  },\n  \"checkPayee\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"utbmsIsEnabled\": \"<boolean>\",\n    \"id\": \"<long>\"\n  },\n  \"project\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"id\": \"<long>\"\n  },\n  \"createdBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"createdDate\": \"1991-06-27T06:20:38.430Z\",\n  \"notes\": \"<string>\",\n  \"number\": 5447,\n  \"amountApplied\": 6818.406634011446,\n  \"amountCredited\": 3028.6688612669864,\n  \"transactionId\": \"<string>\",\n  \"bankAccount\": {\n    \"name\": \"<string>\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"type\": \"<string>\",\n    \"isArchived\": \"<boolean>\"\n  },\n  \"isReconciled\": \"<boolean>\",\n  \"reconciledDate\": \"<dateTime>\",\n  \"reconciledBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"checkIsPrinted\": \"<boolean>\",\n  \"isDepositSlipPrinted\": \"<boolean>\",\n  \"checkNumber\": \"<integer>\",\n  \"feeAmountInCents\": \"<double>\",\n  \"refundParentPaymentGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"surchargeAmount\": \"<double>\",\n  \"totalAmount\": 9724.583718167034,\n  \"guid\": \"00000000-0000-0000-0000-000000000000\",\n  \"name\": \"string\",\n  \"methodName\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.practicepanther.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6d813fe4-5e4e-47dd-bb57-058b16bc3e17",
+    "name": "Legacy API (v1) Account Payment API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

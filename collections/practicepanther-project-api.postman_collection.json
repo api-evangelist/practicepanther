@@ -1,0 +1,1315 @@
+{
+  "item": [
+    {
+      "id": "3456c639-b8d9-4f2d-970f-b6ba98efe977",
+      "name": "Project",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "153e786a-face-487a-be73-1ddd5c633ffc",
+          "name": "Returns a project (matter)",
+          "request": {
+            "name": "Returns a project (matter)",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "project",
+                ":guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "guid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ad1a1526-3fc4-4d67-ba91-fe8eaca9737a",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "project",
+                    ":guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "guid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"hourlyRateType\": \"ItemRate\",\n  \"name\": \"string\",\n  \"status\": \"Pending\",\n  \"assignedToGuids\": [\n    \"00000000-0000-0000-0000-000000000000\",\n    \"00000000-0000-0000-0000-000000000000\"\n  ],\n  \"customFieldValues\": [\n    {\n      \"customField\": {\n        \"objectType\": \"Address\",\n        \"valueType\": \"Checkbox\",\n        \"name\": \"string\",\n        \"isIncludeInList\": true,\n        \"isExportToLedes\": false,\n        \"helpText\": \"string\",\n        \"tooltip\": \"string\",\n        \"rowIndex\": 411,\n        \"createdDate\": \"2016-01-14T11:48:43.743Z\",\n        \"lastModifiedDate\": \"1969-07-13T08:49:08.167Z\",\n        \"createdBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"string\"\n        },\n        \"lastModifiedBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"string\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"isDeleted\": false,\n        \"isRequired\": true,\n        \"isDefault\": false,\n        \"dropDownListValues\": \"string\"\n      },\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueString\": \"string\",\n      \"valueNumber\": 9244.292962623456,\n      \"valueDateTime\": \"2016-01-21T06:08:20.690Z\",\n      \"valueBoolean\": false,\n      \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueContact\": {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"middleName\": \"string\",\n        \"accountName\": \"string\",\n        \"displayName\": \"string\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"string\"\n      }\n    },\n    {\n      \"customField\": {\n        \"objectType\": \"Account\",\n        \"valueType\": \"DateTime\",\n        \"name\": \"string\",\n        \"isIncludeInList\": false,\n        \"isExportToLedes\": false,\n        \"helpText\": \"string\",\n        \"tooltip\": \"string\",\n        \"rowIndex\": 6253,\n        \"createdDate\": \"1992-01-17T08:05:03.748Z\",\n        \"lastModifiedDate\": \"1984-03-26T01:04:41.152Z\",\n        \"createdBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"string\"\n        },\n        \"lastModifiedBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"string\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"isDeleted\": true,\n        \"isRequired\": true,\n        \"isDefault\": false,\n        \"dropDownListValues\": \"string\"\n      },\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueString\": \"string\",\n      \"valueNumber\": 1701.1647203865289,\n      \"valueDateTime\": \"1989-07-06T04:54:11.333Z\",\n      \"valueBoolean\": true,\n      \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueContact\": {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"middleName\": \"string\",\n        \"accountName\": \"string\",\n        \"displayName\": \"string\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"string\"\n      }\n    }\n  ],\n  \"isEmailSync\": false,\n  \"isFilesSync\": false,\n  \"isContactSync\": true,\n  \"projectRates\": [\n    {\n      \"user\": {\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"displayName\": \"string\",\n        \"name\": \"string\",\n        \"timeZoneId\": \"string\"\n      },\n      \"role\": {\n        \"name\": \"string\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\"\n      },\n      \"userGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"roleGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"hourlyRate\": 7132.7067553210545,\n      \"rateType\": \"Everyone\"\n    },\n    {\n      \"user\": {\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"displayName\": \"string\",\n        \"name\": \"string\",\n        \"timeZoneId\": \"string\"\n      },\n      \"role\": {\n        \"name\": \"string\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\"\n      },\n      \"userGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"roleGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"hourlyRate\": 5550.487227479586,\n      \"rateType\": \"User\"\n    }\n  ],\n  \"usersFollowing\": [\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    },\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    }\n  ],\n  \"ledesClientMatterId\": \"string\",\n  \"createdBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"string\"\n  },\n  \"notes\": \"string\",\n  \"originatedByGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"lastModifiedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"string\"\n  },\n  \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"presetProjectRateGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"operatingUnappliedCredit\": 4235.49214620703,\n  \"invoicesDue\": 4009.6294533604514,\n  \"hourlyRate\": 1591966893.9626741,\n  \"flatRate\": 910861411.0894394,\n  \"contingencyRatePercent\": 279592626.3009302,\n  \"isFlatRateBilled\": true,\n  \"isContainsOnlyPendingInvoices\": true,\n  \"operatingPaid\": 334.5899862876367,\n  \"ccPaid\": 9836.969391523255,\n  \"account\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"utbmsIsEnabled\": true,\n    \"id\": 8141\n  },\n  \"tenantRefNumber\": 6984,\n  \"dueDate\": \"2015-12-04T20:08:34.162Z\",\n  \"openDate\": \"1955-05-07T07:13:00.304Z\",\n  \"closeDate\": \"1974-06-17T09:17:28.889Z\",\n  \"createdDate\": \"2002-03-10T02:26:18.625Z\",\n  \"lastModifiedDate\": \"1990-08-24T20:25:15.080Z\",\n  \"evergreenIsAlert\": false,\n  \"evergreenIsOn\": true,\n  \"evergreenAmount\": 8393.67033992796,\n  \"isAddEvergreenToInvoice\": true,\n  \"assignedTo\": [\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    },\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    }\n  ],\n  \"originatedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"string\"\n  },\n  \"number\": 6574,\n  \"tags\": [\n    {\n      \"name\": \"string\"\n    },\n    {\n      \"name\": \"string\"\n    }\n  ],\n  \"accountTags\": [\n    {\n      \"name\": \"string\"\n    },\n    {\n      \"name\": \"string\"\n    }\n  ],\n  \"tagNames\": [\n    \"string\",\n    \"string\"\n  ],\n  \"accountTagsNames\": [\n    \"string\",\n    \"string\"\n  ],\n  \"paid\": 4320.762844937393,\n  \"trustBalance\": 4846.671886933734,\n  \"operatingBalance\": 5854.414196886507,\n  \"billable\": 2520.293807618689,\n  \"saleDocumentTemplateGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"saleDocumentTemplateName\": \"string\",\n  \"presetProjectRate\": {\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\"\n  },\n  \"invoiceMatterRecipients\": [\n    {\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"middleName\": \"string\",\n      \"accountName\": \"string\",\n      \"displayName\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"email\": \"string\"\n    },\n    {\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"middleName\": \"string\",\n      \"accountName\": \"string\",\n      \"displayName\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"email\": \"string\"\n    }\n  ],\n  \"invoiceMatterRecipientsGuids\": [\n    \"00000000-0000-0000-0000-000000000000\",\n    \"00000000-0000-0000-0000-000000000000\"\n  ],\n  \"nameAndNumber\": \"string\",\n  \"guid\": \"00000000-0000-0000-0000-000000000000\",\n  \"id\": 7385\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "95a0876f-db5b-4a0c-8caa-a182d2e20a20",
+          "name": "OData end point to get a list of all projects (matters) accessible by the user",
+          "request": {
+            "name": "OData end point to get a list of all projects (matters) accessible by the user",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "project"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b951e4e1-aa4b-4167-b722-2eb58bbcb86b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "project"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"string\",\n    \"status\": \"Closed\",\n    \"assignedToGuids\": [\n      \"00000000-0000-0000-0000-000000000000\",\n      \"00000000-0000-0000-0000-000000000000\"\n    ],\n    \"account\": {\n      \"nameAndNumber\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"utbmsIsEnabled\": false,\n      \"id\": 6340\n    },\n    \"tenantRefNumber\": 1380,\n    \"dueDate\": \"1991-12-03T06:34:49.769Z\",\n    \"openDate\": \"2007-02-23T17:50:10.774Z\",\n    \"closeDate\": \"2023-10-18T21:57:35.929Z\",\n    \"createdDate\": \"2013-04-26T03:43:09.282Z\",\n    \"lastModifiedDate\": \"1979-06-04T12:30:49.867Z\",\n    \"evergreenIsAlert\": false,\n    \"evergreenIsOn\": false,\n    \"evergreenAmount\": 8892.646915075471,\n    \"isAddEvergreenToInvoice\": true,\n    \"assignedTo\": [\n      {\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"displayName\": \"string\",\n        \"name\": \"string\",\n        \"timeZoneId\": \"string\"\n      },\n      {\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"displayName\": \"string\",\n        \"name\": \"string\",\n        \"timeZoneId\": \"string\"\n      }\n    ],\n    \"originatedBy\": {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    },\n    \"number\": 3334,\n    \"tags\": [\n      {\n        \"name\": \"string\"\n      },\n      {\n        \"name\": \"string\"\n      }\n    ],\n    \"accountTags\": [\n      {\n        \"name\": \"string\"\n      },\n      {\n        \"name\": \"string\"\n      }\n    ],\n    \"tagNames\": [\n      \"string\",\n      \"string\"\n    ],\n    \"accountTagsNames\": [\n      \"string\",\n      \"string\"\n    ],\n    \"paid\": 1776.8653746473829,\n    \"trustBalance\": 8201.396766966986,\n    \"operatingBalance\": 2893.9442128306027,\n    \"billable\": 5670.253282365716,\n    \"saleDocumentTemplateGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"saleDocumentTemplateName\": \"string\",\n    \"presetProjectRate\": {\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\"\n    },\n    \"invoiceMatterRecipients\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"middleName\": \"string\",\n        \"accountName\": \"string\",\n        \"displayName\": \"string\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"string\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"middleName\": \"string\",\n        \"accountName\": \"string\",\n        \"displayName\": \"string\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"string\"\n      }\n    ],\n    \"invoiceMatterRecipientsGuids\": [\n      \"00000000-0000-0000-0000-000000000000\",\n      \"00000000-0000-0000-0000-000000000000\"\n    ],\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"id\": 7427\n  },\n  {\n    \"name\": \"string\",\n    \"status\": \"Closed\",\n    \"assignedToGuids\": [\n      \"00000000-0000-0000-0000-000000000000\",\n      \"00000000-0000-0000-0000-000000000000\"\n    ],\n    \"account\": {\n      \"nameAndNumber\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"utbmsIsEnabled\": false,\n      \"id\": 8931\n    },\n    \"tenantRefNumber\": 2857,\n    \"dueDate\": \"1984-03-03T18:24:05.406Z\",\n    \"openDate\": \"1954-01-02T04:53:09.509Z\",\n    \"closeDate\": \"1947-10-05T16:38:21.409Z\",\n    \"createdDate\": \"1969-01-19T13:11:09.661Z\",\n    \"lastModifiedDate\": \"1964-07-11T08:57:07.315Z\",\n    \"evergreenIsAlert\": false,\n    \"evergreenIsOn\": true,\n    \"evergreenAmount\": 2332.1986596120837,\n    \"isAddEvergreenToInvoice\": false,\n    \"assignedTo\": [\n      {\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"displayName\": \"string\",\n        \"name\": \"string\",\n        \"timeZoneId\": \"string\"\n      },\n      {\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"displayName\": \"string\",\n        \"name\": \"string\",\n        \"timeZoneId\": \"string\"\n      }\n    ],\n    \"originatedBy\": {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    },\n    \"number\": 7544,\n    \"tags\": [\n      {\n        \"name\": \"string\"\n      },\n      {\n        \"name\": \"string\"\n      }\n    ],\n    \"accountTags\": [\n      {\n        \"name\": \"string\"\n      },\n      {\n        \"name\": \"string\"\n      }\n    ],\n    \"tagNames\": [\n      \"string\",\n      \"string\"\n    ],\n    \"accountTagsNames\": [\n      \"string\",\n      \"string\"\n    ],\n    \"paid\": 1552.7840761295497,\n    \"trustBalance\": 6815.984324049964,\n    \"operatingBalance\": 3995.8989987298355,\n    \"billable\": 3827.0967008925927,\n    \"saleDocumentTemplateGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"saleDocumentTemplateName\": \"string\",\n    \"presetProjectRate\": {\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\"\n    },\n    \"invoiceMatterRecipients\": [\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"middleName\": \"string\",\n        \"accountName\": \"string\",\n        \"displayName\": \"string\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"string\"\n      },\n      {\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"middleName\": \"string\",\n        \"accountName\": \"string\",\n        \"displayName\": \"string\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"string\"\n      }\n    ],\n    \"invoiceMatterRecipientsGuids\": [\n      \"00000000-0000-0000-0000-000000000000\",\n      \"00000000-0000-0000-0000-000000000000\"\n    ],\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"id\": 7996\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3da9492d-0423-4002-97e4-be5b924186c7",
+          "name": "Updates an existing project (matter)",
+          "request": {
+            "name": "Updates an existing project (matter)",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "project"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "hourlyRateType",
+                  "value": "<string>",
+                  "description": "(Required) Sets the hourly rate type for this project (matter)."
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "assignedToGuids",
+                  "value": "<uuid>",
+                  "description": "(Required) Used to set the reference in POST and PUTFor compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects. For compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects."
+                },
+                {
+                  "disabled": false,
+                  "key": "assignedToGuids",
+                  "value": "<uuid>",
+                  "description": "(Required) Used to set the reference in POST and PUTFor compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects. For compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects."
+                },
+                {
+                  "disabled": false,
+                  "key": "customFieldValues",
+                  "value": "{\"customField\":{\"objectType\":\"<string>\",\"valueType\":\"<string>\",\"name\":\"<string>\",\"isIncludeInList\":\"<boolean>\",\"isExportToLedes\":\"<boolean>\",\"helpText\":\"<string>\",\"tooltip\":\"<string>\",\"rowIndex\":\"<integer>\",\"createdBy\":{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"},\"lastModifiedBy\":{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"},\"guid\":\"<uuid>\",\"isRequired\":\"<boolean>\",\"isDefault\":\"<boolean>\",\"dropDownListValues\":\"<string>\"},\"guid\":\"<uuid>\",\"valueString\":\"<string>\",\"valueNumber\":\"<double>\",\"valueDateTime\":\"<dateTime>\",\"valueBoolean\":\"<boolean>\",\"valueContactGuid\":\"<uuid>\",\"valueContact\":{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}}"
+                },
+                {
+                  "disabled": false,
+                  "key": "customFieldValues",
+                  "value": "{\"customField\":{\"objectType\":\"<string>\",\"valueType\":\"<string>\",\"name\":\"<string>\",\"isIncludeInList\":\"<boolean>\",\"isExportToLedes\":\"<boolean>\",\"helpText\":\"<string>\",\"tooltip\":\"<string>\",\"rowIndex\":\"<integer>\",\"createdBy\":{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"},\"lastModifiedBy\":{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"},\"guid\":\"<uuid>\",\"isRequired\":\"<boolean>\",\"isDefault\":\"<boolean>\",\"dropDownListValues\":\"<string>\"},\"guid\":\"<uuid>\",\"valueString\":\"<string>\",\"valueNumber\":\"<double>\",\"valueDateTime\":\"<dateTime>\",\"valueBoolean\":\"<boolean>\",\"valueContactGuid\":\"<uuid>\",\"valueContact\":{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}}"
+                },
+                {
+                  "disabled": false,
+                  "key": "isEmailSync",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isFilesSync",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isContactSync",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "projectRates",
+                  "value": "{\"user\":{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"},\"role\":{\"name\":\"<string>\",\"guid\":\"<uuid>\"},\"userGuid\":\"<uuid>\",\"roleGuid\":\"<uuid>\",\"hourlyRate\":\"<double>\",\"rateType\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "projectRates",
+                  "value": "{\"user\":{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"},\"role\":{\"name\":\"<string>\",\"guid\":\"<uuid>\"},\"userGuid\":\"<uuid>\",\"roleGuid\":\"<uuid>\",\"hourlyRate\":\"<double>\",\"rateType\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "usersFollowing",
+                  "value": "{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "usersFollowing",
+                  "value": "{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "ledesClientMatterId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "notes",
+                  "value": "<string>",
+                  "description": "Internal notes."
+                },
+                {
+                  "disabled": false,
+                  "key": "originatedByGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUTRequired for PracticePanther. When creating or updating a time entry, this is used to associate a time entry with an account (contact). Required for PracticePanther. When creating or updating a time entry, this is used to associate a time entry with an account (contact)."
+                },
+                {
+                  "disabled": false,
+                  "key": "presetProjectRateGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "operatingUnappliedCredit",
+                  "value": "<double>",
+                  "description": "[OperatingUnappliedCredit] is a read only property .\r\n= OperatingPayments.AvailableFunds + CreditNotes.AvailableFunds: for this project (matter)."
+                },
+                {
+                  "disabled": false,
+                  "key": "invoicesDue",
+                  "value": "<double>",
+                  "description": "This is a read only property. Will show current outstanding amount on all invoices for this project (matter)."
+                },
+                {
+                  "disabled": false,
+                  "key": "hourlyRate",
+                  "value": "<double>",
+                  "description": "If this project (matter) has a different hourly rate, it can be set here. Will be used if HourlyRateType = 'ProjectRate'."
+                },
+                {
+                  "disabled": false,
+                  "key": "flatRate",
+                  "value": "<double>",
+                  "description": "If this project (matter) has a flat rate (and a zero ($0) hourly rate), it can be set here. Will be used if HourlyRateType = 'FlatRate'."
+                },
+                {
+                  "disabled": false,
+                  "key": "contingencyRatePercent",
+                  "value": "<double>",
+                  "description": "If this project (matter) has a contingency rate."
+                },
+                {
+                  "disabled": false,
+                  "key": "isFlatRateBilled",
+                  "value": "<boolean>",
+                  "description": "Indicates if the flat rate has been billed.\r\nIf false, the flat rate is still billable and will be added to the account (contact) and project (matter) billable totals."
+                },
+                {
+                  "disabled": false,
+                  "key": "operatingPaid",
+                  "value": "<double>",
+                  "description": "This is a read only property. Will show the sum of all payments from operating bank accounts made for this project (matter)."
+                },
+                {
+                  "disabled": false,
+                  "key": "ccPaid",
+                  "value": "<double>",
+                  "description": "This is a read only property. Will show the sum of all payments from CC bank accounts made for this project (matter)."
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "utbmsIsEnabled",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tenantRefNumber",
+                  "value": "<integer>",
+                  "description": "The due date for this project (matter). will appear on the calendar."
+                },
+                {
+                  "disabled": false,
+                  "key": "dueDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "openDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "closeDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "evergreenIsOn",
+                  "value": "<boolean>",
+                  "description": "If on, evergreen alerts will be activated based on the evergreen amount"
+                },
+                {
+                  "disabled": false,
+                  "key": "evergreenAmount",
+                  "value": "<double>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isAddEvergreenToInvoice",
+                  "value": "<boolean>",
+                  "description": "If set to true, we will add the amount required to replenish the retainer to the evergreen amount to the invoice."
+                },
+                {
+                  "disabled": false,
+                  "key": "assignedTo",
+                  "value": "{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "assignedTo",
+                  "value": "{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "number",
+                  "value": "<integer>",
+                  "description": "Project number. Must be unique."
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "tagNames",
+                  "value": "<string>",
+                  "description": "For compatibility reasons, this will return an array of tag names instead of a list of tag objects."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagNames",
+                  "value": "<string>",
+                  "description": "For compatibility reasons, this will return an array of tag names instead of a list of tag objects."
+                },
+                {
+                  "disabled": false,
+                  "key": "accountTagsNames",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountTagsNames",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "paid",
+                  "value": "<double>",
+                  "description": "This is a read only property. Will show the sum of all payments from operating bank accounts and CC bank accounts made for this project (matter)."
+                },
+                {
+                  "disabled": false,
+                  "key": "trustBalance",
+                  "value": "<double>",
+                  "description": "This is a read only property. Will indicate what is the trust account balance for this project (matter)."
+                },
+                {
+                  "disabled": false,
+                  "key": "operatingBalance",
+                  "value": "<double>",
+                  "description": "[OperatingBalance] is a read only property.\r\n= Sum of OperatingPayments.AvailableFunds + CreditNotes.AvailableFunds - Invoices.AmountDue: for this project (matter)."
+                },
+                {
+                  "disabled": false,
+                  "key": "billable",
+                  "value": "<double>",
+                  "description": "This is a read only property. Will indicate how much is currently billable for this project (matter). will include expenses, time entries and flat rate."
+                },
+                {
+                  "disabled": false,
+                  "key": "saleDocumentTemplateGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "saleDocumentTemplateName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "invoiceMatterRecipients",
+                  "value": "{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "invoiceMatterRecipients",
+                  "value": "{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "invoiceMatterRecipientsGuids",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "invoiceMatterRecipientsGuids",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<long>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fc810476-4958-41ec-b711-3680cc44b12c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "project"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"hourlyRateType\": \"<string>\",\n  \"name\": \"<string>\",\n  \"status\": \"<string>\",\n  \"assignedToGuids\": [\n    \"00000000-0000-0000-0000-000000000000\",\n    \"00000000-0000-0000-0000-000000000000\"\n  ],\n  \"customFieldValues\": [\n    {\n      \"customField\": {\n        \"objectType\": \"<string>\",\n        \"valueType\": \"<string>\",\n        \"name\": \"<string>\",\n        \"isIncludeInList\": \"<boolean>\",\n        \"isExportToLedes\": \"<boolean>\",\n        \"helpText\": \"<string>\",\n        \"tooltip\": \"<string>\",\n        \"rowIndex\": \"<integer>\",\n        \"createdDate\": \"1964-01-25T17:43:03.611Z\",\n        \"lastModifiedDate\": \"1955-09-22T14:48:51.251Z\",\n        \"createdBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"lastModifiedBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"isDeleted\": false,\n        \"isRequired\": \"<boolean>\",\n        \"isDefault\": \"<boolean>\",\n        \"dropDownListValues\": \"<string>\"\n      },\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueString\": \"<string>\",\n      \"valueNumber\": \"<double>\",\n      \"valueDateTime\": \"<dateTime>\",\n      \"valueBoolean\": \"<boolean>\",\n      \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueContact\": {\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"middleName\": \"<string>\",\n        \"accountName\": \"<string>\",\n        \"displayName\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"<string>\"\n      }\n    },\n    {\n      \"customField\": {\n        \"objectType\": \"<string>\",\n        \"valueType\": \"<string>\",\n        \"name\": \"<string>\",\n        \"isIncludeInList\": \"<boolean>\",\n        \"isExportToLedes\": \"<boolean>\",\n        \"helpText\": \"<string>\",\n        \"tooltip\": \"<string>\",\n        \"rowIndex\": \"<integer>\",\n        \"createdDate\": \"2008-12-22T06:55:22.970Z\",\n        \"lastModifiedDate\": \"2004-06-15T01:06:01.178Z\",\n        \"createdBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"lastModifiedBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"isDeleted\": true,\n        \"isRequired\": \"<boolean>\",\n        \"isDefault\": \"<boolean>\",\n        \"dropDownListValues\": \"<string>\"\n      },\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueString\": \"<string>\",\n      \"valueNumber\": \"<double>\",\n      \"valueDateTime\": \"<dateTime>\",\n      \"valueBoolean\": \"<boolean>\",\n      \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueContact\": {\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"middleName\": \"<string>\",\n        \"accountName\": \"<string>\",\n        \"displayName\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"<string>\"\n      }\n    }\n  ],\n  \"isEmailSync\": \"<boolean>\",\n  \"isFilesSync\": \"<boolean>\",\n  \"isContactSync\": \"<boolean>\",\n  \"projectRates\": [\n    {\n      \"user\": {\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"displayName\": \"string\",\n        \"name\": \"string\",\n        \"timeZoneId\": \"<string>\"\n      },\n      \"role\": {\n        \"name\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\"\n      },\n      \"userGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"roleGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"hourlyRate\": \"<double>\",\n      \"rateType\": \"<string>\"\n    },\n    {\n      \"user\": {\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"displayName\": \"string\",\n        \"name\": \"string\",\n        \"timeZoneId\": \"<string>\"\n      },\n      \"role\": {\n        \"name\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\"\n      },\n      \"userGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"roleGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"hourlyRate\": \"<double>\",\n      \"rateType\": \"<string>\"\n    }\n  ],\n  \"usersFollowing\": [\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    },\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    }\n  ],\n  \"ledesClientMatterId\": \"<string>\",\n  \"createdBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"notes\": \"<string>\",\n  \"originatedByGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"lastModifiedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"presetProjectRateGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"operatingUnappliedCredit\": \"<double>\",\n  \"invoicesDue\": \"<double>\",\n  \"hourlyRate\": \"<double>\",\n  \"flatRate\": \"<double>\",\n  \"contingencyRatePercent\": \"<double>\",\n  \"isFlatRateBilled\": \"<boolean>\",\n  \"isContainsOnlyPendingInvoices\": true,\n  \"operatingPaid\": \"<double>\",\n  \"ccPaid\": \"<double>\",\n  \"account\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"utbmsIsEnabled\": \"<boolean>\",\n    \"id\": \"<long>\"\n  },\n  \"tenantRefNumber\": \"<integer>\",\n  \"dueDate\": \"<dateTime>\",\n  \"openDate\": \"<dateTime>\",\n  \"closeDate\": \"<dateTime>\",\n  \"createdDate\": \"2025-10-15T13:38:34.496Z\",\n  \"lastModifiedDate\": \"2014-05-24T00:28:58.530Z\",\n  \"evergreenIsAlert\": false,\n  \"evergreenIsOn\": \"<boolean>\",\n  \"evergreenAmount\": \"<double>\",\n  \"isAddEvergreenToInvoice\": \"<boolean>\",\n  \"assignedTo\": [\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    },\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    }\n  ],\n  \"originatedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"number\": \"<integer>\",\n  \"tags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"accountTags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"tagNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"accountTagsNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"paid\": \"<double>\",\n  \"trustBalance\": \"<double>\",\n  \"operatingBalance\": \"<double>\",\n  \"billable\": \"<double>\",\n  \"saleDocumentTemplateGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"saleDocumentTemplateName\": \"<string>\",\n  \"presetProjectRate\": {\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\"\n  },\n  \"invoiceMatterRecipients\": [\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"email\": \"<string>\"\n    },\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"email\": \"<string>\"\n    }\n  ],\n  \"invoiceMatterRecipientsGuids\": [\n    \"00000000-0000-0000-0000-000000000000\",\n    \"00000000-0000-0000-0000-000000000000\"\n  ],\n  \"nameAndNumber\": \"string\",\n  \"guid\": \"00000000-0000-0000-0000-000000000000\",\n  \"id\": \"<long>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6233ef37-27f5-4ab9-9b96-5bf17dec8d92",
+          "name": "Creates a new project (matter)",
+          "request": {
+            "name": "Creates a new project (matter)",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "project"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "hourlyRateType",
+                  "value": "<string>",
+                  "description": "(Required) Sets the hourly rate type for this project (matter)."
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "assignedToGuids",
+                  "value": "<uuid>",
+                  "description": "(Required) Used to set the reference in POST and PUTFor compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects. For compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects."
+                },
+                {
+                  "disabled": false,
+                  "key": "assignedToGuids",
+                  "value": "<uuid>",
+                  "description": "(Required) Used to set the reference in POST and PUTFor compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects. For compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects."
+                },
+                {
+                  "disabled": false,
+                  "key": "customFieldValues",
+                  "value": "{\"customField\":{\"objectType\":\"<string>\",\"valueType\":\"<string>\",\"name\":\"<string>\",\"isIncludeInList\":\"<boolean>\",\"isExportToLedes\":\"<boolean>\",\"helpText\":\"<string>\",\"tooltip\":\"<string>\",\"rowIndex\":\"<integer>\",\"createdBy\":{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"},\"lastModifiedBy\":{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"},\"guid\":\"<uuid>\",\"isRequired\":\"<boolean>\",\"isDefault\":\"<boolean>\",\"dropDownListValues\":\"<string>\"},\"guid\":\"<uuid>\",\"valueString\":\"<string>\",\"valueNumber\":\"<double>\",\"valueDateTime\":\"<dateTime>\",\"valueBoolean\":\"<boolean>\",\"valueContactGuid\":\"<uuid>\",\"valueContact\":{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}}"
+                },
+                {
+                  "disabled": false,
+                  "key": "customFieldValues",
+                  "value": "{\"customField\":{\"objectType\":\"<string>\",\"valueType\":\"<string>\",\"name\":\"<string>\",\"isIncludeInList\":\"<boolean>\",\"isExportToLedes\":\"<boolean>\",\"helpText\":\"<string>\",\"tooltip\":\"<string>\",\"rowIndex\":\"<integer>\",\"createdBy\":{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"},\"lastModifiedBy\":{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"},\"guid\":\"<uuid>\",\"isRequired\":\"<boolean>\",\"isDefault\":\"<boolean>\",\"dropDownListValues\":\"<string>\"},\"guid\":\"<uuid>\",\"valueString\":\"<string>\",\"valueNumber\":\"<double>\",\"valueDateTime\":\"<dateTime>\",\"valueBoolean\":\"<boolean>\",\"valueContactGuid\":\"<uuid>\",\"valueContact\":{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}}"
+                },
+                {
+                  "disabled": false,
+                  "key": "isEmailSync",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isFilesSync",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isContactSync",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "projectRates",
+                  "value": "{\"user\":{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"},\"role\":{\"name\":\"<string>\",\"guid\":\"<uuid>\"},\"userGuid\":\"<uuid>\",\"roleGuid\":\"<uuid>\",\"hourlyRate\":\"<double>\",\"rateType\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "projectRates",
+                  "value": "{\"user\":{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"},\"role\":{\"name\":\"<string>\",\"guid\":\"<uuid>\"},\"userGuid\":\"<uuid>\",\"roleGuid\":\"<uuid>\",\"hourlyRate\":\"<double>\",\"rateType\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "usersFollowing",
+                  "value": "{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "usersFollowing",
+                  "value": "{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "ledesClientMatterId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "notes",
+                  "value": "<string>",
+                  "description": "Internal notes."
+                },
+                {
+                  "disabled": false,
+                  "key": "originatedByGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUTRequired for PracticePanther. When creating or updating a time entry, this is used to associate a time entry with an account (contact). Required for PracticePanther. When creating or updating a time entry, this is used to associate a time entry with an account (contact)."
+                },
+                {
+                  "disabled": false,
+                  "key": "presetProjectRateGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "operatingUnappliedCredit",
+                  "value": "<double>",
+                  "description": "[OperatingUnappliedCredit] is a read only property .\r\n= OperatingPayments.AvailableFunds + CreditNotes.AvailableFunds: for this project (matter)."
+                },
+                {
+                  "disabled": false,
+                  "key": "invoicesDue",
+                  "value": "<double>",
+                  "description": "This is a read only property. Will show current outstanding amount on all invoices for this project (matter)."
+                },
+                {
+                  "disabled": false,
+                  "key": "hourlyRate",
+                  "value": "<double>",
+                  "description": "If this project (matter) has a different hourly rate, it can be set here. Will be used if HourlyRateType = 'ProjectRate'."
+                },
+                {
+                  "disabled": false,
+                  "key": "flatRate",
+                  "value": "<double>",
+                  "description": "If this project (matter) has a flat rate (and a zero ($0) hourly rate), it can be set here. Will be used if HourlyRateType = 'FlatRate'."
+                },
+                {
+                  "disabled": false,
+                  "key": "contingencyRatePercent",
+                  "value": "<double>",
+                  "description": "If this project (matter) has a contingency rate."
+                },
+                {
+                  "disabled": false,
+                  "key": "isFlatRateBilled",
+                  "value": "<boolean>",
+                  "description": "Indicates if the flat rate has been billed.\r\nIf false, the flat rate is still billable and will be added to the account (contact) and project (matter) billable totals."
+                },
+                {
+                  "disabled": false,
+                  "key": "operatingPaid",
+                  "value": "<double>",
+                  "description": "This is a read only property. Will show the sum of all payments from operating bank accounts made for this project (matter)."
+                },
+                {
+                  "disabled": false,
+                  "key": "ccPaid",
+                  "value": "<double>",
+                  "description": "This is a read only property. Will show the sum of all payments from CC bank accounts made for this project (matter)."
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "utbmsIsEnabled",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "tenantRefNumber",
+                  "value": "<integer>",
+                  "description": "The due date for this project (matter). will appear on the calendar."
+                },
+                {
+                  "disabled": false,
+                  "key": "dueDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "openDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "closeDate",
+                  "value": "<dateTime>"
+                },
+                {
+                  "disabled": false,
+                  "key": "evergreenIsOn",
+                  "value": "<boolean>",
+                  "description": "If on, evergreen alerts will be activated based on the evergreen amount"
+                },
+                {
+                  "disabled": false,
+                  "key": "evergreenAmount",
+                  "value": "<double>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isAddEvergreenToInvoice",
+                  "value": "<boolean>",
+                  "description": "If set to true, we will add the amount required to replenish the retainer to the evergreen amount to the invoice."
+                },
+                {
+                  "disabled": false,
+                  "key": "assignedTo",
+                  "value": "{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "assignedTo",
+                  "value": "{\"guid\":\"<uuid>\",\"timeZoneId\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "number",
+                  "value": "<integer>",
+                  "description": "Project number. Must be unique."
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "tags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "tagNames",
+                  "value": "<string>",
+                  "description": "For compatibility reasons, this will return an array of tag names instead of a list of tag objects."
+                },
+                {
+                  "disabled": false,
+                  "key": "tagNames",
+                  "value": "<string>",
+                  "description": "For compatibility reasons, this will return an array of tag names instead of a list of tag objects."
+                },
+                {
+                  "disabled": false,
+                  "key": "accountTagsNames",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountTagsNames",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "paid",
+                  "value": "<double>",
+                  "description": "This is a read only property. Will show the sum of all payments from operating bank accounts and CC bank accounts made for this project (matter)."
+                },
+                {
+                  "disabled": false,
+                  "key": "trustBalance",
+                  "value": "<double>",
+                  "description": "This is a read only property. Will indicate what is the trust account balance for this project (matter)."
+                },
+                {
+                  "disabled": false,
+                  "key": "operatingBalance",
+                  "value": "<double>",
+                  "description": "[OperatingBalance] is a read only property.\r\n= Sum of OperatingPayments.AvailableFunds + CreditNotes.AvailableFunds - Invoices.AmountDue: for this project (matter)."
+                },
+                {
+                  "disabled": false,
+                  "key": "billable",
+                  "value": "<double>",
+                  "description": "This is a read only property. Will indicate how much is currently billable for this project (matter). will include expenses, time entries and flat rate."
+                },
+                {
+                  "disabled": false,
+                  "key": "saleDocumentTemplateGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "saleDocumentTemplateName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "invoiceMatterRecipients",
+                  "value": "{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "invoiceMatterRecipients",
+                  "value": "{\"firstName\":\"<string>\",\"lastName\":\"<string>\",\"middleName\":\"<string>\",\"accountName\":\"<string>\",\"displayName\":\"<string>\",\"guid\":\"<uuid>\",\"email\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "invoiceMatterRecipientsGuids",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "invoiceMatterRecipientsGuids",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<long>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c3f251d9-8a42-4db5-949b-95b2936fddaf",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "project"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"hourlyRateType\": \"<string>\",\n  \"name\": \"<string>\",\n  \"status\": \"<string>\",\n  \"assignedToGuids\": [\n    \"00000000-0000-0000-0000-000000000000\",\n    \"00000000-0000-0000-0000-000000000000\"\n  ],\n  \"customFieldValues\": [\n    {\n      \"customField\": {\n        \"objectType\": \"<string>\",\n        \"valueType\": \"<string>\",\n        \"name\": \"<string>\",\n        \"isIncludeInList\": \"<boolean>\",\n        \"isExportToLedes\": \"<boolean>\",\n        \"helpText\": \"<string>\",\n        \"tooltip\": \"<string>\",\n        \"rowIndex\": \"<integer>\",\n        \"createdDate\": \"1964-01-25T17:43:03.611Z\",\n        \"lastModifiedDate\": \"1955-09-22T14:48:51.251Z\",\n        \"createdBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"lastModifiedBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"isDeleted\": false,\n        \"isRequired\": \"<boolean>\",\n        \"isDefault\": \"<boolean>\",\n        \"dropDownListValues\": \"<string>\"\n      },\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueString\": \"<string>\",\n      \"valueNumber\": \"<double>\",\n      \"valueDateTime\": \"<dateTime>\",\n      \"valueBoolean\": \"<boolean>\",\n      \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueContact\": {\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"middleName\": \"<string>\",\n        \"accountName\": \"<string>\",\n        \"displayName\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"<string>\"\n      }\n    },\n    {\n      \"customField\": {\n        \"objectType\": \"<string>\",\n        \"valueType\": \"<string>\",\n        \"name\": \"<string>\",\n        \"isIncludeInList\": \"<boolean>\",\n        \"isExportToLedes\": \"<boolean>\",\n        \"helpText\": \"<string>\",\n        \"tooltip\": \"<string>\",\n        \"rowIndex\": \"<integer>\",\n        \"createdDate\": \"2008-12-22T06:55:22.970Z\",\n        \"lastModifiedDate\": \"2004-06-15T01:06:01.178Z\",\n        \"createdBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"lastModifiedBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"isDeleted\": true,\n        \"isRequired\": \"<boolean>\",\n        \"isDefault\": \"<boolean>\",\n        \"dropDownListValues\": \"<string>\"\n      },\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueString\": \"<string>\",\n      \"valueNumber\": \"<double>\",\n      \"valueDateTime\": \"<dateTime>\",\n      \"valueBoolean\": \"<boolean>\",\n      \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueContact\": {\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"middleName\": \"<string>\",\n        \"accountName\": \"<string>\",\n        \"displayName\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"<string>\"\n      }\n    }\n  ],\n  \"isEmailSync\": \"<boolean>\",\n  \"isFilesSync\": \"<boolean>\",\n  \"isContactSync\": \"<boolean>\",\n  \"projectRates\": [\n    {\n      \"user\": {\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"displayName\": \"string\",\n        \"name\": \"string\",\n        \"timeZoneId\": \"<string>\"\n      },\n      \"role\": {\n        \"name\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\"\n      },\n      \"userGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"roleGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"hourlyRate\": \"<double>\",\n      \"rateType\": \"<string>\"\n    },\n    {\n      \"user\": {\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"displayName\": \"string\",\n        \"name\": \"string\",\n        \"timeZoneId\": \"<string>\"\n      },\n      \"role\": {\n        \"name\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\"\n      },\n      \"userGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"roleGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"hourlyRate\": \"<double>\",\n      \"rateType\": \"<string>\"\n    }\n  ],\n  \"usersFollowing\": [\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    },\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    }\n  ],\n  \"ledesClientMatterId\": \"<string>\",\n  \"createdBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"notes\": \"<string>\",\n  \"originatedByGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"lastModifiedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"presetProjectRateGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"operatingUnappliedCredit\": \"<double>\",\n  \"invoicesDue\": \"<double>\",\n  \"hourlyRate\": \"<double>\",\n  \"flatRate\": \"<double>\",\n  \"contingencyRatePercent\": \"<double>\",\n  \"isFlatRateBilled\": \"<boolean>\",\n  \"isContainsOnlyPendingInvoices\": true,\n  \"operatingPaid\": \"<double>\",\n  \"ccPaid\": \"<double>\",\n  \"account\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"utbmsIsEnabled\": \"<boolean>\",\n    \"id\": \"<long>\"\n  },\n  \"tenantRefNumber\": \"<integer>\",\n  \"dueDate\": \"<dateTime>\",\n  \"openDate\": \"<dateTime>\",\n  \"closeDate\": \"<dateTime>\",\n  \"createdDate\": \"2025-10-15T13:38:34.496Z\",\n  \"lastModifiedDate\": \"2014-05-24T00:28:58.530Z\",\n  \"evergreenIsAlert\": false,\n  \"evergreenIsOn\": \"<boolean>\",\n  \"evergreenAmount\": \"<double>\",\n  \"isAddEvergreenToInvoice\": \"<boolean>\",\n  \"assignedTo\": [\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    },\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    }\n  ],\n  \"originatedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"number\": \"<integer>\",\n  \"tags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"accountTags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"tagNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"accountTagsNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"paid\": \"<double>\",\n  \"trustBalance\": \"<double>\",\n  \"operatingBalance\": \"<double>\",\n  \"billable\": \"<double>\",\n  \"saleDocumentTemplateGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"saleDocumentTemplateName\": \"<string>\",\n  \"presetProjectRate\": {\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\"\n  },\n  \"invoiceMatterRecipients\": [\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"email\": \"<string>\"\n    },\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"email\": \"<string>\"\n    }\n  ],\n  \"invoiceMatterRecipientsGuids\": [\n    \"00000000-0000-0000-0000-000000000000\",\n    \"00000000-0000-0000-0000-000000000000\"\n  ],\n  \"nameAndNumber\": \"string\",\n  \"guid\": \"00000000-0000-0000-0000-000000000000\",\n  \"id\": \"<long>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "75da8251-12b3-422c-b93d-4ab6650555c5",
+          "name": "Marks an existing project (matter) as deleted",
+          "request": {
+            "name": "Marks an existing project (matter) as deleted",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "project"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "33b0b149-2cfb-41c5-926f-8a0fbc28cdaf",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "project"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "guid",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"hourlyRateType\": \"<string>\",\n  \"name\": \"<string>\",\n  \"status\": \"<string>\",\n  \"assignedToGuids\": [\n    \"00000000-0000-0000-0000-000000000000\",\n    \"00000000-0000-0000-0000-000000000000\"\n  ],\n  \"customFieldValues\": [\n    {\n      \"customField\": {\n        \"objectType\": \"<string>\",\n        \"valueType\": \"<string>\",\n        \"name\": \"<string>\",\n        \"isIncludeInList\": \"<boolean>\",\n        \"isExportToLedes\": \"<boolean>\",\n        \"helpText\": \"<string>\",\n        \"tooltip\": \"<string>\",\n        \"rowIndex\": \"<integer>\",\n        \"createdDate\": \"1964-01-25T17:43:03.611Z\",\n        \"lastModifiedDate\": \"1955-09-22T14:48:51.251Z\",\n        \"createdBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"lastModifiedBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"isDeleted\": false,\n        \"isRequired\": \"<boolean>\",\n        \"isDefault\": \"<boolean>\",\n        \"dropDownListValues\": \"<string>\"\n      },\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueString\": \"<string>\",\n      \"valueNumber\": \"<double>\",\n      \"valueDateTime\": \"<dateTime>\",\n      \"valueBoolean\": \"<boolean>\",\n      \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueContact\": {\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"middleName\": \"<string>\",\n        \"accountName\": \"<string>\",\n        \"displayName\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"<string>\"\n      }\n    },\n    {\n      \"customField\": {\n        \"objectType\": \"<string>\",\n        \"valueType\": \"<string>\",\n        \"name\": \"<string>\",\n        \"isIncludeInList\": \"<boolean>\",\n        \"isExportToLedes\": \"<boolean>\",\n        \"helpText\": \"<string>\",\n        \"tooltip\": \"<string>\",\n        \"rowIndex\": \"<integer>\",\n        \"createdDate\": \"2008-12-22T06:55:22.970Z\",\n        \"lastModifiedDate\": \"2004-06-15T01:06:01.178Z\",\n        \"createdBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"lastModifiedBy\": {\n          \"guid\": \"00000000-0000-0000-0000-000000000000\",\n          \"displayName\": \"string\",\n          \"name\": \"string\",\n          \"timeZoneId\": \"<string>\"\n        },\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"isDeleted\": true,\n        \"isRequired\": \"<boolean>\",\n        \"isDefault\": \"<boolean>\",\n        \"dropDownListValues\": \"<string>\"\n      },\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueString\": \"<string>\",\n      \"valueNumber\": \"<double>\",\n      \"valueDateTime\": \"<dateTime>\",\n      \"valueBoolean\": \"<boolean>\",\n      \"valueContactGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"valueContact\": {\n        \"firstName\": \"<string>\",\n        \"lastName\": \"<string>\",\n        \"middleName\": \"<string>\",\n        \"accountName\": \"<string>\",\n        \"displayName\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"email\": \"<string>\"\n      }\n    }\n  ],\n  \"isEmailSync\": \"<boolean>\",\n  \"isFilesSync\": \"<boolean>\",\n  \"isContactSync\": \"<boolean>\",\n  \"projectRates\": [\n    {\n      \"user\": {\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"displayName\": \"string\",\n        \"name\": \"string\",\n        \"timeZoneId\": \"<string>\"\n      },\n      \"role\": {\n        \"name\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\"\n      },\n      \"userGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"roleGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"hourlyRate\": \"<double>\",\n      \"rateType\": \"<string>\"\n    },\n    {\n      \"user\": {\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"displayName\": \"string\",\n        \"name\": \"string\",\n        \"timeZoneId\": \"<string>\"\n      },\n      \"role\": {\n        \"name\": \"<string>\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\"\n      },\n      \"userGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"roleGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"hourlyRate\": \"<double>\",\n      \"rateType\": \"<string>\"\n    }\n  ],\n  \"usersFollowing\": [\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    },\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    }\n  ],\n  \"ledesClientMatterId\": \"<string>\",\n  \"createdBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"notes\": \"<string>\",\n  \"originatedByGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"lastModifiedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"presetProjectRateGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"operatingUnappliedCredit\": \"<double>\",\n  \"invoicesDue\": \"<double>\",\n  \"hourlyRate\": \"<double>\",\n  \"flatRate\": \"<double>\",\n  \"contingencyRatePercent\": \"<double>\",\n  \"isFlatRateBilled\": \"<boolean>\",\n  \"isContainsOnlyPendingInvoices\": true,\n  \"operatingPaid\": \"<double>\",\n  \"ccPaid\": \"<double>\",\n  \"account\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"utbmsIsEnabled\": \"<boolean>\",\n    \"id\": \"<long>\"\n  },\n  \"tenantRefNumber\": \"<integer>\",\n  \"dueDate\": \"<dateTime>\",\n  \"openDate\": \"<dateTime>\",\n  \"closeDate\": \"<dateTime>\",\n  \"createdDate\": \"2025-10-15T13:38:34.496Z\",\n  \"lastModifiedDate\": \"2014-05-24T00:28:58.530Z\",\n  \"evergreenIsAlert\": false,\n  \"evergreenIsOn\": \"<boolean>\",\n  \"evergreenAmount\": \"<double>\",\n  \"isAddEvergreenToInvoice\": \"<boolean>\",\n  \"assignedTo\": [\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    },\n    {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"<string>\"\n    }\n  ],\n  \"originatedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"number\": \"<integer>\",\n  \"tags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"accountTags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"tagNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"accountTagsNames\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"paid\": \"<double>\",\n  \"trustBalance\": \"<double>\",\n  \"operatingBalance\": \"<double>\",\n  \"billable\": \"<double>\",\n  \"saleDocumentTemplateGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"saleDocumentTemplateName\": \"<string>\",\n  \"presetProjectRate\": {\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\"\n  },\n  \"invoiceMatterRecipients\": [\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"email\": \"<string>\"\n    },\n    {\n      \"firstName\": \"<string>\",\n      \"lastName\": \"<string>\",\n      \"middleName\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"displayName\": \"<string>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"email\": \"<string>\"\n    }\n  ],\n  \"invoiceMatterRecipientsGuids\": [\n    \"00000000-0000-0000-0000-000000000000\",\n    \"00000000-0000-0000-0000-000000000000\"\n  ],\n  \"nameAndNumber\": \"string\",\n  \"guid\": \"00000000-0000-0000-0000-000000000000\",\n  \"id\": \"<long>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.practicepanther.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d94250f8-bb34-429a-843c-3bdb5196c93a",
+    "name": "Legacy API (v1) Account Project API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

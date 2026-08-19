@@ -1,0 +1,1181 @@
+{
+  "item": [
+    {
+      "id": "fe1add6e-41f4-4dc2-88e6-2e7994859325",
+      "name": "Expense",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ef980166-3027-4cb0-bdf9-22b481a5ef2a",
+          "name": "Returns an expense",
+          "request": {
+            "name": "Returns an expense",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "expense",
+                ":guid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "guid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c9fabb00-e194-493f-ac27-f8accd6dfb3f",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "expense",
+                    ":guid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "guid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"projectGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"isBillable\": true,\n  \"isBilled\": true,\n  \"date\": \"1993-02-16T17:34:00.084Z\",\n  \"amount\": 126.37787511459831,\n  \"qty\": 6725.385109719252,\n  \"lastModifiedDate\": \"1950-01-11T03:33:37.717Z\",\n  \"accountingAccountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"lastModifiedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"string\"\n  },\n  \"userGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"isDeleted\": true,\n  \"hardCostPaymentMethod\": \"PayPal\",\n  \"hardCostPaymentCheckNumber\": 8439,\n  \"hardCostPaymentBankAccountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"hardCostPaymentBankAccount\": {\n    \"name\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"type\": \"CreditCard\",\n    \"isArchived\": true\n  },\n  \"hardCostPaymentCheckPayeeGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"hardCostPaymentCheckIsPrinted\": false,\n  \"hardCostPaymentCheckIsToPrint\": false,\n  \"hardCostPaymentChartOfAccountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"hardCostPaymentChartOfAccountName\": \"string\",\n  \"hardCostPaymentNotes\": \"string\",\n  \"hardCostPaymentGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"utbmsCodeId\": null,\n  \"primaryReceiptGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"isMatchedToBankTransaction\": false,\n  \"account\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"utbmsIsEnabled\": false,\n    \"id\": 32\n  },\n  \"accountTags\": [\n    {\n      \"name\": \"string\"\n    },\n    {\n      \"name\": \"string\"\n    }\n  ],\n  \"projectTags\": [\n    {\n      \"name\": \"string\"\n    },\n    {\n      \"name\": \"string\"\n    }\n  ],\n  \"accountingAccount\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"string\",\n    \"code\": \"string\",\n    \"chartOfAccountId\": 6763\n  },\n  \"project\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"id\": 7573\n  },\n  \"notes\": \"string\",\n  \"description\": \"string\",\n  \"user\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"string\"\n  },\n  \"totalAmount\": 2354.1879669943787,\n  \"utbmsCode\": {\n    \"name\": \"string\",\n    \"code\": \"string\"\n  },\n  \"createdDate\": \"1951-01-01T19:09:16.622Z\",\n  \"createdBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"string\"\n  },\n  \"primaryReceipt\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"string\"\n  },\n  \"status\": \"Paid\",\n  \"costType\": \"SoftCost\",\n  \"saleDocumentItem\": {\n    \"saleDocument\": {\n      \"date\": \"2025-04-23T22:07:25.634Z\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"number\": 8360,\n      \"name\": \"string\",\n      \"type\": \"Invoice\",\n      \"invoiceType\": \"Credit\"\n    },\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"string\"\n  },\n  \"guid\": \"00000000-0000-0000-0000-000000000000\",\n  \"name\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0cdd36e8-abce-4746-93b0-efd006cf2f46",
+          "name": "OData end point to get a list of all expenses accessible by the user",
+          "request": {
+            "name": "OData end point to get a list of all expenses accessible by the user",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "expense"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "936cd436-d74e-4f5d-952a-f3ae5da89b75",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "expense"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"date\": \"1985-11-09T07:53:09.948Z\",\n    \"amount\": 6487.7122341511,\n    \"qty\": 3065.8194971854878,\n    \"account\": {\n      \"nameAndNumber\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"utbmsIsEnabled\": true,\n      \"id\": 3071\n    },\n    \"accountTags\": [\n      {\n        \"name\": \"string\"\n      },\n      {\n        \"name\": \"string\"\n      }\n    ],\n    \"projectTags\": [\n      {\n        \"name\": \"string\"\n      },\n      {\n        \"name\": \"string\"\n      }\n    ],\n    \"accountingAccount\": {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"name\": \"string\",\n      \"code\": \"string\",\n      \"chartOfAccountId\": 7080\n    },\n    \"project\": {\n      \"nameAndNumber\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"id\": 5750\n    },\n    \"notes\": \"string\",\n    \"description\": \"string\",\n    \"user\": {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    },\n    \"totalAmount\": 472.99999502018466,\n    \"utbmsCode\": {\n      \"name\": \"string\",\n      \"code\": \"string\"\n    },\n    \"createdDate\": \"1988-12-22T03:55:14.292Z\",\n    \"createdBy\": {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    },\n    \"primaryReceipt\": {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"name\": \"string\"\n    },\n    \"status\": \"Billed\",\n    \"costType\": \"HardCost\",\n    \"saleDocumentItem\": {\n      \"saleDocument\": {\n        \"date\": \"1994-10-12T10:34:43.492Z\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"number\": 8852,\n        \"name\": \"string\",\n        \"type\": \"Invoice\",\n        \"invoiceType\": \"Sale\"\n      },\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"name\": \"string\"\n    },\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"string\"\n  },\n  {\n    \"date\": \"1991-09-09T12:55:31.045Z\",\n    \"amount\": 26.764474153845306,\n    \"qty\": 7636.740703015875,\n    \"account\": {\n      \"nameAndNumber\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"utbmsIsEnabled\": false,\n      \"id\": 155\n    },\n    \"accountTags\": [\n      {\n        \"name\": \"string\"\n      },\n      {\n        \"name\": \"string\"\n      }\n    ],\n    \"projectTags\": [\n      {\n        \"name\": \"string\"\n      },\n      {\n        \"name\": \"string\"\n      }\n    ],\n    \"accountingAccount\": {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"name\": \"string\",\n      \"code\": \"string\",\n      \"chartOfAccountId\": 7361\n    },\n    \"project\": {\n      \"nameAndNumber\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n      \"id\": 1195\n    },\n    \"notes\": \"string\",\n    \"description\": \"string\",\n    \"user\": {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    },\n    \"totalAmount\": 4485.982217017542,\n    \"utbmsCode\": {\n      \"name\": \"string\",\n      \"code\": \"string\"\n    },\n    \"createdDate\": \"2012-02-14T03:26:52.795Z\",\n    \"createdBy\": {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"displayName\": \"string\",\n      \"name\": \"string\",\n      \"timeZoneId\": \"string\"\n    },\n    \"primaryReceipt\": {\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"name\": \"string\"\n    },\n    \"status\": \"NotBillable\",\n    \"costType\": \"SoftCost\",\n    \"saleDocumentItem\": {\n      \"saleDocument\": {\n        \"date\": \"2008-01-13T06:46:42.332Z\",\n        \"guid\": \"00000000-0000-0000-0000-000000000000\",\n        \"number\": 7889,\n        \"name\": \"string\",\n        \"type\": \"Quote\",\n        \"invoiceType\": \"Sale\"\n      },\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"name\": \"string\"\n    },\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d79b8a11-ac60-4b3c-b2a3-95bc5dfcaa5a",
+          "name": "Updates an existing expense",
+          "request": {
+            "name": "Updates an existing expense",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "expense"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "accountGuid",
+                  "value": "<uuid>",
+                  "description": "(Required) Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "projectGuid",
+                  "value": "<uuid>",
+                  "description": "(Required) Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "isBillable",
+                  "value": "<boolean>",
+                  "description": "(Required) Set this to true to indicate this expense is billable to the client and should be added to an invoice."
+                },
+                {
+                  "disabled": false,
+                  "key": "isBilled",
+                  "value": "<boolean>",
+                  "description": "(Required) Set this to true to indicate this expenses has already been billed to the client."
+                },
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<dateTime>",
+                  "description": "(Required) The date of this expense. It will be added to the invoice and indicated on the reports."
+                },
+                {
+                  "disabled": false,
+                  "key": "amount",
+                  "value": "<double>",
+                  "description": "(Required) The amount, in the account's (contact) currency."
+                },
+                {
+                  "disabled": false,
+                  "key": "qty",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "accountingAccountGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUTWhen creating an expense, this is used to reference the expense category. When creating an expense, this is used to reference the expense category."
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "userGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUTWhen creating or updating a time entry, this is used to associate a user with this time entry. When creating or updating a time entry, this is used to associate a user with this time entry."
+                },
+                {
+                  "disabled": false,
+                  "key": "hardCostPaymentMethod",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hardCostPaymentCheckNumber",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hardCostPaymentBankAccountGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isArchived",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hardCostPaymentCheckPayeeGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "hardCostPaymentCheckIsPrinted",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hardCostPaymentCheckIsToPrint",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hardCostPaymentChartOfAccountGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "hardCostPaymentChartOfAccountName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hardCostPaymentNotes",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hardCostPaymentGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "utbmsCodeId",
+                  "value": "<long>",
+                  "description": "When creating or updating a time entry, this is used to attach the UtbmsCode"
+                },
+                {
+                  "disabled": false,
+                  "key": "primaryReceiptGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "isMatchedToBankTransaction",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "utbmsIsEnabled",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "projectTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "projectTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "chartOfAccountId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountGuid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "notes",
+                  "value": "<string>",
+                  "description": "Internal notes, Not visible on the invoice."
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "Description, visible on the invoice."
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "totalAmount",
+                  "value": "<double>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "costType",
+                  "value": "<string>",
+                  "description": "Hard costs are expenses incurred on behalf of a client that require a direct payment by the firm to a vendor. For example if a firm writes a check for a court filing fee, it is considered a hard cost. Soft costs are expenses that are charged to the client but a direct payment is not made to a vendor."
+                },
+                {
+                  "disabled": false,
+                  "key": "saleDocument",
+                  "value": "{\"date\":\"<dateTime>\",\"guid\":\"<uuid>\",\"number\":\"<integer>\",\"type\":\"<string>\",\"invoiceType\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fb209fa8-82c3-4a93-9cb9-4961c08a078c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "expense"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"projectGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"isBillable\": \"<boolean>\",\n  \"isBilled\": \"<boolean>\",\n  \"date\": \"<dateTime>\",\n  \"amount\": \"<double>\",\n  \"qty\": \"<double>\",\n  \"lastModifiedDate\": \"1994-04-05T13:40:27.405Z\",\n  \"accountingAccountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"lastModifiedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"userGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"isDeleted\": true,\n  \"hardCostPaymentMethod\": \"<string>\",\n  \"hardCostPaymentCheckNumber\": \"<integer>\",\n  \"hardCostPaymentBankAccountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"hardCostPaymentBankAccount\": {\n    \"name\": \"<string>\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"type\": \"<string>\",\n    \"isArchived\": \"<boolean>\"\n  },\n  \"hardCostPaymentCheckPayeeGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"hardCostPaymentCheckIsPrinted\": \"<boolean>\",\n  \"hardCostPaymentCheckIsToPrint\": \"<boolean>\",\n  \"hardCostPaymentChartOfAccountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"hardCostPaymentChartOfAccountName\": \"<string>\",\n  \"hardCostPaymentNotes\": \"<string>\",\n  \"hardCostPaymentGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"utbmsCodeId\": \"<long>\",\n  \"primaryReceiptGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"isMatchedToBankTransaction\": \"<boolean>\",\n  \"account\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"utbmsIsEnabled\": \"<boolean>\",\n    \"id\": \"<long>\"\n  },\n  \"accountTags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"projectTags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"accountingAccount\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"<string>\",\n    \"code\": \"<string>\",\n    \"chartOfAccountId\": \"<long>\"\n  },\n  \"project\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"id\": \"<long>\"\n  },\n  \"notes\": \"<string>\",\n  \"description\": \"<string>\",\n  \"user\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"totalAmount\": \"<double>\",\n  \"utbmsCode\": {\n    \"name\": \"<string>\",\n    \"code\": \"<string>\"\n  },\n  \"createdDate\": \"1974-04-10T13:35:35.318Z\",\n  \"createdBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"primaryReceipt\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"<string>\"\n  },\n  \"status\": \"Billed\",\n  \"costType\": \"<string>\",\n  \"saleDocumentItem\": {\n    \"saleDocument\": {\n      \"date\": \"<dateTime>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"number\": \"<integer>\",\n      \"name\": \"string\",\n      \"type\": \"<string>\",\n      \"invoiceType\": \"<string>\"\n    },\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"<string>\"\n  },\n  \"guid\": \"00000000-0000-0000-0000-000000000000\",\n  \"name\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9f9731e7-e49f-4d02-8835-87b4afd15ddd",
+          "name": "Created a new expense (contact)",
+          "request": {
+            "name": "Created a new expense (contact)",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "expense"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "accountGuid",
+                  "value": "<uuid>",
+                  "description": "(Required) Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "projectGuid",
+                  "value": "<uuid>",
+                  "description": "(Required) Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "isBillable",
+                  "value": "<boolean>",
+                  "description": "(Required) Set this to true to indicate this expense is billable to the client and should be added to an invoice."
+                },
+                {
+                  "disabled": false,
+                  "key": "isBilled",
+                  "value": "<boolean>",
+                  "description": "(Required) Set this to true to indicate this expenses has already been billed to the client."
+                },
+                {
+                  "disabled": false,
+                  "key": "date",
+                  "value": "<dateTime>",
+                  "description": "(Required) The date of this expense. It will be added to the invoice and indicated on the reports."
+                },
+                {
+                  "disabled": false,
+                  "key": "amount",
+                  "value": "<double>",
+                  "description": "(Required) The amount, in the account's (contact) currency."
+                },
+                {
+                  "disabled": false,
+                  "key": "qty",
+                  "value": "<double>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "accountingAccountGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUTWhen creating an expense, this is used to reference the expense category. When creating an expense, this is used to reference the expense category."
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "userGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUTWhen creating or updating a time entry, this is used to associate a user with this time entry. When creating or updating a time entry, this is used to associate a user with this time entry."
+                },
+                {
+                  "disabled": false,
+                  "key": "hardCostPaymentMethod",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hardCostPaymentCheckNumber",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hardCostPaymentBankAccountGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isArchived",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hardCostPaymentCheckPayeeGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "hardCostPaymentCheckIsPrinted",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hardCostPaymentCheckIsToPrint",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hardCostPaymentChartOfAccountGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "hardCostPaymentChartOfAccountName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hardCostPaymentNotes",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "hardCostPaymentGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "utbmsCodeId",
+                  "value": "<long>",
+                  "description": "When creating or updating a time entry, this is used to attach the UtbmsCode"
+                },
+                {
+                  "disabled": false,
+                  "key": "primaryReceiptGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "isMatchedToBankTransaction",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "utbmsIsEnabled",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "projectTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "projectTags",
+                  "value": "{\"name\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "chartOfAccountId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountGuid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "notes",
+                  "value": "<string>",
+                  "description": "Internal notes, Not visible on the invoice."
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "Description, visible on the invoice."
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "totalAmount",
+                  "value": "<double>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "costType",
+                  "value": "<string>",
+                  "description": "Hard costs are expenses incurred on behalf of a client that require a direct payment by the firm to a vendor. For example if a firm writes a check for a court filing fee, it is considered a hard cost. Soft costs are expenses that are charged to the client but a direct payment is not made to a vendor."
+                },
+                {
+                  "disabled": false,
+                  "key": "saleDocument",
+                  "value": "{\"date\":\"<dateTime>\",\"guid\":\"<uuid>\",\"number\":\"<integer>\",\"type\":\"<string>\",\"invoiceType\":\"<string>\"}"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a7c5ff0b-b782-48d4-8b8f-354946893dc5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "expense"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"projectGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"isBillable\": \"<boolean>\",\n  \"isBilled\": \"<boolean>\",\n  \"date\": \"<dateTime>\",\n  \"amount\": \"<double>\",\n  \"qty\": \"<double>\",\n  \"lastModifiedDate\": \"1994-04-05T13:40:27.405Z\",\n  \"accountingAccountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"lastModifiedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"userGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"isDeleted\": true,\n  \"hardCostPaymentMethod\": \"<string>\",\n  \"hardCostPaymentCheckNumber\": \"<integer>\",\n  \"hardCostPaymentBankAccountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"hardCostPaymentBankAccount\": {\n    \"name\": \"<string>\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"type\": \"<string>\",\n    \"isArchived\": \"<boolean>\"\n  },\n  \"hardCostPaymentCheckPayeeGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"hardCostPaymentCheckIsPrinted\": \"<boolean>\",\n  \"hardCostPaymentCheckIsToPrint\": \"<boolean>\",\n  \"hardCostPaymentChartOfAccountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"hardCostPaymentChartOfAccountName\": \"<string>\",\n  \"hardCostPaymentNotes\": \"<string>\",\n  \"hardCostPaymentGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"utbmsCodeId\": \"<long>\",\n  \"primaryReceiptGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"isMatchedToBankTransaction\": \"<boolean>\",\n  \"account\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"utbmsIsEnabled\": \"<boolean>\",\n    \"id\": \"<long>\"\n  },\n  \"accountTags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"projectTags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"accountingAccount\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"<string>\",\n    \"code\": \"<string>\",\n    \"chartOfAccountId\": \"<long>\"\n  },\n  \"project\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"id\": \"<long>\"\n  },\n  \"notes\": \"<string>\",\n  \"description\": \"<string>\",\n  \"user\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"totalAmount\": \"<double>\",\n  \"utbmsCode\": {\n    \"name\": \"<string>\",\n    \"code\": \"<string>\"\n  },\n  \"createdDate\": \"1974-04-10T13:35:35.318Z\",\n  \"createdBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"primaryReceipt\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"<string>\"\n  },\n  \"status\": \"Billed\",\n  \"costType\": \"<string>\",\n  \"saleDocumentItem\": {\n    \"saleDocument\": {\n      \"date\": \"<dateTime>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"number\": \"<integer>\",\n      \"name\": \"string\",\n      \"type\": \"<string>\",\n      \"invoiceType\": \"<string>\"\n    },\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"<string>\"\n  },\n  \"guid\": \"00000000-0000-0000-0000-000000000000\",\n  \"name\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a261368b-7399-4ca3-8bdb-d2eb90d1e48a",
+          "name": "Marks an existing expense as deleted",
+          "request": {
+            "name": "Marks an existing expense as deleted",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "expense"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "guid",
+                  "value": "<uuid>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "db53b4fb-9d22-4074-a51c-fefbc5e2697e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "expense"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "guid",
+                      "value": "<uuid>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"projectGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"isBillable\": \"<boolean>\",\n  \"isBilled\": \"<boolean>\",\n  \"date\": \"<dateTime>\",\n  \"amount\": \"<double>\",\n  \"qty\": \"<double>\",\n  \"lastModifiedDate\": \"1994-04-05T13:40:27.405Z\",\n  \"accountingAccountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"lastModifiedBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"userGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"isDeleted\": true,\n  \"hardCostPaymentMethod\": \"<string>\",\n  \"hardCostPaymentCheckNumber\": \"<integer>\",\n  \"hardCostPaymentBankAccountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"hardCostPaymentBankAccount\": {\n    \"name\": \"<string>\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"type\": \"<string>\",\n    \"isArchived\": \"<boolean>\"\n  },\n  \"hardCostPaymentCheckPayeeGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"hardCostPaymentCheckIsPrinted\": \"<boolean>\",\n  \"hardCostPaymentCheckIsToPrint\": \"<boolean>\",\n  \"hardCostPaymentChartOfAccountGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"hardCostPaymentChartOfAccountName\": \"<string>\",\n  \"hardCostPaymentNotes\": \"<string>\",\n  \"hardCostPaymentGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"utbmsCodeId\": \"<long>\",\n  \"primaryReceiptGuid\": \"00000000-0000-0000-0000-000000000000\",\n  \"isMatchedToBankTransaction\": \"<boolean>\",\n  \"account\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"utbmsIsEnabled\": \"<boolean>\",\n    \"id\": \"<long>\"\n  },\n  \"accountTags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"projectTags\": [\n    {\n      \"name\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\"\n    }\n  ],\n  \"accountingAccount\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"<string>\",\n    \"code\": \"<string>\",\n    \"chartOfAccountId\": \"<long>\"\n  },\n  \"project\": {\n    \"nameAndNumber\": \"string\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"accountGuid\": \"00000000-0000-0000-0000-000000000000\",\n    \"id\": \"<long>\"\n  },\n  \"notes\": \"<string>\",\n  \"description\": \"<string>\",\n  \"user\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"totalAmount\": \"<double>\",\n  \"utbmsCode\": {\n    \"name\": \"<string>\",\n    \"code\": \"<string>\"\n  },\n  \"createdDate\": \"1974-04-10T13:35:35.318Z\",\n  \"createdBy\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"<string>\"\n  },\n  \"primaryReceipt\": {\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"<string>\"\n  },\n  \"status\": \"Billed\",\n  \"costType\": \"<string>\",\n  \"saleDocumentItem\": {\n    \"saleDocument\": {\n      \"date\": \"<dateTime>\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\",\n      \"number\": \"<integer>\",\n      \"name\": \"string\",\n      \"type\": \"<string>\",\n      \"invoiceType\": \"<string>\"\n    },\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"name\": \"<string>\"\n  },\n  \"guid\": \"00000000-0000-0000-0000-000000000000\",\n  \"name\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.practicepanther.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "99930f03-9d74-4d82-a2ca-fe01c4a94f4a",
+    "name": "Legacy API (v1) Account Expense API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

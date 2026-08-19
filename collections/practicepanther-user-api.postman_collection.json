@@ -1,0 +1,129 @@
+{
+  "item": [
+    {
+      "id": "c6da6635-a040-40a0-987e-01fdff07d302",
+      "name": "User",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "bb15a56a-4c2f-435e-a4b6-dadaac7c08f6",
+          "name": "OData end point to get a list of all users",
+          "request": {
+            "name": "OData end point to get a list of all users",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "user"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "289281de-ae18-4c13-ad4b-582854b26d53",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "user"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"email\": \"string\",\n    \"hourlyRate\": 1719782286.0412304,\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"middleName\": \"string\",\n    \"lastLoginDate\": \"1988-12-21T13:22:05.031Z\",\n    \"isEnabled\": true,\n    \"role\": {\n      \"name\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\"\n    },\n    \"createdDate\": \"1978-04-18T18:16:25.972Z\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"string\"\n  },\n  {\n    \"email\": \"string\",\n    \"hourlyRate\": 861059935.4185601,\n    \"firstName\": \"string\",\n    \"lastName\": \"string\",\n    \"middleName\": \"string\",\n    \"lastLoginDate\": \"2007-08-08T10:09:13.822Z\",\n    \"isEnabled\": false,\n    \"role\": {\n      \"name\": \"string\",\n      \"guid\": \"00000000-0000-0000-0000-000000000000\"\n    },\n    \"createdDate\": \"2005-11-07T07:52:59.869Z\",\n    \"guid\": \"00000000-0000-0000-0000-000000000000\",\n    \"displayName\": \"string\",\n    \"name\": \"string\",\n    \"timeZoneId\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.practicepanther.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "82d4fb34-18a5-4929-9414-fa82c20447e8",
+    "name": "Legacy API (v1) Account User API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

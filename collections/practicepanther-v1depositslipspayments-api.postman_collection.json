@@ -1,0 +1,745 @@
+{
+  "item": [
+    {
+      "id": "4d81fd7a-a90a-4f92-aa8d-14fbcdeda632",
+      "name": "V1DepositSlipsPayments",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4447c518-edeb-4118-9f5c-ceb6dbefcb3d",
+          "name": "V1Deposit Slips Payments Payments Available For Deposit Slip",
+          "request": {
+            "name": "V1Deposit Slips Payments Payments Available For Deposit Slip",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "internal",
+                "v1",
+                "tenants",
+                ":tenantId",
+                "depositSlipPayments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.tenantId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.userId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.cultureName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.dateFormat",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.dateTimeFormat",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.timeFormat",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.currencyCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.timezoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.integrations.trustAccounting",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.integrations.operatingAccounting",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.integrations.pantherPayments",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.securityDetail.userId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.securityDetail.isUserAuthenticated",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.securityDetail.hasFullAccess",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.bankAccountGuid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.paymentMethods",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.paymentMethods",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.searchTerm",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.showHiddenPayments",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.page",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.sortBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.sortOrder",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.outputType",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.exportAll",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "tenantId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6a803513-92e4-4ae8-a0ee-645332640aa2",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "internal",
+                    "v1",
+                    "tenants",
+                    ":tenantId",
+                    "depositSlipPayments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.tenantId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.userId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.cultureName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.dateFormat",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.dateTimeFormat",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.timeFormat",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.currencyCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.timezoneId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.integrations.trustAccounting",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.integrations.operatingAccounting",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.integrations.pantherPayments",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.securityDetail.userId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.securityDetail.isUserAuthenticated",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.securityDetail.hasFullAccess",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.bankAccountGuid",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.paymentMethods",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.paymentMethods",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.searchTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.showHiddenPayments",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.sortOrder",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.outputType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.exportAll",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "tenantId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6c18bcb0-0274-463d-b49f-e286c99e41de",
+          "name": "V1Deposit Slips Payments Payments For Deposit Slip",
+          "request": {
+            "name": "V1Deposit Slips Payments Payments For Deposit Slip",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "internal",
+                "v1",
+                "tenants",
+                ":tenantId",
+                "depositSlipPayments",
+                ":depositSlipGuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.tenantId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.userId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.cultureName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.dateFormat",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.dateTimeFormat",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.timeFormat",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.currencyCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.timezoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.integrations.trustAccounting",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.integrations.operatingAccounting",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.integrations.pantherPayments",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.securityDetail.userId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.securityDetail.isUserAuthenticated",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.coreIdentity.securityDetail.hasFullAccess",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.bankAccountGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.paymentMethods",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.paymentMethods",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.searchTerm",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.showHiddenPayments",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.page",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.sortBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.sortOrder",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.outputType",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentsGridResource.exportAll",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "tenantId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "depositSlipGuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "387f3c0c-3b65-4674-8412-c5c066030889",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "internal",
+                    "v1",
+                    "tenants",
+                    ":tenantId",
+                    "depositSlipPayments",
+                    ":depositSlipGuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.tenantId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.userId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.cultureName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.dateFormat",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.dateTimeFormat",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.timeFormat",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.currencyCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.localizationPreferences.timezoneId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.integrations.trustAccounting",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.integrations.operatingAccounting",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.integrations.pantherPayments",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.securityDetail.userId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.securityDetail.isUserAuthenticated",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.coreIdentity.securityDetail.hasFullAccess",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.bankAccountGuid",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.paymentMethods",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.paymentMethods",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.searchTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.showHiddenPayments",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.sortOrder",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.outputType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipPaymentsGridResource.exportAll",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "tenantId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "depositSlipGuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.practicepanther.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "41f598b9-b2ec-4c67-91d3-46177a8e200c",
+    "name": "Legacy API (v1) Account V1DepositSlipsPayments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

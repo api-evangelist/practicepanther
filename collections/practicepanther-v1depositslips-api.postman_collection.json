@@ -1,0 +1,1301 @@
+{
+  "item": [
+    {
+      "id": "7e06c922-683d-459f-878e-e8a3d9da02de",
+      "name": "V1DepositSlips",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ead574aa-0b02-4831-bb0b-113aecade1ed",
+          "name": "V1Deposit Slips Get All",
+          "request": {
+            "name": "V1Deposit Slips Get All",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "internal",
+                "v1",
+                "tenants",
+                ":tenantId",
+                "depositSlips"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.coreIdentity.tenantId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.coreIdentity.userId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.coreIdentity.localizationPreferences.cultureName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.coreIdentity.localizationPreferences.dateFormat",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.coreIdentity.localizationPreferences.dateTimeFormat",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.coreIdentity.localizationPreferences.timeFormat",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.coreIdentity.localizationPreferences.currencyCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.coreIdentity.localizationPreferences.timezoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.coreIdentity.integrations.trustAccounting",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.coreIdentity.integrations.operatingAccounting",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.coreIdentity.integrations.pantherPayments",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.coreIdentity.securityDetail.userId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.coreIdentity.securityDetail.isUserAuthenticated",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.coreIdentity.securityDetail.hasFullAccess",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.bankAccountGuid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.depositDateFrom",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.depositDateTo",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.createdDateFrom",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.createdDateTo",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.amountFilter1.amount",
+                  "value": "<double>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.amountFilter1.operator",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.amountFilter2.amount",
+                  "value": "<double>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.amountFilter2.operator",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.searchTerm",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.page",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.pageSize",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.sortBy",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.sortOrder",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.outputType",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipsGridResource.exportAll",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "tenantId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4b46b624-bdc8-4c44-9407-19bd3d94aa33",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "internal",
+                    "v1",
+                    "tenants",
+                    ":tenantId",
+                    "depositSlips"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "depositSlipsGridResource.coreIdentity.tenantId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.coreIdentity.userId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.coreIdentity.localizationPreferences.cultureName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.coreIdentity.localizationPreferences.dateFormat",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.coreIdentity.localizationPreferences.dateTimeFormat",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.coreIdentity.localizationPreferences.timeFormat",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.coreIdentity.localizationPreferences.currencyCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.coreIdentity.localizationPreferences.timezoneId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.coreIdentity.integrations.trustAccounting",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.coreIdentity.integrations.operatingAccounting",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.coreIdentity.integrations.pantherPayments",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.coreIdentity.securityDetail.userId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.coreIdentity.securityDetail.isUserAuthenticated",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.coreIdentity.securityDetail.hasFullAccess",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.bankAccountGuid",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.depositDateFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.depositDateTo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.createdDateFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.createdDateTo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.amountFilter1.amount",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.amountFilter1.operator",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.amountFilter2.amount",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.amountFilter2.operator",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.searchTerm",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.page",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.pageSize",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.sortBy",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.sortOrder",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.outputType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipsGridResource.exportAll",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "tenantId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f5dfd21a-7fd6-41ec-aebd-8d3d9af9f681",
+          "name": "V1Deposit Slips Delete",
+          "request": {
+            "name": "V1Deposit Slips Delete",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "internal",
+                "v1",
+                "tenants",
+                ":tenantId",
+                "depositSlips"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "tenantId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "0",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "1",
+                  "value": "<uuid>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5982ee2c-a07b-4a7d-ac3f-3cc5c59ad6a4",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "internal",
+                    "v1",
+                    "tenants",
+                    ":tenantId",
+                    "depositSlips"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "tenantId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "key": "0",
+                      "value": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "1",
+                      "value": "00000000-0000-0000-0000-000000000000"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f3d53241-688d-4241-9528-3f9034451e32",
+          "name": "V1Deposit Slips Get",
+          "request": {
+            "name": "V1Deposit Slips Get",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "internal",
+                "v1",
+                "tenants",
+                ":tenantId",
+                "depositSlip",
+                ":depositSlipGuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "depositSlipDetailResource.depositSlipId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipDetailResource.depositSlipGuid",
+                  "value": "<uuid>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipDetailResource.coreIdentity.tenantId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipDetailResource.coreIdentity.userId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipDetailResource.coreIdentity.localizationPreferences.cultureName",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipDetailResource.coreIdentity.localizationPreferences.dateFormat",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipDetailResource.coreIdentity.localizationPreferences.dateTimeFormat",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipDetailResource.coreIdentity.localizationPreferences.timeFormat",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipDetailResource.coreIdentity.localizationPreferences.currencyCode",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipDetailResource.coreIdentity.localizationPreferences.timezoneId",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipDetailResource.coreIdentity.integrations.trustAccounting",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipDetailResource.coreIdentity.integrations.operatingAccounting",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipDetailResource.coreIdentity.integrations.pantherPayments",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipDetailResource.coreIdentity.securityDetail.userId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipDetailResource.coreIdentity.securityDetail.isUserAuthenticated",
+                  "value": "<boolean>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipDetailResource.coreIdentity.securityDetail.hasFullAccess",
+                  "value": "<boolean>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "tenantId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "depositSlipGuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "bd2dc62f-63ad-4aa7-8661-e87aea2a5849",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "internal",
+                    "v1",
+                    "tenants",
+                    ":tenantId",
+                    "depositSlip",
+                    ":depositSlipGuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "depositSlipDetailResource.depositSlipId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "depositSlipDetailResource.depositSlipGuid",
+                      "value": "<uuid>"
+                    },
+                    {
+                      "key": "depositSlipDetailResource.coreIdentity.tenantId",
+                      "value": "<long>"
+                    },
+                    {
+                      "key": "depositSlipDetailResource.coreIdentity.userId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "depositSlipDetailResource.coreIdentity.localizationPreferences.cultureName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipDetailResource.coreIdentity.localizationPreferences.dateFormat",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipDetailResource.coreIdentity.localizationPreferences.dateTimeFormat",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipDetailResource.coreIdentity.localizationPreferences.timeFormat",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipDetailResource.coreIdentity.localizationPreferences.currencyCode",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipDetailResource.coreIdentity.localizationPreferences.timezoneId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "depositSlipDetailResource.coreIdentity.integrations.trustAccounting",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipDetailResource.coreIdentity.integrations.operatingAccounting",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipDetailResource.coreIdentity.integrations.pantherPayments",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipDetailResource.coreIdentity.securityDetail.userId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "depositSlipDetailResource.coreIdentity.securityDetail.isUserAuthenticated",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "depositSlipDetailResource.coreIdentity.securityDetail.hasFullAccess",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "tenantId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "depositSlipGuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e773d1ab-bd27-463f-9659-fd4c4694c186",
+          "name": "V1Deposit Slips Update",
+          "request": {
+            "name": "V1Deposit Slips Update",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "internal",
+                "v1",
+                "tenants",
+                ":tenantId",
+                "depositSlip",
+                ":depositSlipGuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "tenantId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "depositSlipGuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "depositSlipId",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "depositDate",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "bankAccountHeadnoteId",
+                  "value": "<string>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "57d3689b-3d09-40dc-8a04-2a8414c91855",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "internal",
+                    "v1",
+                    "tenants",
+                    ":tenantId",
+                    "depositSlip",
+                    ":depositSlipGuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "tenantId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "depositSlipGuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "key": "depositSlipId",
+                      "value": "<long>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Used to set the reference in POST and PUT ",
+                        "type": "text/plain"
+                      },
+                      "key": "depositSlipGuid",
+                      "value": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "depositDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "bankAccountHeadnoteId",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3eb87d23-c3c8-4f86-86d0-f7c36a67646e",
+          "name": "V1Deposit Slips Create",
+          "request": {
+            "name": "V1Deposit Slips Create",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "internal",
+                "v1",
+                "tenants",
+                ":tenantId",
+                "depositSlip"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "tenantId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "full"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "/OAuth/Token"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "/OAuth/Authorize"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "id",
+                  "value": "<long>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentGuids",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "depositSlipPaymentGuids",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "depositDate",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "depositedByGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "tenantId",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "bankAccountGuid",
+                  "value": "<uuid>",
+                  "description": "Used to set the reference in POST and PUT "
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "isPrinted",
+                  "value": "<boolean>"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "93412a4d-9130-4c5b-9aa0-c5fc2ef633fb",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "internal",
+                    "v1",
+                    "tenants",
+                    ":tenantId",
+                    "depositSlip"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "tenantId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "key": "id",
+                      "value": "<long>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Used to set the reference in POST and PUT ",
+                        "type": "text/plain"
+                      },
+                      "key": "depositSlipPaymentGuids",
+                      "value": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Used to set the reference in POST and PUT ",
+                        "type": "text/plain"
+                      },
+                      "key": "depositSlipPaymentGuids",
+                      "value": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "depositDate",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Used to set the reference in POST and PUT ",
+                        "type": "text/plain"
+                      },
+                      "key": "depositedByGuid",
+                      "value": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "tenantId",
+                      "value": "<integer>"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "Used to set the reference in POST and PUT ",
+                        "type": "text/plain"
+                      },
+                      "key": "bankAccountGuid",
+                      "value": "00000000-0000-0000-0000-000000000000"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "disabled": false,
+                      "key": "isPrinted",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.practicepanther.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "bfec1159-83ae-4c62-931e-21db839bc0b3",
+    "name": "Legacy API (v1) Account V1DepositSlips API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

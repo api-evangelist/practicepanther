@@ -1,0 +1,597 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Legacy API (v1) Account V1AllPaymentsGrid API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "V1AllPaymentsGrid",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "V1AllPaymentsGrid_GetPaymentsStats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.practicepanther.com/api/internal/v1/tenants/:tenantId/allpayments/stats",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "paymentsGridResource.searchTerm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.paymentTypes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.bankAccountGuids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.bankAccountTypes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.paymentStatuses",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.paymentMethods",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.payeeGuid",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.payorGuid",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.dateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.dateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.reconciledDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.reconciledDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.amountFilter1.amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.amountFilter1.operator",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.amountFilter2.amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.amountFilter2.operator",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.paymentReconciledStatus",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.accountTags",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.projectTags",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.tagsFilter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.contactAssignedToUserIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.matterAssignedToUserIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.contactAssignedToUserGroupGuids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.matterAssignedToUserGroupGuids",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.pageVariant",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.isPrinted",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.isUsingQBNewIntegration",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.isPostedToAccountingPlus",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.hasSurchargesEnabled",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.columnDefinitions",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.sortBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.sortOrder",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.columns",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.outputType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.exportAll",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.tenantId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.localizationPreferences.cultureName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.localizationPreferences.dateFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.localizationPreferences.dateTimeFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.localizationPreferences.timeFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.localizationPreferences.currencyCode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.localizationPreferences.timezoneId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.integrations.trustAccounting",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.integrations.operatingAccounting",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.integrations.pantherPayments",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.securityDetail.userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.securityDetail.isUserAuthenticated",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.securityDetail.hasFullAccess",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.securityDetail.accessLevels",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          }
+        },
+        {
+          "info": {
+            "name": "V1AllPaymentsGrid_GetPayments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.practicepanther.com/api/internal/v1/tenants/:tenantId/allpayments",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "paymentsGridResource.searchTerm",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.paymentTypes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.bankAccountGuids",
+                "value": "",
+                "type": "query",
+                "description": "Used to set the reference in POST and PUT "
+              },
+              {
+                "name": "paymentsGridResource.bankAccountTypes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.paymentStatuses",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.paymentMethods",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.payeeGuid",
+                "value": "",
+                "type": "query",
+                "description": "Used to set the reference in POST and PUT "
+              },
+              {
+                "name": "paymentsGridResource.payorGuid",
+                "value": "",
+                "type": "query",
+                "description": "Used to set the reference in POST and PUT "
+              },
+              {
+                "name": "paymentsGridResource.dateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.dateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.reconciledDateFrom",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.reconciledDateTo",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.amountFilter1.amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.amountFilter1.operator",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.amountFilter2.amount",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.amountFilter2.operator",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.paymentReconciledStatus",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.accountTags",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.projectTags",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.tagsFilter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.contactAssignedToUserIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.matterAssignedToUserIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.contactAssignedToUserGroupGuids",
+                "value": "",
+                "type": "query",
+                "description": "Used to set the reference in POST and PUT "
+              },
+              {
+                "name": "paymentsGridResource.matterAssignedToUserGroupGuids",
+                "value": "",
+                "type": "query",
+                "description": "Used to set the reference in POST and PUT "
+              },
+              {
+                "name": "paymentsGridResource.pageVariant",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.isPrinted",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.isUsingQBNewIntegration",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.isPostedToAccountingPlus",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.hasSurchargesEnabled",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.columnDefinitions",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.page",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.pageSize",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.sortBy",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.sortOrder",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.columns",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.outputType",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.exportAll",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.tenantId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.localizationPreferences.cultureName",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.localizationPreferences.dateFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.localizationPreferences.dateTimeFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.localizationPreferences.timeFormat",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.localizationPreferences.currencyCode",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.localizationPreferences.timezoneId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.integrations.trustAccounting",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.integrations.operatingAccounting",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.integrations.pantherPayments",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.securityDetail.userId",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.securityDetail.isUserAuthenticated",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.securityDetail.hasFullAccess",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "paymentsGridResource.coreIdentity.securityDetail.accessLevels",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Legacy API (v1) Account CustomField API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CustomField",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "OData end point to get a list of all available custom fields for an object",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.practicepanther.com/api/customfield",
+            "params": [
+              {
+                "name": "objectType",
+                "value": "",
+                "type": "query",
+                "description": "Project/Contact/Account"
+              }
+            ],
+            "auth": {
+              "type": "oauth2",
+              "flow": "authorization_code",
+              "authorizationUrl": "/OAuth/Authorize",
+              "accessTokenUrl": "/OAuth/Token",
+              "credentials": {
+                "clientId": "{{clientId}}",
+                "clientSecret": "{{clientSecret}}"
+              }
+            }
+          },
+          "docs": "OData end point to get a list of all available custom fields for an object"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

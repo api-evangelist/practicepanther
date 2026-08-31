@@ -259,7 +259,7 @@ apis:
   humanURL: https://support.practicepanther.com/en/collections/340699-api
   baseURL: https://app.practicepanther.com
   tags:
-  - Sales Tax
+  - SalesTax
   tags_raw:
   - SalesTax
   properties:
@@ -523,7 +523,7 @@ apis:
   humanURL: https://support.practicepanther.com/en/collections/340699-api
   baseURL: https://app.practicepanther.com
   tags:
-  - v1 - Expenses
+  - V1Expenses
   tags_raw:
   - V1Expenses
   properties:

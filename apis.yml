@@ -89,40 +89,6 @@ apis:
     url: https://app.practicepanther.com/swagger/ui/index
   - type: Authentication
     url: https://support.practicepanther.com/en/articles/480086-api-access
-- aid: practicepanther:practicepanther-customfield-api
-  name: PracticePanther CustomField API
-  description: The CustomField API from PracticePanther — 1 operation(s) for customfield.
-  humanURL: https://support.practicepanther.com/en/collections/340699-api
-  baseURL: https://app.practicepanther.com
-  tags:
-  - Custom Field
-  tags_raw:
-  - CustomField
-  properties:
-  - type: OpenAPI
-    url: openapi/practicepanther-customfield-api-openapi.yml
-  - type: Documentation
-    url: https://support.practicepanther.com/en/articles/479897-practicepanther-api
-  - type: SwaggerUI
-    url: https://app.practicepanther.com/swagger/ui/index
-  - type: Authentication
-    url: https://support.practicepanther.com/en/articles/480086-api-access
-- aid: practicepanther:practicepanther-emailtemplate-api
-  name: PracticePanther EmailTemplate API
-  description: The EmailTemplate API from PracticePanther — 1 operation(s) for emailtemplate.
-  humanURL: https://support.practicepanther.com/en/collections/340699-api
-  baseURL: https://app.practicepanther.com
-  tags:
-  - EmailTemplate
-  properties:
-  - type: OpenAPI
-    url: openapi/practicepanther-emailtemplate-api-openapi.yml
-  - type: Documentation
-    url: https://support.practicepanther.com/en/articles/479897-practicepanther-api
-  - type: SwaggerUI
-    url: https://app.practicepanther.com/swagger/ui/index
-  - type: Authentication
-    url: https://support.practicepanther.com/en/articles/480086-api-access
 - aid: practicepanther:practicepanther-expense-api
   name: PracticePanther Expense API
   description: The Expense API from PracticePanther — 2 operation(s) for expense.
@@ -253,24 +219,6 @@ apis:
     url: https://app.practicepanther.com/swagger/ui/index
   - type: Authentication
     url: https://support.practicepanther.com/en/articles/480086-api-access
-- aid: practicepanther:practicepanther-salestax-api
-  name: PracticePanther SalesTax API
-  description: The SalesTax API from PracticePanther — 2 operation(s) for salestax.
-  humanURL: https://support.practicepanther.com/en/collections/340699-api
-  baseURL: https://app.practicepanther.com
-  tags:
-  - Sales Tax
-  tags_raw:
-  - SalesTax
-  properties:
-  - type: OpenAPI
-    url: openapi/practicepanther-salestax-api-openapi.yml
-  - type: Documentation
-    url: https://support.practicepanther.com/en/articles/479897-practicepanther-api
-  - type: SwaggerUI
-    url: https://app.practicepanther.com/swagger/ui/index
-  - type: Authentication
-    url: https://support.practicepanther.com/en/articles/480086-api-access
 - aid: practicepanther:practicepanther-tag-api
   name: PracticePanther Tag API
   description: The Tag API from PracticePanther — 1 operation(s) for tag.
@@ -281,24 +229,6 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/practicepanther-tag-api-openapi.yml
-  - type: Documentation
-    url: https://support.practicepanther.com/en/articles/479897-practicepanther-api
-  - type: SwaggerUI
-    url: https://app.practicepanther.com/swagger/ui/index
-  - type: Authentication
-    url: https://support.practicepanther.com/en/articles/480086-api-access
-- aid: practicepanther:practicepanther-timeentry-api
-  name: PracticePanther TimeEntry API
-  description: The TimeEntry API from PracticePanther — 2 operation(s) for timeentry.
-  humanURL: https://support.practicepanther.com/en/collections/340699-api
-  baseURL: https://app.practicepanther.com
-  tags:
-  - Time entry
-  tags_raw:
-  - TimeEntry
-  properties:
-  - type: OpenAPI
-    url: openapi/practicepanther-timeentry-api-openapi.yml
   - type: Documentation
     url: https://support.practicepanther.com/en/articles/479897-practicepanther-api
   - type: SwaggerUI
@@ -517,24 +447,6 @@ apis:
     url: https://app.practicepanther.com/swagger/ui/index
   - type: Authentication
     url: https://support.practicepanther.com/en/articles/480086-api-access
-- aid: practicepanther:practicepanther-v1expenses-api
-  name: PracticePanther V1Expenses API
-  description: The V1Expenses API from PracticePanther — 1 operation(s) for v1expenses.
-  humanURL: https://support.practicepanther.com/en/collections/340699-api
-  baseURL: https://app.practicepanther.com
-  tags:
-  - v1 - Expenses
-  tags_raw:
-  - V1Expenses
-  properties:
-  - type: OpenAPI
-    url: openapi/practicepanther-v1expenses-api-openapi.yml
-  - type: Documentation
-    url: https://support.practicepanther.com/en/articles/479897-practicepanther-api
-  - type: SwaggerUI
-    url: https://app.practicepanther.com/swagger/ui/index
-  - type: Authentication
-    url: https://support.practicepanther.com/en/articles/480086-api-access
 - aid: practicepanther:practicepanther-v1firmpayments-api
   name: PracticePanther V1FirmPayments API
   description: The V1FirmPayments API from PracticePanther — 6 operation(s) for v1firmpayments.
@@ -693,6 +605,86 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/practicepanther-v1trustbooksonboardingnotifications-api-openapi.yml
+  - type: Documentation
+    url: https://support.practicepanther.com/en/articles/479897-practicepanther-api
+  - type: SwaggerUI
+    url: https://app.practicepanther.com/swagger/ui/index
+  - type: Authentication
+    url: https://support.practicepanther.com/en/articles/480086-api-access
+- aid: practicepanther:practicepanther-custom-field-api
+  name: PracticePanther Custom Field API
+  description: The Custom Field API from PracticePanther — 1 operation(s) for custom field.
+  humanURL: https://support.practicepanther.com/en/collections/340699-api
+  baseURL: https://app.practicepanther.com
+  tags:
+  - Custom Field
+  properties:
+  - type: OpenAPI
+    url: openapi/practicepanther-custom-field-api-openapi.yml
+  - type: Documentation
+    url: https://support.practicepanther.com/en/articles/479897-practicepanther-api
+  - type: SwaggerUI
+    url: https://app.practicepanther.com/swagger/ui/index
+  - type: Authentication
+    url: https://support.practicepanther.com/en/articles/480086-api-access
+- aid: practicepanther:practicepanther-email-template-api
+  name: PracticePanther Email Template API
+  description: The Email Template API from PracticePanther — 1 operation(s) for email template.
+  humanURL: https://support.practicepanther.com/en/collections/340699-api
+  baseURL: https://app.practicepanther.com
+  tags:
+  - Email Template
+  properties:
+  - type: OpenAPI
+    url: openapi/practicepanther-email-template-api-openapi.yml
+  - type: Documentation
+    url: https://support.practicepanther.com/en/articles/479897-practicepanther-api
+  - type: SwaggerUI
+    url: https://app.practicepanther.com/swagger/ui/index
+  - type: Authentication
+    url: https://support.practicepanther.com/en/articles/480086-api-access
+- aid: practicepanther:practicepanther-sales-tax-api
+  name: PracticePanther Sales tax API
+  description: The Sales tax API from PracticePanther — 2 operation(s) for sales tax.
+  humanURL: https://support.practicepanther.com/en/collections/340699-api
+  baseURL: https://app.practicepanther.com
+  tags:
+  - Sales tax
+  properties:
+  - type: OpenAPI
+    url: openapi/practicepanther-sales-tax-api-openapi.yml
+  - type: Documentation
+    url: https://support.practicepanther.com/en/articles/479897-practicepanther-api
+  - type: SwaggerUI
+    url: https://app.practicepanther.com/swagger/ui/index
+  - type: Authentication
+    url: https://support.practicepanther.com/en/articles/480086-api-access
+- aid: practicepanther:practicepanther-time-entry-api
+  name: PracticePanther Time entry API
+  description: The Time entry API from PracticePanther — 2 operation(s) for time entry.
+  humanURL: https://support.practicepanther.com/en/collections/340699-api
+  baseURL: https://app.practicepanther.com
+  tags:
+  - Time entry
+  properties:
+  - type: OpenAPI
+    url: openapi/practicepanther-time-entry-api-openapi.yml
+  - type: Documentation
+    url: https://support.practicepanther.com/en/articles/479897-practicepanther-api
+  - type: SwaggerUI
+    url: https://app.practicepanther.com/swagger/ui/index
+  - type: Authentication
+    url: https://support.practicepanther.com/en/articles/480086-api-access
+- aid: practicepanther:practicepanther-v1-expenses-api
+  name: PracticePanther v1 - Expenses API
+  description: The v1 - Expenses API from PracticePanther — 1 operation(s) for v1 - expenses.
+  humanURL: https://support.practicepanther.com/en/collections/340699-api
+  baseURL: https://app.practicepanther.com
+  tags:
+  - v1 - Expenses
+  properties:
+  - type: OpenAPI
+    url: openapi/practicepanther-v1-expenses-api-openapi.yml
   - type: Documentation
     url: https://support.practicepanther.com/en/articles/479897-practicepanther-api
   - type: SwaggerUI

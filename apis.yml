@@ -95,6 +95,8 @@ apis:
   humanURL: https://support.practicepanther.com/en/collections/340699-api
   baseURL: https://app.practicepanther.com
   tags:
+  - Expenses
+  tags_raw:
   - Expense
   properties:
   - type: OpenAPI
@@ -145,6 +147,8 @@ apis:
   humanURL: https://support.practicepanther.com/en/collections/340699-api
   baseURL: https://app.practicepanther.com
   tags:
+  - Invoices
+  tags_raw:
   - Invoice
   properties:
   - type: OpenAPI
@@ -177,6 +181,8 @@ apis:
   humanURL: https://support.practicepanther.com/en/collections/340699-api
   baseURL: https://app.practicepanther.com
   tags:
+  - Payments
+  tags_raw:
   - Payment
   properties:
   - type: OpenAPI
@@ -633,6 +639,8 @@ apis:
   humanURL: https://support.practicepanther.com/en/collections/340699-api
   baseURL: https://app.practicepanther.com
   tags:
+  - EmailTemplate
+  tags_raw:
   - Email Template
   properties:
   - type: OpenAPI
@@ -649,6 +657,8 @@ apis:
   humanURL: https://support.practicepanther.com/en/collections/340699-api
   baseURL: https://app.practicepanther.com
   tags:
+  - Sales Tax
+  tags_raw:
   - Sales tax
   properties:
   - type: OpenAPI

@@ -1,0 +1,65 @@
+slug: practicepanther
+provider: PracticePanther
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 5
+edges:
+- tag: Invoice
+  spec_file: practicepanther-invoice-api-openapi.yml
+  capability_id: BC-200.30
+  capability_id_l1: BC-200
+  capability_name: Accounts Receivable Management
+  confidence: 0.78
+  evidence: '''Returns an invoice''; DELETE ''Marks an existing invoice as deleted, will remove all amounts
+    applied on invoices.''; schemas SaleDocumentDTO_Detail, SaleDocumentPayment, CreditRef'
+  reason: Client invoicing documents with payments and credits applied — accounts receivable / customer
+    invoicing for a professional services firm.
+- tag: Payment
+  spec_file: practicepanther-payment-api-openapi.yml
+  capability_id: BC-200.30
+  capability_id_l1: BC-200
+  capability_name: Accounts Receivable Management
+  confidence: 0.78
+  evidence: '''Created a new payment''; DELETE ''Marks an existing payment as deleted, will remove all
+    amounts applied on invoices''; schemas PaymentDTO_Detail, SaleDocumentPaymentRef, BankAccountRef'
+  reason: Client payments recorded and applied against invoices — cash application within accounts receivable.
+- tag: V1ContactPayments
+  spec_file: practicepanther-v1contactpayments-api-openapi.yml
+  capability_id: BC-200.30
+  capability_id_l1: BC-200
+  capability_name: Accounts Receivable Management
+  confidence: 0.75
+  evidence: V1ContactPayments_Create, V1ContactPayments_UpdateReconcilationStatus, V1ContactPayments_SyncContactPaymentToTrustbooks
+  reason: Contacts are the firm's clients, so these operations record client payments, reconcile them
+    and sync them to trust accounting — customer payment receipt/cash application under Accounts Receivable.
+    Some ambiguity as trust accounting also touches cash management.
+- tag: Account
+  spec_file: practicepanther-account-api-openapi.yml
+  capability_id: BC-420.10
+  capability_id_l1: BC-420
+  capability_name: Customer Data Management
+  confidence: 0.72
+  evidence: GET /api/account/{guid} Account_GetAccount 'Returns an account (contact)'; POST 'Created a
+    new account (contact)'; schemas ContactDTO_Detail, AccountDTO_Detail, AddressDTO
+  reason: Accounts here are client/contact records (CRUD over contacts with addresses and custom fields)
+    for a law firm's clients — customer master data, not financial accounts. Some ambiguity as the record
+    is also used for billing relationships.
+- tag: V1FirmPayments
+  spec_file: practicepanther-v1firmpayments-api-openapi.yml
+  capability_id: BC-200
+  capability_id_l1: BC-200
+  capability_name: Financial Management
+  confidence: 0.7
+  evidence: V1FirmPayments_UpdateReconcilationStatus, V1FirmPayments_SyncTransferToQuickbooks, FirmPaymentTransferResource
+  reason: Manages firm-side payments and inter-account transfers with reconciliation status and accounting-system
+    (QuickBooks/Trustbooks) synchronisation — clearly financial accounting operations, but the mix of
+    payments and transfers does not pin a single L2.

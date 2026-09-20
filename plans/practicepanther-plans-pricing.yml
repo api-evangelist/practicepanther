@@ -1,74 +1,75 @@
-name: PracticePanther Plans and Pricing
-description: Pricing plans for PracticePanther cloud-based legal practice management software, covering solo practitioners to full-service law firms.
-version: '0.1'
-url: https://www.practicepanther.com/pricing/
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-09-20'
+method: searched
+source: https://www.practicepanther.com/pricing/
+sources:
+- https://www.practicepanther.com/pricing/
+provenance:
+  tool: planning/api-economics/harvest_pricing.py
+  run: 20260920T120546
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: per-seat
+published: true
+note: Per-user tiered plans with monthly and annual pricing; API access mentioned as a feature (Zapier
+  & API) but not priced separately. 7-day free trial, no credit card.
+plan_count: 8
+currency: USD
 plans:
-  - name: Solo
-    description: Core legal practice management features for solo practitioners and small firms.
-    price:
-      monthly: 59
-      annual: 49
-      currency: USD
-      per: user/month
-    features:
-      - Contact and Matter Management
-      - Billable Time and Expense Tracking
-      - Native ePayments
-      - Internal Chat
-      - Real-Time Notifications
-      - Daily Agenda Email
-      - Document Templates
-      - Task and Event Workflows
-      - Secure Client Portal
-      - Unlimited Data Storage
-      - Mobile App (iOS and Android)
-      - World Class Support
-  - name: Essential
-    description: Adds custom fields, security roles, and multi-bank support for growing firms.
-    price:
-      monthly: 79
-      annual: 69
-      currency: USD
-      per: user/month
-    features:
-      - All Solo features
-      - Custom Fields
-      - Custom Security Roles
-      - Invoice Read Alerts
-      - Multiple Bank Accounts
-  - name: Business
-    description: Full-featured plan with 2-way texting, intake forms, eSignature, and advanced billing for established firms.
-    price:
-      monthly: 99
-      annual: 89
-      currency: USD
-      per: user/month
-    features:
-      - All Essential features
-      - 2-Way Texting
-      - Intake Forms
-      - Native eSignature
-      - Attorney Revenue Report
-      - LEDES Billing
-  - name: Business Pro
-    description: Complete suite with PantherAccounting Plus including trust and operating accounting for full financial management.
-    price:
-      monthly: 124
-      annual: 114
-      currency: USD
-      per: user/month
-    features:
-      - All Business features
-      - PantherAccounting Plus
-      - Trust Accounting
-      - Operating Accounting
-      - Enhanced Reconciliation
-      - GL/AR/Expense Management
-trial:
-  available: true
-  duration: 7
-  durationUnit: days
-  creditCardRequired: false
-notes:
-  - Annual billing saves $120/user/year compared to monthly billing.
-  - API access is authorized on a case-by-case basis; submit a support request to request access.
+- name: SOLO
+  price_text: $59 per user/month
+  price: 59
+  currency: USD
+  period: month
+  unit: per user
+  included_quota: Internal Chat, Real-Time Notifications, Native ePayments with PantherPayments, Daily
+    Agenda Email, Document Templates, Task & Event Workflows
+- name: SOLO (annual)
+  price_text: $49 per user/month
+  price: 49
+  currency: USD
+  period: month
+  unit: per user, billed annually
+  included_quota: Save $120/user/year
+- name: ESSENTIAL
+  price_text: $79 per user/month
+  price: 79
+  currency: USD
+  period: month
+  unit: per user
+  included_quota: Everything in SOLO, Custom Fields, Custom Security Roles, Invoice Read Alerts, Multiple
+    Bank Accounts
+- name: ESSENTIAL (annual)
+  price_text: $69 per user/month
+  price: 69
+  currency: USD
+  period: month
+  unit: per user, billed annually
+- name: BUSINESS
+  price_text: $99 per user/month
+  price: 99
+  currency: USD
+  period: month
+  unit: per user
+  included_quota: Everything in ESSENTIAL, Native 2-Way Texting, Intake Forms, Native eSignature (Unlimited
+    sends), Attorney Revenue Report, LEDES Billing
+- name: BUSINESS (annual)
+  price_text: $89 per user/month
+  price: 89
+  currency: USD
+  period: month
+  unit: per user, billed annually
+- name: BUSINESS PRO
+  price_text: $124 per user/month
+  price: 124
+  currency: USD
+  period: month
+  unit: per user
+  included_quota: Everything in BUSINESS, PantherAccounting Plus, Trust Accounting, Operating Accounting,
+    Enhanced Reconciliation Process, GL / AR / Expense Management
+- name: BUSINESS PRO (annual)
+  price_text: $114 per user/month
+  price: 114
+  currency: USD
+  period: month
+  unit: per user, billed annually

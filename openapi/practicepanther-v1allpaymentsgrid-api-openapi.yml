@@ -1,7 +1,7 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   version: v1
-  title: Legacy API (v1) Account V1AllPaymentsGrid API
+  title: Legacy API (v1) V1 All Payments Grid API
   description: ''
 servers:
 - url: https://app.practicepanther.com
@@ -395,6 +395,8 @@ paths:
       security:
       - oauth2:
         - full
+      summary: V1 all payments grid get payments stats
+      x-summary-source: derived
   /api/internal/v1/tenants/{tenantId}/allpayments:
     get:
       tags:
@@ -787,6 +789,8 @@ paths:
       security:
       - oauth2:
         - full
+      summary: V1 all payments grid get payments
+      x-summary-source: derived
 components:
   securitySchemes:
     oauth2:

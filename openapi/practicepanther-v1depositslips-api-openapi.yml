@@ -1,7 +1,7 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   version: v1
-  title: Legacy API (v1) Account V1DepositSlips API
+  title: Legacy API (v1) V1 Deposit Slips API
   description: ''
 servers:
 - url: https://app.practicepanther.com
@@ -209,6 +209,8 @@ paths:
       security:
       - oauth2:
         - full
+      summary: V1 deposit slips get all
+      x-summary-source: derived
     delete:
       tags:
       - V1DepositSlips
@@ -257,6 +259,8 @@ paths:
       security:
       - oauth2:
         - full
+      summary: V1 deposit slips delete
+      x-summary-source: derived
   /api/internal/v1/tenants/{tenantId}/depositSlip/{depositSlipGuid}:
     get:
       tags:
@@ -379,6 +383,8 @@ paths:
       security:
       - oauth2:
         - full
+      summary: V1 deposit slips get
+      x-summary-source: derived
     put:
       tags:
       - V1DepositSlips
@@ -421,6 +427,8 @@ paths:
       security:
       - oauth2:
         - full
+      summary: V1 deposit slips update
+      x-summary-source: derived
   /api/internal/v1/tenants/{tenantId}/depositSlip:
     post:
       tags:
@@ -458,8 +466,25 @@ paths:
       security:
       - oauth2:
         - full
+      summary: V1 deposit slips create
+      x-summary-source: derived
 components:
   schemas:
+    DepositSlipUpdateResource:
+      type: object
+      properties:
+        depositSlipId:
+          format: int64
+          type: integer
+        depositSlipGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        depositDate:
+          type: string
+        bankAccountHeadnoteId:
+          type: string
     DepositSlipCreationResource:
       type: object
       properties:
@@ -495,21 +520,6 @@ components:
           type: string
         isPrinted:
           type: boolean
-    DepositSlipUpdateResource:
-      type: object
-      properties:
-        depositSlipId:
-          format: int64
-          type: integer
-        depositSlipGuid:
-          format: uuid
-          description: 'Used to set the reference in POST and PUT '
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        depositDate:
-          type: string
-        bankAccountHeadnoteId:
-          type: string
   securitySchemes:
     oauth2:
       type: oauth2

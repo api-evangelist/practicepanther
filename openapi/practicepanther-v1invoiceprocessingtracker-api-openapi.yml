@@ -1,7 +1,7 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   version: v1
-  title: Legacy API (v1) Account V1InvoiceProcessingTracker API
+  title: Legacy API (v1) V1 Invoice Processing Tracker API
   description: ''
 servers:
 - url: https://app.practicepanther.com
@@ -39,6 +39,8 @@ paths:
       security:
       - oauth2:
         - full
+      summary: V1 invoice processing tracker get async
+      x-summary-source: derived
   /api/internal/v1/tenants/{tenantId}/InvoiceProcessingTracker:
     post:
       tags:
@@ -66,6 +68,8 @@ paths:
       security:
       - oauth2:
         - full
+      summary: V1 invoice processing tracker post async
+      x-summary-source: derived
     delete:
       tags:
       - V1InvoiceProcessingTracker
@@ -92,6 +96,8 @@ paths:
       security:
       - oauth2:
         - full
+      summary: V1 invoice processing tracker delete async
+      x-summary-source: derived
 components:
   requestBodies:
     V1InvoiceProcessingTracker_PostAsyncMatterids:

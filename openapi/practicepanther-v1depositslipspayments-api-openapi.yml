@@ -1,7 +1,7 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   version: v1
-  title: Legacy API (v1) Account V1DepositSlipsPayments API
+  title: Legacy API (v1) V1 Deposit Slips Payments API
   description: ''
 servers:
 - url: https://app.practicepanther.com
@@ -194,6 +194,8 @@ paths:
       security:
       - oauth2:
         - full
+      summary: V1 deposit slips payments payments available for deposit slip
+      x-summary-source: derived
   /api/internal/v1/tenants/{tenantId}/depositSlipPayments/{depositSlipGuid}:
     get:
       tags:
@@ -387,6 +389,8 @@ paths:
       security:
       - oauth2:
         - full
+      summary: V1 deposit slips payments payments for deposit slip
+      x-summary-source: derived
 components:
   securitySchemes:
     oauth2:

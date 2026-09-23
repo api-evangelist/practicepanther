@@ -1,7 +1,7 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   version: v1
-  title: Legacy API (v1) Account V1MergeFields API
+  title: Legacy API (v1) V1 Merge Fields API
   description: ''
 servers:
 - url: https://app.practicepanther.com
@@ -32,10 +32,12 @@ paths:
       security:
       - oauth2:
         - full
+      summary: V1 merge fields get merge fields
+      x-summary-source: derived
     post:
       tags:
       - V1MergeFields
-      summary: "This action will take in an HTML document containing the old document\r\ntemplate merge fields and will replace the merge field with values from the matter,contact, and account"
+      summary: This action will take in an HTML document containing the old document template…
       operationId: V1MergeFields_MergeHtmlDocument
       parameters:
       - name: tenantId

@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   version: v1
   title: Legacy API (v1) Account API
@@ -126,6 +126,243 @@ paths:
         - full
 components:
   schemas:
+    UserRef:
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        displayName:
+          description: ' '
+          type: string
+          readOnly: true
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        timeZoneId:
+          type: string
+    AccountDTO_Export:
+      required:
+      - assignedToGuids
+      type: object
+      properties:
+        contacts:
+          description: This is the primary contact for this account. All invoices and notifications will be sent to this contact.
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactDTO'
+        website:
+          type: string
+        billingAddress:
+          $ref: '#/components/schemas/AddressDTO'
+        name:
+          description: Account (company) name
+          type: string
+        currencyCode:
+          description: This defines the currency for this account. Must be in ISO 4217 format. Invoices created for this account will use this currency. If null, defaults will be set.
+          type: string
+        number:
+          format: int32
+          description: Account number, must be unique.
+          type: integer
+        assignedTo:
+          description: The users this account (contact) is assigned to. For custom security roles this can define which users can access this account.
+          type: array
+          items:
+            $ref: '#/components/schemas/UserRef'
+        assignedToGuids:
+          description: Used to set the reference in POST and PUTFor compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects. For compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects.
+          type: array
+          items:
+            format: uuid
+            type: string
+            example: 00000000-0000-0000-0000-000000000000
+        primaryContact:
+          $ref: '#/components/schemas/ContactDTO'
+        tags:
+          description: Tags, Used in POST and PUT to modify account tags so make sure you include all tags.
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        tagNames:
+          description: For compatibility reasons, this will return an array of tag names instead of a list of tag objects.
+          type: array
+          items:
+            type: string
+        createdDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        lastModifiedDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        paid:
+          format: double
+          description: Total amount paid. Total amount paid.
+          type: number
+          readOnly: true
+        trustBalance:
+          format: double
+          description: Trust account balance. Trust account balance.
+          type: number
+          readOnly: true
+        operatingBalance:
+          format: double
+          description: Sum of OperatingPayments.AvailableFunds + CreditNotes.AvailableFunds - Invoices.AmountDue Sum of OperatingPayments.AvailableFunds + CreditNotes.AvailableFunds - Invoices.AmountDue
+          type: number
+          readOnly: true
+        billable:
+          format: double
+          description: Total billable time entries, expenses and flat rates. Total billable time entries, expenses and flat rates.
+          type: number
+          readOnly: true
+        status:
+          enum:
+          - Active
+          - Archived
+          type: string
+        saleDocumentTemplateGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        saleDocumentTemplateName:
+          type: string
+        contactInvoiceRecipients:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContactRef'
+        contactInvoiceRecipientsGuids:
+          description: 'Used to set the reference in POST and PUT '
+          type: array
+          items:
+            format: uuid
+            type: string
+            example: 00000000-0000-0000-0000-000000000000
+        is1099Eligible:
+          type: boolean
+        taxId:
+          type: string
+        surchargesEnabled:
+          type: boolean
+        nameAndNumber:
+          description: ' '
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        utbmsIsEnabled:
+          type: boolean
+        id:
+          format: int64
+          type: integer
+    ContactDTO_Detail:
+      type: object
+      properties:
+        customFieldValues:
+          type: array
+          items:
+            $ref: '#/components/schemas/CustomFieldValueDTO_Detail'
+        notes:
+          type: string
+        photoGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        type:
+          description: Currently must be set to 'contact'. 'lead' will be supported in the future.
+          enum:
+          - Contact
+          - Lead
+          type: string
+        portal:
+          $ref: '#/components/schemas/PortalDTO'
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        email:
+          type: string
+        mobile:
+          type: string
+        home:
+          type: string
+        office:
+          type: string
+        ext:
+          type: string
+        fax:
+          type: string
+        salutation:
+          type: string
+        position:
+          type: string
+        prefix:
+          type: string
+        isDeleted:
+          description: ' '
+          type: boolean
+          readOnly: true
+        firstName:
+          type: string
+        lastName:
+          type: string
+        middleName:
+          type: string
+        accountName:
+          type: string
+        displayName:
+          type: string
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+    TagDTO:
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+    CustomFieldValueDTO:
+      description: Based on the ValueType of the custom field, the values below will be set.
+      required:
+      - customFieldGuid
+      type: object
+      properties:
+        valueString:
+          description: Used to set the value type for CustomField.ValueType of 'textBox', 'textEdit' and 'dropDownList'.
+          type: string
+        valueNumber:
+          format: double
+          description: Used to set the value type for CustomField.ValueType of 'number' and 'currency'.
+          type: number
+        valueDateTime:
+          format: date-time
+          description: Used to set the value type for CustomField.ValueType of 'dateTime' and 'date'.
+          type: string
+        valueDateString:
+          description: Returns a string date value used in the UI for Dates
+          type: string
+          readOnly: true
+        valueBoolean:
+          description: Used to set the value type for CustomField.ValueType of 'checkbox'
+          type: boolean
+        customFieldGuid:
+          format: uuid
+          description: Used to set the reference in POST and PUTReferenced the custom field object for this value. Referenced the custom field object for this value.
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        valueContact:
+          $ref: '#/components/schemas/ContactRef'
     PortalDTO:
       type: object
       properties:
@@ -134,77 +371,56 @@ components:
         lastLoginDate:
           format: date-time
           type: string
-    CustomFieldDTO_Detail:
-      required:
-      - objectType
-      - valueType
-      - name
+    AddressDTO:
       type: object
       properties:
-        isIncludeInList:
-          type: boolean
-        isExportToLedes:
-          type: boolean
-        helpText:
+        name:
+          description: ie. Home / Office
           type: string
-        tooltip:
+        address1:
           type: string
-        objectType:
-          enum:
-          - Account
-          - Project
-          - Contact
-          - User
-          - Address
+        address2:
           type: string
-        rowIndex:
-          format: int32
-          description: Defines the order of the custom fields on the object
-          type: integer
-        createdDate:
-          format: date-time
-          description: Returns the number of CustomFieldValues which use this custom field. (ie, how many different contacts have a value for this custom field) Returns the number of CustomFieldValues which use this custom field. (ie, how many different contacts have a value for this custom field)
+        city:
           type: string
-          readOnly: true
-        lastModifiedDate:
-          format: date-time
-          description: ' '
+        state:
           type: string
-          readOnly: true
-        createdBy:
-          $ref: '#/components/schemas/UserRef'
-        lastModifiedBy:
-          $ref: '#/components/schemas/UserRef'
+        country:
+          type: string
+        postalCode:
+          type: string
+    CustomFieldValueDTO_Detail:
+      required:
+      - customField
+      type: object
+      properties:
         guid:
           format: uuid
           type: string
           example: 00000000-0000-0000-0000-000000000000
-        valueType:
-          description: Sets the value type for this custom field. Will affect CustomFieldValues
-          enum:
-          - TextBox
-          - Date
-          - DateTime
-          - Number
-          - Currency
-          - TextEditor
-          - DropDownList
-          - Checkbox
-          - Contact
+        valueString:
+          description: Used to set the value type for CustomField.ValueType of 'textBox', 'textEdit' and 'dropDownList'.
           type: string
-        name:
+        valueNumber:
+          format: double
+          description: Used to set the value type for CustomField.ValueType of 'number' and 'currency'.
+          type: number
+        valueDateTime:
+          format: date-time
+          description: Used to set the value type for CustomField.ValueType of 'dateTime' and 'date'.
           type: string
-        isDeleted:
-          description: ' '
+        valueBoolean:
+          description: Used to set the value type for CustomField.ValueType of 'checkbox'
           type: boolean
-          readOnly: true
-        isRequired:
-          type: boolean
-        isDefault:
-          type: boolean
-        dropDownListValues:
-          description: Comma separated list of values for ValueType 'dropDownList'.
+        valueContactGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
           type: string
+          example: 00000000-0000-0000-0000-000000000000
+        valueContact:
+          $ref: '#/components/schemas/ContactRef'
+        customField:
+          $ref: '#/components/schemas/CustomFieldDTO_Detail'
     AccountDTO_Detail:
       required:
       - primaryContact
@@ -415,187 +631,6 @@ components:
         id:
           format: int64
           type: integer
-    ContactRef:
-      type: object
-      properties:
-        firstName:
-          type: string
-        lastName:
-          type: string
-        middleName:
-          type: string
-        accountName:
-          type: string
-        displayName:
-          type: string
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        email:
-          type: string
-    TagDTO:
-      required:
-      - name
-      type: object
-      properties:
-        name:
-          type: string
-    AddressDTO:
-      type: object
-      properties:
-        name:
-          description: ie. Home / Office
-          type: string
-        address1:
-          type: string
-        address2:
-          type: string
-        city:
-          type: string
-        state:
-          type: string
-        country:
-          type: string
-        postalCode:
-          type: string
-    AccountDTO_Export:
-      required:
-      - assignedToGuids
-      type: object
-      properties:
-        contacts:
-          description: This is the primary contact for this account. All invoices and notifications will be sent to this contact.
-          type: array
-          items:
-            $ref: '#/components/schemas/ContactDTO'
-        website:
-          type: string
-        billingAddress:
-          $ref: '#/components/schemas/AddressDTO'
-        name:
-          description: Account (company) name
-          type: string
-        currencyCode:
-          description: This defines the currency for this account. Must be in ISO 4217 format. Invoices created for this account will use this currency. If null, defaults will be set.
-          type: string
-        number:
-          format: int32
-          description: Account number, must be unique.
-          type: integer
-        assignedTo:
-          description: The users this account (contact) is assigned to. For custom security roles this can define which users can access this account.
-          type: array
-          items:
-            $ref: '#/components/schemas/UserRef'
-        assignedToGuids:
-          description: Used to set the reference in POST and PUTFor compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects. For compatibility reasons, this will return an array of guids for the assigned to users instead of a list of UserRef objects.
-          type: array
-          items:
-            format: uuid
-            type: string
-            example: 00000000-0000-0000-0000-000000000000
-        primaryContact:
-          $ref: '#/components/schemas/ContactDTO'
-        tags:
-          description: Tags, Used in POST and PUT to modify account tags so make sure you include all tags.
-          type: array
-          items:
-            $ref: '#/components/schemas/TagDTO'
-        tagNames:
-          description: For compatibility reasons, this will return an array of tag names instead of a list of tag objects.
-          type: array
-          items:
-            type: string
-        createdDate:
-          format: date-time
-          description: ' '
-          type: string
-          readOnly: true
-        lastModifiedDate:
-          format: date-time
-          description: ' '
-          type: string
-          readOnly: true
-        paid:
-          format: double
-          description: Total amount paid. Total amount paid.
-          type: number
-          readOnly: true
-        trustBalance:
-          format: double
-          description: Trust account balance. Trust account balance.
-          type: number
-          readOnly: true
-        operatingBalance:
-          format: double
-          description: Sum of OperatingPayments.AvailableFunds + CreditNotes.AvailableFunds - Invoices.AmountDue Sum of OperatingPayments.AvailableFunds + CreditNotes.AvailableFunds - Invoices.AmountDue
-          type: number
-          readOnly: true
-        billable:
-          format: double
-          description: Total billable time entries, expenses and flat rates. Total billable time entries, expenses and flat rates.
-          type: number
-          readOnly: true
-        status:
-          enum:
-          - Active
-          - Archived
-          type: string
-        saleDocumentTemplateGuid:
-          format: uuid
-          description: 'Used to set the reference in POST and PUT '
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        saleDocumentTemplateName:
-          type: string
-        contactInvoiceRecipients:
-          type: array
-          items:
-            $ref: '#/components/schemas/ContactRef'
-        contactInvoiceRecipientsGuids:
-          description: 'Used to set the reference in POST and PUT '
-          type: array
-          items:
-            format: uuid
-            type: string
-            example: 00000000-0000-0000-0000-000000000000
-        is1099Eligible:
-          type: boolean
-        taxId:
-          type: string
-        surchargesEnabled:
-          type: boolean
-        nameAndNumber:
-          description: ' '
-          type: string
-          readOnly: true
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        utbmsIsEnabled:
-          type: boolean
-        id:
-          format: int64
-          type: integer
-    UserRef:
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        displayName:
-          description: ' '
-          type: string
-          readOnly: true
-        name:
-          description: ' '
-          type: string
-          readOnly: true
-        timeZoneId:
-          type: string
     ContactDTO:
       type: object
       properties:
@@ -639,86 +674,9 @@ components:
           format: uuid
           type: string
           example: 00000000-0000-0000-0000-000000000000
-    CustomFieldValueDTO_Detail:
-      required:
-      - customField
+    ContactRef:
       type: object
       properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        valueString:
-          description: Used to set the value type for CustomField.ValueType of 'textBox', 'textEdit' and 'dropDownList'.
-          type: string
-        valueNumber:
-          format: double
-          description: Used to set the value type for CustomField.ValueType of 'number' and 'currency'.
-          type: number
-        valueDateTime:
-          format: date-time
-          description: Used to set the value type for CustomField.ValueType of 'dateTime' and 'date'.
-          type: string
-        valueBoolean:
-          description: Used to set the value type for CustomField.ValueType of 'checkbox'
-          type: boolean
-        valueContactGuid:
-          format: uuid
-          description: 'Used to set the reference in POST and PUT '
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        valueContact:
-          $ref: '#/components/schemas/ContactRef'
-        customField:
-          $ref: '#/components/schemas/CustomFieldDTO_Detail'
-    ContactDTO_Detail:
-      type: object
-      properties:
-        customFieldValues:
-          type: array
-          items:
-            $ref: '#/components/schemas/CustomFieldValueDTO_Detail'
-        notes:
-          type: string
-        photoGuid:
-          format: uuid
-          description: 'Used to set the reference in POST and PUT '
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        type:
-          description: Currently must be set to 'contact'. 'lead' will be supported in the future.
-          enum:
-          - Contact
-          - Lead
-          type: string
-        portal:
-          $ref: '#/components/schemas/PortalDTO'
-        name:
-          description: ' '
-          type: string
-          readOnly: true
-        email:
-          type: string
-        mobile:
-          type: string
-        home:
-          type: string
-        office:
-          type: string
-        ext:
-          type: string
-        fax:
-          type: string
-        salutation:
-          type: string
-        position:
-          type: string
-        prefix:
-          type: string
-        isDeleted:
-          description: ' '
-          type: boolean
-          readOnly: true
         firstName:
           type: string
         lastName:
@@ -733,37 +691,79 @@ components:
           format: uuid
           type: string
           example: 00000000-0000-0000-0000-000000000000
-    CustomFieldValueDTO:
-      description: Based on the ValueType of the custom field, the values below will be set.
+        email:
+          type: string
+    CustomFieldDTO_Detail:
       required:
-      - customFieldGuid
+      - objectType
+      - valueType
+      - name
       type: object
       properties:
-        valueString:
-          description: Used to set the value type for CustomField.ValueType of 'textBox', 'textEdit' and 'dropDownList'.
+        isIncludeInList:
+          type: boolean
+        isExportToLedes:
+          type: boolean
+        helpText:
           type: string
-        valueNumber:
-          format: double
-          description: Used to set the value type for CustomField.ValueType of 'number' and 'currency'.
-          type: number
-        valueDateTime:
+        tooltip:
+          type: string
+        objectType:
+          enum:
+          - Account
+          - Project
+          - Contact
+          - User
+          - Address
+          type: string
+        rowIndex:
+          format: int32
+          description: Defines the order of the custom fields on the object
+          type: integer
+        createdDate:
           format: date-time
-          description: Used to set the value type for CustomField.ValueType of 'dateTime' and 'date'.
-          type: string
-        valueDateString:
-          description: Returns a string date value used in the UI for Dates
+          description: Returns the number of CustomFieldValues which use this custom field. (ie, how many different contacts have a value for this custom field) Returns the number of CustomFieldValues which use this custom field. (ie, how many different contacts have a value for this custom field)
           type: string
           readOnly: true
-        valueBoolean:
-          description: Used to set the value type for CustomField.ValueType of 'checkbox'
-          type: boolean
-        customFieldGuid:
+        lastModifiedDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        createdBy:
+          $ref: '#/components/schemas/UserRef'
+        lastModifiedBy:
+          $ref: '#/components/schemas/UserRef'
+        guid:
           format: uuid
-          description: Used to set the reference in POST and PUTReferenced the custom field object for this value. Referenced the custom field object for this value.
           type: string
           example: 00000000-0000-0000-0000-000000000000
-        valueContact:
-          $ref: '#/components/schemas/ContactRef'
+        valueType:
+          description: Sets the value type for this custom field. Will affect CustomFieldValues
+          enum:
+          - TextBox
+          - Date
+          - DateTime
+          - Number
+          - Currency
+          - TextEditor
+          - DropDownList
+          - Checkbox
+          - Contact
+          type: string
+        name:
+          type: string
+        isDeleted:
+          description: ' '
+          type: boolean
+          readOnly: true
+        isRequired:
+          type: boolean
+        isDefault:
+          type: boolean
+        dropDownListValues:
+          description: Comma separated list of values for ValueType 'dropDownList'.
+          type: string
   requestBodies:
     AccountDTO_Detail:
       content:

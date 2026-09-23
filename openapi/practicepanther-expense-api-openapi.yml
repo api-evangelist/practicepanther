@@ -1,7 +1,7 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   version: v1
-  title: Legacy API (v1) Account Expense API
+  title: Legacy API (v1) Expense API
   description: ''
 servers:
 - url: https://app.practicepanther.com
@@ -126,39 +126,23 @@ paths:
         - full
 components:
   schemas:
-    BankAccountRef:
-      required:
-      - name
+    UserRef:
       type: object
       properties:
         guid:
           format: uuid
           type: string
           example: 00000000-0000-0000-0000-000000000000
+        displayName:
+          description: ' '
+          type: string
+          readOnly: true
         name:
+          description: ' '
           type: string
-        type:
-          enum:
-          - Operating
-          - Trust
-          - CreditCard
+          readOnly: true
+        timeZoneId:
           type: string
-        isArchived:
-          type: boolean
-    AccountingAccountRef:
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        name:
-          type: string
-        code:
-          type: string
-        chartOfAccountId:
-          format: int64
-          type: integer
     TagDTO:
       required:
       - name
@@ -166,22 +150,48 @@ components:
       properties:
         name:
           type: string
-    AccountRef:
+    SaleDocumentRef:
+      required:
+      - date
       type: object
       properties:
-        nameAndNumber:
-          description: ' '
-          type: string
-          readOnly: true
         guid:
           format: uuid
           type: string
           example: 00000000-0000-0000-0000-000000000000
-        utbmsIsEnabled:
-          type: boolean
-        id:
-          format: int64
+        number:
+          format: int32
           type: integer
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        type:
+          description: Indicates if this sale document is an Invoice or a Quote
+          enum:
+          - Invoice
+          - Quote
+          type: string
+        invoiceType:
+          description: If this sale document is of type 'invoice', will indicate if this is a sale, refund or credit invoice.
+          enum:
+          - Sale
+          - Refund
+          - Credit
+          type: string
+        date:
+          format: date-time
+          description: The issue date for this invoice / quote.
+          type: string
+    BlobRef:
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          type: string
     ExpenseDTO_Detail:
       required:
       - accountGuid
@@ -366,56 +376,25 @@ components:
           description: ' '
           type: string
           readOnly: true
-    SaleDocumentRef:
+    BankAccountRef:
       required:
-      - date
+      - name
       type: object
       properties:
         guid:
           format: uuid
           type: string
           example: 00000000-0000-0000-0000-000000000000
-        number:
-          format: int32
-          type: integer
         name:
-          description: ' '
           type: string
-          readOnly: true
         type:
-          description: Indicates if this sale document is an Invoice or a Quote
           enum:
-          - Invoice
-          - Quote
+          - Operating
+          - Trust
+          - CreditCard
           type: string
-        invoiceType:
-          description: If this sale document is of type 'invoice', will indicate if this is a sale, refund or credit invoice.
-          enum:
-          - Sale
-          - Refund
-          - Credit
-          type: string
-        date:
-          format: date-time
-          description: The issue date for this invoice / quote.
-          type: string
-    UserRef:
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        displayName:
-          description: ' '
-          type: string
-          readOnly: true
-        name:
-          description: ' '
-          type: string
-          readOnly: true
-        timeZoneId:
-          type: string
+        isArchived:
+          type: boolean
     ExpenseDTO:
       required:
       - date
@@ -495,6 +474,22 @@ components:
           description: ' '
           type: string
           readOnly: true
+    AccountRef:
+      type: object
+      properties:
+        nameAndNumber:
+          description: ' '
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        utbmsIsEnabled:
+          type: boolean
+        id:
+          format: int64
+          type: integer
     ProjectRef:
       type: object
       properties:
@@ -514,6 +509,13 @@ components:
         id:
           format: int64
           type: integer
+    UtbmsCodeRef:
+      type: object
+      properties:
+        name:
+          type: string
+        code:
+          type: string
     SaleDocumentItemRefWithSaleDocumentRef:
       type: object
       properties:
@@ -525,14 +527,7 @@ components:
           example: 00000000-0000-0000-0000-000000000000
         name:
           type: string
-    UtbmsCodeRef:
-      type: object
-      properties:
-        name:
-          type: string
-        code:
-          type: string
-    BlobRef:
+    AccountingAccountRef:
       type: object
       properties:
         guid:
@@ -541,6 +536,11 @@ components:
           example: 00000000-0000-0000-0000-000000000000
         name:
           type: string
+        code:
+          type: string
+        chartOfAccountId:
+          format: int64
+          type: integer
   requestBodies:
     ExpenseDTO_Detail:
       content:

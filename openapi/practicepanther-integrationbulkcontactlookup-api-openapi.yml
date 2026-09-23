@@ -1,7 +1,7 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   version: v1
-  title: Legacy API (v1) Account IntegrationBulkContactLookup API
+  title: Legacy API (v1) Integration Bulk Contact Lookup API
   description: ''
 servers:
 - url: https://app.practicepanther.com
@@ -26,6 +26,8 @@ paths:
       security:
       - oauth2:
         - full
+      summary: Integration bulk contact lookup test
+      x-summary-source: derived
   /api/integrations/v1/contacts/bulk-lookup:
     post:
       tags:
@@ -56,6 +58,8 @@ paths:
       security:
       - oauth2:
         - full
+      summary: Integration bulk contact lookup bulk lookup
+      x-summary-source: derived
 components:
   schemas:
     BulkContactLookupRequest:

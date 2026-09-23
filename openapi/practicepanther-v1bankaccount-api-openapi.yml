@@ -1,7 +1,7 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
   version: v1
-  title: Legacy API (v1) Account V1BankAccount API
+  title: Legacy API (v1) V1 Bank Account API
   description: ''
 servers:
 - url: https://app.practicepanther.com
@@ -130,6 +130,8 @@ paths:
       security:
       - oauth2:
         - full
+      summary: V1 bank account get
+      x-summary-source: derived
   /api/internal/v1/tenants/{tenantId}/bankAccounts/{bankAccountGuid}/payments/stats:
     get:
       tags:
@@ -528,6 +530,8 @@ paths:
       security:
       - oauth2:
         - full
+      summary: V1 bank account get payments stats
+      x-summary-source: derived
   /api/internal/v1/tenants/{tenantId}/bankAccounts/{bankAccountGuid}/payments:
     get:
       tags:
@@ -926,11 +930,13 @@ paths:
       security:
       - oauth2:
         - full
+      summary: V1 bank account get payments
+      x-summary-source: derived
   /api/internal/v1/tenants/{tenantId}/bankAccounts:
     post:
       tags:
       - V1BankAccount
-      summary: 'Note: [GetBankAccounts] should be a [HttpGet], and should get all params from the Uri, but we are working with the Legacy ReactJS Grid at this time.'
+      summary: 'Note: [GetBankAccounts] should be a [HttpGet], and should get all params from…'
       operationId: V1BankAccount_GetBankAccounts
       parameters:
       - name: tenantId

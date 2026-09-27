@@ -639,8 +639,6 @@ apis:
   humanURL: https://support.practicepanther.com/en/collections/340699-api
   baseURL: https://app.practicepanther.com
   tags:
-  - EmailTemplate
-  tags_raw:
   - Email Template
   properties:
   - type: OpenAPI
@@ -657,8 +655,6 @@ apis:
   humanURL: https://support.practicepanther.com/en/collections/340699-api
   baseURL: https://app.practicepanther.com
   tags:
-  - Sales Tax
-  tags_raw:
   - Sales tax
   properties:
   - type: OpenAPI

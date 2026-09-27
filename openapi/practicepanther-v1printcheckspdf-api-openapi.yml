@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   version: v1
-  title: Legacy API (v1) V1 Print Checks PDF API
+  title: Legacy API (v1) V1Print Checks PDF API
   description: ''
 servers:
 - url: https://app.practicepanther.com
@@ -63,73 +63,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/UserAccessLevel'
-    LocalizationPreferences:
-      type: object
-      properties:
-        cultureName:
-          type: string
-        dateFormat:
-          type: string
-        dateTimeFormat:
-          type: string
-        timeFormat:
-          type: string
-        currencyCode:
-          type: string
-        timezoneId:
-          type: string
-    CoreIdentity:
-      type: object
-      properties:
-        tenantId:
-          format: int64
-          type: integer
-        userId:
-          format: int32
-          type: integer
-        localizationPreferences:
-          $ref: '#/components/schemas/LocalizationPreferences'
-        integrations:
-          $ref: '#/components/schemas/IntegrationAccess'
-        securityDetail:
-          $ref: '#/components/schemas/SecurityDetail'
-        cultureInfo:
-          type: string
-          readOnly: true
-        timeZoneInfo:
-          type: object
-          readOnly: true
-    IntegrationAccess:
-      type: object
-      properties:
-        trustAccounting:
-          type: boolean
-        operatingAccounting:
-          type: boolean
-        pantherPayments:
-          type: boolean
-    PrintChecksPdfResource:
-      type: object
-      properties:
-        paymentsToPrint:
-          type: array
-          items:
-            format: uuid
-            type: string
-            example: 00000000-0000-0000-0000-000000000000
-        coreIdentity:
-          $ref: '#/components/schemas/CoreIdentity'
-        pageType:
-          enum:
-          - Standard
-          - Voucher
-          type: string
-        numOfChecksOnFirstPage:
-          format: int32
-          type: integer
-        startingCheckNumber:
-          format: int32
-          type: integer
     UserAccessLevel:
       type: object
       properties:
@@ -176,6 +109,73 @@ components:
           - ModifyAll
           - Archive
           type: string
+    CoreIdentity:
+      type: object
+      properties:
+        tenantId:
+          format: int64
+          type: integer
+        userId:
+          format: int32
+          type: integer
+        localizationPreferences:
+          $ref: '#/components/schemas/LocalizationPreferences'
+        integrations:
+          $ref: '#/components/schemas/IntegrationAccess'
+        securityDetail:
+          $ref: '#/components/schemas/SecurityDetail'
+        cultureInfo:
+          type: string
+          readOnly: true
+        timeZoneInfo:
+          type: object
+          readOnly: true
+    PrintChecksPdfResource:
+      type: object
+      properties:
+        paymentsToPrint:
+          type: array
+          items:
+            format: uuid
+            type: string
+            example: 00000000-0000-0000-0000-000000000000
+        coreIdentity:
+          $ref: '#/components/schemas/CoreIdentity'
+        pageType:
+          enum:
+          - Standard
+          - Voucher
+          type: string
+        numOfChecksOnFirstPage:
+          format: int32
+          type: integer
+        startingCheckNumber:
+          format: int32
+          type: integer
+    LocalizationPreferences:
+      type: object
+      properties:
+        cultureName:
+          type: string
+        dateFormat:
+          type: string
+        dateTimeFormat:
+          type: string
+        timeFormat:
+          type: string
+        currencyCode:
+          type: string
+        timezoneId:
+          type: string
+    IntegrationAccess:
+      type: object
+      properties:
+        trustAccounting:
+          type: boolean
+        operatingAccounting:
+          type: boolean
+        pantherPayments:
+          type: boolean
   securitySchemes:
     oauth2:
       type: oauth2

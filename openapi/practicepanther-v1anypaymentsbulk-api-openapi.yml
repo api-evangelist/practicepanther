@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   version: v1
-  title: Legacy API (v1) V1 Any Payments Bulk API
+  title: Legacy API (v1) V1Any Payments Bulk API
   description: ''
 servers:
 - url: https://app.practicepanther.com
@@ -100,19 +100,6 @@ paths:
       summary: V1 any payments bulk make payment available for deposit slips
       x-summary-source: derived
 components:
-  requestBodies:
-    PaymentMakeAvailableResource:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PaymentMakeAvailableResource'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/PaymentMakeAvailableResource'
-        application/x-www-form-urlencoded:
-          schema:
-            $ref: '#/components/schemas/PaymentMakeAvailableResource'
-      required: true
   schemas:
     PaymentMakeAvailableResource:
       type: object
@@ -126,6 +113,19 @@ components:
             example: 00000000-0000-0000-0000-000000000000
         isDepositSlipPrinted:
           type: boolean
+  requestBodies:
+    PaymentMakeAvailableResource:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PaymentMakeAvailableResource'
+        text/json:
+          schema:
+            $ref: '#/components/schemas/PaymentMakeAvailableResource'
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: '#/components/schemas/PaymentMakeAvailableResource'
+      required: true
   securitySchemes:
     oauth2:
       type: oauth2

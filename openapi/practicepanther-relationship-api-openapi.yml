@@ -126,42 +126,6 @@ paths:
         - full
 components:
   schemas:
-    UserRef:
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        displayName:
-          description: ' '
-          type: string
-          readOnly: true
-        name:
-          description: ' '
-          type: string
-          readOnly: true
-        timeZoneId:
-          type: string
-    RelationshipDTO:
-      required:
-      - relationshipName
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        account:
-          $ref: '#/components/schemas/AccountRef'
-        contact:
-          $ref: '#/components/schemas/ContactRef'
-        project:
-          $ref: '#/components/schemas/ProjectRef'
-        relationshipName:
-          type: string
-        notes:
-          type: string
     RelationshipDTO_Detail:
       required:
       - contactGuid
@@ -225,25 +189,6 @@ components:
         id:
           format: int64
           type: integer
-    ProjectRef:
-      type: object
-      properties:
-        nameAndNumber:
-          description: This is a read only property This is a read only property
-          type: string
-          readOnly: true
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        accountGuid:
-          format: uuid
-          description: 'Used to set the reference in POST and PUT '
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        id:
-          format: int64
-          type: integer
     ContactRef:
       type: object
       properties:
@@ -263,6 +208,61 @@ components:
           example: 00000000-0000-0000-0000-000000000000
         email:
           type: string
+    UserRef:
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        displayName:
+          description: ' '
+          type: string
+          readOnly: true
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        timeZoneId:
+          type: string
+    RelationshipDTO:
+      required:
+      - relationshipName
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        account:
+          $ref: '#/components/schemas/AccountRef'
+        contact:
+          $ref: '#/components/schemas/ContactRef'
+        project:
+          $ref: '#/components/schemas/ProjectRef'
+        relationshipName:
+          type: string
+        notes:
+          type: string
+    ProjectRef:
+      type: object
+      properties:
+        nameAndNumber:
+          description: This is a read only property This is a read only property
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        accountGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        id:
+          format: int64
+          type: integer
   requestBodies:
     RelationshipDTO_Detail:
       content:

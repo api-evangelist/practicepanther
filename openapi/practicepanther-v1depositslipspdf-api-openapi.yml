@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   version: v1
-  title: Legacy API (v1) V1 Deposit Slips PDF API
+  title: Legacy API (v1) V1Deposit Slips PDF API
   description: ''
 servers:
 - url: https://app.practicepanther.com

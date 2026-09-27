@@ -126,6 +126,25 @@ paths:
         - full
 components:
   schemas:
+    SalesTaxRef:
+      required:
+      - name
+      - rate
+      - isCompound
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          type: string
+        rate:
+          format: double
+          type: number
+        isCompound:
+          description: If set to true this will be considered to be a "Compound Tax". A compound tax is a special tax that is calculated after and on top of a primary tax. In Canada, Quebec and Prince Edward Island use compound taxes of 8.5% and 10% respectively.
+          type: boolean
     UserRef:
       type: object
       properties:
@@ -206,25 +225,6 @@ components:
           example: 00000000-0000-0000-0000-000000000000
         name:
           type: string
-    SalesTaxRef:
-      required:
-      - name
-      - rate
-      - isCompound
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        name:
-          type: string
-        rate:
-          format: double
-          type: number
-        isCompound:
-          description: If set to true this will be considered to be a "Compound Tax". A compound tax is a special tax that is calculated after and on top of a primary tax. In Canada, Quebec and Prince Edward Island use compound taxes of 8.5% and 10% respectively.
-          type: boolean
   requestBodies:
     ItemDTO:
       content:

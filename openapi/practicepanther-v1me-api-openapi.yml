@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   version: v1
-  title: Legacy API (v1) V1 Me API
+  title: Legacy API (v1) V1Me API
   description: ''
 servers:
 - url: https://app.practicepanther.com
@@ -37,32 +37,30 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    AccountingPlusUserPermissionsDto:
+    RoleSummary:
       type: object
       properties:
-        create_reconciliation:
+        isFullAccess:
           type: boolean
-        upload_bank_statements:
-          type: boolean
-        create_journal_entries:
-          type: boolean
-        view_journal_entries:
-          type: boolean
-        edit_journal_entries:
-          type: boolean
-        create_chart_of_accounts:
-          type: boolean
-        view_chart_of_accounts:
-          type: boolean
-        edit_chart_of_accounts:
-          type: boolean
-        view_operating_reports:
-          type: boolean
-        set_permissions:
-          type: boolean
-        view_reconciliation:
-          type: boolean
-        edit_reconciliation:
+        accessLevels:
+          type: array
+          items:
+            $ref: '#/components/schemas/AccessLevelSummary'
+    AccessLevelSummary:
+      type: object
+      properties:
+        controller:
+          format: int32
+          type: integer
+        action:
+          format: int32
+          type: integer
+    FeatureFlag:
+      type: object
+      properties:
+        name:
+          type: string
+        isEnabled:
           type: boolean
     GetResponse:
       type: object
@@ -113,30 +111,32 @@ components:
         operatingOnboardingStep:
           format: int32
           type: integer
-    AccessLevelSummary:
+    AccountingPlusUserPermissionsDto:
       type: object
       properties:
-        controller:
-          format: int32
-          type: integer
-        action:
-          format: int32
-          type: integer
-    RoleSummary:
-      type: object
-      properties:
-        isFullAccess:
+        create_reconciliation:
           type: boolean
-        accessLevels:
-          type: array
-          items:
-            $ref: '#/components/schemas/AccessLevelSummary'
-    FeatureFlag:
-      type: object
-      properties:
-        name:
-          type: string
-        isEnabled:
+        upload_bank_statements:
+          type: boolean
+        create_journal_entries:
+          type: boolean
+        view_journal_entries:
+          type: boolean
+        edit_journal_entries:
+          type: boolean
+        create_chart_of_accounts:
+          type: boolean
+        view_chart_of_accounts:
+          type: boolean
+        edit_chart_of_accounts:
+          type: boolean
+        view_operating_reports:
+          type: boolean
+        set_permissions:
+          type: boolean
+        view_reconciliation:
+          type: boolean
+        edit_reconciliation:
           type: boolean
   securitySchemes:
     oauth2:

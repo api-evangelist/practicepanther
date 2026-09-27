@@ -116,23 +116,32 @@ paths:
         - full
 components:
   schemas:
-    UserRef:
+    CreditRef:
+      required:
+      - creditForSaleDocument
       type: object
       properties:
         guid:
           format: uuid
           type: string
           example: 00000000-0000-0000-0000-000000000000
-        displayName:
-          description: ' '
-          type: string
+        creditAmount:
+          format: double
+          description: Total credit amount Total credit amount
+          type: number
           readOnly: true
-        name:
-          description: ' '
-          type: string
+        creditApplied:
+          format: double
+          description: Credit amount applied towards invoices Credit amount applied towards invoices
+          type: number
           readOnly: true
-        timeZoneId:
-          type: string
+        creditAvailable:
+          format: double
+          description: Credit amount available (not applied towards invoices) Credit amount available (not applied towards invoices)
+          type: number
+          readOnly: true
+        creditForSaleDocument:
+          $ref: '#/components/schemas/SaleDocumentRef'
     TagDTO:
       required:
       - name
@@ -257,160 +266,6 @@ components:
         methodName:
           type: string
           readOnly: true
-    SaleDocumentRef:
-      required:
-      - date
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        number:
-          format: int32
-          type: integer
-        name:
-          description: ' '
-          type: string
-          readOnly: true
-        type:
-          description: Indicates if this sale document is an Invoice or a Quote
-          enum:
-          - Invoice
-          - Quote
-          type: string
-        invoiceType:
-          description: If this sale document is of type 'invoice', will indicate if this is a sale, refund or credit invoice.
-          enum:
-          - Sale
-          - Refund
-          - Credit
-          type: string
-        date:
-          format: date-time
-          description: The issue date for this invoice / quote.
-          type: string
-    SaleDocumentPaymentRef:
-      required:
-      - amount
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        amount:
-          format: double
-          description: The amount of payment or credit applied on this invoice
-          type: number
-        saleDocument:
-          $ref: '#/components/schemas/SaleDocumentRef'
-        payment:
-          $ref: '#/components/schemas/PaymentRef'
-        credit:
-          $ref: '#/components/schemas/CreditRef'
-    BankAccountRef:
-      required:
-      - name
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        name:
-          type: string
-        type:
-          enum:
-          - Operating
-          - Trust
-          - CreditCard
-          type: string
-        isArchived:
-          type: boolean
-    AccountRef:
-      type: object
-      properties:
-        nameAndNumber:
-          description: ' '
-          type: string
-          readOnly: true
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        utbmsIsEnabled:
-          type: boolean
-        id:
-          format: int64
-          type: integer
-    PaymentRef:
-      required:
-      - amount
-      - date
-      - method
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        amount:
-          format: double
-          description: The total amount received.
-          type: number
-        name:
-          description: ' '
-          type: string
-          readOnly: true
-        date:
-          format: date-time
-          type: string
-        method:
-          enum:
-          - Cash
-          - Check
-          - CreditCard
-          - PayPal
-          - AuthorizeNet
-          - Other
-          - Stripe
-          - Wire
-          - Transfer
-          - LawPay
-          - PantherPaymentsCC
-          - PantherPaymentsECheck
-          - JournalEntry
-          type: string
-        methodName:
-          type: string
-          readOnly: true
-    CreditRef:
-      required:
-      - creditForSaleDocument
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        creditAmount:
-          format: double
-          description: Total credit amount Total credit amount
-          type: number
-          readOnly: true
-        creditApplied:
-          format: double
-          description: Credit amount applied towards invoices Credit amount applied towards invoices
-          type: number
-          readOnly: true
-        creditAvailable:
-          format: double
-          description: Credit amount available (not applied towards invoices) Credit amount available (not applied towards invoices)
-          type: number
-          readOnly: true
-        creditForSaleDocument:
-          $ref: '#/components/schemas/SaleDocumentRef'
     PaymentDTO_Detail:
       required:
       - accountGuid
@@ -562,6 +417,151 @@ components:
         methodName:
           type: string
           readOnly: true
+    AccountRef:
+      type: object
+      properties:
+        nameAndNumber:
+          description: ' '
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        utbmsIsEnabled:
+          type: boolean
+        id:
+          format: int64
+          type: integer
+    SaleDocumentRef:
+      required:
+      - date
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        number:
+          format: int32
+          type: integer
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        type:
+          description: Indicates if this sale document is an Invoice or a Quote
+          enum:
+          - Invoice
+          - Quote
+          type: string
+        invoiceType:
+          description: If this sale document is of type 'invoice', will indicate if this is a sale, refund or credit invoice.
+          enum:
+          - Sale
+          - Refund
+          - Credit
+          type: string
+        date:
+          format: date-time
+          description: The issue date for this invoice / quote.
+          type: string
+    UserRef:
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        displayName:
+          description: ' '
+          type: string
+          readOnly: true
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        timeZoneId:
+          type: string
+    PaymentRef:
+      required:
+      - amount
+      - date
+      - method
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        amount:
+          format: double
+          description: The total amount received.
+          type: number
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        date:
+          format: date-time
+          type: string
+        method:
+          enum:
+          - Cash
+          - Check
+          - CreditCard
+          - PayPal
+          - AuthorizeNet
+          - Other
+          - Stripe
+          - Wire
+          - Transfer
+          - LawPay
+          - PantherPaymentsCC
+          - PantherPaymentsECheck
+          - JournalEntry
+          type: string
+        methodName:
+          type: string
+          readOnly: true
+    SaleDocumentPaymentRef:
+      required:
+      - amount
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        amount:
+          format: double
+          description: The amount of payment or credit applied on this invoice
+          type: number
+        saleDocument:
+          $ref: '#/components/schemas/SaleDocumentRef'
+        payment:
+          $ref: '#/components/schemas/PaymentRef'
+        credit:
+          $ref: '#/components/schemas/CreditRef'
+    BankAccountRef:
+      required:
+      - name
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          type: string
+        type:
+          enum:
+          - Operating
+          - Trust
+          - CreditCard
+          type: string
+        isArchived:
+          type: boolean
     ProjectRef:
       type: object
       properties:

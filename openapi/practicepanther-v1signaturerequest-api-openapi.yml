@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   version: v1
-  title: Legacy API (v1) V1 Signature Request API
+  title: Legacy API (v1) V1Signature Request API
   description: ''
 servers:
 - url: https://app.practicepanther.com

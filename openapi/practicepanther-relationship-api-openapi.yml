@@ -126,6 +126,41 @@ paths:
         - full
 components:
   schemas:
+    AccountRef:
+      type: object
+      properties:
+        nameAndNumber:
+          description: ' '
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        utbmsIsEnabled:
+          type: boolean
+        id:
+          format: int64
+          type: integer
+    RelationshipDTO:
+      required:
+      - relationshipName
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        account:
+          $ref: '#/components/schemas/AccountRef'
+        contact:
+          $ref: '#/components/schemas/ContactRef'
+        project:
+          $ref: '#/components/schemas/ProjectRef'
+        relationshipName:
+          type: string
+        notes:
+          type: string
     RelationshipDTO_Detail:
       required:
       - contactGuid
@@ -173,22 +208,6 @@ components:
           type: string
         notes:
           type: string
-    AccountRef:
-      type: object
-      properties:
-        nameAndNumber:
-          description: ' '
-          type: string
-          readOnly: true
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        utbmsIsEnabled:
-          type: boolean
-        id:
-          format: int64
-          type: integer
     ContactRef:
       type: object
       properties:
@@ -207,42 +226,6 @@ components:
           type: string
           example: 00000000-0000-0000-0000-000000000000
         email:
-          type: string
-    UserRef:
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        displayName:
-          description: ' '
-          type: string
-          readOnly: true
-        name:
-          description: ' '
-          type: string
-          readOnly: true
-        timeZoneId:
-          type: string
-    RelationshipDTO:
-      required:
-      - relationshipName
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        account:
-          $ref: '#/components/schemas/AccountRef'
-        contact:
-          $ref: '#/components/schemas/ContactRef'
-        project:
-          $ref: '#/components/schemas/ProjectRef'
-        relationshipName:
-          type: string
-        notes:
           type: string
     ProjectRef:
       type: object
@@ -263,6 +246,23 @@ components:
         id:
           format: int64
           type: integer
+    UserRef:
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        displayName:
+          description: ' '
+          type: string
+          readOnly: true
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        timeZoneId:
+          type: string
   requestBodies:
     RelationshipDTO_Detail:
       content:

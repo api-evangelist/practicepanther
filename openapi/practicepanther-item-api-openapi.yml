@@ -125,7 +125,37 @@ paths:
       - oauth2:
         - full
 components:
+  requestBodies:
+    ItemDTO:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ItemDTO'
+        text/json:
+          schema:
+            $ref: '#/components/schemas/ItemDTO'
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: '#/components/schemas/ItemDTO'
+      required: true
   schemas:
+    UserRef:
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        displayName:
+          description: ' '
+          type: string
+          readOnly: true
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        timeZoneId:
+          type: string
     SalesTaxRef:
       required:
       - name
@@ -145,23 +175,6 @@ components:
         isCompound:
           description: If set to true this will be considered to be a "Compound Tax". A compound tax is a special tax that is calculated after and on top of a primary tax. In Canada, Quebec and Prince Edward Island use compound taxes of 8.5% and 10% respectively.
           type: boolean
-    UserRef:
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        displayName:
-          description: ' '
-          type: string
-          readOnly: true
-        name:
-          description: ' '
-          type: string
-          readOnly: true
-        timeZoneId:
-          type: string
     ItemDTO:
       required:
       - salePrice
@@ -225,19 +238,6 @@ components:
           example: 00000000-0000-0000-0000-000000000000
         name:
           type: string
-  requestBodies:
-    ItemDTO:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ItemDTO'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/ItemDTO'
-        application/x-www-form-urlencoded:
-          schema:
-            $ref: '#/components/schemas/ItemDTO'
-      required: true
   securitySchemes:
     oauth2:
       type: oauth2

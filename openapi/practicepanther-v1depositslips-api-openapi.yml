@@ -470,21 +470,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    DepositSlipUpdateResource:
-      type: object
-      properties:
-        depositSlipId:
-          format: int64
-          type: integer
-        depositSlipGuid:
-          format: uuid
-          description: 'Used to set the reference in POST and PUT '
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        depositDate:
-          type: string
-        bankAccountHeadnoteId:
-          type: string
     DepositSlipCreationResource:
       type: object
       properties:
@@ -520,6 +505,21 @@ components:
           type: string
         isPrinted:
           type: boolean
+    DepositSlipUpdateResource:
+      type: object
+      properties:
+        depositSlipId:
+          format: int64
+          type: integer
+        depositSlipGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        depositDate:
+          type: string
+        bankAccountHeadnoteId:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2

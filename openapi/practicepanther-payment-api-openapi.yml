@@ -142,130 +142,6 @@ components:
           readOnly: true
         creditForSaleDocument:
           $ref: '#/components/schemas/SaleDocumentRef'
-    TagDTO:
-      required:
-      - name
-      type: object
-      properties:
-        name:
-          type: string
-    PaymentDTO:
-      required:
-      - currencyCode
-      - amount
-      - date
-      - method
-      type: object
-      properties:
-        accountTags:
-          type: array
-          items:
-            $ref: '#/components/schemas/TagDTO'
-        projectTags:
-          type: array
-          items:
-            $ref: '#/components/schemas/TagDTO'
-        account:
-          $ref: '#/components/schemas/AccountRef'
-        checkPayee:
-          $ref: '#/components/schemas/AccountRef'
-        project:
-          $ref: '#/components/schemas/ProjectRef'
-        createdBy:
-          $ref: '#/components/schemas/UserRef'
-        createdDate:
-          format: date-time
-          description: ' '
-          type: string
-          readOnly: true
-        notes:
-          type: string
-        number:
-          format: int32
-          description: ' '
-          type: integer
-          readOnly: true
-        currencyCode:
-          description: This defines the currency for this account. Must be in ISO 4217 format. Must match the currency code for the Account (contact).
-          type: string
-        amountApplied:
-          format: double
-          description: The portion of the payment already applied towards invoices. The portion of the payment already applied towards invoices.
-          type: number
-          readOnly: true
-        amountCredited:
-          format: double
-          description: The portion of the payment not yet applied towards invoices. The portion of the payment not yet applied towards invoices.
-          type: number
-          readOnly: true
-        transactionId:
-          description: Used to reference a transaction from an external gateway (ie. Stripe, PayPal, Auth.Net etc.)
-          type: string
-        bankAccount:
-          $ref: '#/components/schemas/BankAccountRef'
-        isReconciled:
-          type: boolean
-        reconciledDate:
-          format: date-time
-          type: string
-        reconciledBy:
-          $ref: '#/components/schemas/UserRef'
-        checkIsPrinted:
-          type: boolean
-        isDepositSlipPrinted:
-          type: boolean
-        checkNumber:
-          format: int32
-          type: integer
-        feeAmountInCents:
-          format: double
-          type: number
-        refundParentPaymentGuid:
-          format: uuid
-          description: 'Used to set the reference in POST and PUT '
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        surchargeAmount:
-          format: double
-          type: number
-        totalAmount:
-          format: double
-          type: number
-          readOnly: true
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        amount:
-          format: double
-          description: The total amount received.
-          type: number
-        name:
-          description: ' '
-          type: string
-          readOnly: true
-        date:
-          format: date-time
-          type: string
-        method:
-          enum:
-          - Cash
-          - Check
-          - CreditCard
-          - PayPal
-          - AuthorizeNet
-          - Other
-          - Stripe
-          - Wire
-          - Transfer
-          - LawPay
-          - PantherPaymentsCC
-          - PantherPaymentsECheck
-          - JournalEntry
-          type: string
-        methodName:
-          type: string
-          readOnly: true
     PaymentDTO_Detail:
       required:
       - accountGuid
@@ -433,6 +309,142 @@ components:
         id:
           format: int64
           type: integer
+    BankAccountRef:
+      required:
+      - name
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          type: string
+        type:
+          enum:
+          - Operating
+          - Trust
+          - CreditCard
+          type: string
+        isArchived:
+          type: boolean
+    PaymentDTO:
+      required:
+      - currencyCode
+      - amount
+      - date
+      - method
+      type: object
+      properties:
+        accountTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        projectTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        account:
+          $ref: '#/components/schemas/AccountRef'
+        checkPayee:
+          $ref: '#/components/schemas/AccountRef'
+        project:
+          $ref: '#/components/schemas/ProjectRef'
+        createdBy:
+          $ref: '#/components/schemas/UserRef'
+        createdDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        notes:
+          type: string
+        number:
+          format: int32
+          description: ' '
+          type: integer
+          readOnly: true
+        currencyCode:
+          description: This defines the currency for this account. Must be in ISO 4217 format. Must match the currency code for the Account (contact).
+          type: string
+        amountApplied:
+          format: double
+          description: The portion of the payment already applied towards invoices. The portion of the payment already applied towards invoices.
+          type: number
+          readOnly: true
+        amountCredited:
+          format: double
+          description: The portion of the payment not yet applied towards invoices. The portion of the payment not yet applied towards invoices.
+          type: number
+          readOnly: true
+        transactionId:
+          description: Used to reference a transaction from an external gateway (ie. Stripe, PayPal, Auth.Net etc.)
+          type: string
+        bankAccount:
+          $ref: '#/components/schemas/BankAccountRef'
+        isReconciled:
+          type: boolean
+        reconciledDate:
+          format: date-time
+          type: string
+        reconciledBy:
+          $ref: '#/components/schemas/UserRef'
+        checkIsPrinted:
+          type: boolean
+        isDepositSlipPrinted:
+          type: boolean
+        checkNumber:
+          format: int32
+          type: integer
+        feeAmountInCents:
+          format: double
+          type: number
+        refundParentPaymentGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        surchargeAmount:
+          format: double
+          type: number
+        totalAmount:
+          format: double
+          type: number
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        amount:
+          format: double
+          description: The total amount received.
+          type: number
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        date:
+          format: date-time
+          type: string
+        method:
+          enum:
+          - Cash
+          - Check
+          - CreditCard
+          - PayPal
+          - AuthorizeNet
+          - Other
+          - Stripe
+          - Wire
+          - Transfer
+          - LawPay
+          - PantherPaymentsCC
+          - PantherPaymentsECheck
+          - JournalEntry
+          type: string
+        methodName:
+          type: string
+          readOnly: true
     SaleDocumentRef:
       required:
       - date
@@ -466,6 +478,51 @@ components:
           format: date-time
           description: The issue date for this invoice / quote.
           type: string
+    TagDTO:
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+    SaleDocumentPaymentRef:
+      required:
+      - amount
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        amount:
+          format: double
+          description: The amount of payment or credit applied on this invoice
+          type: number
+        saleDocument:
+          $ref: '#/components/schemas/SaleDocumentRef'
+        payment:
+          $ref: '#/components/schemas/PaymentRef'
+        credit:
+          $ref: '#/components/schemas/CreditRef'
+    ProjectRef:
+      type: object
+      properties:
+        nameAndNumber:
+          description: This is a read only property This is a read only property
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        accountGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        id:
+          format: int64
+          type: integer
     UserRef:
       type: object
       properties:
@@ -524,63 +581,6 @@ components:
         methodName:
           type: string
           readOnly: true
-    SaleDocumentPaymentRef:
-      required:
-      - amount
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        amount:
-          format: double
-          description: The amount of payment or credit applied on this invoice
-          type: number
-        saleDocument:
-          $ref: '#/components/schemas/SaleDocumentRef'
-        payment:
-          $ref: '#/components/schemas/PaymentRef'
-        credit:
-          $ref: '#/components/schemas/CreditRef'
-    BankAccountRef:
-      required:
-      - name
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        name:
-          type: string
-        type:
-          enum:
-          - Operating
-          - Trust
-          - CreditCard
-          type: string
-        isArchived:
-          type: boolean
-    ProjectRef:
-      type: object
-      properties:
-        nameAndNumber:
-          description: This is a read only property This is a read only property
-          type: string
-          readOnly: true
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        accountGuid:
-          format: uuid
-          description: 'Used to set the reference in POST and PUT '
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        id:
-          format: int64
-          type: integer
   securitySchemes:
     oauth2:
       type: oauth2

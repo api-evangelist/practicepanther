@@ -126,11 +126,15 @@ paths:
         - full
 components:
   schemas:
-    TagDTO:
-      required:
-      - name
+    SaleDocumentItemRefWithSaleDocumentRef:
       type: object
       properties:
+        saleDocument:
+          $ref: '#/components/schemas/SaleDocumentRef'
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
         name:
           type: string
     ActivityRef:
@@ -155,22 +159,6 @@ components:
           - Email
           - Note
           type: string
-    AccountRef:
-      type: object
-      properties:
-        nameAndNumber:
-          description: ' '
-          type: string
-          readOnly: true
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        utbmsIsEnabled:
-          type: boolean
-        id:
-          format: int64
-          type: integer
     TimeEntryDTO:
       required:
       - date
@@ -243,6 +231,29 @@ components:
           description: ' '
           type: string
           readOnly: true
+    UtbmsCodeRef:
+      type: object
+      properties:
+        name:
+          type: string
+        code:
+          type: string
+    AccountRef:
+      type: object
+      properties:
+        nameAndNumber:
+          description: ' '
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        utbmsIsEnabled:
+          type: boolean
+        id:
+          format: int64
+          type: integer
     SaleDocumentRef:
       required:
       - date
@@ -276,6 +287,13 @@ components:
           format: date-time
           description: The issue date for this invoice / quote.
           type: string
+    TagDTO:
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          type: string
     ItemRef:
       required:
       - name
@@ -292,34 +310,6 @@ components:
         chartOfAccountId:
           format: int64
           type: integer
-    UserRef:
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        displayName:
-          description: ' '
-          type: string
-          readOnly: true
-        name:
-          description: ' '
-          type: string
-          readOnly: true
-        timeZoneId:
-          type: string
-    SaleDocumentItemRefWithSaleDocumentRef:
-      type: object
-      properties:
-        saleDocument:
-          $ref: '#/components/schemas/SaleDocumentRef'
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        name:
-          type: string
     TimeEntryDTO_Detail:
       required:
       - accountGuid
@@ -466,12 +456,22 @@ components:
         id:
           format: int64
           type: integer
-    UtbmsCodeRef:
+    UserRef:
       type: object
       properties:
-        name:
+        guid:
+          format: uuid
           type: string
-        code:
+          example: 00000000-0000-0000-0000-000000000000
+        displayName:
+          description: ' '
+          type: string
+          readOnly: true
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        timeZoneId:
           type: string
   requestBodies:
     TimeEntryDTO_Detail:

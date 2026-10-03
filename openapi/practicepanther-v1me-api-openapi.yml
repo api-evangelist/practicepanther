@@ -46,22 +46,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/AccessLevelSummary'
-    AccessLevelSummary:
-      type: object
-      properties:
-        controller:
-          format: int32
-          type: integer
-        action:
-          format: int32
-          type: integer
-    FeatureFlag:
-      type: object
-      properties:
-        name:
-          type: string
-        isEnabled:
-          type: boolean
     GetResponse:
       type: object
       properties:
@@ -89,6 +73,15 @@ components:
             $ref: '#/components/schemas/FeatureFlag'
         accountingPlusUserPermissions:
           $ref: '#/components/schemas/AccountingPlusUserPermissionsDto'
+    AccessLevelSummary:
+      type: object
+      properties:
+        controller:
+          format: int32
+          type: integer
+        action:
+          format: int32
+          type: integer
     IntegrationSummary:
       type: object
       properties:
@@ -111,6 +104,13 @@ components:
         operatingOnboardingStep:
           format: int32
           type: integer
+    FeatureFlag:
+      type: object
+      properties:
+        name:
+          type: string
+        isEnabled:
+          type: boolean
     AccountingPlusUserPermissionsDto:
       type: object
       properties:

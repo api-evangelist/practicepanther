@@ -100,19 +100,6 @@ paths:
       summary: V1 any payments bulk make payment available for deposit slips
       x-summary-source: derived
 components:
-  schemas:
-    PaymentMakeAvailableResource:
-      type: object
-      properties:
-        paymentGuids:
-          description: 'Used to set the reference in POST and PUT '
-          type: array
-          items:
-            format: uuid
-            type: string
-            example: 00000000-0000-0000-0000-000000000000
-        isDepositSlipPrinted:
-          type: boolean
   requestBodies:
     PaymentMakeAvailableResource:
       content:
@@ -126,6 +113,19 @@ components:
           schema:
             $ref: '#/components/schemas/PaymentMakeAvailableResource'
       required: true
+  schemas:
+    PaymentMakeAvailableResource:
+      type: object
+      properties:
+        paymentGuids:
+          description: 'Used to set the reference in POST and PUT '
+          type: array
+          items:
+            format: uuid
+            type: string
+            example: 00000000-0000-0000-0000-000000000000
+        isDepositSlipPrinted:
+          type: boolean
   securitySchemes:
     oauth2:
       type: oauth2

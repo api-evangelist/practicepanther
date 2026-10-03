@@ -152,6 +152,15 @@ components:
         startingCheckNumber:
           format: int32
           type: integer
+    IntegrationAccess:
+      type: object
+      properties:
+        trustAccounting:
+          type: boolean
+        operatingAccounting:
+          type: boolean
+        pantherPayments:
+          type: boolean
     LocalizationPreferences:
       type: object
       properties:
@@ -167,15 +176,6 @@ components:
           type: string
         timezoneId:
           type: string
-    IntegrationAccess:
-      type: object
-      properties:
-        trustAccounting:
-          type: boolean
-        operatingAccounting:
-          type: boolean
-        pantherPayments:
-          type: boolean
   securitySchemes:
     oauth2:
       type: oauth2

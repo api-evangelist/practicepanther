@@ -126,6 +126,65 @@ paths:
         - full
 components:
   schemas:
+    CustomFieldValueDTO_Detail:
+      required:
+      - customField
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        valueString:
+          description: Used to set the value type for CustomField.ValueType of 'textBox', 'textEdit' and 'dropDownList'.
+          type: string
+        valueNumber:
+          format: double
+          description: Used to set the value type for CustomField.ValueType of 'number' and 'currency'.
+          type: number
+        valueDateTime:
+          format: date-time
+          description: Used to set the value type for CustomField.ValueType of 'dateTime' and 'date'.
+          type: string
+        valueBoolean:
+          description: Used to set the value type for CustomField.ValueType of 'checkbox'
+          type: boolean
+        valueContactGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        valueContact:
+          $ref: '#/components/schemas/ContactRef'
+        customField:
+          $ref: '#/components/schemas/CustomFieldDTO_Detail'
+    PresetProjectRateRef:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+    AccountRef:
+      type: object
+      properties:
+        nameAndNumber:
+          description: ' '
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        utbmsIsEnabled:
+          type: boolean
+        id:
+          format: int64
+          type: integer
     ProjectDTO_Detail:
       required:
       - hourlyRateType
@@ -362,13 +421,6 @@ components:
         id:
           format: int64
           type: integer
-    TagDTO:
-      required:
-      - name
-      type: object
-      properties:
-        name:
-          type: string
     CustomFieldDTO_Detail:
       required:
       - objectType
@@ -440,22 +492,24 @@ components:
         dropDownListValues:
           description: Comma separated list of values for ValueType 'dropDownList'.
           type: string
-    AccountRef:
+    RoleRef:
+      required:
+      - name
       type: object
       properties:
-        nameAndNumber:
-          description: ' '
-          type: string
-          readOnly: true
         guid:
           format: uuid
           type: string
           example: 00000000-0000-0000-0000-000000000000
-        utbmsIsEnabled:
-          type: boolean
-        id:
-          format: int64
-          type: integer
+        name:
+          type: string
+    TagDTO:
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          type: string
     ProjectRateDTO:
       type: object
       properties:
@@ -501,77 +555,6 @@ components:
           example: 00000000-0000-0000-0000-000000000000
         email:
           type: string
-    UserRef:
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        displayName:
-          description: ' '
-          type: string
-          readOnly: true
-        name:
-          description: ' '
-          type: string
-          readOnly: true
-        timeZoneId:
-          type: string
-    RoleRef:
-      required:
-      - name
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        name:
-          type: string
-    CustomFieldValueDTO_Detail:
-      required:
-      - customField
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        valueString:
-          description: Used to set the value type for CustomField.ValueType of 'textBox', 'textEdit' and 'dropDownList'.
-          type: string
-        valueNumber:
-          format: double
-          description: Used to set the value type for CustomField.ValueType of 'number' and 'currency'.
-          type: number
-        valueDateTime:
-          format: date-time
-          description: Used to set the value type for CustomField.ValueType of 'dateTime' and 'date'.
-          type: string
-        valueBoolean:
-          description: Used to set the value type for CustomField.ValueType of 'checkbox'
-          type: boolean
-        valueContactGuid:
-          format: uuid
-          description: 'Used to set the reference in POST and PUT '
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        valueContact:
-          $ref: '#/components/schemas/ContactRef'
-        customField:
-          $ref: '#/components/schemas/CustomFieldDTO_Detail'
-    PresetProjectRateRef:
-      type: object
-      properties:
-        name:
-          type: string
-        description:
-          type: string
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
     ProjectDTO:
       required:
       - name
@@ -713,6 +696,23 @@ components:
         id:
           format: int64
           type: integer
+    UserRef:
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        displayName:
+          description: ' '
+          type: string
+          readOnly: true
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        timeZoneId:
+          type: string
   requestBodies:
     ProjectDTO_Detail:
       content:

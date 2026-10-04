@@ -33,17 +33,6 @@ paths:
         - full
 components:
   schemas:
-    RoleRef:
-      required:
-      - name
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        name:
-          type: string
     UserDTO:
       required:
       - email
@@ -92,6 +81,17 @@ components:
           type: string
           readOnly: true
         timeZoneId:
+          type: string
+    RoleRef:
+      required:
+      - name
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
           type: string
   securitySchemes:
     oauth2:

@@ -142,25 +142,44 @@ components:
         id:
           format: int64
           type: integer
-    RelationshipDTO:
-      required:
-      - relationshipName
+    ContactRef:
       type: object
       properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        middleName:
+          type: string
+        accountName:
+          type: string
+        displayName:
+          type: string
         guid:
           format: uuid
           type: string
           example: 00000000-0000-0000-0000-000000000000
-        account:
-          $ref: '#/components/schemas/AccountRef'
-        contact:
-          $ref: '#/components/schemas/ContactRef'
-        project:
-          $ref: '#/components/schemas/ProjectRef'
-        relationshipName:
+        email:
           type: string
-        notes:
+    ProjectRef:
+      type: object
+      properties:
+        nameAndNumber:
+          description: This is a read only property This is a read only property
           type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        accountGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        id:
+          format: int64
+          type: integer
     RelationshipDTO_Detail:
       required:
       - contactGuid
@@ -208,44 +227,25 @@ components:
           type: string
         notes:
           type: string
-    ContactRef:
+    RelationshipDTO:
+      required:
+      - relationshipName
       type: object
       properties:
-        firstName:
-          type: string
-        lastName:
-          type: string
-        middleName:
-          type: string
-        accountName:
-          type: string
-        displayName:
-          type: string
         guid:
           format: uuid
           type: string
           example: 00000000-0000-0000-0000-000000000000
-        email:
+        account:
+          $ref: '#/components/schemas/AccountRef'
+        contact:
+          $ref: '#/components/schemas/ContactRef'
+        project:
+          $ref: '#/components/schemas/ProjectRef'
+        relationshipName:
           type: string
-    ProjectRef:
-      type: object
-      properties:
-        nameAndNumber:
-          description: This is a read only property This is a read only property
+        notes:
           type: string
-          readOnly: true
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        accountGuid:
-          format: uuid
-          description: 'Used to set the reference in POST and PUT '
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        id:
-          format: int64
-          type: integer
     UserRef:
       type: object
       properties:

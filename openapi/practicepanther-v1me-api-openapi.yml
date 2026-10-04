@@ -46,42 +46,33 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/AccessLevelSummary'
-    GetResponse:
+    AccountingPlusUserPermissionsDto:
       type: object
       properties:
-        id:
-          format: int32
-          type: integer
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        displayName:
-          type: string
-        roleSummary:
-          $ref: '#/components/schemas/RoleSummary'
-        featuresInPlan:
-          type: array
-          items:
-            format: int32
-            type: integer
-        integrations:
-          $ref: '#/components/schemas/IntegrationSummary'
-        featureFlags:
-          type: array
-          items:
-            $ref: '#/components/schemas/FeatureFlag'
-        accountingPlusUserPermissions:
-          $ref: '#/components/schemas/AccountingPlusUserPermissionsDto'
-    AccessLevelSummary:
-      type: object
-      properties:
-        controller:
-          format: int32
-          type: integer
-        action:
-          format: int32
-          type: integer
+        create_reconciliation:
+          type: boolean
+        upload_bank_statements:
+          type: boolean
+        create_journal_entries:
+          type: boolean
+        view_journal_entries:
+          type: boolean
+        edit_journal_entries:
+          type: boolean
+        create_chart_of_accounts:
+          type: boolean
+        view_chart_of_accounts:
+          type: boolean
+        edit_chart_of_accounts:
+          type: boolean
+        view_operating_reports:
+          type: boolean
+        set_permissions:
+          type: boolean
+        view_reconciliation:
+          type: boolean
+        edit_reconciliation:
+          type: boolean
     IntegrationSummary:
       type: object
       properties:
@@ -111,33 +102,42 @@ components:
           type: string
         isEnabled:
           type: boolean
-    AccountingPlusUserPermissionsDto:
+    AccessLevelSummary:
       type: object
       properties:
-        create_reconciliation:
-          type: boolean
-        upload_bank_statements:
-          type: boolean
-        create_journal_entries:
-          type: boolean
-        view_journal_entries:
-          type: boolean
-        edit_journal_entries:
-          type: boolean
-        create_chart_of_accounts:
-          type: boolean
-        view_chart_of_accounts:
-          type: boolean
-        edit_chart_of_accounts:
-          type: boolean
-        view_operating_reports:
-          type: boolean
-        set_permissions:
-          type: boolean
-        view_reconciliation:
-          type: boolean
-        edit_reconciliation:
-          type: boolean
+        controller:
+          format: int32
+          type: integer
+        action:
+          format: int32
+          type: integer
+    GetResponse:
+      type: object
+      properties:
+        id:
+          format: int32
+          type: integer
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        displayName:
+          type: string
+        roleSummary:
+          $ref: '#/components/schemas/RoleSummary'
+        featuresInPlan:
+          type: array
+          items:
+            format: int32
+            type: integer
+        integrations:
+          $ref: '#/components/schemas/IntegrationSummary'
+        featureFlags:
+          type: array
+          items:
+            $ref: '#/components/schemas/FeatureFlag'
+        accountingPlusUserPermissions:
+          $ref: '#/components/schemas/AccountingPlusUserPermissionsDto'
   securitySchemes:
     oauth2:
       type: oauth2

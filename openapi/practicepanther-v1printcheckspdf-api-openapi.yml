@@ -49,20 +49,28 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    SecurityDetail:
+    PrintChecksPdfResource:
       type: object
       properties:
-        userId:
-          format: int32
-          type: integer
-        isUserAuthenticated:
-          type: boolean
-        hasFullAccess:
-          type: boolean
-        accessLevels:
+        paymentsToPrint:
           type: array
           items:
-            $ref: '#/components/schemas/UserAccessLevel'
+            format: uuid
+            type: string
+            example: 00000000-0000-0000-0000-000000000000
+        coreIdentity:
+          $ref: '#/components/schemas/CoreIdentity'
+        pageType:
+          enum:
+          - Standard
+          - Voucher
+          type: string
+        numOfChecksOnFirstPage:
+          format: int32
+          type: integer
+        startingCheckNumber:
+          format: int32
+          type: integer
     UserAccessLevel:
       type: object
       properties:
@@ -109,6 +117,44 @@ components:
           - ModifyAll
           - Archive
           type: string
+    SecurityDetail:
+      type: object
+      properties:
+        userId:
+          format: int32
+          type: integer
+        isUserAuthenticated:
+          type: boolean
+        hasFullAccess:
+          type: boolean
+        accessLevels:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserAccessLevel'
+    LocalizationPreferences:
+      type: object
+      properties:
+        cultureName:
+          type: string
+        dateFormat:
+          type: string
+        dateTimeFormat:
+          type: string
+        timeFormat:
+          type: string
+        currencyCode:
+          type: string
+        timezoneId:
+          type: string
+    IntegrationAccess:
+      type: object
+      properties:
+        trustAccounting:
+          type: boolean
+        operatingAccounting:
+          type: boolean
+        pantherPayments:
+          type: boolean
     CoreIdentity:
       type: object
       properties:
@@ -130,52 +176,6 @@ components:
         timeZoneInfo:
           type: object
           readOnly: true
-    PrintChecksPdfResource:
-      type: object
-      properties:
-        paymentsToPrint:
-          type: array
-          items:
-            format: uuid
-            type: string
-            example: 00000000-0000-0000-0000-000000000000
-        coreIdentity:
-          $ref: '#/components/schemas/CoreIdentity'
-        pageType:
-          enum:
-          - Standard
-          - Voucher
-          type: string
-        numOfChecksOnFirstPage:
-          format: int32
-          type: integer
-        startingCheckNumber:
-          format: int32
-          type: integer
-    IntegrationAccess:
-      type: object
-      properties:
-        trustAccounting:
-          type: boolean
-        operatingAccounting:
-          type: boolean
-        pantherPayments:
-          type: boolean
-    LocalizationPreferences:
-      type: object
-      properties:
-        cultureName:
-          type: string
-        dateFormat:
-          type: string
-        dateTimeFormat:
-          type: string
-        timeFormat:
-          type: string
-        currencyCode:
-          type: string
-        timezoneId:
-          type: string
   securitySchemes:
     oauth2:
       type: oauth2

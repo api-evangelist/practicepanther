@@ -125,19 +125,6 @@ paths:
       - oauth2:
         - full
 components:
-  requestBodies:
-    SalesTaxDTO:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/SalesTaxDTO'
-        text/json:
-          schema:
-            $ref: '#/components/schemas/SalesTaxDTO'
-        application/x-www-form-urlencoded:
-          schema:
-            $ref: '#/components/schemas/SalesTaxDTO'
-      required: true
   schemas:
     SalesTaxDTO:
       required:
@@ -164,6 +151,19 @@ components:
         isCompound:
           description: If set to true this will be considered to be a "Compound Tax". A compound tax is a special tax that is calculated after and on top of a primary tax. In Canada, Quebec and Prince Edward Island use compound taxes of 8.5% and 10% respectively.
           type: boolean
+  requestBodies:
+    SalesTaxDTO:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/SalesTaxDTO'
+        text/json:
+          schema:
+            $ref: '#/components/schemas/SalesTaxDTO'
+        application/x-www-form-urlencoded:
+          schema:
+            $ref: '#/components/schemas/SalesTaxDTO'
+      required: true
   securitySchemes:
     oauth2:
       type: oauth2

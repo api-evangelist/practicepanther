@@ -126,6 +126,20 @@ paths:
         - full
 components:
   schemas:
+    UtbmsCodeRef:
+      type: object
+      properties:
+        name:
+          type: string
+        code:
+          type: string
+    TagDTO:
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          type: string
     SaleDocumentItemRefWithSaleDocumentRef:
       type: object
       properties:
@@ -137,179 +151,6 @@ components:
           example: 00000000-0000-0000-0000-000000000000
         name:
           type: string
-    ActivityRef:
-      required:
-      - name
-      - type
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        name:
-          description: Name (subject) of this activity.
-          type: string
-        type:
-          description: Sets the type of this activity (task/event/call/email)
-          enum:
-          - Call
-          - Task
-          - Event
-          - Email
-          - Note
-          type: string
-    TimeEntryDTO:
-      required:
-      - date
-      - hours
-      - hourlyRate
-      type: object
-      properties:
-        accountTags:
-          type: array
-          items:
-            $ref: '#/components/schemas/TagDTO'
-        projectTags:
-          type: array
-          items:
-            $ref: '#/components/schemas/TagDTO'
-        account:
-          $ref: '#/components/schemas/AccountRef'
-        project:
-          $ref: '#/components/schemas/ProjectRef'
-        user:
-          $ref: '#/components/schemas/UserRef'
-        product:
-          $ref: '#/components/schemas/ItemRef'
-        utbmsCode:
-          $ref: '#/components/schemas/UtbmsCodeRef'
-        description:
-          type: string
-        notes:
-          description: Internal notes, Not visible on the invoice.
-          type: string
-        date:
-          format: date-time
-          description: The date for this time entry. Will be used on the invoice and in various reports.
-          type: string
-        hours:
-          format: double
-          description: How many hours were logged, 1.1 = 1 hour and 6 minutes.
-          type: number
-        hourlyRate:
-          format: double
-          description: The hourly rate for this time entry.
-          type: number
-        total:
-          format: double
-          description: The total to be billed for this time entry. Set to ZERO if you wish to not bill this to the client.
-          type: number
-        createdDate:
-          format: date-time
-          description: ' '
-          type: string
-          readOnly: true
-        createdBy:
-          $ref: '#/components/schemas/UserRef'
-        status:
-          description: ' '
-          enum:
-          - Billable
-          - Billed
-          - Paid
-          - NotBillable
-          type: string
-          readOnly: true
-        saleDocumentItem:
-          $ref: '#/components/schemas/SaleDocumentItemRefWithSaleDocumentRef'
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        name:
-          description: ' '
-          type: string
-          readOnly: true
-    UtbmsCodeRef:
-      type: object
-      properties:
-        name:
-          type: string
-        code:
-          type: string
-    AccountRef:
-      type: object
-      properties:
-        nameAndNumber:
-          description: ' '
-          type: string
-          readOnly: true
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        utbmsIsEnabled:
-          type: boolean
-        id:
-          format: int64
-          type: integer
-    SaleDocumentRef:
-      required:
-      - date
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        number:
-          format: int32
-          type: integer
-        name:
-          description: ' '
-          type: string
-          readOnly: true
-        type:
-          description: Indicates if this sale document is an Invoice or a Quote
-          enum:
-          - Invoice
-          - Quote
-          type: string
-        invoiceType:
-          description: If this sale document is of type 'invoice', will indicate if this is a sale, refund or credit invoice.
-          enum:
-          - Sale
-          - Refund
-          - Credit
-          type: string
-        date:
-          format: date-time
-          description: The issue date for this invoice / quote.
-          type: string
-    TagDTO:
-      required:
-      - name
-      type: object
-      properties:
-        name:
-          type: string
-    ItemRef:
-      required:
-      - name
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        name:
-          type: string
-        code:
-          type: string
-        chartOfAccountId:
-          format: int64
-          type: integer
     TimeEntryDTO_Detail:
       required:
       - accountGuid
@@ -437,6 +278,55 @@ components:
           format: uuid
           type: string
           example: 00000000-0000-0000-0000-000000000000
+    AccountRef:
+      type: object
+      properties:
+        nameAndNumber:
+          description: ' '
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        utbmsIsEnabled:
+          type: boolean
+        id:
+          format: int64
+          type: integer
+    SaleDocumentRef:
+      required:
+      - date
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        number:
+          format: int32
+          type: integer
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        type:
+          description: Indicates if this sale document is an Invoice or a Quote
+          enum:
+          - Invoice
+          - Quote
+          type: string
+        invoiceType:
+          description: If this sale document is of type 'invoice', will indicate if this is a sale, refund or credit invoice.
+          enum:
+          - Sale
+          - Refund
+          - Credit
+          type: string
+        date:
+          format: date-time
+          description: The issue date for this invoice / quote.
+          type: string
     ProjectRef:
       type: object
       properties:
@@ -456,6 +346,116 @@ components:
         id:
           format: int64
           type: integer
+    ActivityRef:
+      required:
+      - name
+      - type
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          description: Name (subject) of this activity.
+          type: string
+        type:
+          description: Sets the type of this activity (task/event/call/email)
+          enum:
+          - Call
+          - Task
+          - Event
+          - Email
+          - Note
+          type: string
+    ItemRef:
+      required:
+      - name
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          type: string
+        code:
+          type: string
+        chartOfAccountId:
+          format: int64
+          type: integer
+    TimeEntryDTO:
+      required:
+      - date
+      - hours
+      - hourlyRate
+      type: object
+      properties:
+        accountTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        projectTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        account:
+          $ref: '#/components/schemas/AccountRef'
+        project:
+          $ref: '#/components/schemas/ProjectRef'
+        user:
+          $ref: '#/components/schemas/UserRef'
+        product:
+          $ref: '#/components/schemas/ItemRef'
+        utbmsCode:
+          $ref: '#/components/schemas/UtbmsCodeRef'
+        description:
+          type: string
+        notes:
+          description: Internal notes, Not visible on the invoice.
+          type: string
+        date:
+          format: date-time
+          description: The date for this time entry. Will be used on the invoice and in various reports.
+          type: string
+        hours:
+          format: double
+          description: How many hours were logged, 1.1 = 1 hour and 6 minutes.
+          type: number
+        hourlyRate:
+          format: double
+          description: The hourly rate for this time entry.
+          type: number
+        total:
+          format: double
+          description: The total to be billed for this time entry. Set to ZERO if you wish to not bill this to the client.
+          type: number
+        createdDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        createdBy:
+          $ref: '#/components/schemas/UserRef'
+        status:
+          description: ' '
+          enum:
+          - Billable
+          - Billed
+          - Paid
+          - NotBillable
+          type: string
+          readOnly: true
+        saleDocumentItem:
+          $ref: '#/components/schemas/SaleDocumentItemRefWithSaleDocumentRef'
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          description: ' '
+          type: string
+          readOnly: true
     UserRef:
       type: object
       properties:

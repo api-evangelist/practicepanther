@@ -126,11 +126,214 @@ paths:
         - full
 components:
   schemas:
+    UtbmsCodeRef:
+      type: object
+      properties:
+        name:
+          type: string
+        code:
+          type: string
+    TagDTO:
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          type: string
     SaleDocumentItemRefWithSaleDocumentRef:
       type: object
       properties:
         saleDocument:
           $ref: '#/components/schemas/SaleDocumentRef'
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          type: string
+    SaleDocumentRef:
+      required:
+      - date
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        number:
+          format: int32
+          type: integer
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+        type:
+          description: Indicates if this sale document is an Invoice or a Quote
+          enum:
+          - Invoice
+          - Quote
+          type: string
+        invoiceType:
+          description: If this sale document is of type 'invoice', will indicate if this is a sale, refund or credit invoice.
+          enum:
+          - Sale
+          - Refund
+          - Credit
+          type: string
+        date:
+          format: date-time
+          description: The issue date for this invoice / quote.
+          type: string
+    BankAccountRef:
+      required:
+      - name
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          type: string
+        type:
+          enum:
+          - Operating
+          - Trust
+          - CreditCard
+          type: string
+        isArchived:
+          type: boolean
+    AccountRef:
+      type: object
+      properties:
+        nameAndNumber:
+          description: ' '
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        utbmsIsEnabled:
+          type: boolean
+        id:
+          format: int64
+          type: integer
+    ExpenseDTO:
+      required:
+      - date
+      - amount
+      - qty
+      type: object
+      properties:
+        account:
+          $ref: '#/components/schemas/AccountRef'
+        accountTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        projectTags:
+          type: array
+          items:
+            $ref: '#/components/schemas/TagDTO'
+        accountingAccount:
+          $ref: '#/components/schemas/AccountingAccountRef'
+        project:
+          $ref: '#/components/schemas/ProjectRef'
+        notes:
+          description: Internal notes, Not visible on the invoice.
+          type: string
+        description:
+          description: Description, visible on the invoice.
+          type: string
+        user:
+          $ref: '#/components/schemas/UserRef'
+        date:
+          format: date-time
+          description: The date of this expense. It will be added to the invoice and indicated on the reports.
+          type: string
+        amount:
+          format: double
+          description: The amount, in the account's (contact) currency.
+          type: number
+        qty:
+          format: double
+          type: number
+        totalAmount:
+          format: double
+          type: number
+        utbmsCode:
+          $ref: '#/components/schemas/UtbmsCodeRef'
+        createdDate:
+          format: date-time
+          description: ' '
+          type: string
+          readOnly: true
+        createdBy:
+          $ref: '#/components/schemas/UserRef'
+        primaryReceipt:
+          $ref: '#/components/schemas/BlobRef'
+        status:
+          description: This is a read only property, will be set on GET requests This is a read only property, will be set on GET requests
+          enum:
+          - Billable
+          - Billed
+          - Paid
+          - NotBillable
+          type: string
+          readOnly: true
+        costType:
+          description: Hard costs are expenses incurred on behalf of a client that require a direct payment by the firm to a vendor. For example if a firm writes a check for a court filing fee, it is considered a hard cost. Soft costs are expenses that are charged to the client but a direct payment is not made to a vendor.
+          enum:
+          - SoftCost
+          - HardCost
+          type: string
+        saleDocumentItem:
+          $ref: '#/components/schemas/SaleDocumentItemRefWithSaleDocumentRef'
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          description: ' '
+          type: string
+          readOnly: true
+    ProjectRef:
+      type: object
+      properties:
+        nameAndNumber:
+          description: This is a read only property This is a read only property
+          type: string
+          readOnly: true
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        accountGuid:
+          format: uuid
+          description: 'Used to set the reference in POST and PUT '
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        id:
+          format: int64
+          type: integer
+    AccountingAccountRef:
+      type: object
+      properties:
+        guid:
+          format: uuid
+          type: string
+          example: 00000000-0000-0000-0000-000000000000
+        name:
+          type: string
+        code:
+          type: string
+        chartOfAccountId:
+          format: int64
+          type: integer
+    BlobRef:
+      type: object
+      properties:
         guid:
           format: uuid
           type: string
@@ -321,209 +524,6 @@ components:
           description: ' '
           type: string
           readOnly: true
-    UtbmsCodeRef:
-      type: object
-      properties:
-        name:
-          type: string
-        code:
-          type: string
-    BlobRef:
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        name:
-          type: string
-    AccountingAccountRef:
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        name:
-          type: string
-        code:
-          type: string
-        chartOfAccountId:
-          format: int64
-          type: integer
-    AccountRef:
-      type: object
-      properties:
-        nameAndNumber:
-          description: ' '
-          type: string
-          readOnly: true
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        utbmsIsEnabled:
-          type: boolean
-        id:
-          format: int64
-          type: integer
-    SaleDocumentRef:
-      required:
-      - date
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        number:
-          format: int32
-          type: integer
-        name:
-          description: ' '
-          type: string
-          readOnly: true
-        type:
-          description: Indicates if this sale document is an Invoice or a Quote
-          enum:
-          - Invoice
-          - Quote
-          type: string
-        invoiceType:
-          description: If this sale document is of type 'invoice', will indicate if this is a sale, refund or credit invoice.
-          enum:
-          - Sale
-          - Refund
-          - Credit
-          type: string
-        date:
-          format: date-time
-          description: The issue date for this invoice / quote.
-          type: string
-    BankAccountRef:
-      required:
-      - name
-      type: object
-      properties:
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        name:
-          type: string
-        type:
-          enum:
-          - Operating
-          - Trust
-          - CreditCard
-          type: string
-        isArchived:
-          type: boolean
-    TagDTO:
-      required:
-      - name
-      type: object
-      properties:
-        name:
-          type: string
-    ExpenseDTO:
-      required:
-      - date
-      - amount
-      - qty
-      type: object
-      properties:
-        account:
-          $ref: '#/components/schemas/AccountRef'
-        accountTags:
-          type: array
-          items:
-            $ref: '#/components/schemas/TagDTO'
-        projectTags:
-          type: array
-          items:
-            $ref: '#/components/schemas/TagDTO'
-        accountingAccount:
-          $ref: '#/components/schemas/AccountingAccountRef'
-        project:
-          $ref: '#/components/schemas/ProjectRef'
-        notes:
-          description: Internal notes, Not visible on the invoice.
-          type: string
-        description:
-          description: Description, visible on the invoice.
-          type: string
-        user:
-          $ref: '#/components/schemas/UserRef'
-        date:
-          format: date-time
-          description: The date of this expense. It will be added to the invoice and indicated on the reports.
-          type: string
-        amount:
-          format: double
-          description: The amount, in the account's (contact) currency.
-          type: number
-        qty:
-          format: double
-          type: number
-        totalAmount:
-          format: double
-          type: number
-        utbmsCode:
-          $ref: '#/components/schemas/UtbmsCodeRef'
-        createdDate:
-          format: date-time
-          description: ' '
-          type: string
-          readOnly: true
-        createdBy:
-          $ref: '#/components/schemas/UserRef'
-        primaryReceipt:
-          $ref: '#/components/schemas/BlobRef'
-        status:
-          description: This is a read only property, will be set on GET requests This is a read only property, will be set on GET requests
-          enum:
-          - Billable
-          - Billed
-          - Paid
-          - NotBillable
-          type: string
-          readOnly: true
-        costType:
-          description: Hard costs are expenses incurred on behalf of a client that require a direct payment by the firm to a vendor. For example if a firm writes a check for a court filing fee, it is considered a hard cost. Soft costs are expenses that are charged to the client but a direct payment is not made to a vendor.
-          enum:
-          - SoftCost
-          - HardCost
-          type: string
-        saleDocumentItem:
-          $ref: '#/components/schemas/SaleDocumentItemRefWithSaleDocumentRef'
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        name:
-          description: ' '
-          type: string
-          readOnly: true
-    ProjectRef:
-      type: object
-      properties:
-        nameAndNumber:
-          description: This is a read only property This is a read only property
-          type: string
-          readOnly: true
-        guid:
-          format: uuid
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        accountGuid:
-          format: uuid
-          description: 'Used to set the reference in POST and PUT '
-          type: string
-          example: 00000000-0000-0000-0000-000000000000
-        id:
-          format: int64
-          type: integer
     UserRef:
       type: object
       properties:

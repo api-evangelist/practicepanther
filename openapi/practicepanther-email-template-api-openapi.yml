@@ -42,30 +42,6 @@ paths:
       x-summary-source: derived
 components:
   schemas:
-    EmailAttachment:
-      type: object
-      properties:
-        name:
-          type: string
-        byteArray:
-          format: byte
-          type: string
-    EmailAddressInfo:
-      type: object
-      properties:
-        email:
-          type: string
-        name:
-          type: string
-    EmailTemplateRequest:
-      type: object
-      properties:
-        templateSerializedData:
-          type: string
-        templateDataType:
-          type: string
-        emailData:
-          $ref: '#/components/schemas/EmailData'
     EmailData:
       type: object
       properties:
@@ -92,6 +68,30 @@ components:
         customArguments:
           description: ' '
           type: object
+    EmailAddressInfo:
+      type: object
+      properties:
+        email:
+          type: string
+        name:
+          type: string
+    EmailTemplateRequest:
+      type: object
+      properties:
+        templateSerializedData:
+          type: string
+        templateDataType:
+          type: string
+        emailData:
+          $ref: '#/components/schemas/EmailData'
+    EmailAttachment:
+      type: object
+      properties:
+        name:
+          type: string
+        byteArray:
+          format: byte
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2
